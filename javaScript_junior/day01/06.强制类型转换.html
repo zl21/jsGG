@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+	在JS中：
+	函数（function）是：一段代码，需要通过名字来进行调用。它能将一些数据（函数的参数）传递进去进行处理，然后返回一些数据（函数的返回值），也可以不返回数据。
+	方法（method）是：通过对象调用的javascript函数。也就是说，方法也是函数，只是比较特殊的函数。
+	当将函数和对象和写在一起时，函数（function）就变成了方法（method）。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/**
+			 * 强制类型转换指：将其他的数据类型转换为string、number、boolean
+			 */
+			
+			/**
+			 * ----------------------------类型一 ----------------------------
+			 * 转为string:
+			 * 方法1.调用被转换类型(变量/字面量)的toString()方法;
+			 * 		-该方法不会影响到原变量（？我存疑），会将转换后的结果返回；
+			 *  	-tip：null和undefined没有toString()方法；
+			 * 方法2.调用String()函数；
+			 * 		-对于number和boolean来说等于调用toString();
+			 * 		-对于null和undefined来说则不会调用toString();
+			 * 		-会将null转换为字符串"null"，将undefined转换为字符串"undefined";
+			 */
+			var a = 123;
+			//方法一、调用a的toSting方法：
+			a = a.toString();
+			console.log(typeof a);//返回string
+			a = a + 1;//字符串拼接
+			console.log("a调用完它的toString()之后做加法（a = a + 1）的结果为："+ a);//返回124
+			console.log(typeof a);//返回string
+			a = null;
+			//a = a.toString();//报错(null没有toString()方法)
+			
+			c = 123;
+			//方法二、调用String()函数将c来转换为字符串
+			c = String(c);
+			console.log(typeof c);//返回string
+			c = null;
+			console.log(typeof c);//返回object
+			c = String(c);
+			console.log(c);//返回字符串"null"
+			console.log(typeof c);//返回string
+			var d;
+			console.log(typeof d);//返回undefined
+			d = String(d);
+			console.log(d);//返回字符串"undefined"
+			console.log(typeof d);//返回string
+			
+			/**
+			 * ----------------------------类型二 ----------------------------
+			 * 转为number:
+			 * 方法1.使用Number()函数;
+			 * 	 字符串——>number：
+			 * 		-纯数字字符串则直接转换为number；
+			 * 		-非纯数字字符串则转换为NaN；
+			 * 		-空串或空格串则转为0；
+			 * 	 boolean——>number：
+			 *  	-true转为1；
+			 *  	-false转为0；
+			 * 	 null——>number:
+			 *  	-null转为0；
+			 * 	 undefined——>number:
+			 *  	-nudefined转为NaN(因为先转换为了string)；
+			 * 方法2.专门针对字符串转number：
+			 * 		-parseInt()函数转为整数;（可以用来做取整操作）
+			 * 		-parseFloat()函数转为浮点数;
+			 * 		-parse v.(作语法)分析;
+			 * 		-对非string使用parseXXX()函数会先将其转换为string;
+			 */
+			//方法一、
+			var e = "123";
+			console.log(e);
+			console.log(typeof e);//string型
+			e = Number(e);
+			console.log(e);
+			console.log(typeof e);//number型
+			e = "abc123";
+			e = Number(e);
+			console.log(e);//返回NaN
+			e = " ";
+			e = Number(e);
+			console.log(e);//返回0
+			e = true;
+			e = Number(e);
+			console.log(e);//返回1，false则返回0
+			e = undefined;
+			e = Number(e);
+			console.log(e);//返回NaN(因为先转换为了string,这里与parseInt()/parseFloat()一样工作原理)
+			console.log("---------------------------------");
+			
+			//方法二、
+			/**
+			 * 调用parseInt()函数将e转为number
+			 * parseInt()函数扫描e(词法分析)(从左往右读)并取出有效的整数内容;
+			 * tip：parseInt()读到第一个非数字(字母、小数点)即停止;意味着不完全扫描。
+			 * 		parswFloat()会读小数点；
+			 * */
+			e = "123.456px78";
+			e = parseInt(e);
+			console.log(e);//输出123
+			e = "123.456px78";
+			e = parseFloat(e);
+			console.log(e);//输出123.456
+			e = "px123";
+			e = parseInt(e);
+			console.log(e);//输出NaN
+			
+			/**
+			 * ----------------------------类型三 ----------------------------
+			 * 转为boolean:
+			 * 方法:调用Boolean()函数;
+			 * 	  number——>boolean：
+			 *  	-除了0和NaN，其余都是true；
+			 * 	  string——>boolean：
+			 *  	-除了空串，其余都是true；
+			 * 	  null和undefined都会转换为false；
+			 * 	    对象也会转换为true；
+			 * 5个会转为false：0、NaN、null、undefined、空串。
+			 */
+			var a = 0;
+			a = Boolean(a);
+			console.log(a);
+			a = NaN;
+			a = Boolean(a);
+			console.log(a);
+			a = null;
+			a = Boolean(a);
+			console.log(a);
+			
+			a = undefined;
+			console.log(a);
+			console.log(typeof a);//返回undefined；(说明将一个变量的定义=undefined，这个变量是undefined类型)
+			a = Boolean(a);
+			console.log(a);
+			var un;
+			console.log(un);
+			console.log(typeof un);//返回undefined；(说明仅声明不定义，这个变量也是undefined类型)
+			un = Boolean(un);
+			console.log(un);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

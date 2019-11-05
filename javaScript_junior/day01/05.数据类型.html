@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			 * 一、数据类型指的是：字面量的类型
+			 * 二、JS中共有2类6种数据类型：
+			 * 	1.基本数据类型：
+			 * 	 -Sting 字符串
+			 * 	 -number 数值（包括float类型）
+			 * 	 -Boolean 布尔值
+			 * 	 -null
+			 * 	 -undefined 未定义
+			 * 	2.引用数据类型：
+			 * 	 -object 对象
+			 * 三、可以使用一个运算符typeof来检查一个变量的类型；返回值为：
+			 * 	 1.string.例：任意字符串、空串
+			 * 	 2.number.例：任意数字、±Infinity(无穷大/小)、NaN、字符串的四则运算(因为返回NaN)
+			 * 	 3.boolean.例：true、false
+			 * 	 4.object.例：null(因为是空对象)
+			 *   5.undefined.例：将一个变量定义为undefined(eg:var a = undefined;) 或 仅声明未定义(eg:var a;)
+			 */
+			
+			/* ---------------------------- string类型 ----------------------------
+			 * 1.使用单双引号都可以，不能同类嵌套使用；可以单双嵌套；
+			 * 2.使用\作为转移字符表示一些特殊符号；
+			 * 	 \" 表示“
+			 * 	 \' 表示‘
+			 *   \r 是回车=return，前者使光标到行首，（carriage return）
+			 *   \n 是换行=newline，后者使光标下移一格，（line feed）
+			 * 		对于换行这个动作：nuix下:仅有0x0A表示"\n";
+			 * 						windows下:0x0D+0x0A表示"\r\n";
+			 * 						mac下:用回车符CR表示"\r";
+			 * 	 \t 制表符=按一个table建
+			 * 	 \\ 打印出\
+			 * */
+			var str = "hello";
+			
+			/* ---------------------------- number类型 ----------------------------
+			 * 1.JS中所有数值都是number类型；
+			 * 2.包括整数和浮点数（小数）；
+			 * 4.Number.MAX_VALUE保存了一个最大的数:1.7976931348623157e+308；
+			 * 5.当number > Number.MAX_VALUE时，返回Infinity(正无穷)，反之返回-Infinity;
+			 * 6.Infinity是字面量number类型；
+			 * 7.字符串四则运算会返回NaN；
+			 * 8.NaN也是number类型；
+			 * */
+			var a = 123;
+			var b = "123";
+			console.log(a);
+			console.log(b);
+			console.log(typeof a);//返回number
+			console.log(typeof b);//返回string
+			
+			console.log(Number.MAX_VALUE);//返回1.7976931348623157e+308
+			console.log(Number.MIN_VALUE);//返回5e-324(无线接近0的数)
+			
+			a = Number.MAX_VALUE * Number.MAX_VALUE;
+			console.log(a);//返回Infinity
+			console.log(typeof a);//返回number
+			
+			b = Infinity * Infinity;
+			console.log("无穷*无穷的类型是："+ typeof b);//返回number
+			
+			a = "abc" - "bcd";
+			console.log(a);//返回NaN(Not a Number)
+			console.log(typeof a);//返回number
+			
+			a = NaN;
+			console.log("NaN的类型是："+ typeof a);
+			
+			var c = 123 + 456;
+			console.log(c);//返回579(整数间的计算基本正确)
+			c = 0.1 + 0.2;
+			console.log(c);//返回0.30000000000000004(浮点数间的计算不能保证，别用JS算钱，可以放到服务器上去)
+			
+			/* ---------------------------- boolean类型 ----------------------------
+			 * 用来做逻辑判断； 值为：true/false
+			 * */
+			var bool = true;
+			console.log(typeof bool);//返回Boolean
+			console.log("---------------------------------");
+			
+			/* ---------------------------- null和Undefined类型 ----------------------------
+			 * null类型只有一个值null，表示空对象；
+			 * undefined表示仅声明未定义(赋值)；
+			 * */
+			var nu = null;
+			console.log(typeof nu);//返回object
+			
+			//undefined类型.例：将一个变量定义为undefined(eg:var a = undefined;) 或 仅声明未定义(eg:var a;)
+			var un;
+			console.log(un);//返回undefined(未定义)
+			console.log(typeof un);
+			a = undefined;
+			console.log(a);
+			console.log(typeof a);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
