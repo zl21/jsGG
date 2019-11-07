@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/**
+			 * 条件运算符也叫三目/元运算符
+			 * 	语法：条件语句？语句1：语句2；
+			 * 	执行流程：表达式为true则执行语句1并返回结果，反之执行语句2并返回结果.
+			 * 
+			 * */
+			var a = 10;
+			var b = 200;
+			var c = 50;
+			//a > b ? alert("a大"):alert("b大");//b大
+			//三个数比较大小：
+			var max = a > b ? a : b;
+			max = max > c ? max : c;
+			
+			var max1 = a > b ? a > c ? a : b : c > b ? c : b;//a、b中先选一个再与c对比；不推荐写，不方便阅读
+			console.log(max);
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

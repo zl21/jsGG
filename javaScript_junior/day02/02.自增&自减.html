@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * ----------------------------自增 ----------------------------
+			 * 1、++a:先+1，再使用；
+			 * 2、a++:先使用，再+1；
+			 * 自减与自增相似
+			 * */
+			var a = 1;
+			a++;
+			console.log(a);//2
+			console.log(a++);//2;(因为先使用后+1)
+			console.log(a);//3;(因为2+1=3)
+			a = 1;
+			++a;
+			console.log(a);//2
+			a = 1;
+			a = a++;
+			console.log(a);//1;(因为先使用后+1)
+			a = 1;
+			a = ++a;
+			console.log(a);//2;(因为先+1后使用后)
+			
+			a = 1;
+			console.log(a++);//返回1;(因为使用的是原值)
+			a = 1;
+			++a;
+			console.log(a);//2
+			
+			a = 10;
+			a = a++ + ++a + a;//10+12+12=34
+			console.log(a);
+			console.log("---------------- 分割线  -----------------");
+			
+			
+			
+//			 ---------------------------- 练习 ----------------------------
+			var n1 = 10,n2 = 20;
+			var n = n1++;
+			console.log(n);//10
+			console.log(n1);//11
+			n = ++n1;
+			console.log(n);//12
+			console.log(n1);//12
+			n = n2--;
+			console.log(n);//20
+			console.log(n2);//19
+			n = --n2;
+			console.log(n);//18
+			console.log(n2);//18
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

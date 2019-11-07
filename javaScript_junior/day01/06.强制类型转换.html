@@ -25,6 +25,8 @@
 			 * 		-对于number和boolean来说等于调用toString();
 			 * 		-对于null和undefined来说则不会调用toString();
 			 * 		-会将null转换为字符串"null"，将undefined转换为字符串"undefined";
+			 * 方法3.隐式类型转换；
+			 * 		-+(拼接空串)：可通过 （+""） 转为string类型（实为调用String()函数）
 			 */
 			var a = 123;
 			//方法一、调用a的toSting方法：
@@ -71,6 +73,8 @@
 			 * 		-parseFloat()函数转为浮点数;
 			 * 		-parse v.(作语法)分析;
 			 * 		-对非string使用parseXXX()函数会先将其转换为string;
+			 * 方法3.隐式类型转换：
+			 * 		--、*、/(减0、乘1、除1)：可通过 （-0、*1、/1 ）转为number类型（实为调用Number()函数）
 			 */
 			//方法一、
 			var e = "123";
@@ -113,14 +117,15 @@
 			/**
 			 * ----------------------------类型三 ----------------------------
 			 * 转为boolean:
-			 * 方法:调用Boolean()函数;
+			 * 方法1:调用Boolean()函数;
 			 * 	  number——>boolean：
 			 *  	-除了0和NaN，其余都是true；
 			 * 	  string——>boolean：
 			 *  	-除了空串，其余都是true；
 			 * 	  null和undefined都会转换为false；
 			 * 	    对象也会转换为true；
-			 * 5个会转为false：0、NaN、null、undefined、空串。
+			 * 方法2：隐式类型转换：可以对任意值取两次反来转为boolean类型。（例：a=10;a=!!a;返回true）
+			 * 注：5个会转为false：0、NaN、null、undefined、空串。
 			 */
 			var a = 0;
 			a = Boolean(a);

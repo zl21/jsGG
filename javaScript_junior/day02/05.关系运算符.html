@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/**
+			 * 成立则返回true，反之则返回false。相同类型才可以比较。
+			 * >
+			 * <
+			 * >=
+			 * <=
+			 * 注： 1、非number与number比较会先转换为number类型（要么转换为number要么为NaN）。
+			 * 	   2、任何值与NaN（主要是非纯数字的string转换为number时出现的情况）作任何比较都为false。
+			 * 	   3、字符串相比是依次 按位 参照Unicode 比较，两位一样则比较下一位。可以用来排序英文字母。A=0041，a=0061,b=0062，1=0031,5=0035……
+			 *     4、所以数字字符串相比较一定不要忘了先转型。例如购物车系统要限制加购上限时,用户输入的数是string类型的，不手动转型就按Unicode编码来比较了。eg:"199999"<"5"依次比。
+			 *     5、JS中使用转义字符"\u0000（16进制）"输出Unicode编码对应的字符。
+			 *     6、网页xml中使用转义字符"&#00（10进制）"输出Unicode编码对应的字符。
+			 * !=
+			 * ==
+			 * ===
+			 * ！==
+			 * 注： 1、undefined == null；返回true 。
+			 *     2、NaN不与任何值相等，包括它本身。NaN == NaN；返回false。
+			 *     3、检查一个变量是不是NaN的方法：调用isNaN()函数。是则返回true，反之返回false。
+			 * 	   4、===全等不会做类型转换，类型不同直接false。
+			 * 	   5、！==不全等也不会做类型转换，类型不同直接true。
+			 * */
+			console.log(2 <= "3");//2 <= 3;true
+			console.log(2 <= "hellow1");//2 <= NaN;false
+			console.log(1 >= false);//true
+			console.log("11" >= "5");//Unicode（11） >= Unicode（5）;false（因为在Unicode表中1<5）
+			
+			var b = NaN;
+			console.log(b == NaN);//false（因为NaN不与任何值相等，包括它自己）
+			console.log(isNaN(b));//true
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

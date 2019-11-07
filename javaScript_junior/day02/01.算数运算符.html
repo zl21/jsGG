@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/**
+			 * ----------------------------二元运算符----------------------------
+			 * 运算符也叫操作符,运算完都有返回；
+			 * 	1.typeof 获取值类型，返回值都是string类型的，有：number、string、boolean、undefined、object；
+			 * 	2.算数运算符：
+			 * 	  -tips:
+			 * 			任意值 + NaN = NaN;
+			 * 			隐式类型转换：
+			 * 				1).+ ：可通过 （+""） 转为string类型（实为调用String()函数）
+			 * 				2).-、*、/：可通过 （-0、*1、/1 ）转为number类型（实为调用Number()函数）
+			 * 
+			 * 		+ ：加法运算、任意都转为string拼串、任意值+字符串=拼串、任意值+空串=类型转换为string(浏览器做隐式类型转换=调用String()函数)、输出拼接；
+			 * 		- ：减法运算、任意都转为number计算；
+			 * 		* ：乘法运算、任意都转为number计算；
+			 * 		/ ：除法运算、任意都转为number计算；
+			 * 		% ：取余运算；
+			 * */
+			/**
+			 * ----------------------------加法----------------------------
+			 * */
+			var a = 123;
+			var result = typeof a;
+			console.log(result);//number
+			console.log(typeof result);//string
+			result = a + 1;
+			console.log(result);//124
+			a = a + 1;
+			console.log(a);//124
+			result = true + 1;
+			console.log(result);//2
+			result = true + false;
+			console.log(result);//1
+			a = a + NaN;
+			console.log(a);//NaN
+			
+			result = "123" + 999;
+			console.log(result);//123999
+			result = "123" + a;
+			console.log(result);//123NaN
+			result = "123" + "abc";
+			console.log(result);//123abc
+			var str = "红豆生南国，" +
+					  "春来发几枝；" +
+					  "愿君多采撷(xie)，" +
+					  "此物最相思；";
+			console.log(str);
+			a = 123 + "";
+			console.log(a);//string型的123
+			result = 1 + 2 + "3";
+			console.log(result);//33 (先算1+2)
+			console.log("---------------- 分割线  -----------------");
+			
+			/**
+			 * ----------------------------减法----------------------------
+			 * */
+			result = 100 - "1";
+			console.log(result);//99
+			
+			/**
+			 * ----------------------------乘法----------------------------
+			 * */
+			result = 100 * "99";
+			console.log(result);//9900
+			result = 2 * undefined;
+			console.log(result);//NaN
+			result = 2 * null;
+			console.log(result);//0
+			console.log("---------------- 分割线  -----------------");
+			
+			/**
+			 * ----------------------------除法----------------------------
+			 * */
+			
+			/**
+			 * ----------------------------取余----------------------------
+			 * */
+			result = 9 % 3;
+			console.log(result);//0
+			result = 9 % 4;
+			console.log(result);//1
+			
+			
+			/**
+			 * ----------------------------一元运算符----------------------------
+			 * 一元：只需一个操作数即可；
+			 *  + 正号：
+			 * 		1).对非数字进行Number()转换；例：+“18” = 18（number类型的）;
+			 *  - 负号：
+			 * 		1).对数字进行负号的取反；
+			 * 		2).对非数字先进行Number()再进行负号的取反；
+			 * */
+			a = -a;
+			console.log(a);
+			a = +"123";
+			console.log(a);
+			console.log(typeof a);
+			result = 1 + +"2" + 3;
+			console.log(result);//6
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
