@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 练习一：成绩大于60输出pass，低于60输出fail。
+			 * */
+			//var score = +prompt("输入成绩：");
+			var score = 99;
+			//这样写
+			switch (parseInt(score)/10){
+				case 10:
+				case 9:
+				case 8:
+				case 7:
+				case 6:
+					console.log("pass！");
+				default:
+					console.log("fail！");
+					break;
+			}
+			//或这样写
+			switch (true){
+				case score >= 60:
+					console.log("pass！");
+				default:
+					console.log("fail！");
+					break;
+			}
+			
+			/**
+			 * 练习二：输出星期。
+			 * */
+			var day = 3;
+			switch (day){
+				case 1:
+					console.log("Monday");
+					break;
+				case 2:
+					console.log("Tuesday");
+					break;
+				case 3:
+					console.log("Wednesday");
+					break;
+				case 4:
+					console.log("Thursday");
+					break;
+				case 5:
+					console.log("Friday");
+					break;
+				case 6:
+					console.log("Saturday");
+					break;
+				case 7:
+					console.log("Sunday");
+					break;
+				default:
+					console.log("error！")
+					break;
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

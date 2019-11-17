@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * ---------------------------- break ----------------------------
+			 * 1、一般遵循就近原则，即仅对最近的循环loop或switch起作用；
+			 * 2、若要指定控制某循环可以为该循环创建一个label标签来标识循环，相当于给某循环起个名字；使用break跳出label循环时，只需在break后跟label即可；
+			 * 		格式：
+			 * 			label：循环语句
+			 * */
+			/*
+			outer:
+			for (var a = 0;a < 5 ;a++) {
+				document.write("@外层循环" + a + "<br>");
+				for(var b = 0;b < 5 ;b++) {
+					if (b == 2) {
+						break outer;
+					}
+					document.write("内层循环" + b + "<br>");
+				}
+			}
+			*/
+
+			/**
+			 * ---------------------------- continue ----------------------------
+			 * 1、一般也遵循就近原则；
+			 * */
+			/*
+			document.write("<br>");
+			for (var c=0; c<5; c++) {
+				if (c == 2) {
+					continue;//不做continue后面的了，直接开始下一次循环 = 回到c++
+				}
+				document.write(c);
+			}
+			*/
+			
+			/* 练习四-2：优化
+			 * 打印出1-100间的质（素）数。
+			 * */
+			/**
+			 * 测试下面程序的性能的方法：
+			 * 1、在执行前用console.time("string类型的参数作为计时器的标识or名字")来开启计时器；
+			 * 2、结束处用console.timeEnd()来关闭计时器；
+			 * 3、在浏览器中的控制台查看；
+			 * */
+			/*
+			console.time("test");
+			
+			for (var x=2; x<=1000; x++) {
+				var flag = true;	//定义在外面不可以，why？
+				for (var y=2; y<x; y++) {
+					if (x % y == 0) {
+						//document.write(x + "不是质数。");
+						flag = false;	//把当前这个x定义为false
+						break;
+					}
+				}
+				if (flag) {
+					console.log(x);
+				}
+			}
+			
+			console.timeEnd("test");
+			*/
+			
+			/* 练习四-2：再优化
+			 * 打印出1-100间的质（素）数。
+			 * */
+			/**
+			 * 开方的方法：
+			 * 1、Math.sqrt()函数；sqrt = square方 root根
+			 * 2、因为一个数若=x*y，则这个数一定能分别被x和y整除
+			 * 		例： 36 = 1  36
+			 * 				 2  18
+			 * 				 3  12
+			 * 				 4  9
+			 * 				 6  6
+			 * 				 6 = 根号(36)
+			 * */
+			console.time("test");
+			
+			for (var x=2; x<=1000; x++) {
+				var flag = true;	//定义在外面不可以，why？
+				for (var y=2; y<=Math.sqrt(x); y++) {
+					if (x % y == 0) {
+						//document.write(x + "不是质数。");
+						flag = false;	//把当前这个x定义为false
+						break;
+					}
+				}
+				if (flag) {
+					console.log(x);
+				}
+			}
+			
+			console.timeEnd("test");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

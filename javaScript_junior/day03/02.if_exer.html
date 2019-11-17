@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 练习1：
+			 * 键入小明的期末成绩：
+			 * 成绩=100，奖励一辆BMW！
+			 * 成绩为80-99，奖励一台iPhone20！
+			 * 成绩为60-79，奖励一本书！
+			 * 其他，继续加油！
+			 * */
+			/**
+			 * prompt a.及时，迅速的；take ~ action
+			 * 		  av.及时地；
+			 * 		  v.促使，激起，鼓励，提示；
+			 * 		  n.提示
+			 * prompt()函数可以弹出一个带有输入文本框的提示框。供用户键入内容。
+			 * prompt()返回的是string类型。
+			 * */
+			/* *
+			var score = prompt("请输入小明的成绩：");
+			var x = score;
+			if(score > 100 || score < 0 || isNaN(score)){
+				if (x == 100) {
+				alert("奖励一辆BMW！");
+				} else if (x >= 80 && x <= 99) {
+					alert("奖励一台iPhone20！");
+				} else if(x >= 60 && x <= 79){
+					alert("奖励一本书！");
+				} else{
+					alert("继续加油！");
+				}
+			}
+			 * */
+			
+			
+			/**
+			 * 练习2：
+			 * 高：180以上，富：1000万以上，帅：500以上
+			 * 三个条件同时满足：周杰伦
+			 * 有一个满足：王俊凯
+			 * 都不满足：张三
+			 * */
+			/*
+			var height = prompt("请问你多高：");
+			var property = prompt("请问你多富：");
+			var handsome = prompt("请问你多帅：");
+			if (height >= 180 && property >= 1000 && handsome >= 500) {
+				alert("周杰伦");
+			} else if(height >= 180 || property >= 1000 || handsome >= 500){
+				alert("王俊凯");
+			} else if(height <= 180 && property <= 1000 && handsome <= 500){
+				alert("张三");
+			}
+			*/
+			
+			
+			/**
+			 * 练习3：
+			 * 键入三个数a、b、c
+			 * 从小到大排序
+			 * */
+			var a = +prompt("a=");//0+号将string隐式转换为number
+			var b = +prompt("b=");
+			var c = +prompt("c=");
+			var temp;
+			//设c最小，则将a与c交换位置：
+			/*
+			if (a > c && c < b) {
+				temp = a;//把1位腾空,腾到temp里面去
+				a = c;//3去占1位
+				c = temp;//temp放到3位去
+				alert(a + b + c);
+			} else if (a > b && b < c) {
+				//设b最小，则将a与b交换位置：
+				temp = a;
+				a = b;
+				b = temp;
+				alert(a + b + c);
+			} else if (a > b && b < c) {
+				//设b最小，则将a与b交换位置：
+				temp = a;
+				a = b;
+				b = temp;
+				alert(a + b + c);
+			} 
+			*/
+			
+			if(a>b){temp=a;a=b;b=temp;} 
+			if(a>c){temp=a;a=c;c=temp;} 
+			if(b>c){temp=b;b=c;c=temp;} 
+			alert(a + b + c);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

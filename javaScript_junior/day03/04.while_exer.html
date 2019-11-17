@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var i = 1;
+			do{
+				document.write(i++ + "<br />");
+			}while (i <= 3);
+			
+			/*
+			 * 练习一：
+			 * 如投资的年利率为5%，求从1000增长到5000元要多少年。
+			 * 1000 1000 * 0.05
+			 * 1050 1050 * 0.05
+			 * ……
+			 * */
+			var fund = 1000;
+			var time = 0;//定义计数器
+			while (fund <= 5000){
+				fund = fund + (fund * 0.05);
+				time++;
+			}
+			document.write("共需"+time+"年");
+			
+			/*
+			 * 练习二：
+			 * 给小明一次重新输入成绩的机会。
+			 * ……
+			 * */
+			//一直让他输入，直到输的是满足条件的
+			while (true){
+				var score = prompt("请输入小明的期末成绩（0-100）：");
+				//判断是否合法
+				if (score >= 0 && score <= 100) {
+					//合法则break
+					break;
+				}
+//				alert("请输入有效的分数！");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

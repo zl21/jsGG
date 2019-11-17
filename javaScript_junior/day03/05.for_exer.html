@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 练习一：
+			 * 计算1-100之间的奇数有多少个并打印。
+			 * 分析：不能被2整除（除2有余）的为奇数
+			 * */
+			var count = 0;
+			for (var h = 1;h <= 100;h++) {
+				if (h % 2 != 0) {
+					document.write(h + "、");
+					count++;
+				}
+			}
+			document.write("<br>");
+			document.write(count + "个奇数。"+ "<br><br>");
+			
+			/* 练习二：
+			 * 计算1-100之间的7的倍数有多少个、打印、求和。
+			 * 分析：能被2整除（除7无余）的
+			 * */
+			var count1 = 0;
+			var sum = 0;
+			for (var a = 1;a <= 100;a++) {
+				if (a % 7 == 0) {
+					document.write(a + "、");
+					count1++;
+					sum += a;
+				}
+			}
+			document.write("<br>");
+			document.write("和为：" + sum + "<br>");
+			document.write(count1 + "个7的倍数。" + "<br><br>");
+
+			/* 练习三：
+			 * 计算水仙花数有多少个并打印。
+			 * 分析：水仙花数：各位数的3次幂 之和 = 这个数本身  的三位数。
+			 * */
+			var count2 = 0;
+			for (var n = 100;n <= 999;n++) {
+				var g = n % 10;//123%10=3
+				var s = parseInt(n / 10) % 10; //12.3%10 != 2 !!!
+				var b = parseInt(n / 100);
+			    if (b*b*b + s*s*s + g*g*g == n) {
+					document.write(n + "、");
+					count2++;
+				}
+			}
+			document.write("<br>");
+			document.write(count2 + "个水仙花数。");
+			document.write("<br>"+ "<br>");
+			/*var y = parseInt(12.3) % 10;
+			document.write(y);*/
+			
+			/* 练习四：
+			 * 判断键入的数是否是质（素）数。
+			 * 分析：只能被1和它本身整除的自然数（0和非负整数），1不是质数也不是合数。
+			 * 证明是质数太麻烦，反向思维证明不是质数的数排除掉。
+			 * */
+			var c = 7;//prompt("请键入一个大于1的自然数：");
+			//存储当前这个数的状态是or不是质数
+			var flag = true;
+			//判断值是否合法：
+			if (c <= 1) {
+				console.log("illegal number！");
+			} else{
+				for (var x=c-1;x>1;x--) { //for(var x=2; x < c;x++)
+						//console.log("1~c之间的数:" + x);
+					if (c % x == 0) {
+						//挨个除，没有余数（能除尽）则不是质数
+						console.log(c + "不是质数！");
+						//不是质数则令flag = false
+						flag = false;
+					} 
+				}
+				if (flag) {
+					console.log(c + "是质数！");
+				}
+			}
+			
+			/* 练习五：
+			 * 用嵌套的for(){}循环打印一些简单的图形
+			 * 先控制行()外层，再考虑列(内层)
+			 * */
+			//1、边长为5的正方形
+			for (var r = 1;r < 6;r++) {
+				for (var col = 1;col < 6;col++) {
+					document.write("* &nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+			
+			document.write("<br>");
+			//直边长为5的正直角三角形
+			for (var d = 1;d<6;d++) {
+				for (var e = 1;e <= d;e++) {
+					document.write("* &nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+			
+			document.write("<br>");
+			//直角边长为5的倒三角形
+			for (var f=1; f<6; f++ ) {
+				for (var g=5; g>=f; g--) { //(var g=1; g<=6-f; g++)
+					document.write("* &nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+			
+			document.write("<br>");
+			//打印99乘法表
+			for (i=1; i<10; i++) { 		//row
+				for (j=1; j<=i; j++) {	//column
+					document.write("<span>" + j + "*" + i + "=" + i*j + "</span>");
+				}
+				document.write("<br>");
+			}
+		</script>
+		<style type="text/css">	
+			body{
+				
+			}
+			span{
+				display: inline-block;
+				width: 70px;
+			}
+		</style>
+		
+	</head>
+	<body>
+	</body>
+</html>
+<!--/*
+			 * 计算水仙花数有多少个并打印。
+			 * 分析：水仙花数：各位数的3次幂 之和 = 这个数本身  的三位数。
+			 * */
+			var count2 = 0;
+			for (var a = 100;a <= 999;a++) {
+				var g = a % 10;//123%10=3
+				var s = (a / 10) % 10; //12.3%10=2 ？？？
+				var b = a % 10 % 10;
+				/*
+				 * if (a %  == 0) {
+					document.write(a + "、");
+					count1++;
+				}
+			}
+			document.write("<br>");
+			document.write(count1 + "个7的倍数。");
+			*/
+			var y = 12.3 % 10;
+			document.write(y);-->
