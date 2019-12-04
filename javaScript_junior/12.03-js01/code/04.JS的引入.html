@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的引入</title>
+
+</head>
+<body>
+    <!--
+        JS的引入：
+            JS是不能单独运行的
+            向HTML中引入JavaScript主要方法就是使用 <script>标签
+
+        <script>标签书写位置
+            作为最佳实践，我们会在关闭body标签之前引入JavaScript，这样浏览器就会在加载JS之前去解析和渲染HTML，有利于提升页面性能
+            JS的执行时间：浏览器对HTML来说会依次从上至下逐行解析，JS是HTML组成的一部分，所以JS什么时候解析，看script标签书写的位置
+            为什么放在body闭合标签上边：
+                1、先加载htmlcss  等页面加载好以后，再去加载js
+                2、先加载JS的时候，HTML没有加载，会找不到相应的DOM节点，出现错误
+
+            为什么不放在body闭合标签的后边：
+                浏览器检测到script标签以后，会自己忽略刚才解析的body关标签，然后再html关标签前添加一个body关标签，消耗浏览器的效率
+
+           script标签的属性：
+                1.type
+                    type="text/javascript"
+                    现代浏览器默认script标签引入类型是js 所以可以省略
+
+                2.src
+                    引入外部的js
+                    如果一个script 有src用来引入外部的js，那么这个script标签就不能内嵌其他js代码，只能作为引入外部文件使用
+
+    -->
+
+
+    <script>
+        alert(1);
+    </script>
+    <script src="./demo1.js"></script>
+</body>
+
+
+</html>

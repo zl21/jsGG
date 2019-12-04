@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>null类型</title>
+</head>
+<body>
+<script>
+    /*
+    * null类型：
+    *   Null类型是第二个只有一个值的数据类型，这个值是null
+    *   从逻辑角度上来说null表示一个空对象指针，所以typeof检测它得到的是object
+    * */
+
+
+    /*
+    * 常见null的应用场景：
+    *   1、调用函数时给个null；
+    *   2、初始化为null以供将来使用；
+    *   3、作为原型链的终点；
+    * */
+
+    // 1.调用时函数传入的参数，表示该参数不是一个对象，或者是不想传入，使用null来表示
+    function add(a,b) {
+        console.log(a);
+        console.log(b);
+        console.log(a+b);
+    }
+    add(1,null);
+
+    //2.如果定义的变量在将来要使用，但是现在不使用，可以初始化为null，而不是不赋值
+    var a = null;
+    function fn() {
+        a = 3;
+        console.log(a);
+    }
+    fn();
+
+
+    //3.作为原型链的终点
+
+    // "hello" --》String --》Object --》null
+    // 123-->Number --->Object -->null
+</script>
+</body>
+</html>

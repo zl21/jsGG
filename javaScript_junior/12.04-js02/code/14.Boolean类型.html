@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean类型</title>
+</head>
+<body>
+<script>
+    /*
+    *   Boolean类型
+    *       布尔类型仅包含两个值  true 和 false   true代表真  false代表假
+    *
+    *
+    * Boolean()方法 可以强制的把其他类型转换成布尔类型
+    *  在某些时候，其他类型也可以默认转为boolean类型，所以需要知道转换规则
+    * */
+
+    //1.null
+    console.log(Boolean(null));//false
+
+    //2.undefined
+    console.log(Boolean(undefined));//false
+
+    //3.number
+        //除了 0 和 NaN 其他都是true
+    console.log(Boolean(0));//false
+    console.log(Boolean(1));//true
+    console.log(Boolean(-1));//true
+    console.log(Boolean(Infinity));//true
+    console.log(Boolean(NaN));//false
+
+    //4.string
+    // 空字符串为false  其余为true
+    console.log(Boolean(""));//false
+    console.log(Boolean("0"));//true
+    console.log(Boolean("NaN"));//true
+    console.log(Boolean("abc"));//true
+    console.log(Boolean("   "));//true
+
+    //5.对象类型
+        //所有对象类型都是true
+    console.log(Boolean([]));//true
+    console.log(Boolean([1]));//true
+    console.log(Boolean([0]));//true
+    console.log(Boolean({}));//true
+    console.log(Boolean({name:"lily"}));//true
+</script>
+</body>
+</html>

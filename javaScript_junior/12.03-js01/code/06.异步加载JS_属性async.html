@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载JS</title>
+    <script src="demo1.js" async></script>
+</head>
+<body>
+<!--
+    异步加载JS：
+        1.在默认情况下，网页都是同步加载JS文件的，如果JS文件比较大，可能会影响后边的代码执行，所以我们想要最后加载JS文件
+        2.我们可以把JS放在最后边 body闭合标签前
+        3.现在，script标签提供一个async属性，让浏览器异步加载JS文件，也就是说，JS文件在被加载的时候，不会影响其他代码的解析，这样节省时间，提升速度
+        4.async是H5新提出来的布尔类型的属性
+        5.虽然是异步加载js，但是js加载完就会立马执行，执行的时候就会停止其他操作
+		6.遇到js——>停止当前html解析 并 开始加载js——>执行完——>继续解析html页面
+-->
+哈哈
+</body>
+</html>

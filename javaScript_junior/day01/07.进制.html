@@ -20,16 +20,16 @@
 			//000.1  1  1.000
 			//000.32 16 8.000
 			console.log(a);//返回56
-			
+			console.log(Number(a,8));
+			console.log("\r");
 			a = "070";
 			a = parseInt(a);
 			console.log(a);//可能返回70也可能返回56，取决于浏览器把070当10进制还是8进制；所以为了统一：
 			a = "070";
 			a = parseInt(a,8);//加一个参数
 			console.log(a);//返回56
-			
+
 			//a = 0b10;
-			
 		</script>
 	</head>
 	<body>

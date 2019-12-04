@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean类型</title>
+    <style>
+        #ipt{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="ipt">
+<button id="btn">按钮</button>
+<script>
+    /*
+    * 点击按钮的时候，当input为空，则把input边框变红，否则是黑的
+    * */
+    var oBtn = document.getElementById("btn");
+    var oIpt = document.getElementById("ipt");
+    oBtn.onclick = function () {
+        var oIptValue = oIpt.value;
+        //第一种判断 oIptValue == ""
+        //第二种判断 oIptValue.length == 0
+        //第三种判断 直接使用 if可以隐式转换的
+        if(oIptValue){//oIptValue为非空
+            oIpt.style.borderColor = "#000";
+        }else{//oIptValue为空
+            // 改变元素的行内样式
+            oIpt.style.borderColor = "red";
+        }
+    }
+</script>
+</body>
+</html>

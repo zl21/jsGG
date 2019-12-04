@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+<script>
+    /*
+    * 声明变量练习：
+    *   声明一个变量a，值为：3
+    *    声明一个变量b，值为：null
+    *    声明一个变量c，值为："Hello!"
+    *     声明一个变量d，值为：true
+    *   声明一个变量e，不赋值
+    *   声明一个变量f，值为""
+
+    * */
+
+    var a = 3;
+    var b = null;
+    var c = "hello";
+    var d = true;
+    var e ;
+    var f = "";
+    var g = [1,2,3,4];//数组
+    var h = function(){};//函数
+
+
+    /*
+    *  使用typeof 来检测数据类型
+    *       用法是  typeof a  或者  typeof(a)
+    *   有些时候typeof操作符 会返回令人迷惑但是技术上却是正确的值
+    *       比如：把 null 归为了object 因为null是空对象的意思（后边详细讲解）
+    *             把function检测出 Function类型，但是Function类型其实是Object类型的一个子类
+    * */
+    console.log(typeof a);//number
+    console.log(typeof (b));//object
+    console.log(typeof (c));//string
+    console.log(typeof (d));//boolean
+    console.log(typeof (e));//undefined
+    console.log(typeof (f));//string
+    console.log(typeof (g));//object
+    console.log(typeof (h));//function
+
+
+
+
+</script>
+</body>
+</html>

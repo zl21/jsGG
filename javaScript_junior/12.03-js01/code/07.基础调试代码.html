@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础调试代码</title>
+</head>
+<body>
+你可以看到我吗？
+<!--
+    基础调试代码:
+        1.alert()
+            内置alert函数，也叫alert方法，alert()就是调用了这个方法
+            给浏览器发送一个命令，这个命令告诉浏览器让其弹出一个警告框，窗口的内容就是alert()方法中传入的参数
+
+        2.console.log()
+            在控制台打印出你要看到的信息
+
+        3.document.write()
+            向HTML的文档插入你要的内容，按照你书写的顺序依次显示在页面中，并且可以解析标签
+
+            如果说页面已经加载完整，再书写document.write()，那么就会覆盖之前所有的内容
+
+-->
+
+<script>
+    alert(125);
+    alert("大帅比");
+    var sex = "girl";
+    alert(sex);
+
+
+
+    console.log("hello world");
+
+    document.write("哈哈");
+    document.write("<a href='###'>点我上天</a>");
+</script>
+</body>
+</html>

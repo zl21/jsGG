@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isNaN方法的应用</title>
+</head>
+<body>
+<!--
+    需求：
+        页面中有一个输入框，用户输入电话号码。
+        当点击按钮的时候，检测如果为空，则提示用户不能为空
+        否则检测是不是纯数字，如果是，则成功，否则清空重新输入
+-->
+    <div>
+        请输入电话号码：
+        <input id="ipt" type="text" value="">
+        <button id="btn">点一下下</button>
+    </div>
+    <script>
+        /*
+        * 1.获取元素（想要控制哪一个元素，需要js先获取）
+        * 2.点击按钮执行事件
+        * 3.检测是不是空，如果为空则弹出警告框
+        * 4.检测是不是非数字，如果是 则清空。不是则成功
+        * */
+
+        // 1、获取元素（使用ID获取，首先元素有ID属性）使用变量保存
+            //获取元素的命名 可以使用o开头，后边驼峰
+            //从document中获取（从整个文档开始寻找）
+            // . 操作符叫做成员访问  访问.之前对象中的方法或属性
+            //getElementById()  获取 元素 通过  ID  括号中书写ID值加引号
+        var oIpt = document.getElementById("ipt");
+        console.log(oIpt);//打印的是获取到的元素
+        var oBtn = document.getElementById("btn");
+
+        //2.点击按钮执行事件
+            //点击事件使用 onclick,点击是要执行操作的，所以要把一个匿名函数赋值给这个事件，那么事件发生以后，匿名函数就会执行
+        oBtn.onclick = function () {
+            //3.检测是否为空
+                //获取input表单的值  使用ipt.value获取
+                //获取值的长度 使用length属性 如果为0 则是空
+            if(oIpt.value.length == 0){
+                //当长度为0 执行这个代码块
+                alert("不能不输入，赶紧输入");
+            }else{
+                //否则 执行当前代码块
+                //4.检测是不是非数字，如果是 则清空。不是则成功
+                //用一个变量保存放回的值
+                var isTrue = isNaN(oIpt.value);
+                //判断
+                if (isTrue) {
+                    alert("输入字符非法");
+                }else{
+                    alert("成功 送你一个村花");
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

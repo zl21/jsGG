@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串练习</title>
+</head>
+<body>
+<!--
+    用户提交账号密码的时候，判断是否正确 已知账号是lipeihua  密码是1234561
+-->
+请输入账号名：
+<input type="text" id="user" autofocus>
+请输入密码：
+<input type="password" id="pass">
+<button id="btn">登录</button>
+<script>
+    /*
+    * 1.获取元素
+    * 2.点击事件
+    * 3.判断账号是否正确(点击以后可以直接获取账号密码)
+    * 4.判断密码是否正确
+    * 5.如果不正确 清空重新输入  正确则返回登陆成功
+    * */
+    var oUser = document.getElementById("user");
+    var oPass = document.getElementById("pass");
+    var oBtn = document.getElementById("btn");
+
+    oBtn.onclick = function () {
+        //用userUser 保存点击的时候，用户输入的用户名
+        var userUser = oUser.value;
+        //用userPass 保存点击的时候，用户输入的密码
+        var userPass = oPass.value;
+
+        // 判断
+        if(userUser == "lipeihua"){
+            if (userPass == 1234561) {
+                alert("送你一个小发发");
+            }else{
+                alert("小伙子 你的密码不对哦")
+                oPass.value = "";
+                oPass.focus();
+            }
+        }else{
+            alert("用户名错误");
+            // userUser = "";//千万不要只改变变量 因为这个只是对变量重新赋值，没有操作value值
+            oUser.value = "";
+
+            // 让表单获取焦点
+            oUser.focus();
+        }
+
+    }
+
+</script>
+</body>
+</html>

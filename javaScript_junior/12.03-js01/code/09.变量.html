@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+</head>
+<body>
+<!--
+    变量：
+        变量相当于容器，值就是容器中盛放的内容，变量名字就是贴在容器上的标签，通过这个标签可以找到变量读取使用它
+
+        在计算机中，变量就是给一个内存区域起的一个代号，通过这个代号就可以把相应的数据存放到这里
+
+        ECMAScript中变量是松散类型的（弱类型，动态类型），也就是一个变量可以保存任何类型的值
+
+-->
+
+<!--
+ 定义一个变量并使用：
+        1.在JS的语法中，使用 var关键字 + 变量名 = 数据;
+            var name = "xiaohuahua";(把等号后边的值 赋值给了 前边的定义的变量)
+
+        2.还可以给多个变量同时赋值，或者是同时定义，使用逗号隔开
+
+        3.可以重复声明同一个变量，或者重复初始化一个变量的值
+
+
+-->
+<script>
+    var name = "xiaowang";
+
+    var sex = "女" , age = 18;
+    var sex2 ;
+    var sex3 , age2;
+    var sex4 , age3 = 19;
+    console.log(sex,age);
+
+
+    var score = 100;
+    score = 120;
+    console.log(score);
+    var score = 150;
+    console.log(score);
+</script>
+
+</body>
+</html>

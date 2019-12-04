@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        isNaN()是非纯数字吗？：返回true或false；
+            1、先把值转换为number类型在判断是不是纯数字。
+        注意:
+            在 JS中 ，空字符串""代表的是数字0，而不是NaN
+            1.isNaN("")返回值为false
+            2.isNaN(parseInt("")) 返回值为true
+    */
+    var a = "12";
+    console.log(isNaN(a)); //false（是非纯数字NaN吗？false）
+
+</script>
+</body>
+</html>

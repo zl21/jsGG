@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声明提升</title>
+</head>
+<body>
+<!--
+    声明提升:
+        1.JavaScript在预编译期会先去预处理声明的变量(只看声明)，但是变量的赋值发生在JS的执行器（逐行解析），而不是预编译期
+        2.JS引擎运行机制：先预编译代码，获取所有被声明的变量，然后提升到当前变量所在的作用域最前边开始解析
+-->
+<script>
+    /*
+    * 1. 正常执行
+    * */
+    var a = 1;
+    console.log(a);//1
+
+
+    /*
+    * 2. 没有声明和赋值 直接使用
+    * */
+    // console.log(b);//报错  b变量找不到 未声明
+
+
+    /*
+    * 3. 在使用后边声明
+    * */
+    console.log(c);//undefined  声明了但是找不到值
+    var c;
+
+    /*
+    * 4. 在使用后边声明并赋值
+    * */
+    console.log(d);//undefined
+    var d = 3;
+
+
+    /*
+    * 5.以下代码的真正的执行方式是？
+    * */
+
+    console.log(e); //undefined
+    var e = 10;
+    console.log(f); //undefined
+    var f = 20;
+    var g = 30;
+    console.log(g); //30
+    var h = 40;
+
+    //答案：
+    var e , f , g , h ;
+    console.log(e);
+    e = 10;
+    console.log(f);
+    f = 20;
+    g = 30;
+    console.log(g);
+    h = 40;
+</script>
+</body>
+</html>

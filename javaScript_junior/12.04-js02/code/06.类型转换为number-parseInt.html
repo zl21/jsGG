@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换为number-parseInt</title>
+</head>
+<body>
+<script>
+    /*
+    * parseInt()全局的方法，可以把数字或字符串 转换成整数，其他类型不能被转换
+    *   第一步：先解析位置0处的字符，如果不是有效数字就转为NaN
+    *   第二步：如果0 的位置是有效数字（或者可以转成有效数字），则继续解析位置1处的值，如果不是有效数字，则返回0处的数字
+    *   第三步：第二步依次类推，从左至右  依次分析，直到发现无效数字停止检测
+    *   第四部：parseInt把所有前边检测到的合法数字输出
+    *
+    * 注意：
+    *   浮点数的 点 在parseInt中属于非有效数字，所以不会返回浮点数
+    *
+    *   如果是以0x为开头的数字，parseInt会把他当做十六进制处理 再转成十进制返回出来
+    *
+    *   如果是0开头，不会作为8进制
+    * */
+
+    console.log(parseInt(123));//123
+    console.log(parseInt("a123"));//NaN
+    console.log(parseInt("1a123"));//1
+    console.log(parseInt("10a23"));//10
+    console.log(parseInt("100px"));//100
+    console.log(parseInt(12.3));//12
+    console.log(parseInt("0xa"));//12
+
+    console.log(parseInt(null));//NaN
+    console.log(parseInt(true));//NaN
+
+
+    /*
+    * parseInt 支持基模式，把不同进制的数字字符串转换为整数
+    * */
+    var a = "abc123";
+    console.log(parseInt(a,16));//11256099 把a当成16进制，转化为10进制输出
+    var b = "111";
+    console.log(parseInt(b,2));//7
+
+    console.log(parseInt(5,3));//NaN  因为3进制没有5这个字符
+
+    // 特殊情况如下：
+    console.log(parseInt(1,1));//NaN
+    console.log(parseInt(0,1));//NaN
+    console.log(parseInt(0,0));//0
+</script>
+</body>
+</html>

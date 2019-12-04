@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String类型</title>
+</head>
+<body>
+<script>
+    /*
+    *   String类型：
+    *       String类型是由0个或多个unicode字符组成的字符序列，0个字符代表空字符串
+    *
+    * */
+
+    /*
+    *   1.字符串直接量
+    *       1）子串必须包含在单引号或者是双引号中（ES6提供了反引号）
+    *       2)单引号中嵌套的引号必须是双引号，反之一样
+    *       3)在ES3中，字符串必须在一行书写，换行不允许，如果要显示换行，需要添加换行符（\n）
+    *       4)在ES5中，字符串允许多行表示(不是多行显示，如果多行显示 需要\n)，实现方法在换行处添加反斜杠（\）
+    *       5)字符串中每一个字符都有固定的位置，第一个字符的位置是0，依次类推，所以字符串最后一个字符的位置应该是 字符串的长度-1
+    *
+    * */
+
+    var str1 = '093284yrc091708)(*&(^&(*&T';
+    var str2 = "kajhx  askjh &*(";
+    var str3 = `9287O&*b`;
+
+    var str4 = "小王他妈妈说：'他要把翠花嫁给我'";
+    console.log(str4);
+
+    var str5 = "今天天气\n真好"
+    console.log(str5);
+
+    var str6 = "今天天气\
+真好";
+    console.log(str6);
+
+
+</script>
+</body>
+</html>

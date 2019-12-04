@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number类型</title>
+</head>
+<body>
+<script>
+    /*
+    *   Number类型：
+    *       数字也成为 数值 或者 数
+    *       number的种类：
+    *           1.整数、浮点数（数字直接量）
+    *           2.八进制数（数字前加一个0 代表8进制 ）
+    *           3.十六进制（数字前加有0x 代表十六进制）
+    *           4.二进制（数字前加 0b 代表二进制  但是兼容性不好）
+    *           5.科学计数法（用E代表底数10  后边跟E的指数 可以是正负值）
+    *           6.JS保证精确的最大值和最小值，是一个常量（Number.MIN_VALUE,Number.MAX_VALUE）
+    *           7.无穷大 无穷小（Infinity  -Infinity）
+    *           8.NaN(not a number)
+    * */
+
+    // 1.整数、浮点数（数字直接量）
+    var num1 = 12;
+    var num1 = -12;
+    var num1 = -12.3;
+    var num1 = 12.33234323;
+
+    // 2.八进制数（数字前加一个0 代表8进制 ）
+    var num2 = 010;
+    console.log(num2);//在那其他进制的数值进行使用的时候，会先转换成10进制 才使用
+
+    // 3.十六进制（数字前加有0x 代表十六进制）
+    var num3 = 0x123abc;
+    console.log(num3);//1194684
+
+    // 4.二进制（数字前加 0b 代表二进制  但是兼容性不好）
+    var num4 = 0b110;
+    console.log(num4);
+
+
+    // 5.科学计数法（用E代表底数10  后边跟E的指数 可以是正负值）
+    var num5 = 1.2E-7;
+    console.log(num5);//1.2E-7
+    console.log(num5+1);//1.00000012   运算以后 变成直接量显示
+
+    // 6.JS保证精确的最大值和最小值，是一个常量（Number.MIN_VALUE,Number.MAX_VALUE）
+    var num6  = Number.MAX_VALUE;
+    var num7 = Number.MIN_VALUE;
+    console.log(num6);
+    console.log(num7);
+
+    // 7.无穷大 无穷小（Infinity  -Infinity）
+    var num8 = 100/0;
+    var num9 = -100/0;
+    console.log(num8);//Infinity
+    console.log(num9);//-Infinity
+
+    console.log(typeof Infinity);//number
+
+    // 关于Infinity的运算， 无法计算 加减乘除一个数字都是Infinity，Infinity和Infinity计算，加法乘法为Infinity，其他为NaN
+    console.log(Infinity + 1);//Infinity
+    console.log(Infinity - 1);//Infinity
+    console.log(Infinity - 1000000000000000000000);//Infinity
+    console.log(Infinity - Infinity);//NaN
+    console.log(Infinity * Infinity);//Infinity
+    console.log(Infinity + Infinity);//Infinity
+    console.log(Infinity / Infinity);//NaN
+
+    //Infinity和自身相等  其他比较正常
+    console.log(Infinity > 1);//true
+    console.log(Infinity < 1);//false
+    console.log(Infinity == 1);//false
+    console.log(Infinity > Infinity);//false
+    console.log(Infinity == Infinity);//true
+    console.log(Infinity < Infinity);//false
+    console.log(Infinity > -Infinity);//true
+
+
+    // 8.NaN(not a number)
+    //     数字类型的非数字，是一个特殊的值，表示一个本来要返回数值但是没有变成数值的情况下（设置NaN后可以避免跑出错误）
+    var num10 = "李沛华"-"翠花";
+    console.log(num10);//NaN
+
+    // NaN和任何值比较 都返回假
+    console.log(NaN > 1);//false
+    console.log(NaN == 1);//false
+    console.log(NaN < 1);//false
+
+    // NaN和任何值运算，都是NaN
+    console.log(NaN + 1);//NaN
+
+
+</script>
+</body>
+</html>

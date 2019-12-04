@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮点数溢出</title>
+</head>
+<body>
+<script>
+    /*
+    *   浮点数溢出：
+    *       执行数字运算，要防止浮点数溢出，比如0.1+0.2 = 0.3是错误的
+    *       因为js执行二进制浮点数运算标准导致的
+    *       解决方法：   整数运算是精确的，我们可以把浮点数转成整数，再除一个10
+    * */
+    console.log(0.1 + 0.2);
+    console.log((1+2)/10);
+</script>
+</body>
+</html>

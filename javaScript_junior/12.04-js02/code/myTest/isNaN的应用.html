@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>请输入电话号码：</p>
+    <input id="ipt" type="text" value=""><br>
+    <button id="btn">提交</button>
+</div>
+<script>
+    /*
+    * 需求：要求用户键入电话号码。
+    * 分析需求：
+    *   1、获取元素；
+    *   2、点击执行的按钮事件；
+    *   3、检测是否为空；
+    *   4、检测是否为非纯数字NaN，是NaN则清空，反之则提示成功。
+    * */
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn")
+    oBtn.onclick = function () {
+        if (oIpt.value.length == 0){
+            alert("不能为空！")
+        } else if (isNaN(oIpt.value)) {
+            alert("非法的电话号码！")
+        } else {
+            alert("成功！")
+        }
+    }
+    // var oIptValueLenth = oIpt.value.length; 不能放在点击事件之外获取长度，因为页面初加载时value的长度为0，此时再调用点击事件使用的就是这个0.
+</script>
+</body>
+</html>

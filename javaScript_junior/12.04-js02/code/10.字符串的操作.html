@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的操作</title>
+</head>
+<body>
+<script>
+    /*
+    *   借助String对象的原型方法，可以灵活的处理字符串（后边单独讲解）
+    *
+    *   1.使用+号可以对多个字符串，或者是把字符串和其他值拼接\
+    *   2.使用length属性可以获取字符串的长度
+    *   3.在ES5中，字符串可以当做可读数组，我们可以使用中括号运算符，里边书写下标，获取相应的字符
+    * */
+
+    var str = "老师说";
+    var say = "你好啊";
+    console.log(str+say);//老师说你好啊
+    console.log(str + 1);//老师说1
+    console.log(str + 1);//老师说1
+    console.log(1 + 1);//2
+    console.log("1" + 1);//11
+    console.log(1 + "1");//11
+
+    var str1 = "今天是个好天气123 b5";
+    console.log(str1.length);//13
+
+    console.log(str1[0]);//今
+    //获取最后一个字符
+    console.log(str1[str1.length-1]);//5
+
+
+</script>
+</body>
+</html>

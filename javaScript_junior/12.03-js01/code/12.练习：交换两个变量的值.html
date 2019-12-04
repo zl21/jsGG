@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习：交换两个变量的值</title>
+</head>
+<body>
+<!--
+    练习：交换两个变量的值
+        声明变量 a是1  b是2  请写出代码 让 b是1  a是2
+-->
+
+<script>
+    var a = 1 , b = 2;
+
+    // 方法1：定义中间值
+    /*var c = b;
+    b = a;
+    a = c;
+    console.log(a,b);*/
+
+
+    // 方法2
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    console.log(a,b);
+</script>
+</body>
+</html>

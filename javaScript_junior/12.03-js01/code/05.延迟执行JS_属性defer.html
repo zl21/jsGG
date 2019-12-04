@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>延迟执行JS</title>
+</head>
+<body>
+<!--
+    延迟执行JS：
+        <script>标签有一个属性叫做 defer
+        defer也是 异步加载(停止当前html解析去加载js) 但是 要等页面全部解析完之后才执行js，与async不同（后者是:遇到js——>加载——>执行完——>继续解析html页面）
+        该属性能够将JS延迟到页面解析完成才能去执行
+        但是defer只是适用于 外部引入js，对于内嵌的不管用
+-->
+<!--此时JS执行的时候，后边的文字还没有被渲染出来-->
+<script src="demo1.js" defer></script>
+<script>
+    alert("里边")
+</script>
+
+<p>今天天气真好我有点热</p>
+</body>
+</html>

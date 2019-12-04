@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换为number方法一-Number方法</title>
+</head>
+<body>
+<script>
+    /*
+    *   类型转换为number方法一-Number方法
+    *       Number方法是强制转换，将一个值强制转换为 number类型
+    *
+    * */
+    // 1. number 转 number
+            //会把其他进制转为10进制，其余不变
+    console.log(Number(12));//12
+    console.log(Number(NaN));//NaN
+    console.log(Number(Infinity));//Infinity
+    console.log(Number(010));//8
+    console.log(Number(1E6));//100000
+    console.log(Number(0.1E-6));//1E-7
+
+    //2.string 转 number
+        //如果是纯数字，那么直接转换为number
+        //其他进制 原则上是转为10进制，但是8进制因为0开口，所以按照十进制转换的
+        //只要含有非数字（除了进制、无穷以外、科学计数法以外） 都是NaN
+        //空字符串和都是空格的字符串 都是 0
+
+    console.log(Number("12"));//12
+    console.log(Number("-12"));//-12
+    console.log(Number("-1.2"));//-1.2
+    console.log(Number("010"));//10
+    console.log(Number("0xa"));//10
+    console.log(Number("0b11"));//10
+    console.log(Number("123a"));//NaN
+    console.log(Number("abcd123"));//NaN
+    console.log(Number(""));//0
+    console.log(Number(" "));//0
+    console.log(Number("Infinity"));//Infinity
+    console.log(Number("1.2E-4"));//0.00012
+    console.log(Number("a"));//NaN
+
+    //3布尔值转数字
+    console.log(Number(true));//1
+    console.log(Number(false));//0
+
+    //4.undefined转数字
+    console.log(Number(undefined));//NaN
+
+    // 5.null转数字
+    console.log(Number(null));//0
+
+    //6.object转数字
+        //空数组是0  只有一个值的数组，会把这个值转成数字
+        //多个值的数组 是NaN
+        //其他对象都是NaN
+    console.log(Number([]));//0
+    console.log(Number([1]));//1
+    console.log(Number(["1"]));//1
+    console.log(Number([1,2,3]));//NaN
+    console.log(Number([1,2,3,undefined]));//NaN
+    console.log(Number(["1","2"]));//NaN
+
+    console.log(Number({}));//NaN
+    console.log(Number({name:"lily"}));//NaN
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 在js中，如果需要表示16进制，则需以0x开头
+     *					  8进制，则以0开头
+     *					  2进制，则以0b开头(但不是所有浏览器都支持)
+     * */
+    var a;
+    a = 0x10;
+    a = 0xff;
+    a = 0xCafe;
+
+    a = 070;//(32+16+8=56)
+    //000.1  1  1.000
+    //000.32 16 8.000
+    console.log(a);//返回56
+
+    a = "070";
+    a = parseInt(a);
+    console.log(a);//可能返回70也可能返回56，取决于浏览器把070当10进制还是8进制；所以为了统一：
+    a = "070";
+    a = parseInt(a,8);//加一个参数
+    console.log(a);//返回56
+</script>
+
+</body>
+</html>

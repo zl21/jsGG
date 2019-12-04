@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String方法</title>
+</head>
+<body>
+<!--
+
+-->
+<script>
+    /*
+    * 把其他类型强制转换成字符串
+    *
+    * */
+
+    //1.null
+    console.log(String(null));//'null'
+
+    //2.undefined
+    console.log(String(undefined));//'undefined'
+
+    //3.number
+        //其他进制会先识别为十进制，然后再变成字符串
+        //其他的值 直接变成相应的字符串
+    console.log(String(1));//'1'
+    console.log(String(1.1));//'1.1'
+    console.log(String(-2.1));//'-2.1'
+    console.log(String(0xa));//10
+    console.log(String(010));//8
+    console.log(String(Infinity));//'Infinity'
+    console.log(String(NaN));//'NaN'
+    console.log(String(1.2E-4));//'0.00012'
+
+    //4.布尔值
+    console.log(String(true));//'true'
+    console.log(String(false));//'false'
+
+    //5.对象
+    console.log(String([]));//''空字符串
+    console.log(String([1]));//'1'
+    console.log(String([1,2]));//'1,2'
+    console.log(String([1,010]));//'1,8'
+    console.log(String({}));//[object Object]
+    console.log(String({name:'lily'}));//[object Object]
+</script>
+</body>
+</html>

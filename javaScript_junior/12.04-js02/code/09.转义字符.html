@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转义字符</title>
+</head>
+<body>
+<script>
+    /*
+    * 转义字符：
+    *   转义字符是字符的一种间接表达形式，在一些特殊的语境中，无法使用字符本身
+    *   如果出现这样的情况  请在该字符前添加一个反斜杠，将该字符转义为原本的字符
+    *   如果一个正常的字符 添加了 \  那么会忽略
+    *   如果想要在字符串中显示 \，
+    *
+    *  但是 一些普通的字符加上 反斜杠以后 就拥有的特殊的意义，需要注意
+    *       比如：\n换行  \0 null  \b退格   \t水平制表  \v  \r   \f
+    * */
+
+    var str = "小明妈妈说:\"今天天气真好\"";
+    console.log(str);
+
+    var str2 = "小明妈妈说:\"\今\天\天\气\真\好\"";
+    console.log(str2);
+
+    var str3 = "看我斜杠：\\"
+    console.log(str3);
+
+</script>
+</body>
+</html>
