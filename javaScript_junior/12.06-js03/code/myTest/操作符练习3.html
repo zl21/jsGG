@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3</title>
+</head>
+<body>
+<div id="outer">
+    <h2>姓名录入表</h2>
+    <input id="ipt"></input>
+    <button id="btn">添加</button>
+</div>
+<section>
+    <ul id="stuList">
+    </ul>
+</section>
+<script>
+/*
+* 需求：姓名录入
+* 分析：
+*   1、获取元素
+*   2、创建点击事件
+*   3、获取输入的姓名
+*   4、把姓名放在li中
+*   5、把li放在ul中
+* */
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+    var oStuList = document.getElementById("stuList");
+    oBtn.onclick = function () {
+        var oIptV = oIpt.value;
+        //把姓名放在li标签中：
+        oIptV = "<li>" + oIptV + "</li>";
+        //把字符串当成标签来解析 并放入ul标签中的方法：调用父标签的innerHTML添加标签。
+        oStuList.innerHTML += oIptV;
+        oIpt.value = "";
+    }
+</script>
+</body>
+</html>

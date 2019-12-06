@@ -14,87 +14,54 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/05.数据类型.html">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="338">
+              <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/08.String类型.html">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/02.乘性操作符.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/05.类型转换为number方法一-Number方法.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/03.isNaN方法的应用.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+            <state relative-caret-position="463">
+              <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/06.类型转换为number-parseInt.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/晨测.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="171">
+                <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/04,浮点数溢出.html">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="-118">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/02.if_exer.html">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/08.学生姓名录入系统.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/05.for_exer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2185">
-              <caret line="115" column="45" lean-forward="true" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
+            <state relative-caret-position="-4">
+              <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/06.强制类型转换.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="77" column="15" lean-forward="true" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/04.标识符.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -125,20 +92,31 @@
         <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/myTest/isNaN的应用.html" />
         <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/myTest/isNaN.html" />
         <option value="$PROJECT_DIR$/javaScript_junior/day01/07.进制.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/16.逗号操作符.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/04,浮点数溢出.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/02.isNaN方法.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.04-js02/code/晨测.md" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习1.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习3.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习2.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/09.递增递减操作符.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/02.乘性操作符.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.06-js03/code/晨测.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="210" />
-    <option name="y" value="22" />
-    <option name="width" value="1294" />
-    <option name="height" value="778" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-228" />
+    <option name="y" value="5" />
+    <option name="width" value="1295" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,19 +133,6 @@
               <item name="JS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JS" type="462c0819:PsiDirectoryNode" />
               <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
-              <item name="12.03-js01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
-              <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
-              <item name="12.03-js01" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
-              <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
               <item name="12.04-js02" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -176,19 +141,39 @@
               <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
               <item name="12.04-js02" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
+              <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
+              <item name="12.06-js03" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
+              <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
+              <item name="12.06-js03" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
+              <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
+              <item name="12.06-js03" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="myTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../htmlCss_h5Css3" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -224,20 +209,25 @@
       <workItem from="1575355224532" duration="4746000" />
       <workItem from="1575379985873" duration="123000" />
       <workItem from="1575419442565" duration="18289000" />
+      <workItem from="1575506375817" duration="614000" />
+      <workItem from="1575530061474" duration="1607000" />
+      <workItem from="1575546693208" duration="1322000" />
+      <workItem from="1575591399277" duration="25829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23158000" />
+    <option name="totallyTimeSpent" value="52820000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="168" y="18" width="1035" height="622" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18718718" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09048877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32874355" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -357,13 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/02.isNaN方法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/notes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57" />
@@ -373,13 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/04,浮点数溢出.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -407,36 +383,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/05.数据类型.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="532">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/08.String类型.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/05.类型转换为number方法一-Number方法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="513">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/03.isNaN方法的应用.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="722">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/06.类型转换为number-parseInt.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/16.逗号操作符.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/04,浮点数溢出.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/02.isNaN方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/04.加法操作符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/晨测.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="190">
+            <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="36" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/07.类型转换为Number-乘法运算符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/01.赋值操作符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/day02/03.逻辑运算符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/08.学生姓名录入系统.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/myTest/操作符练习2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/03.减法操作符.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/11.相等 全等 不等 不全等.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/10.关系运算符-大小比较.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-365" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/09.递增递减操作符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/05.类型转换为number方法一-Number方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="63" column="33" lean-forward="true" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/02.乘性操作符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.06-js03/code/晨测.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="171">
+            <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

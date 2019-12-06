@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关系运算符-大小比较</title>
+</head>
+<body>
+<script>
+    /*
+        关系运算符：也称为比较运算符，有两个操作数，返回的是布尔值
+    *   关系运算符-大小比较：
+    *       >  第一个操作数 大于  第二个操作数的时候，返回true  否则返回false
+            >= 第一个操作数 大于等于  第二个操作数的时候，返回true  否则返回false
+            < 第一个操作数 小于  第二个操作数的时候，返回true  否则返回false
+            <= 第一个操作数 小于等于  第二个操作数的时候，返回true  否则返回false
+    * */
+
+    var num1 = 3,num2 = 4;
+    console.log(num1 > num2);//false
+    console.log(num1 >= num2);//false
+    console.log(num1 <= num2);//true
+    console.log(num1 < num2);//true
+
+    /*
+    *  大小比较运算，会牵扯到一系列的数值类型转换
+    *       1.如果两个操作数都是数字，或者是一个是数字，另一个可以被转成数字，那么就按照数值比较。如果有其中一个是NaN  或者是转成数字比较的时候是NaN  那么一定是false
+    *       2.如果两个都是字符串，那么就按照字符串比较
+    *       3.如果一个操作数是对象，则先用valueOf取其的原始值，如果没有原始值，则使用toString方法去字符串比较
+    *       4.如果有一个数是布尔值，则转成数字比较
+    *
+    * */
+    // 1
+    console.log(2 > "1");//true
+
+    // 2.字符串比较是 1.一位一位的比较  2.每一位都是按照ascII码来比较  小写字母>大写字母>数字
+    console.log("14" > "3");//false
+    console.log("ab123" > "abc23");//false
+
+    // 3.
+    console.log([5] > 3);//true
+    console.log(({}) >= 3);//false  对象转成了NaN
+
+    //4.
+    console.log(true > "a");//false
+    console.log(true <= "a");//false
+    console.log(true <= "1");//true
+
+
+    // 特殊
+
+    console.log(null > undefined);//false
+    console.log(null <= undefined);//false
+
+    console.log([] < ({}));//true  取了空字符串和  字符串[object object]的比较
+    console.log(({}) > ({}));//都转成字符串  相等
+
+    //
+</script>
+</body>
+</html>

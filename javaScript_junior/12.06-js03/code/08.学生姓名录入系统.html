@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生姓名录入系统</title>
+</head>
+<body>
+    <!--点击录入，把输入框的名字录入到列表中。每一个名字是列表的每一个项-->
+    <div>
+        <div>
+            请输入姓名：<input type="text" id="ipt">
+            <button id="btn">录入</button>
+        </div>
+        <section>
+            <h2>1108学生列表</h2>
+            <ul id="studentList">
+
+            </ul>
+        </section>
+    </div>
+    <script>
+        /*
+        * 1.获取标签
+        * 2.点击录入
+        * 3.获取输入的姓名
+        * 4.把姓名放在li中
+        * 5.把li放在ul中
+        * */
+
+        var oIpt = document.getElementById("ipt");
+        var oBtn = document.getElementById("btn");
+        var oStudentList= document.getElementById("studentList");
+
+        oBtn.onclick = function () {
+            var studentName = oIpt.value;
+
+            //把姓名放在li中最简单的写法就是和li的开关标签进行拼接  li的开关标签可以是一个字符串
+            studentName = "<li>" + studentName + "</li>";//'<li>xiaowang</li>'
+
+            // 把字符串放在DOM元素中，并且可以解析字符串的标签，就使用innerHTML的属性
+            //innerHTML就是向一个非表单元素中插入内容的 只不过可以解析标签。innerHTML也可以获取标签里的内容
+            //如果每次都修改innerHTML  那就会每次都覆盖
+            oStudentList.innerHTML += studentName;
+
+            // 每次录入完毕，清空输入框
+            oIpt.value = "";
+        }
+    </script>
+</body>
+</html>

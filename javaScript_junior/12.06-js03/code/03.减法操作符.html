@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>减法操作符</title>
+</head>
+<body>
+<script>
+    /*
+    *   减法操作符：
+    *       把所有的类型都转换成数字运算
+    *
+    *   技巧：把任意类型 减去 0  都可以转为number类型
+    *
+    * */
+    console.log(5 - 1);//4
+    console.log(5 - 0);//5
+    console.log("5" - "3");//2
+    console.log("5" - "Infinity");//-Infinity
+    console.log([] - {});//NaN
+    console.log([] - []);//0
+    console.log({} - {});//NaN
+    console.log(true - false);//1
+    console.log(null - undefined);//NaN
+</script>
+</body>
+</html>

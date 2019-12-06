@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习2</title>
+</head>
+<body>
+<button id="btn">改变</button>
+<div id="box" style="width: 120px; height: 120px;border: 1px solid;background: #bfa;"></div>
+<script>
+    /*
+    * 需求：大小固定的盒子每次点击变大10px
+    * 分析：
+    *   1、
+    * */
+    var oBtn = document.getElementById("btn");
+    var oBox = document.getElementById("box");
+    var oBoxWidth = parseInt(oBox.style.width);
+    var oBoxHeight = parseInt(oBox.style.height);
+    var falg1 = true;
+    var falg2 = true;
+    oBtn.onclick = function () {
+
+        if (falg1) {
+            falg2 = false;
+            oBoxWidth += 20;
+            oBoxHeight += 20;
+            oBox.style.width = oBoxWidth + "px";
+            oBox.style.height = oBoxHeight + "px";
+            if (oBoxWidth >= 400) {
+                // console.log(oBoxWidth);
+                falg1 = false;
+                falg2 = true;
+            }
+        }
+
+        if (falg2) {
+            // console.log(falg1)
+            // console.log(oBoxWidth -= 20);
+            oBoxWidth -= 20;
+            oBoxHeight -= 20;
+            oBox.style.width = oBoxWidth + "px";
+            oBox.style.height = oBoxHeight + "px";
+            // console.log(oBoxWidth + "px");
+            if (oBoxWidth == 0 || oBoxHeight == 0) {
+                falg2 = false;
+                falg1 = true;
+                console.log(falg2);
+                console.log(falg1);
+            }
+        }
+    }
+</script>
+</body>
+</html>

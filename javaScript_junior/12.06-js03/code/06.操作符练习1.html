@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作符练习1</title>
+    <style>
+        #box{
+            width: 0;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<!--让用户输入两个值，计算两个值的和。当点击按钮的时候，让box的宽度为两个值的和（如果两个值的和小于等于0  那么请用户重新输入）-->
+<div class="outer">
+    请输入第一个数字：
+    <input type="text" id="ipt1">
+    请输入第二个数字：
+    <input type="text" id="ipt2">
+    <button id="btn">come on baby</button>
+    <div id="box"></div>
+</div>
+<script>
+    /*
+    *   1.获取标签
+    *   2.点击事件
+    *   3.判断两个是不是纯数字，如果不是 提示用户重新输入
+    *   4.如果是 那么计算和
+    *   5.判断和 是否小于等于0   如果是 则提示 重新输入
+    *   6.否则  改变box的宽度
+    *
+    * */
+
+    // 1.获取标签
+    var oIpt1 = document.getElementById("ipt1");
+    var oIpt2 = document.getElementById("ipt2");
+    var oBtn = document.getElementById("btn");
+    var oBox = document.getElementById("box");
+
+    // 2.点击事件
+    oBtn.onclick = function () {
+        //点击以后获取两个ipt的值
+        var oIpt1_Num = oIpt1.value;
+        var oIpt2_Num = oIpt2.value;
+        //判断第一个数可以转为数字
+        if (isNaN(oIpt1_Num)){
+            alert("第一个滚回去重新来");
+        }else{
+            //判断第二个数可以转为数字
+            if (isNaN(oIpt2_Num)) {
+                alert("第二个滚回去重新来");
+            }else{
+                //转为数字再相加
+                var resultAdd = (oIpt1_Num/1) + (+ oIpt2_Num);
+                //判断两个数字的和是否大于0
+                if(resultAdd > 0){
+                    // 最终赋值
+                    oBox.style.width = resultAdd + "px";
+                }else{
+                    alert("你输入的数字和 小于1");
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

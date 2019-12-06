@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加法操作符</title>
+</head>
+<body>
+<!---->
+<script>
+    /*
+    *   加法操作符：
+    *       加法操作符除了运算以外，还有字符串拼接的功能
+    *       //如果 加法运算中出现字符串，那么会把其他类型都转换成字符串 然后拼接
+    *
+    *       //如果对象和数字 相加 或者对象对象  数组数组相加  都是转成字符串
+    *
+    *       //如果undefined和null运算  都转成数字 是NaN
+    * */
+
+
+    console.log(1 + 1);//2
+    console.log("1" + 1);//'11'
+    console.log("abc" + 1);//'abc1'
+    console.log("abc" + null);//'abcnull'
+    console.log("abc" + undefined);//'abcundefined'
+    console.log("abc" + []);//'abc'
+    console.log("abc" + {});//abc[object Object]
+    console.log([] + []);//""
+    console.log({} + []);//[object object]
+    console.log(undefined + []);//'undefined'
+
+    console.log(undefined + null);
+    console.log(true + "false");//truefalse
+</script>
+</body>
+</html>

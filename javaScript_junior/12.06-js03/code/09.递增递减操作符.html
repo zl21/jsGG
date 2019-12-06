@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递增递减操作符</title>
+</head>
+<body>
+<script>
+    /*
+    * 递增递减操作符：
+    *       递增（++） 递减（--），通过不断的加1或减1，把结果赋值给左值，以实现改变自己和赋值的操作
+    *
+    *       作为1元运算符，递增和递减只能用于变量直接量、数组元素、或对象属性，尽量不能直接用于其他
+    *
+    *       递增递减在运算的时候都会把操作数转换成number类型，如果转不了就是NaN
+    *
+    *       根据++  -- 的位置不一样，分为以下4种：
+    *           前置递增：++n   先递增  后赋值
+    *           前置递减：--n    先递减 后赋值
+    *           后置递增：n++    先赋值 后递增
+    *           后置递减：n--    先赋值 后递减
+    *
+    * */
+
+    // 先后是在一条语句中执行完的。只要在1个语句中，a++还是++a。一定a加了1。
+    var a = 1;
+    a ++;
+    a ++;
+    a ++;
+    console.log(a);//4
+
+    var a = 1;
+    ++ a;
+    ++ a;
+    ++ a;
+    console.log(a);//4
+
+    var b = 2;
+    var k = b ++;
+    console.log(k);//2
+    console.log(b);//3
+
+    var b = 2;
+    var k = ++ b;
+    console.log(k);//3
+    console.log(b);//3
+
+
+
+    var  a = 1;
+    console.log(a++);//1
+    console.log(a);//2
+
+
+    var a = 1;
+    b = a++ + a++ + 1 + ++a + a++ + ++a + a + ++a;
+    /*b = 1   2     1     4   4     6     6     7
+    a = 2     3     3     4   5     6     6     7*/
+    console.log(a);//7
+    console.log(b);//31
+</script>
+</body>
+</html>

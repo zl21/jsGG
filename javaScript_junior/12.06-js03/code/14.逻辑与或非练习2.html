@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑与或非练习2</title>
+</head>
+<body>
+<script>
+    /*
+    *   按照与或非的执行步骤，可以完成以下练习。
+    *
+    *   &&  || 都遵循短路原理
+    *   当&&第一个表达式返回fasle 的时候，不会处理下一个表达式
+    *   当|| 第一个表达式返回true 的时候， 不会处理下一个表达式
+    *
+    *   当&&第一个表达式返回true的时候，则要处理下一个表达式
+    *   当||第一个表达式返回false 的时候，则要处理下一个表达式
+    *   */
+    var a=2,b=3;
+    (a<b)&&(a=5);
+    console.log(a);
+
+    var a=4,b=3;
+    (a<b)&&(a=5);
+    console.log(a);
+
+    var a=2,b=3;
+    (a<b)||(a=5);
+    console.log(a);
+
+    var a=4,b=3;
+    (a<b)||(a=5);
+    console.log(a);
+</script>
+</body>
+</html>

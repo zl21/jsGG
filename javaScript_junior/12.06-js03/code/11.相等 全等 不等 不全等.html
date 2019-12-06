@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相等 全等 不等 不全等</title>
+</head>
+<body>
+<script>
+    /*
+    *   相等 全等 不等 不全等
+    *
+    *       等值检测有4种：
+    *           == 等于  两个值相等
+    *           != 不等
+    *           === 全等
+    *           !== 不全等
+    *
+    *       在等值的相等比较中要注意：
+    *           如果操作数是布尔值，则先转成数字比较，true 为 1   flase为 0
+    *           如果一个操作数是数字，一个是字符串。将全部转成数字比较
+    *           如果一个操作数数字符串  一个是对象 先把对象转成字符串 再比较
+    *           如果一个操作数是数字 一个是对象  先把对象转成数字 再比较
+    *           如果两个操作数都是对象，那么就是比较两个对象的地址
+    *           null和undefined是相等的  但是不全等
+    *
+    *       在全等比较中
+    *           如果两个操作数简单的值，  只要值相等  类型也相等  才会全等
+    *           如果一个数简单值，一个是对象，则不全等
+    *           如果两个操作数是对象，则判断地址是否相投
+    * */
+
+    console.log(1 == 2);//false
+    console.log(1 == "1");//true
+    console.log(1 == "2");//false
+    console.log(1 == {name:"lily"});//false  1和NaN
+    console.log("a" == {name:"lily"});//false  a 和 [object object]
+    console.log({name:"lily"} == {name:"lily"});//false
+    console.log(null == undefined);//true
+    console.log(true == null);//false
+    console.log(true == 3);//false
+    console.log(true == 1);//true
+
+    console.log(true != 3);//true
+
+
+    console.log(1 === 1);//true
+    console.log(1 === "1");//false
+    console.log({name:"lily"} == {name:"lily"});//false
+    console.log(null === undefined);//false
+    console.log(1 !=="1" )//true
+    console.log(1 !==1 )//false
+
+
+    // 对象的比较是地址的比较，而不是值的比较
+    var obj1 = {name:"lily"};
+    var obj2 = {name:"lily"};
+    var obj3 = obj1;
+    console.log(obj1 == obj2);//false
+    console.log(obj1 == obj3);//true
+    console.log(obj1 === obj3);//true
+</script>
+</body>
+</html>

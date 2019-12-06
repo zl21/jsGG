@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赋值操作符</title>
+</head>
+<body>
+<script>
+    /*
+    *   赋值操作符：
+    *       赋值操作符的左侧操作数一定是一个变量、对象的属性、数组元素
+    *   赋值运算有两种方式：
+    *       1）简单的赋值运算（=）：把等号右边的操作数（不限）赋值给左边的操作数
+    *       2）复杂的赋值运算（+=  -=  *=  /=  %=）:赋值之前会先对右边的操作数进行某种运算，然后再赋值操作
+    *
+    * */
+
+    //定义一个数组\对象、变量
+    var arr = [1,2,3,4,5,6];
+    var fir = {
+        name:"bangcui",
+        age:11
+    };
+    var a = 1;
+
+    a = 3;
+    fir.name = "wangdacui";
+    arr[3] = "hello";
+
+    console.log(a,arr,fir);
+
+
+    //复杂的运算 +=
+    //假设你有100块钱 每天挣5块  每天算一下还有多少钱
+    var money = 100;
+    var everyDay = 5;
+    //每天计算的时候，重新对money赋值
+    // money = money + everyDay;
+    /*money += everyDay;//105
+    money += everyDay;//110*/
+    //使用for循环来计算100天后，你还有多少钱
+    for (var i = 0; i < 100 ; i++) {
+        money += everyDay;
+    }
+    console.log(money);
+
+
+    //其他：
+    var a = 8;
+    a -=2;
+    console.log(a);//6
+
+    var a = 8;
+    a *=2;
+    console.log(a);//16
+
+    var a = 8;
+    a /=2;
+    console.log(a);//4
+
+    var a = 8;
+    a %=2;
+    console.log(a);//0
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习1</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            background: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <input type="text" id="ipt1">
+        <input type="text" id="ipt2">
+        <button id="btn">确定更改</button>
+        <div id="box"></div>
+    </div>
+    <script>
+        /*
+        需求：给两个值，和大于0则赋给盒子的宽度。
+        1、获取元素
+        2、创建点击事件
+        3、获取元素里的值
+        4、判断两个数是否为非纯数字
+        5、判断和是否小于等于0，true则提示重新输入
+        6、false则改变box的宽度
+        */
+        var oIpt1 = document.getElementById("ipt1");
+        var oIpt2 = document.getElementById("ipt2");
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("box");
+        oBtn.onclick = function () {
+            var oIpt1V = Number(oIpt1.value);
+            var oIpt2V = Number(oIpt2.value);
+            var sum = oIpt1V + oIpt2V;
+            if(isNaN(oIpt1V) || isNaN(oIpt2V)){
+                alert("请输入数字！");
+            } else if (sum > 0) {
+                //获取到的是元素的行内样式，而不是css中的样式
+                oBox.style.width = sum + "px";
+            } else {
+                alert("宽度要大于0！")
+            }
+        }
+    </script>
+</body>
+</html>
