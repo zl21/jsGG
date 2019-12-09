@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断登录2</title>
+</head>
+<body>
+<script>
+    //弹出请用户输入：
+    var uName = prompt("请输入用户名：");
+    var uPwd = prompt("请输入密码：");
+    //如果不对就让用户一直输入：
+    while(uName != "laowang" || uPwd != "8888"){
+        alert("重新输入！")
+        userNum = prompt("请输入用户名：");
+        uPwd = prompt("请输入密码：");
+    }
+        alert("你是老王！");
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while语句</title>
+</head>
+<body>
+<script>
+    /*
+    * while是最基本的循环结构：
+    * while(判断式){语句}
+    *   当判断式为真的时候，执行语句。
+    *   执行语句结束以后，会再次执行判断式，直到判断式为假，就会跳出while循环
+    *
+    * */
+
+    /*var a = 0;
+    while(a < 10){
+        alert("你好");
+        a ++;
+    }*/
+
+    /*var a = 0;
+    while(a++ < 10){
+        alert("你好");
+    }*/
+
+    // 计算 1到100的和
+    var i = 1;
+    var num = 0;
+    while(i <= 100){
+        num += i;
+        i++;
+    }
+    console.log(num);
+
+    // 将1-100中 3的倍数打印出来  并计算个数
+    var i = 1;
+    var num = 0;
+    while(i <= 100){
+        if (i % 3 == 0){
+            console.log(i);
+            num ++;
+        }
+        i++;
+    }
+    console.log("总数是" + num)
+
+</script>
+</body>
+</html>

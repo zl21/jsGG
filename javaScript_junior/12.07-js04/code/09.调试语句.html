@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调试语句</title>
+</head>
+<body>
+<script>
+    /*
+    * 调试语句
+    *   debugger语句用来暂停JS的执行
+    *   debugger语句可以发在代码的任意位置用来暂停脚本，但是不会删除变量文件等信息。类似于在审查元素中打断点
+    *   需要打开审查元素（调试工具）才起作用
+    * */
+    for (var i = 0; i < 5; i++) {
+        debugger;
+        console.log(1);
+    }
+</script>
+</body>
+</html>

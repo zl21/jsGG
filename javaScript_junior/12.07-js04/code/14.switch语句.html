@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch语句</title>
+</head>
+<body>
+<!--
+    switch语句：
+-->
+<script>
+    /*
+    * switch语句：
+    *       switch(表达式){
+                case value1:
+                    语句1;
+                    break;
+                case value2:
+                    语句2;
+                    break;
+                case value3:
+                    语句3;
+                    break;
+                ......
+                default :语句
+            }
+            *
+            * switch专门用来设计多分支结构，与else/if相比，更直观简洁
+            *
+            *   switch语句根据表达式的值 每次依次和case后的value值比较，如果相等则执行该case的代码块，否则对比下一个case
+            * 只要遇到break 就会立马退出switch语句，不再执行switch的任何代码
+            *
+            * switch语句中包含了一个可选的 default语句（switch的异常处理），如果前边的case都不满足条件，那么就执行default语句
+            *
+            * 在switch语句中，case只是语句的起点，没有指明终点，如果不书写break，就会出现一直执行的现象(不再case对比)，直到出现break
+            *
+            *case可以出现空值，多个case合并
+            * 
+    * */
+    
+    var a = 6;
+    switch (a) {
+        case 1:
+            alert(1);
+            // break;
+        case 2:
+            alert(2);
+            // break;
+        case 3:
+            alert(3);
+            // break;
+        case 4:
+            alert(4);
+            break;
+        case 5:
+        case 6:
+        case 7:
+            alert(8);
+            break;
+        default:
+            alert(10)
+    }
+
+</script>
+</body>
+</html>

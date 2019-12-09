@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if练习</title>
+</head>
+<body>
+<!--
+    用户输入成绩，弹出成绩的等级
+    100：s
+    90以上：A
+    80以上：B
+    70以上：C
+    60以上：D
+    60以下：Z
+-->
+<input type="text" id="ipt">
+<button id="btn">点击查看等级</button>
+<script>
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+
+    oBtn.onclick = function () {
+        var userScore = parseInt((+ oIpt.value)/10);
+        switch (userScore) {
+            case 10:
+                alert("S");
+                break;
+            case 9:
+                alert("A");
+                break;
+            case 8:
+                alert("B");
+                break;
+            case 7:
+                alert("C");
+                break;
+            case 6:
+                alert("D");
+                break;
+            default:
+                alert("Z");
+                break
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声明语句</title>
+</head>
+<body>
+<script>
+    /*
+    * 声明语句：
+    *   声明函数
+    *   声明变量
+    *   声明标签
+    * */
+
+    // 声明函数 使用function关键字
+    function f() {
+
+    }
+
+    // 声明变量
+    var a = 1;//有声明提升  作用域按照函数计算
+    let b = 2;//无声明提升  作用域按照代码块计算
+    const MAX = 100;//无声明提升  常量  不能被修改或者重新赋值
+
+    // 声明Label:
+    // 声明语句一般都是配合continue和break来使用的，在后边流程控制语句中讲解
+    for1:
+    for (var i = 0;i<3;i++){
+
+    }
+</script>
+</body>
+</html>

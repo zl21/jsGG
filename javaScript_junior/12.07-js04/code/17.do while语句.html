@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do while语句</title>
+</head>
+<body>
+<script>
+    /*
+    * do while语句：
+    *   do while的语法如下：
+    *       do{代码块}while(判断式);
+    *   do while和while非常的相似，区别在于do while表达式的值是在每次循环结束以后去检查，而不是开始就检查
+    *   do while至少执行一次，但是while可能会一次都不执行
+    *
+    * */
+
+    // 打印5次hello
+    var i =0;
+    do{
+        console.log("hello");
+        i++;
+    }while( i < 5 );
+
+
+    // 打印5次hello
+    var i =0;
+    do{
+        console.log("hello");
+    }while( ++i < 5 );
+
+    // 使用do while 计算 1-100的偶数的和
+    var i = 0;
+    var num = 0;
+    do{
+        if (i % 2 == 0){
+            num += i;
+        }
+    }while( ++i <= 100);
+    console.log(num);
+
+    var i = 0;
+    var num = 0;
+    do{
+        num += i;
+        i += 2;
+    }while( i <= 100);
+    console.log(num);
+</script>
+</body>
+</html>

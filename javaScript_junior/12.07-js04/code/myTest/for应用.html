@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for应用</title>
+</head>
+<body>
+<!--
+    点击哪一个li标签，哪个个就变色。
+-->
+<ul id="box">
+    <!--下标从0开始-->
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oBox = document.getElementById("box");
+    //oLis是用来装标签的麻袋，js会把这个麻袋定义为数组
+    var oLis = document.getElementsByTagName("li");
+    console.log(oLis);
+    for (var i = 0; i <= 4; i++) {
+        oLis[i].onclick = function () {
+            // oLis[i].style.backgroundColor = "#bfa";
+            this.style.backgroundColor = "#bfa";
+        }
+    }
+<!--
+    告诉我我点了哪个li标签：
+    方法：遍历所有li标签，if我点的效果和某确定样式一样那就是点了那个。
+-->
+
+
+</script>
+</body>
+</html>

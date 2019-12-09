@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制语句</title>
+</head>
+<body>
+<script>
+    /*
+    * 流程控制语句：
+    *   使用break、continue、label、return 可以中途改变分支结构、循环结构的流程方向。
+    *
+    *   1.label：
+    *       label可以是任意合法的标识符，然后使用冒号 分割 标签与标签的语句
+    *       label和break、continue一起使用，主要用来跳出内部循环体
+    *
+    *   2.break语句:
+    *       能够立即结束当前的 for  for/in  while  do/while或者是switch语句的执行
+    *       同时break 还可以接受一个可选的标签名（label）来决定跳出哪一个循环体
+    *       如果没有标签名 则跳出最内的循环体
+    *
+    *   3.continue:
+    *       语句用在循环结构中，跳出本次循环的所有代码，并在表达式还为真的时候（后边还有次数的时候）继续执行下一次循环
+    *       可以接受一个标签名
+    * */
+
+    //break案例：
+    var num = 0;
+    for (var i = 0; i < 5; i++) {
+        if(i == 3){
+            break;
+        }
+        num++;
+    }
+    console.log(num);//3
+
+    //break + label 案例
+    var num = 0;
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            if (i == 5 && j == 5){
+                break;
+            }
+            num++;
+        }
+    }
+    console.log(num);//95，少走的是i=5的时候j=6、7、8、9、10的这5次。
+
+
+    var num = 0;
+    outFor:
+    for (var i = 0; i < 10; i++) {
+        inFor:
+        for (var j = 0; j < 10; j++) {
+            if (i == 5 && j == 5){
+                break outFor;
+            }
+            num++;
+        }
+    }
+    console.log(num);//55
+
+
+
+
+    //continue案例：
+    var num = 0;
+    for (var i = 0; i < 5; i++) {
+        if(i == 3){
+            continue;
+        }
+        num++;
+    }
+    console.log(num);//4
+
+    //break + label 案例
+    var num = 0;
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            if (i == 5 && j == 5){
+                continue;
+            }
+            num++;
+        }
+    }
+    console.log(num);//99
+
+
+    var num = 0;
+    outFor:
+        for (var i = 0; i < 10; i++) {
+            inFor:
+                for (var j = 0; j < 10; j++) {
+                    if (i == 5 && j == 5){
+                        continue outFor;
+                    }
+                    num++;
+                }
+        }
+    console.log(num);//95
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环的应用</title>
+</head>
+<body>
+<!--
+    点击哪一个li  让哪一个li变红色
+-->
+    <ul id="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<script>
+    var oBox = document.getElementById("box");
+    var oLis = oBox.getElementsByTagName("li");
+    console.log(oLis);
+    /*oLis[0].onclick = function () {
+        oLis[0].style.backgroundColor = "red";
+    }
+    oLis[1].onclick = function () {
+        oLis[1].style.backgroundColor = "red";
+    }
+    oLis[2].onclick = function () {
+        oLis[2].style.backgroundColor = "red";
+    }
+    oLis[3].onclick = function () {
+        oLis[3].style.backgroundColor = "red";
+    }
+    oLis[4].onclick = function () {
+        oLis[4].style.backgroundColor = "red";
+    }
+    oLis[5].onclick = function () {
+        oLis[5].style.backgroundColor = "red";
+    }*/
+
+    for (var i = 0; i < 6; i++) {
+        oLis[i].onclick = function () {
+            this.style.backgroundColor = "red";
+        }
+    }
+</script>
+</body>
+</html>

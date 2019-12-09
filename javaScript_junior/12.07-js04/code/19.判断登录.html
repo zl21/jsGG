@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断登录</title>
+</head>
+<body>
+<!--接受用户输入的账号名和密码，只要账号名不是laowang  密码不是8888888  就一直提示请重新输入，否则输出：你是老王吧。-->
+<!--prompt是包含输入框的，还有确认和取消按钮的弹窗。用户可以输入值，prompt返回的值就是用户输入的值。
+如果用户没有输入或者是点击的取消 则返回null-->
+<script>
+    /*//1 页面刚刚进入 就提示用户输入账号名和输入密码
+    var userName = prompt("请输入账号名");
+    var userPass = prompt("请输入密码");
+    // 2.如果输入的不正确，就一直弹出请输入账号和密码
+    function isLogin() {
+        if (userName != "laowang" || userPass != "8888888") {
+            alert("不对，点击确定请重新输入")
+            userName = prompt("请输入账号名");
+            userPass = prompt("请输入密码");
+            isLogin();//在函数内部调用自身，递归算法
+        }else{
+            alert("你是老王吧");
+        }
+    }
+    isLogin();*/
+
+
+
+    //1 页面刚刚进入 就提示用户输入账号名和输入密码
+    var userName = prompt("请输入账号名");
+    var userPass = prompt("请输入密码");
+    while(userName != "laowang" || userPass != "8888888"){
+        alert("不对，点击确定请重新输入")
+        userName = prompt("请输入账号名");
+        userPass = prompt("请输入密码");
+    }
+    alert("你是老王吧");
+
+</script>
+</body>
+</html>
