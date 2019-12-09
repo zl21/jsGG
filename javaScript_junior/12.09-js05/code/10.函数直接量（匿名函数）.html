@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数直接量（匿名函数）</title>
+</head>
+<body>
+<script>
+    /*
+    * 匿名函数也叫函数直接量，
+    * 只有函数声明和参数和函数体
+    * 匿名函数就是一个表达式，可以把它作为一个函数赋值给一个变量或者是一个对象的方法，这个时候变量和对象的方法就是这个函数了
+    * 匿名函数可以自己调用，也可以使用一元运算符  + - ~ ！写在最前边  然后后边括号调用
+    *
+    *
+    * */
+
+    // 把函数当做一个值
+    /*function fn1() {
+        console.log("fn1");
+    }
+    var fn2 = fn1;
+    var fn3 = function (){
+        console.log("匿名")
+    }
+    fn2();
+    fn3();*/
+    
+    
+    
+    //函数也可以是一个对象
+    function fn1() {
+        alert("fn1");
+    }
+    fn1.name1 = "lily";
+    fn1.sex = "nv";
+    // fn1();
+    alert(fn1.name1);
+    alert(fn1.sex);
+
+
+
+    //函数可以作为对象的某个方法
+    var obj = {
+        name :"lily",
+        sex:"nan",
+        say:function () {
+            alert("aaaaaaaaa");
+        },
+        do:fn1
+    }
+    console.log(obj.name);
+    console.log(obj.say());//undefined
+    obj.do();
+</script>
+</body>
+</html>

@@ -16,6 +16,15 @@
     var isObject = + (prompt("你有对象吗？请输入1(有) or 0(没有)"));
     var age = + (prompt("你多大啊"));
     var sex = (prompt("你的性别是  m or w"));
+
+    if (isObject){
+        alert("回家抱孩子去吧  给你买");
+    }else if(age < 25 && sex == "m" || age < 22 && sex == "w"){
+        alert("自己回家买去吧")
+    }else{
+        alert("回家抱孩子去吧  给你买");
+    }
+
     /*if (isObject){
         alert("回家抱孩子去吧  给你买");
     }else{
@@ -25,14 +34,6 @@
             alert("回家抱孩子去吧  给你买");
         }
     }*/
-
-    if (isObject){
-        alert("回家抱孩子去吧  给你买");
-    }else if(age < 25 && sex == "m" || age < 22 && sex == "w"){
-        alert("自己回家买去吧")
-    }else{
-        alert("回家抱孩子去吧  给你买");
-    }
 </script>
 </body>
 </html>

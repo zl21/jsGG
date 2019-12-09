@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取参数的个数</title>
+</head>
+<body>
+<script>
+    /*
+    * 获取参数的个数：
+    *   使用arguments对象可以获取到函数的实参
+    *   arguments对象表示函数实参的集合，仅仅能够在函数内访问
+    *   arguments对象是一个伪数组,但是不能够直接使用数组的方法。可以使用下标或者里边的每一个值，可以通过length获取长度
+    *   arguments.length 就是实参的个数
+    *
+    *
+    * 获取形参的个数：
+    *   直接使用函数对象的length属性，就可以获取到函数的形参个数
+    *
+    *
+    * callee属性
+    *   callee属性是arguments对象的属性，它是引用当前arguments对象所在的函数，使用该属性，可以调用自身函数
+    * */
+
+    function fn1(a,b,c) {
+        console.log(arguments.length);//获取实参的个数
+    }
+    fn1(1,2,3,4)
+
+    //输入一组数字，求平均值的函数
+    function f() {
+        //先获取到所有的实参 使用arguments
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum / arguments.length;
+    }
+
+    console.log(f(12, 34, 54, 32, 100, 98, 45, 34, 12));
+
+
+
+    // 直接使用函数对象的length属性，就可以获取到函数的形参个数
+    function f3(a,b,c) {
+        console.log(f3.length);//3
+    }
+    f3(1,2,3,4,5,6);
+
+
+
+    // 检测函数的形参和实参是否一致，如果不一致，则抛出错误
+    /*function f4(a,b,c,d) {
+        if (arguments.length != f4.length) {
+            throw new Error("参数不一致");
+        }else{
+            alert("go")
+        }
+    }
+    f4(1,2,3,4,5)*/
+
+    // 检测函数的形参和实参是否一致，如果不一致，则抛出错误
+    /*function f4(a,b,c,d) {
+        if (arguments.length != arguments.callee.length) {
+            throw new Error("参数不一致");
+        }else{
+            alert("go")
+        }
+    }
+    f4(1,2,3,4,5)*/
+
+    var a = 0;
+    (function (){
+        a++;
+        alert(1);
+        if (a > 1){
+            return;
+        }
+        arguments.callee()
+    })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收银了</title>
+</head>
+<body>
+<!--
+    /*
+    * 收银程序
+    * 用户可以输入 商品的单价  商品的数量 并计算折扣（如果消费达到500元  那么打8折) 弹出用户需要交纳的费用
+    * 用户可以输入给多少钱  判断用户输入的钱够不够 并且计算找零钱
+    */
+-->
+<script>
+    var price,count,money,uMoney,addMoney;
+    f();
+    function f1() {
+        uMoney = +prompt("您应支付" + money + "元，请支付");
+        if (!isNaN(uMoney)) {
+            if (uMoney >= money) {
+                alert("找您" + (uMoney - money) + "元，您慢走！");
+            }else{
+                addMoney = money - uMoney;
+                alert("您还应再给" + addMoney + "元");
+                money = addMoney;
+                f1();
+            }
+        }else
+            {
+                alert("请输入正确的格式！");
+                f1();
+            }
+        }
+
+    function f() {
+        price = +prompt("单价：");
+        count = +prompt("数量：");
+        if (isNaN(price) || price === 0 || count === 0){
+            alert("请输入正确的格式！");
+            f();
+        }else{
+            money = price * count;
+            money >= 500 ? money *= 0.8 : money;
+            f1();
+        }
+    }
+
+</script>
+</body>
+</html>

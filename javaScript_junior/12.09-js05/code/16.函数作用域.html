@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 函数作用域、变量作用域（scope）指的是变量在程序中可以访问的有效范围，也称变量可见性。
+    *   全局作用域：变量在整个页面都是可见的，可以被自有的访问
+    *   局部作用域：变量仅能够在当前函数内部可见（或者是当前函数内部的函数可见），函数外不允许访问
+    *   var 或者是 function声明的变量和函数 是按照函数划分的
+    *
+    * */
+
+   /* var a = 1;
+    function f() {
+        console.log(a);
+    }
+    f();
+*/
+
+
+
+    function f2 (){
+        var a = 2;
+        function f3() {
+            console.log(a);
+        }
+        f3();
+    }
+    // f3();//f3是局部函数 外部使用不了的
+    f2();
+    console.log(a);
+</script>
+</body>
+</html>

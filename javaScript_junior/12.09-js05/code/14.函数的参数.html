@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的参数</title>
+</head>
+<body>
+<script>
+    /*
+    * 函数的参数：
+    *   参数分为形参和实参：
+    *       形参：在定义函数的时候，声明的参数变量，仅在函数内部可见
+    *       实参：在调用函数的时候，传入的参数
+    *
+    *   1.一般情况下，函数的实参和形参的个数是相同的，但是JS没有做要求，可以不相同
+    *   2.如果函数的实参小于形参的个数，多出来的形参就是undefined
+    *   3.如果函数的形参小于实参的个数，那么多出来的实参不能被形参访问。
+    *   4.我们可以提前或者是在函数内部设置参数的默认值
+    *
+    *
+    * */
+
+    function f(a,b) {
+
+    }
+    f(1,2);
+
+
+    function f2(a,b,c) {
+        console.log(a,b,c);//1 2 undefined
+        console.log(typeof c);//undefined
+    }
+    f2(1,2);
+
+    function f3(a,b,c) {
+        console.log(a,b,c)
+    }
+    f3(1,2,3,4,5,6,7)
+
+    //书写一个函数 计算 三个值的和
+    /*function add(a,b,c) {
+        return a+b+c;
+    }
+
+    console.log(add(1, 2));//NaN*/
+
+
+    //直接给函数形参默认值
+    /*function add(a,b,c=0) {
+        return a+b+c;
+    }
+    console.log(add(1, 2));//NaN*/
+
+    //判断参数是否存在，否则给出默认值
+    function add(a,b,c) {
+        c = typeof c === "undefined" ? 0 : c;
+        typeof c === "undefined" ? c = 0 : c;
+        return a+b+c;
+    }
+    console.log(add(1, 2));//NaN
+</script>
+</body>
+</html>
