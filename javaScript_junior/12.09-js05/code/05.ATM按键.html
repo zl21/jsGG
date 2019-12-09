@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM按键</title>
+</head>
+<body>
+<script>
+    /*
+    * 输入相应的代码，执行不同的操作（1.查询余额  2.取钱  3.转账  4.退出  5.抢钱）
+    * */
+    var userPress = + (prompt("请输入指令（1.查询余额  2.取钱  3.转账  4.退出  5.抢钱）"));
+    //switch的比较是全等的比较
+    switch (userPress) {
+        case 1:
+            alert("余额是1000000000");
+            break;
+        case 2:
+            alert("取出1000000000");
+            break;
+        case 3:
+            alert("向你转账了1000000000");
+            break;
+        case 4:
+            alert("拜拜");
+            break;
+        case 5:
+            alert("请联系110取钱");
+            break;
+        default:
+            alert("看不懂提示吗 xiabi");
+    }
+
+</script>
+</body>
+</html>

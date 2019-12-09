@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>throw语句</title>
+</head>
+<body>
+<script>
+    /*
+    *  throw是抛出错误
+    *
+    * */
+    var a = 10;
+    if(a > 4){
+        // throw "你错啦吗？";
+        // throw new TypeError("你的类型错误");
+        var userError = "你今天犯错了，错误如下。。。。。。。。";
+        throw new SyntaxError(userError);
+    }
+</script>
+</body>
+</html>

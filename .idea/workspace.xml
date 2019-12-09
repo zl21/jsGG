@@ -12,7 +12,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/22.for循环的应用.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/myTest/收银程序.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/09.构造函数.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/08.定义函数.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-342" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/递归.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,14 +103,17 @@
         <option value="$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/for应用.html" />
         <option value="$PROJECT_DIR$/javaScript_junior/12.07-js04/code/23.流程控制语句.html" />
         <option value="$PROJECT_DIR$/javaScript_junior/12.07-js04/code/18.计算年利率.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.09-js05/code/myTest/异常.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/递归.html" />
+        <option value="$PROJECT_DIR$/javaScript_junior/12.09-js05/code/myTest/收银程序.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="92" />
-    <option name="y" value="12" />
-    <option name="width" value="1595" />
-    <option name="height" value="1040" />
+    <option name="x" value="-77" />
+    <option name="y" value="37" />
+    <option name="width" value="1103" />
+    <option name="height" value="893" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -94,13 +137,13 @@
               <item name="JS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JS" type="462c0819:PsiDirectoryNode" />
               <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
-              <item name="12.07-js04" type="462c0819:PsiDirectoryNode" />
+              <item name="12.09-js05" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JS" type="462c0819:PsiDirectoryNode" />
               <item name="javaScript_junior" type="462c0819:PsiDirectoryNode" />
-              <item name="12.07-js04" type="462c0819:PsiDirectoryNode" />
+              <item name="12.09-js05" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -119,7 +162,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="H:/htmlCss_h5Css3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../htmlCss_h5Css3" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -167,12 +210,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79061000" />
+    <option name="totallyTimeSpent" value="84118000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="10" width="1276" height="832" extended-state="1" />
+    <frame x="-61" y="30" width="882" height="714" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3516129" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26477543" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -195,63 +239,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/02.if_exer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/05.for_exer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2185">
-          <caret line="115" column="45" lean-forward="true" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/04.标识符.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/day01/05.数据类型.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/08.String类型.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/03.isNaN方法的应用.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/06.类型转换为number-parseInt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/16.逗号操作符.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/04,浮点数溢出.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.04-js02/code/02.isNaN方法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -402,13 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/15.switch练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/04.while_exer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-285" />
@@ -425,13 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/for练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -463,16 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/22.for循环的应用.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/21.for练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1101" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/05.if的优化.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -497,8 +460,8 @@
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/晨测.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <first_editor relative-caret-position="95">
+            <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           </first_editor>
           <second_editor />
         </state>
@@ -506,15 +469,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/23.流程控制语句.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/18.计算年利率.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="51" />
+        <state relative-caret-position="152">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -525,11 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/19.判断登录.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/day03/01.流程控制语句.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -537,9 +488,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/myTest/异常.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/13.if练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-228" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/14.switch语句.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/for练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/21.for练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/20.for语句.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37" />
+        <state relative-caret-position="-114" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/19.判断登录.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/18.计算年利率.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/17.do while语句.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-535" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/16.while语句.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-456" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/15.switch练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/22.for循环的应用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.07-js04/code/myTest/递归.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/myTest/收银程序.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/09.构造函数.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaScript_junior/12.09-js05/code/08.定义函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342" />
       </provider>
     </entry>
   </component>
