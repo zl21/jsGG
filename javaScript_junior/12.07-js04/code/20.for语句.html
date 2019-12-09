@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for语句</title>
+</head>
+<body>
+<script>
+    /*
+    * for语句的结构如下
+    *   for（表达式1;判断式2;表达式3）{语句}
+    *       表达式1在循环开始之前，无条件的执行一次，
+    *       而判断式2是在每次循环开始之前判断，如果判断为false，那么就直接退出循环，否则执行语句
+    *       表达式3在每次循环之后执行，然后再次去判断式2判断
+    *
+    * */
+
+    //1 弹出 5次 hello
+    for(var i = 0; i < 5; i++){
+        console.log('hello');
+    }
+
+    var i = 0;
+    for(; i < 5; i++){
+        console.log('hello');
+    }
+
+
+    // 练习：定义一个变量a=5，让a执行5次，每次a加3.然后弹出a的最终值
+    var a = 5;
+    for (var j = 0; j < 5; j++) {
+        a += 3;
+    }
+    console.log(a);
+</script>
+</body>
+</html>

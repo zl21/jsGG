@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一元运算符</title>
+</head>
+<body>
+<script>
+    // 一元加号，是把字符串转成了数字
+    console.log(+ 5);//5
+    console.log(+ "5");//5
+    console.log(+ "a");//NaN
+    console.log(+ []);//0
+    console.log(+ null);//0
+    console.log(+ undefined);//NaN
+    console.log(+ false);//0
+
+    // 一元减号  把字符串转成数字  但是会取负数 (其实可以减0  可以转换,并且不为负)
+    console.log(- 5);//-5
+    console.log(- "5");//-5
+    console.log(- "a");//NaN
+    console.log(- []);//0
+    console.log(- null);//0
+    console.log(- undefined);//NaN
+    console.log(- false);//0
+
+
+    console.log(! false);//true
+    var a = 1;
+    console.log(a++);//1
+    console.log(a--);//2
+
+</script>
+</body>
+</html>

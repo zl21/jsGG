@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击查看等级switch</title>
+</head>
+<body>
+<input type="text" id="ipt">
+<button id="btn">查看</button>
+<script>
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        var oIptV = +oIpt.value;
+        // alert(oIptV);
+        switch (true) {
+            case oIptV >= 90 && oIptV <=100:
+                alert("优秀啊！");
+                break;
+            case oIptV >= 80 && oIptV < 90:
+                alert("哇哦！");
+                break;
+            default:
+                alert("再来一次！")
+        }
+    }
+    /*
+    初始化;
+    while(判断式){
+        更新表达式;
+        循环体;
+    }
+    * */
+</script>
+</body>
+</html>

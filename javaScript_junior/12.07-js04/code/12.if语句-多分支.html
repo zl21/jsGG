@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if语句-多分支</title>
+</head>
+<body>
+<script>
+    /*
+    * if语句-多分支 else if语句：
+    *       else if中放的是判断式，在if语句的基础上再次增加判断
+    *       if（）{}else if（）{}else{}
+    * */
+    // 练习：如果x值为3，y值为2，如果x值大于3，y值为1，如果x值小于3，y值为4
+    var x = 3,y;
+    if (x == 3){
+        y = 2;
+    } else if(x > 3){
+        y = 1;
+    }else{
+        y = 4;
+    }
+
+    // 练习：x值为2，y值为1，如果x值比2小，y值为0，如果x值比10大，y值为10，如果x值小于4且大于3，y值为5，其他情况y为3
+
+    var x = 2,y = 1;
+    if(x < 2){
+        y = 0;
+    }else if(x > 10){
+        y = 10;
+    }else if(x < 4 && x >3){
+        y = 5
+    }else{
+        y = 3;
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for练习</title>
+</head>
+<body>
+<script>
+    /*
+    * for练习
+    *
+    * */
+
+    //1.求1 - 9的和
+    var sum = 0;
+    for (var i = 0; i < 10; i++) {
+        sum += i;
+    }
+    console.log(sum);//45
+
+    //2.求1 - 9的和
+    var sum = 0;
+    for (var i = 0; i < 101; i++) {
+        sum += i;
+    }
+    console.log(sum);//5050
+
+    //3.求1 - 99单数的和
+    var sum = 0;
+    for (var i = 0; i < 100; i++) {
+        if (i % 2 == 1){
+            sum += i;
+        }
+    }
+    console.log(sum);//2500
+
+    var sum = 0;
+    for (var i = 1; i < 100; i += 2) {
+        sum += i;
+    }
+    console.log(sum);//2500
+
+    //4.求1 - 99 3的倍数的和
+    var sum = 0;
+    for (var i = 0; i < 100; i++) {
+        if (i % 3 == 0){
+            sum += i;
+        }
+    }
+    console.log(sum);//1683
+
+    var sum = 0;
+    for (var i = 0; i < 100; i += 3) {
+        sum += i;
+    }
+    console.log(sum);//1683
+
+
+    // 5.定义一个v，当v等于0时，v进行3次自加1。否则v进行4次自加2
+    var v = 0;
+    if (v == 0){
+        for (var i = 0; i < 3; i++) {
+            v ++;
+        }
+    }else{
+        for (var i = 0; i < 4; i++) {
+            v += 2;
+        }
+    }
+    console.log(v);//3
+
+
+    //6.定义v＝3；对变量i由0到3进行遍历；当i 等于2时，v自加2；否则v自加3
+    var v = 3;
+    for (var i = 0; i < 4; i++) {
+        if (i == 2){
+            v += 2;
+        }else{
+            v +=3;
+        }
+    }
+    console.log(v);//14
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if语句-双分支</title>
+</head>
+<body>
+<script>
+    /*
+    * if语句-双分支 else语句：
+    *       else语句仅在 判断式（if的和elseif的）不成立的情况下执行
+    * */
+
+    // 练习1：
+    // 声明变量 a赋值为100；当 a 大于 50 时，弹出“a真大”，否则弹出“a真小”
+
+    var a = 100;
+    if (a > 50){
+        alert("a真大")
+    } else{
+        alert("a真小")
+    }
+
+    /*练习2：
+    y值和x值相关。当X大于等于3时，y值为2。X小于3时，y值为1*/
+    var x = 2,y = 3;
+    if (x >= 3){
+        y = 2;
+    }else{
+        y = 1;
+    }
+
+    /*练习3：
+    如果x大于y成立，则x值为y值加1，否则x值为y值减1*/
+    var x = 2,y = 3;
+    if (x > y){
+        x = y + 1;
+    }else{
+        x = y - 1;
+    }
+
+    /*练习4：
+    如果x大于y或者x小于z成立，则x值为z值，否则x值为y值*/
+    var x = 2,y = 3,z = 4;
+    if(x > y || x < z){
+        x = z;
+    }else{
+        x = y;
+    }
+
+</script>
+</body>
+</html>

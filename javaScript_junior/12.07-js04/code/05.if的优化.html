@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if的优化</title>
+</head>
+<body>
+<script>
+    /*
+    * if的其他写法：
+    *
+    * */
+    //定义两个变量 a  和  b，如果a 大于b  那么弹出你好  否则 弹出 滚蛋
+    var a = 3;
+    var b = 4;
+    //if
+    if (a > b){
+        alert("hello")
+    }else{
+        alert("gun")
+    }
+
+
+    //三元
+    a > b ? alert("hello") : alert("gun");
+
+    //短路原理
+    a > b  && alert("hello");
+    a > b  || alert("gun");
+
+    //短路原理优化
+    a > b  && alert("hello") || alert("gun");
+</script>
+</body>
+</html>

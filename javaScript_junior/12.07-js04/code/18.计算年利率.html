@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算年利率</title>
+</head>
+<body>
+<!--    用户输入一个钱数，年利率是1.05（去年的利息和本金，是今天的本金），计算多少年能翻倍-->
+<input type="text" id="ipt">
+<button id="btn">计算时间按钮</button>
+<script>
+
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+    var year = 0;
+    oBtn.onclick = function () {
+        var userMoney = + oIpt.value;
+        if (!isNaN(userMoney)) {
+            var userPrice = userMoney * 2;
+            while(userMoney < userPrice){
+                userMoney = userMoney * 1.05;
+                year ++;
+            }
+            alert("您的钱翻倍需要"+year+"年");
+        }
+    }
+</script>
+</body>
+</html>

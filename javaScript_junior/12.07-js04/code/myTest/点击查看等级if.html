@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击查看等级</title>
+</head>
+<body>
+<input type="text" id="ipt">
+<button id="btn">查看</button>
+<script>
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        var oIptV = +oIpt.value;
+        if (oIptV <= 100 && oIptV >= 90){
+            alert("优秀啊！");
+        }else {
+            alert("额……");
+        }
+    }
+</script>
+</body>
+</html>

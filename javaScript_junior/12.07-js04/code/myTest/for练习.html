@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for练习</title>
+</head>
+<body>
+<script>
+    /*求1-100的和*/
+    var sum = 0;
+    for (var i = 1;i<=100;i++) {
+        sum += i;
+    }
+    console.log(sum);
+
+    var sum1 = 0;
+    for (var b = 1;b<=99;b++) {
+        if (b % 2 != 0) {
+            sum1 += b;
+        }
+    }
+    console.log(sum1);
+
+    var sum3 = 0;
+    for (var c = 1;c <= 99;c++){
+        if (c % 3 == 0){
+            sum3 += c;
+        }
+    }
+    console.log(sum3);
+
+    var v = 0;
+    if (v == 0){
+        for (var d = 1;d <= 3;d++){
+            v += 1;
+        }
+    }else{
+        for (var e = 1;e <= 4;e++){
+            v += 2;
+        }
+    }
+    console.log(v);
+    
+    v = 3;
+    for (var f = 0;f <= 3;f++){
+        if (f == 2){
+            v += 2;
+        }else{
+            v += 3;
+        }
+    }
+    console.log(v);
+
+
+</script>
+</body>
+</html>

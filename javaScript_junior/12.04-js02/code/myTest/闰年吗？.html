@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 闰年的条件：
+    * 能被4整除且不能被100整除
+    * 或能被400整除
+    * */
+    var year= 2020;
+    if((year%4==0 && year%100!=0) || year%400==0){
+        console.log(year + "是的！");
+    }else{
+        console.log(year + "不是!");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>年利率</title>
+</head>
+<body>
+<input type="text" id="ipt">
+<button id="btn">算一算</button>
+<script>
+    /*
+    * 需求：年利率为1.05，问多少年能翻倍？
+    *
+    * */
+    var year = 0;
+    var oIpt = document.getElementById("ipt");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        var oIptV = +oIpt.value;
+        if (!isNaN(oIptV)){
+            var oIptPrice = oIptV * 2;
+            while(oIptV < oIptPrice){
+                oIptV = oIptV * 1.05;
+                year ++;
+            }
+            alert("需要" + year + "年");
+            year = 0;
+        }
+    }
+</script>
+</body>
+</html>

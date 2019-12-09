@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断登录</title>
+</head>
+<body>
+
+<!--
+    prompt是包含输入框、确认和取消按钮的弹出输入框。
+    如果用户未输入或是点击取消则返回null。
+-->
+<script>
+    //弹出请用户输入：
+    var uName = prompt("请输入用户名：");
+    var uPwd = prompt("请输入密码：");
+    //如果不对就让用户一直输入：
+    function isLogin() {
+        if (uName != "laowang" || uPwd != "8888"){
+            userNum = prompt("请输入用户名：");
+            uPwd = prompt("请输入密码：");
+            isLogin();  //在函数内部调用函数称为递归
+        }else{
+            alert("你是老王！");
+        }
+    }
+</script>
+
+</body>
+</html>
