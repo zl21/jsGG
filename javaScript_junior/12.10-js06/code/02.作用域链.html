@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域链</title>
+</head>
+<body>
+<script>
+    /*
+    * 作用域链：
+    *   当代码在一个环境中执行的时候，会创建变量对象的作用域链（scope chain）
+    *   作用域链的用途是：保证对执行环境有权访问的所有变量和函数的有序访问
+    *   作用域链的首端，始终都是当前执行代码所在环境的变量对象
+    *   标识符沿着作用域链一级一级的搜索标识符的过程，逐级向后走，直到找到标识符为止。（如果找不到，会有错误发生）
+    * */
+
+    var a = 1;
+    function f1() {
+        console.log(a);// undefined
+        var a = 2;
+        console.log(a)//2
+        function f2() {
+            console.log(a)//2
+            a = 3;
+            console.log(a);//3
+            function f3() {
+                console.log(a);//undefined
+                var a = 4;
+                console.log(a);//4
+            }
+            f3();
+        }
+        f2();
+    }
+    f1();
+    console.log(a)//1
+
+
+
+
+    /*var a = 1;
+    function f1() {
+        VO = {
+            arguments:{},
+            a:undefined,
+            f2:function () {
+
+            }
+        }
+        console.log(a);// undefined
+        a = 2;
+        console.log(a)//2
+        function f2() {
+            VO = {
+                arguments:{},
+                f3:function () {
+
+                }
+            }
+            console.log(a)//2
+            a = 3;
+            console.log(a);//3
+            function f3() {
+                VO = {
+                    arguments:{},
+                    a:undefined,
+                }
+                console.log(a);//undefined
+                a = 4;
+                console.log(a);//4
+            }
+            f3();
+        }
+        f2();
+    }
+    f1();
+    console.log(a)//1*/
+</script>
+</body>
+</html>
