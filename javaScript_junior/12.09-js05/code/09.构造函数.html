@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+<script>
+    /*
+    * 使用 Function构造函数
+    *   var fn1 = new Function(p1,p2,p3,p4.....,body)
+    *   p1---pn 都是函数的参数
+    *   body是函数体
+    *   p1--pn  和 body都是字符串格式
+    * */
+
+    var fn1 = new Function("console.log(111)");
+    fn1();
+
+    //以下两种传参方式都可以使用
+    var fn2 = new Function("a","b","c","console.log(a+b+c)");
+    var fn2 = new Function("a,b,c","console.log(a+b+c)");
+    fn2(1,2,3);
+
+    fn4()
+    function fn4() {
+        alert("you")
+    }
+    fn4()
+    var fn4 = function(){
+        alert("hou")
+    }
+
+    f

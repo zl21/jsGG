@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调用函数</title>
+</head>
+<body>
+<script>
+
+    /*
+    * 调用函数：
+    *       在js中，提供了4种函数调用方法，函数调用，方法调用，apply和call调用，使用new调用
+    *
+    * 函数调用：
+    *   默认情况下，函数自己不会执行，需要使用小括号激活并执行函数，小括号中传入参数
+    *
+    * 方法调用：
+    *   当一个函数被设置成一个对象的属性值的时候，被称作为方法，可以通过点操作符调用
+    *
+    *
+    * */
+
+    //函数可以作为对象的某个方法
+    var obj = {
+        name :"lily",
+        sex:"nan",
+        say:function () {
+            alert("aaaaaaaaa");
+        },
+        do:fn1
+    }
+    console.log(obj.name);
+    console.log(obj.say());//undefined
+    obj.do();
+
+
+
+</script>
+</body>
+</html>

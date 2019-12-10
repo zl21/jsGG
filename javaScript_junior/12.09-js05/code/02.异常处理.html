@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异常处理</title>
+</head>
+<body>
+<script>
+    /*
+    *   异常处理：
+    *       try、catch、finally都是异常处理语句
+    *       try{调试的代码}catch(e){捕获的异常,catch的参数就是异常类型，当异常后执行的代码}finally{后期清理代码块};
+    *       正常情况下，JS按顺序执行try中的代码，如果没有异常发生，将忽略catch直接进入finally
+    *       如果在try中出现的异常，或者是使用throw抛的异常，将会执行catch代码，catch代码的参数是错误类型
+    * */
+
+    // try catch 案例
+    try{
+        console.log(a);//当try中出现错误的时候，会直接进入catch执行
+        console.log("我是try");
+    }catch (e) {
+        console.log("catch");
+        console.log(e);//referenceError:a is not defined
+        console.log(e.name);//referenceError
+        console.log(e.message);//a is not defined
+    }
+
+
+    try{
+        console.log("try");
+        throw new Error("你是不是没有定义变量");
+    }catch (e) {
+        console.log("catch")
+        console.log(e);
+        console.log(e.name);
+        console.log(e.message);
+    }
+
+
+
+    try{
+        console.log("try");
+        // throw new Error("你是不是没有定义变量");
+    }catch (e) {
+        console.log("catch")
+        console.log(e);
+        console.log(e.name);
+        console.log(e.message);
+    }finally {
+        console.log('finally')
+    }
+
+    alert(1);
+</script>
+</body>
+</html>

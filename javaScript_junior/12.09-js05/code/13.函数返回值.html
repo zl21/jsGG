@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数返回值</title>
+</head>
+<body>
+<script>
+    /*
+    * 函数返回值：
+    *   函数提供了两个与外界交互的接口，其中参数是入口，用来接收外界的信息。函数返回值作为出口，把运算结果返回出去
+    *   在函数内部，使用return语句可以设置函数的返回值，一旦执行return语句，将停止函数的运行，并返回return语句后的值
+    *   如果函数没有return语句，也就是没有返回值，这个时候，，会先执行完函数体内所有代码。返回值就是undefined
+    *   函数对接受和输出的值得类型 没有任何的限制
+    *   还可以返回一个计算值
+    *
+    * */
+
+    function fn1(a,b){
+        var sum = a + b;
+        return sum;
+        alert("计算完毕");
+    }
+    fn1(1,2);//如果不用变量接受，或者是不使用，那么这个返回值是看不到的
+    console.log(fn1(1,2)+4);//7
+
+
+    function fn1() {
+        var a = 1;
+        return function () {
+            alert(a);
+        }
+    }
+    fn1()();
+    var b = fn1();
+    console.log(b);
+    a();
+
+
+    function teacherMessage(name,age,sex) {
+        alert("我的名字是"+name);
+        alert("我的年龄是"+age);
+        alert("我的性别是"+sex);
+    }
+
+    var teacher1 = {
+        name:"lily",
+        age:"18",
+        sex:"nv"
+    }
+    var teacher2 = {
+        name:"lily1",
+        age:"128",
+        sex:"nan"
+    }
+    function teacherMessage(obj) {
+        alert("我的名字是"+obj.name);
+        alert("我的年龄是"+obj.age);
+        alert("我的性别是"+obj.sex);
+    }
+    teacherMessage(teacher1);
+
+
+    function fn1() {
+        var a = 1;
+        return;//返回的是undefined
+        alert(2);
+    }
+
+    console.log(fn1());
+</script>
+</body>
+</html>

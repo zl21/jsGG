@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买保险</title>
+</head>
+<body>
+<script>
+    /*
+    *   公司给你买保险。可以通过这个程序查询你是否符合条件
+    *       1.只要有对象的都可以买
+    *       2.没有对象的男的 25岁以下不买
+    *       3.没有对象的女的  22岁以下不买
+    * */
+
+    var isObject = + (prompt("你有对象吗？请输入1(有) or 0(没有)"));
+    var age = + (prompt("你多大啊"));
+    var sex = (prompt("你的性别是  m or w"));
+
+    if (isObject){
+        alert("回家抱孩子去吧  给你买");
+    }else if(age < 25 && sex == "m" || age < 22 && sex == "w"){
+        alert("自己回家买去吧")
+    }else{
+        alert("回家抱孩子去吧  给你买");
+    }
+
+    /*if (isObject){
+        alert("回家抱孩子去吧  给你买");
+    }else{
+        if (age < 25 && sex == "m" || age < 22 && sex == "w") {
+            alert("自己回家买去吧")
+        }else{
+            alert("回家抱孩子去吧  给你买");
+        }
+    }*/
+</script>
+</body>
+</html>

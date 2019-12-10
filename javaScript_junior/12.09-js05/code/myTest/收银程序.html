@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收银程序</title>
+</head>
+<body>
+<script>
+    var price = +prompt("请输入商品的单价：");
+    var count = +prompt("请输入商品的数量：");
+    /*计算折扣，若>=500就打8折，弹出用户需要支付的总价。*/
+    if (price*count >= 500){
+        var money = price*count * 0.8;
+        var pay = prompt("您需要支付：" + money + "元，请支付");
+        // var pay = +prompt("用户给钱：");
+        if(pay < money){
+            alert("钱不够，把东西放下！");
+        }else {
+            alert("欢迎下次光临！");
+        }
+    }else {
+        money = price * count;
+        // alert("您需要支付：" + money + "元");
+        var pay = prompt("您需要支付：" + money + "元，请支付");
+        if(pay < money){
+            alert("钱不够，把东西放下！");
+        }else if(pay > money){
+            var qian = pay - money;
+            alert("退您：" + qian);
+        }else {
+            alert("欢迎下次光临！");
+        }
+    }
+
+</script>
+</body>
+</html>
