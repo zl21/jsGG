@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer10</title>
+</head>
+<body>
+<script>
+    var t='a';
+    function test2(){
+        /*VO = {
+            arguments:{},
+            t:a
+        }*/
+        alert(t);
+        t='b';
+        alert(t);
+    }
+    alert(t);
+    test2();    //如果先执行这个的话t的值就会被改变
+    alert(t);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余字数练习</title>
+</head>
+<body>
+<!--
+剩余字数练习：
+    用户在表单内输入文字，显示剩余字数是多少，如果超出 则剩余字数变成红色
+-->
+<textarea name="con" id="text"></textarea>
+<p>您还剩余<span id="reduce">100</span>字</p>
+<script>
+    /*
+    * 1.获取标签
+    * 2.绑定事件（onchange事件  oninput事件）
+    * 3.输入的时候，计算已经输入的文字，然后计算剩余文字
+    * 4.给reduce这个元素改变字数，
+    * 5.判断如果为负 则文字变红
+    *
+    * */
+    /*onchange事件：表单发生改变就会执行
+    oninput事件：表单发生改变就会执行*/
+    var oText = document.getElementById("text");
+    var oReduce = document.getElementById("reduce");
+    oText.onchange = function () {
+        console.log(1);
+    }
+</script>
+</body>
+</html>

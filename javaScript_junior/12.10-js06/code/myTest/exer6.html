@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer6</title>
+</head>
+<body>
+<script>
+
+    var a = 1;
+    function outer() {
+        var b = 2;
+        function inner() {
+            var c = 4;
+            alert(a);   //在函数内部，先使用后声明 就是undefined!
+            // var a = 3;
+        }
+        inner();
+    }
+    outer();
+
+</script>
+</body>
+</html>

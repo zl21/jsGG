@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取标签</title>
+</head>
+<body>
+    <ul class="box" id="box">
+        <li name="active"></li>
+        <li class="show"></li>
+        <li name="active"></li>
+        <li></li>
+    </ul>
+
+    <input type="text" name="user">
+    <input type="text" name="user">
+    <input type="text" name="user">
+    <script>
+        //1.通过ID获取标签 id是唯一的 所以通过ID获取的标签也是唯一的  完美兼容
+        var a = "box";
+        var oBox = document.getElementById(a);
+        var oBox = document.getElementById("box");
+        console.log(oBox);
+        oBox.style.backgroundColor = "yellow";
+        // box.style.backgroundColor = "yellow";//ID不获取也可以直接使用
+
+        // 2.通过标签名获取，无论页面有1个还是多个，通过标签名获取的元素一定是一个复数
+        //获取的是一个集合。拥有length长度
+        //要么在获取的时候添加下标，代表获取某一个。要么在使用的时候添加下标，代表使用哪一个
+        //但是不能一起添加下标 否则出错
+        //前边的doument 可以改为其他获取到的元素，用来获取 某一个元素内的所有的li
+        var oBox_Lis = document.getElementsByTagName("li");
+        var oBox_Lis = oBox.getElementsByTagName("li");
+        console.log(oBox_Lis);
+        oBox_Lis[1].style.backgroundColor = "green";
+
+        var oBox2 = document.getElementsByTagName("ul");
+        var oLis = oBox2[0].getElementsByTagName("li");
+        console.log(oLis);
+
+
+
+        //3.通过类名获取元素 IE9及以上
+        var oBox3 = document.getElementsByClassName("box");
+        console.log(oBox3[0]);
+        var oShow = oBox.getElementsByClassName("show");
+        console.log(oShow[0]);
+
+        //4.通过Name属性获取
+        //     在IE9及IE9以下，是不能通过Name属性获取非表单元素的
+        var oIpt  = document.getElementsByName("user");
+        console.log(oIpt);
+        var oActive = document.getElementsByName("active");
+        console.log(oActive);
+
+
+    </script>
+</body>
+</html>

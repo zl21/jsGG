@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer1</title>
+</head>
+<body>
+<script>
+    /*
+    //全局执行上下文的变量对象练习
+    console.log(a);//undefined
+    var a = 1;
+    f();
+    function f() {
+        alert(f)    //弹出：function f(){ alert(f)}
+    }
+    var b = 2;
+    */
+
+
+    //以下来分析函数的执行上下文的变量对象
+    function f1(a,b) {
+        console.log(a); //1
+        var c = 2;
+        function ff1() {
+            alert("ff1");   //无弹出，因为未调用ff1
+        }
+        var  a = 5;
+    }
+    f1(1,2);
+
+</script>
+</body>
+</html>

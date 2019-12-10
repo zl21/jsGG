@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域练习1</title>
+</head>
+<body>
+<script>
+
+    var a = "a";
+    (function () {
+        alert(a);   //
+        var a = "b";
+    })();
+    alert(a);   //
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件-获取焦点和失去焦点</title>
+</head>
+<body>
+    <input type="text" value="请输入电话号码" id="ipt">
+    <script>
+        /*
+        * 模拟表单输入内容提示：
+        *   当用户没有输入的时候，表单默认提示“请输入电话号码”，如果获取焦点，则清空等待用户输入
+        *   如果用户没有输入内容，表单失去焦点后，恢复“请输入电话号码”
+        *
+        *   获取焦点事件：onfocus
+        *   失去焦点事件：onblur
+        * */
+
+        var oIpt = document.getElementById("ipt");
+        oIpt.onfocus = function () {
+            if(oIpt.value == "请输入电话号码"){
+                oIpt.value = "";
+            }
+        };
+        oIpt.onblur = function () {
+            if(oIpt.value == ""){
+                oIpt.value = "请输入电话号码";
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

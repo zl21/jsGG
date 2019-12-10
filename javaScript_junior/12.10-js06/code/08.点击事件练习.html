@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击事件练习</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 当点击box第一下的时候，box变成粉色，第二下变红色，第三下变粉色，第四下变红色。。。。。。
+
+        /*
+        * 1.获取标签
+        * 2.书写事件
+        * 3.每次点击 让一个变量(外部)累加
+        * 4.累加的值对2取余  可以余 0 或 1  分别代表两个颜色
+        * 5.判断更改颜色
+        * */
+        /*var oBox = document.getElementById("box");
+        var num = 0;//累加器
+        oBox.onclick = function () {
+            num ++;
+            if(num % 2){
+                this.style.backgroundColor = "pink";
+            }else{
+                this.style.backgroundColor = "red";
+            }
+        }*/
+
+
+        /*
+        * 1.获取标签
+        * 2.书写事件
+        * 3.开关思想，定义一个变量 如果为true则代表红色，如果为false则代表粉色
+        * 4.每次点击都让这个变量取反
+        * 5.判断
+        * */
+        var oBox = document.getElementById("box");
+        var flag = true;//开关
+        oBox.onclick = function () {
+            if (flag){
+                this.style.backgroundColor = "pink";
+                // flag = false;
+            }else{
+                this.style.backgroundColor = "red";
+                // flag = true;
+            }
+            // 更改开关的状态
+            flag = !flag;
+        }
+    </script>
+</body>
+</html>
