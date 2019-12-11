@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer5</title>
+</head>
+<body>
+<script>
+
+    //函数声明是整体提升
+    //函数表达式  只提升声明的变量 不会带着函数体一起提升
+    (function() {
+        f2();
+        f1();   //typeError
+        // console.log(f1());
+        var f1 = function(){
+            alert(2);
+        };
+        function f2(){
+            alert(1);
+        }
+    })();
+
+</script>
+</body>
+</html>

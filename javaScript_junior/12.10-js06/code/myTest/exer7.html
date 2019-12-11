@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer7</title>
+</head>
+<body>
+<script>
+/*
+    var a = 1;
+    function f() {
+        a = 100;    //没有重新声明，相当于这里用的a就是全局的a
+        alert(a);
+    }
+    f();    //执行之后会覆盖全局变量
+    alert(a);
+
+    /!*
+    function f() {
+        var = a;
+        alert(a);
+        // var a = 100;    //声明提升了，但是变量定义还留在原地。
+        a = 100;
+    }
+    *!/
+*/
+
+
+    /*--------------分割线-------------*/
+
+    function rain(){
+        var x = 1;
+        function man(){
+            x = 100;    //没有重新定义，所以与上面的x是同一个，这里改变了上面也会变。
+        }
+        man();  //执行完之后会改变x的值
+        alert( x );
+    }
+    rain();
+
+</script>
+</body>
+</html>

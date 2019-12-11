@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer9</title>
+</head>
+<body>
+<script>
+
+    var t='a';
+    function test2(){
+        // var t;   变量的声明提升仅提升声明
+        alert(t);
+        var t='b';
+        // t = "b";     而赋值（定义）留在了原地
+        alert(t);
+    }
+    test2();
+
+</script>
+</body>
+</html>

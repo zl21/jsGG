@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer2</title>
+</head>
+<body>
+<div id="box">关于this</div>
+<script>
+    var x = 2;
+    var obj = {
+        f3: function () {
+            console.log(this.x);//1,因为指向当前所在函数的调用者obj，而x是当前对象的属性，所以就用当前的
+            (function () {
+                console.log(this.x);//2
+            })();
+
+            function f4() {
+                console.log(this.x);//2
+            }
+
+            f4();
+        },
+        x: 1
+    }
+    obj.f3();
+</script>
+</body>
+</html>

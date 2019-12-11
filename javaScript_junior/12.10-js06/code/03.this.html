@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+	/*
+    *   this永远指向其所在函数的调用者，如果没有调用者，则指向全局对象window。
+    *   什么是this:
+    *       js的函数调用是动态的，由于函数可以在不同的环境中调用，在函数中定义了this关键字，用来获取当前的运行环境
+    *       this是一个指针型的变量，动态的引用当前的环境，具体点来说，就是调用函数的对象
+    * */
+
+	//obj.f表示在obj对象上调用f方法（不用括号！！！），则调用者是obj，所以this就指向obj对象，this.x就是obj.x
+	//当把obj.f赋值给了a，然后再全局上下文中调用了a，a在全局上下文的运行环境中执行，所以this就执向的是window。this.x就是window.x
+
+	var x = 1;
+	var obj = {
+		f: function () {
+			console.log(this.x);//this指向当前函数的调用者：object
+		},
+		x: 2
+	};
+
+	function f2() {
+		console.log(this.x);
+	}
+
+	obj.f();//2
+
+	var a = obj.f;
+	a();//1
+	f2();//1
+
+/*------------------------分割线-------------------------*/
+	var x = 1;
+	var obj = {
+		f: function () {
+			console.log(this.x)
+		},
+		x: 2
+    };
+	//正确理解运行环境，obj.f = obj.f 是赋值操作符，把obj.f的地址，赋值给了obj的f属性，表达式返回了一个函数，并且运行环境在全局，所以this指向window
+	(obj.f = obj.f)();//1   因为匿名函数的this指向的是window
+	(false || obj.f)();//1
+	(obj.f, obj.f)();//1
+
+	//这个没有返回一个函数，因为小括号不是运算符，只是一个逻辑分割符，不运算 也没有运行环境 其实就是好 obj.f()
+	(obj.f)();//2
+
+
+	// 指向事件的调用者
+	function f2() {
+		console.log(this);
+	}
+
+	box.onclick = f2;//点击box的时候才调用  所以this指向box
+
+
+	//
+	var x = 2;
+	var obj = {
+		f3: function () {
+			console.log(this.x);//1,因为指向当前所在函数的调用者obj，而x是当前对象的属性，所以就用当前的
+			(function () {
+				console.log(this.x);//2
+			})();
+
+			function f4() {
+				console.log(this.x);//2
+			}
+
+			f4();
+		},
+		// x: 1
+	}
+	obj.f3();
+
+
+</script>
+</body>
+</html>

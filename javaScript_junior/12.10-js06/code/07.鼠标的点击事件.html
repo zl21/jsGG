@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标的点击事件</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById("box");
+    // 单击事件click，是鼠标左键在元素上按下并在元素上抬起后触发
+    oBox.onclick = function () {
+        this.style.backgroundColor="pink";
+    }
+
+    // 双击事件ondblclick
+    oBox.ondblclick = function () {
+        alert("dblclick");
+    }
+
+    // 右键事件oncontextmenu
+    oBox.oncontextmenu = function () {
+        alert("oncontextmenu");
+
+        return false;//阻止默认事件
+    }
+
+</script>
+</body>
+</html>

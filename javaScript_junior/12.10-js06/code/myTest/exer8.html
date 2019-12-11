@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exer8</title>
+</head>
+<body>
+<script>
+
+    var x = 1;
+    function rain(){
+        alert( x );
+        var x = 'man';
+        alert( x );
+    }
+    rain();
+
+//    以上代码函数提升后如下：
+    var x = 1;
+    function rain(){
+        var x;  //变量的声明提升了
+        alert( x );
+        x = 'man';  //但是变量的赋值留在原地了
+        alert( x );
+    }
+    rain();
+
+</script>
+</body>
+</html>
