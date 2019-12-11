@@ -13,12 +13,26 @@
         function inner() {
             var c = 4;
             alert(a);   //在函数内部，先使用后声明 就是undefined!
-            // var a = 3;
+            var a = 3;
+            var a = 9;
+            alert(a);
         }
         inner();
     }
     outer();
 
+    /*
+    var a = 1;
+    function outer() {
+        function inner() {
+            alert(a);   //在函数内部，先使用后声明 就是undefined!
+            var a = 3;
+            var a = 9;
+            alert(a);   //9,不会被覆盖
+        }
+    }
+        outer();
+*/
 </script>
 </body>
 </html>
