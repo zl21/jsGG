@@ -12,6 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< Updated upstream
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javaScript_junior/12.11-js07/code/myTest/tab切换进阶版2练习.html">
@@ -50,6 +51,9 @@
         </entry>
       </file>
     </leaf>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> Stashed changes
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,7 +123,12 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< Updated upstream
     <option name="x" value="491" />
+=======
+    <option name="x" value="437" />
+    <option name="y" value="43" />
+>>>>>>> Stashed changes
     <option name="width" value="1393" />
     <option name="height" value="919" />
   </component>
@@ -205,8 +214,12 @@
     <option name="totallyTimeSpent" value="153096000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="393" y="0" width="1114" height="735" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="350" y="35" width="1114" height="735" extended-state="0" />
+>>>>>>> Stashed changes
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15955473" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
