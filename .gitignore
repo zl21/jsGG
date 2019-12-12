@@ -1,7 +1,11 @@
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 *.mmap
 =======
 .idea/workspace.xml
 guiGu
 
+=======
+*.mmap
+>>>>>>> Stashed changes
