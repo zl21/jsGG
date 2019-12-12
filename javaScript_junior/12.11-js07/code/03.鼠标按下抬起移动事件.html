@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标按下抬起移动事件</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">1</div>
+<script>
+    /*
+    * 鼠标按下抬起移动事件:
+    *   onmousedown:鼠标按下触发
+    *   onmousemove:鼠标移动触发（无论是否按下鼠标）,只要移动就会一直触发
+    *   onmouseup:鼠标抬起触发
+    *
+    * */
+
+    /*var oBox = document.getElementById("box");
+    var num = 1;
+    oBox.onmousemove = function () {
+        // 只要鼠标进入box 移动，就会执行累加器，并把值放在元素中
+        num ++;
+        oBox.innerHTML = num;
+    }*/
+
+
+    var oBox = document.getElementById("box");
+    var num = 1;//累加器
+    // 鼠标按下以后，变色
+    oBox.onmousedown = function () {
+        this.style.backgroundColor = "green";
+
+        oBox.onmousemove = function () {
+            num ++;
+            oBox.innerHTML = num;
+        }
+    }
+
+    // 鼠标抬起变色
+    oBox.onmouseup = function () {
+        this.style.backgroundColor = "red";
+        //取消事件 是把null赋值给事件，即可取消事件
+        oBox.onmousemove = null;
+    }
+</script>
+</body>
+</html>

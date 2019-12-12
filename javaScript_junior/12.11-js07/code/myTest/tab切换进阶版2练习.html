@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进阶版2</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 600px;
+            margin: 10px auto;
+            border: 1px solid gray;
+        }
+        .title{
+            width: 600px;
+            overflow: hidden;/*清一下浮动咯，还我高度！！！*/
+        }
+        .title>li{
+            width: 32px;/*两个字符的宽度。*/
+            margin: 0px 84px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;/*哦豁，父级塌陷了！*/
+            /*border-top: 1px solid gray;*/
+            margin-top: -1px;/*为了让上边框显示在父元素的上边框之上，覆盖住上边框。*/
+        }
+        .con{
+            width: 600px;
+        }
+        .con>li{
+            width: 600px;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            background: #bfa;
+            display: none;
+        }
+        .title>.active{
+            color: red;
+            border-top: 20px solid red;
+        }
+        .con>.show{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul class="title">
+        <li class="active">title1</li>
+        <li>title2</li>
+        <li>title3</li>
+    </ul>
+    <ul class="con">
+        <li class="show">内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+    </ul>
+</div>
+<script>
+    /*1、获取标签*/
+    var oTitle = document.getElementsByClassName("title")[0];
+    var o_Title_Lis = oTitle.getElementsByTagName("li");
+    // console.log(o_Title_Lis);
+    var oCon = document.getElementsByClassName("con")[0];
+    // console.log(oCon);
+    var o_Con_Lis = oCon.getElementsByTagName("li");
+
+    /*2、目的：先将title中的所有的子标签li的class属性清空，将con中的子标签的class属清空。
+    * 当点击时，将获取当前点击的标签并将active赋给className，同时将show也赋给相应的标签的class。
+    * 步骤：1. 先写第二个标签的点击事件；
+    *       2. 用for循环封装一下遍历清空；
+    *       3. 再用一个父级的for来为当前被点击的元素创建一个索引index；
+    *       5. 将索引index用到当前需要更改class属性的标签中。
+    *       6. 共用一个for；
+    * */
+    for (var i = 0; i < o_Title_Lis.length; i++) {
+        o_Title_Lis[i].index = i;
+        o_Title_Lis[i].onclick = function () {
+            for (var i = 0; i < o_Title_Lis.length; i++) {
+                o_Title_Lis[i].className = "";
+                o_Con_Lis[i].className = "";
+            }
+            this.className = "active";
+            o_Con_Lis[this.index].className = "show";
+        }
+    }
+</script>
+</body>
+</html>

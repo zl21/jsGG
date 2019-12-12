@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定义对象</title>
+</head>
+<body>
+<script>
+    /*
+    * 定义对象3种方法：
+    *   1.构造函数法
+    *       使用new操作符调用构造函数，可以造一个实例对象
+    *           var objectName = new functionName（参数）;
+    *           参数说明：
+    *               objectName：实例化对象的标识符
+    *               functionName：是构造函数的名字（对象、数组、字符串、布尔、等等都有）
+    *               参数：实例化对象的配置参数列表
+    *
+    *   2.对象直接量
+    *       可以使用对象直接量快速的定义对象，也是最高效，最简洁的方法
+    *       var objName = {
+    *           属性名1:属性值1,
+    *           属性名2:属性值2,
+    *           属性名3:属性值3,
+    *        }
+    *       属性名和属性值使用冒号间隔，每一个键值对使用逗号间隔，最后一个键值对可以省略逗号；
+    *       属性名可以是一个标识符，也可以是字符串类型的标识符；
+    *       属性值可以是任何类型的值；
+    *       如果括号中什么都不写，就是一个空对象。
+    *
+    *   3.使用Object.create方法
+    *       ES5新增的一个方法，用来定义一个实例对象
+    *       这个方法可以指定对象的原型和对象的特性
+    *       Object.create(prototype,description)
+    *           prototype:指定原型对象，可以是null(创建一个干净的对象)
+    *           description：可选的参数，包含一个或多个属性，属性是用来描述包含数据特性和访问器特性
+    *               value：值
+    *               writable：默认false 设置属性值 是否可以书写
+    *               enumerable:默认false  设置属性是否可以被枚举（for/in）
+    *               configurable:默认是false设置是否可以修改属性特性  或删除属性
+    *               访问器：包含两个方法  get方法 和set方法
+    *
+    *
+    *
+    * */
+
+
+    // 1.构造函数法
+     var num1 = new Number(111);
+    console.log(num1);
+
+    var obj = new Object({
+        name:1
+    });
+    console.log(obj);
+
+    //2.对象直接量
+    var obj1 = {
+        name:"lily",
+        "sex":"女",
+        score:[100,90,80,12,35,34],
+        fri:{
+            fir1:"xiaowang",
+            fir2:"xiaoli",
+            fir3:{
+                sis1:"dahua",
+                sis2:"xiaohua",
+                sis3:["zhangdama","zhangxiaoma","zhangma"]
+            }
+        }
+    }
+    console.log(obj1.sex);
+
+    //3 Object.create方法
+    var obj = {};
+    console.log(obj);
+
+    var obj2 = Object.create(obj1);
+    console.log(obj2);//空对象  但是继承了obj1
+    console.log(obj2.name);//自己没有没关系  他爹有
+
+
+    //创建一个干净的对象
+    var obj3 = Object.create(null);
+    console.log(obj3);
+
+
+    //创建一个对象
+    var obj4 = Object.create(null,{
+        name:{
+            value:"xiaowang",
+            writable:true,
+            enumerable:true,
+        },
+        sex:{
+            value:"nv"
+        }
+    })
+    console.log(obj4);
+    console.log(obj4.name);
+    obj4.name = "laowang";
+    console.log(obj4);
+
+    for(i in obj4){
+        console.log(i);
+    }
+
+
+    //访问器属性
+    var obj5 = Object.create(null,{
+        a:{
+            value:"hello",
+            writable:true
+        },
+        b:{
+            get:function () {
+                return this.a+" world"
+            },
+            set:function (i) {
+                this.a = i + "我拖堂了";
+            }
+        }
+    })
+    console.log(obj5);
+    console.log(obj5.b);//当调用一个属性的时候，会访问他的访问器属性的get，get方法的返回值就是b的值
+    obj5.b = "hahaha";//当设置属性的时候，会调用访问器的set方法，设置的值就是方法的参数
+    console.log(obj5);
+
+
+</script>
+</body>
+</html>

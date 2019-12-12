@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入移出事件</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            overflow: hidden;
+        }
+        #box>p{
+            background-color: pink;
+        }
+        #box>h1{
+            background-color: #009ff2;
+        }
+    </style>
+</head>
+<body>
+<!--
+    鼠标移入移出事件：
+        onmouseover：鼠标移入（支持冒泡）
+        onmouseout：鼠标移出（支持冒泡）
+
+        onmouseenter：鼠标移入（不支持冒泡）
+        onmouseleave：鼠标移出（不支持冒泡）
+-->
+<div id="box">
+    <p>我是一个p标签</p>
+    <h1>我是一个h1</h1>
+    <span id="num">1</span>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+    var oNum = document.getElementById("num");
+
+    /*当鼠标移入box一次，那么累加器就加一*/
+    /*var num = 1;
+    oBox.onmouseover = function () {
+        num ++;
+        oNum.innerHTML = num;
+    }
+    oBox.onmouseout = function () {
+        alert("移出")
+    }*/
+
+
+    /*var num = 1;
+    oBox.onmouseenter = function () {
+        num ++;
+        oNum.innerHTML = num;
+    }
+    oBox.onmouseleave = function () {
+        alert("移出")
+    }*/
+</script>
+</body>
+</html>
