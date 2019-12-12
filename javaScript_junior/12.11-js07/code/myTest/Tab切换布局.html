@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        #outer{
+            width: 600px;
+            margin: 10px auto;
+            border: 1px solid gray;
+        }
+        #title{
+            width: 600px;
+            margin: 0 auto;
+            height: 50px;
+            /*overflow: hidden;   !*避免父级塌陷之后下面的内容区顶上来！！！*!*/
+            /*background: #fbf;*/
+        }
+        #title>li{
+            width: 32px;
+            height: 50px;
+            margin: 0px 84px;
+            /*background: #bfa;*/
+            float: left;
+            border-top: 1px solid gray;
+            margin-top: -1px;/*为了让边框上去与父元素的上边框重合。*/
+            /*margin:0px 10px;*/
+            /*border: 1px solid;*/
+            text-align: center;
+            line-height: 50px;
+        }
+        #con{
+            width: 600px;
+        }
+        #con li{
+            width: 600px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            /*float: left;*/
+            background:#9bf5ff;
+            display: none;  /*后用js打开*/
+        }
+    </style>
+</head>
+<body>
+
+    <div id="outer">
+        <ul id="title">
+            <li>精选</li>
+            <li>社会</li>
+            <li>娱乐</li>
+        </ul>
+        <ul id="con">
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+        </ul>
+    </div>
+
+</body>
+</html>

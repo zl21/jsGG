@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数优先提升</title>
+</head>
+<body>
+<script>
+    /*fn1();
+    function fn1() {
+        alert(1)
+    }
+    var fn1 = 2;*/
+
+    // 函数优先提升
+    function fn1() {
+        alert(1);
+    }
+    var fn1;//当前边已经声明fn1了，后边的声明都无效，当重新赋值的时候就有效了
+    // fn1 = 2;
+    fn1();//1
+    fn1 = 2;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var oBox = document.getElementById("box");
+        var oLis = oBox.getElementsByTagName("li");
+        for (var i = 0; i < oLis.length ; i++) {
+            oLis[i].onclick = function () {
+                //这个地方不能使用i，因为事件是异步代码，等到所有同步代码执行完毕才执行异步代码
+                //所以当用户点击的时候，for循环已经执行完毕，i已经变成4，所以这里用i就会不能当下标
+                //this可以使用，因为点击谁，谁调用函数，this就指向谁
+                this.style.backgroundColor = "red";
+            }
+        }
+
+    </script>
+</body>
+</html>
