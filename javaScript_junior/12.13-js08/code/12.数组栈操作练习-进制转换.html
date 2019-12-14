@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栈操作练习 -进制转换</title>
+</head>
+<body>
+<script>
+    function to2b(num) {
+        var arr = [];//一个新栈，把每次生成的余数压到栈里
+        var r = null;//用来保存每次生成的余数
+        var s = "";//最后返回的二进制字符串
+        while(num > 0){
+            r = num % 2;//求出每次的余数
+            arr.push(r);//把余数入栈
+            num = parseInt(num / 2);//求出num计算后的值 并向下取整
+        }
+        while(arr.length > 0){
+            s += arr.pop();//pop是把最后一个值删了 并返回出来 和s拼接  放在了s的首位
+        }
+        return s;
+    }
+    console.log(to2b(100));
+    console.log(to2b(1000));
+    console.log(to2b(3));
+    // console.log((100).toString(2));//1100100
+</script>
+</body>
+</html>

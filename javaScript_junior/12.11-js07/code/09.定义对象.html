@@ -39,9 +39,6 @@
     *               enumerable:默认false  设置属性是否可以被枚举（for/in）
     *               configurable:默认是false设置是否可以修改属性特性  或删除属性
     *               访问器：包含两个方法  get方法 和set方法
-    *
-    *
-    *
     * */
 
 
@@ -125,7 +122,6 @@
     console.log(obj5.b);//当调用一个属性的时候，会访问他的访问器属性的get，get方法的返回值就是b的值
     obj5.b = "hahaha";//当设置属性的时候，会调用访问器的set方法，设置的值就是方法的参数
     console.log(obj5);
-
 
 </script>
 </body>

@@ -82,6 +82,7 @@
         for (var i = 0; i < oTitleH3s.length; i++) {
             //公用一个for循环
             oTitleH3s[i].index = i;
+            console.log(i);
             oTitleH3s[i].onclick = function () {
                 for (var i = 0; i < oTitleH3s.length; i++) {
                     oTitleH3s[i].className = "";
@@ -89,6 +90,7 @@
                 }
                 this.className = "active";
                 //中括号中想要书写 当前this的下标是多少
+                console.log(this.index);
                 oConLis[this.index].className = "show";
             }
         }

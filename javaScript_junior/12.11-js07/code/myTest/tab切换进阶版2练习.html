@@ -73,20 +73,20 @@
 
     /*2、目的：先将title中的所有的子标签li的class属性清空，将con中的子标签的class属清空。
     * 当点击时，将获取当前点击的标签并将active赋给className，同时将show也赋给相应的标签的class。
-    * 步骤：1. 先写第二个标签的点击事件；
-    *       2. 用for循环封装一下遍历清空；
+    * 步骤： 1. 用循环全部清空；
     *       3. 再用一个父级的for来为当前被点击的元素创建一个索引index；
     *       5. 将索引index用到当前需要更改class属性的标签中。
     *       6. 共用一个for；
     * */
     for (var i = 0; i < o_Title_Lis.length; i++) {
-        o_Title_Lis[i].index = i;
+        o_Title_Lis[i].index = i;   //要再点击事件之前创建，不然会受到异步执行的影响。
         o_Title_Lis[i].onclick = function () {
             for (var i = 0; i < o_Title_Lis.length; i++) {
                 o_Title_Lis[i].className = "";
                 o_Con_Lis[i].className = "";
             }
             this.className = "active";
+            // o_Con_Lis[i].className = "show";    //报错，由于上面的for循环已经将i变成3了（异步执行），而下标为3的标签是不存在的。
             o_Con_Lis[this.index].className = "show";
         }
     }

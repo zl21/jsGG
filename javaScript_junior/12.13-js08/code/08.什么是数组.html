@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>什么是数组</title>
+</head>
+<body>
+<script>
+    /*
+    * 什么是数组：
+    *   数组（Array）是一个有序的数据集合。
+    *   数组中每一个成员都被称作为元素，每个元素的键名被称作为下标（index）
+    *   数组中不同的元素的值可以是不同类型的。
+    *
+    *   数组的长度也是弹性的，可以读写
+    *
+    * */
+    var arr = [123,"abc",null,undefined,{name:"xioawang"},true,[1,2,3],function () {
+        alert(1);
+    }];
+    console.log(arr);
+    // arr[arr.length - 1]();
+    arr.length = 100;
+    console.log(arr);
+</script>
+</body>
+</html>

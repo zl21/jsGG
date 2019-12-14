@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读取属性</title>
+</head>
+<body>
+<script>
+    /*
+    * 读取属性：
+    *   1.使用点语法
+    *       点语法可以快速的读取属性，点的左侧是要读取的对象变量，右侧是属性名
+    *
+    *   2.中括号语法
+    *       - 结构上分析，对象被称作为关联数组，所以也可以通过中括号来获取属性值
+    *       - 中括号的语法中，里边书写变量，或者是必须引号包围的属性名
+    *
+    *   3.Object.getOwnPropertyNames()
+    *       Object.getOwnPropertyNames()函数能够返回对象的私有属性名称，私有属性是用户给当前对象定义的属性，而不是继承的属性
+    *       返回的是一个数组
+    *       无论属性的特性是什么样子 都可以被获取
+    *
+    *   4.Object.keys()
+    *       Object.keys()函数 仅能获取可枚举的私有属性  返回的是一个数组
+    *
+    *   5.Object.getOwnPropertyDescriptor()
+    *       Object.getOwnPropertyDescriptor(): 获取对象属性的描述符
+    *
+    * */
+    // 遍历以下对象，然后在每一个属性值后添加一个  @ 符号
+    var obj1 = {
+        name:"xiaowang",
+        like:"唱跳rap篮球",
+        time:"两年半"
+    }
+
+    for(var item in obj1){
+        console.log(item);
+        obj1[item] = obj1[item] + "@";
+    }
+    console.log(obj1);
+
+
+    console.log(Object.getOwnPropertyNames(obj1));//["name","like","time"]
+
+
+    //对 create方法创建的对象 进行属性设置
+    var obj2 = Object.create(null,{
+        name:{
+            value:"新宝岛",
+            enumerable:true
+        },
+        time:{
+            value:"5min",
+            enumerable:true
+        },
+        like:{
+            value:"rap"
+        }
+
+    })
+    console.log(Object.getOwnPropertyNames(obj2));//["name","like","time"]
+    console.log(Object.keys(obj2));//["name","time"]
+
+    console.log(Object.getOwnPropertyDescriptor(obj1, "like"));//{value: "唱跳rap篮球@", writable: true, enumerable: true, configurable: true}
+    console.log(Object.getOwnPropertyDescriptor(obj2, "time"));//{value: "5min", writable: false, enumerable: true, configurable: false}
+
+</script>
+</body>
+</html>
