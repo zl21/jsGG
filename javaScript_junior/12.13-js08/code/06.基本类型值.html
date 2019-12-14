@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本类型值</title>
+</head>
+<body>
+<script>
+    /*
+    * 基本类型值:
+    *   基本类型值：null  undefined  number  boolean  string
+    *   基本类型值按值访问，直接访问变量中的实际的值
+    *   基本类型值都是储存在栈区。
+    *
+    * */
+    var num1 = 10;
+    var num2 = 20;
+    var num3 = num1;
+    num3 = 40;
+    console.log(num1);//10
+
+    /*
+    * 基本类型值的特点：
+    *   1.基本类型值不可变（除非赋值后直接替换新值）
+    *   2.我们不能给基本类型值设置自定义的方法和属性
+    *   3.基本类型值的比较是 值和值的比较
+    *   4.基本类型值的变量储存在栈区，栈区包括 变量的标识符 和变量的值
+    *
+    * */
+    var obj1 = {
+
+    }
+    obj1.name="xiaowang";
+
+    var str = "hello";
+    str.name = "xiaowang";
+    str.sex = "haha";
+    console.log(str);
+    console.log(str.name);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除属性</title>
+</head>
+<body>
+<script>
+    /*
+    * 删除属性：
+    *    delete 运算符可以删除属性
+    *    当删除属性以后，这个属性的值并不是变成undefined了  而是直接从对象移出
+    *
+    * */
+    var obj = {
+        name:"laowang",
+        sex:"nan",
+        like:undefined
+    }
+    console.log(obj.like);//可以设置一个属性值为undefined
+    console.log(Object.getOwnPropertyNames(obj));//设置为undefined值的属性名 仍然可以获取到
+
+    delete obj.sex;//删除一个属性
+    console.log(obj);
+    console.log(Object.getOwnPropertyNames(obj));//当一个属性被删除的话，就枚举不到他的这个属性名了
+
+</script>
+</body>
+</html>

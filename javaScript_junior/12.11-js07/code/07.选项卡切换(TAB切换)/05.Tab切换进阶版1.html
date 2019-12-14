@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.Tab切换基础版2.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .outer{
+            width: 606px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        .title{
+            width: 606px;
+            overflow: hidden;
+        }
+        .title>h3{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #666;
+            border: 1px solid #000;
+            float: left;
+        }
+
+        .con{
+            width: 606px;
+        }
+        .con>li{
+            width: 606px;
+            height: 300px;
+            line-height: 300px;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+        .title>h3.active{
+            background-color: red;
+        }
+        .con>li.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="title">
+            <h3 class="active">标题1</h3>
+            <h3>标题2</h3>
+            <h3>标题3</h3>
+        </div>
+        <ul class="con">
+            <li class="show">内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <script>
+        //获取标签
+        var oTitle = document.getElementsByClassName("title")[0];
+        var oCon = document.getElementsByClassName("con")[0];
+        var oTitleH3s = oTitle.getElementsByTagName("h3");
+        var oConLis = oCon.getElementsByTagName("li");
+
+        oTitleH3s[1].onclick = function () {
+            for (var i = 0; i < oTitleH3s.length; i++) {
+                oTitleH3s[i].className = "";    /*注意这里清的是class name，就是说大家的class属性都为空了。*/
+                oConLis[i].className = "";
+            }
+            this.className = "active";  /*这里是将空的class属性换成active。*/
+            oConLis[1].className = "show";
+        }
+
+        oTitleH3s[2].onclick = function () {
+            for (var i = 0; i < oTitleH3s.length; i++) {
+                oTitleH3s[i].className = "";
+                oConLis[i].className = "";
+            }
+            this.className = "active";
+            oConLis[2].className = "show";
+        }
+
+        oTitleH3s[0].onclick = function () {
+            for (var i = 0; i < oTitleH3s.length; i++) {
+                oTitleH3s[i].className = "";
+                oConLis[i].className = "";
+            }
+            this.className = "active";
+            oConLis[0].className = "show";
+        }
+
+    </script>
+</body>
+</html>

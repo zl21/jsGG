@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制对象状态</title>
+</head>
+<body>
+<script>
+    /*
+    * 控制对象状态：
+    *   1.Object.preventExtensions():阻止为对象添加新的属性
+    *   2.Object.seal():阻止为对象添加新的属性,同时也不能删除旧属性
+    *   3.Object.freeze():阻止为对象添加新的属性,同时也不能删除旧属性，不允许修改属性值
+    *
+    *  3个辅助检查函数：
+    *   Object.isExtensible() 检测对象是否可以被添加新属性
+    *   Object.isSealed()检测一个对象是否使用了 seal方法
+    *   Object.isFrozen()检测一个对象是否使用了 freeze方法
+    *
+    * */
+
+    // 1.Object.preventExtensions():
+    var obj = {
+        name:"xiaoxinxin",
+        width:"200",
+        height:"300"
+    }
+    console.log(obj);
+    obj.color = "red";//设置新属性
+    console.log(obj);
+    console.log(Object.isExtensible(obj));
+    Object.preventExtensions(obj);//阻止设置新属性
+    console.log(Object.isExtensible(obj));
+    obj.bg = "green";
+    console.log(obj);//阻止以后 无法设置新属性
+
+
+    // 2.Object.seal():
+    var obj2 = {
+        name:"dadudu",
+        width:"200",
+        height:"300"
+    }
+    console.log(obj2);
+    delete obj2.width;//删除一个旧属性
+    console.log(obj2);
+    console.log(Object.isSealed(obj2));
+    Object.seal(obj2)//阻止添加新属性 和删除旧属性
+    console.log(Object.isSealed(obj2));
+    delete obj2.height;
+    console.log(obj2);
+
+
+    // 3.Object.freeze()
+    var obj3 = {
+        name:"xiaowangba",
+        width:"200",
+        height:"300"
+    }
+    console.log(obj3);
+    obj3.width = "1000";//修改旧属性
+    console.log(obj3);
+    console.log(Object.isFrozen(obj3));
+    Object.freeze(obj3);
+    console.log(Object.isFrozen(obj3));
+    obj3.height = "800";
+    console.log(obj3);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栈操作</title>
+</head>
+<body>
+<script>
+    /*
+    * 栈操作：
+    *   使用push()和pop()方法,可以在数组的尾部执行操作。
+    *   其中push方法，能够把一个或多个参数附加到数组的尾部，并返回附加元素以后，数组的长度
+    *   pop方法是能够删除数组中的最后一个元素，并返回删除的值
+    *
+    *   补充：
+    *       栈是先进后出，后进先出的原则。类似的情况是，叠放物品，或者子弹上膛
+    * */
+
+    var arr = [];//空栈
+    console.log(arr.push(1));//入栈 返回新长度
+    console.log(arr.push(2,3));//入栈 一次可以插入多个值 返回新长度
+    console.log(arr);
+
+    console.log(arr.pop());//出栈 返回删除的值
+    console.log(arr.pop());//出栈 返回删除的值
+    console.log(arr);
+</script>
+</body>
+</html>

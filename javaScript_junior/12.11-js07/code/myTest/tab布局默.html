@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teb-Test</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        .outer{
+            width: 600px;
+            margin: 10px auto;
+            border: 1px solid #feeefe;
+        }
+        .title{
+            overflow: hidden;
+        }
+        .title>li{
+            width: 32px;
+            height: 50px;
+            margin: -1px 84px 0px 84px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+        }
+        .con{}
+        .con>li{
+            width: 600px;
+            height: 400px;
+            display: none;
+        }
+        .title>.active{
+            border-top: 1px solid red;
+            color: red;
+        }
+        .con>.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <ul class="title">
+        <li class="active">吃饭</li>
+        <li>睡觉</li>
+        <li>学习</li>
+    </ul>
+    <ul class="con">
+        <li class="show">f</li>
+        <li>er</li>
+        <li>we</li>
+    </ul>
+</div>
+<script>
+    var oTitle = document.getElementsByClassName("title")[0];
+    var oTitleLis = oTitle.getElementsByTagName("li");
+    var oCon = document.getElementsByClassName("con")[0];
+    var oConLis = oCon.getElementsByTagName("li");
+
+    for (var i = 0; i < oConLis.length; i++) {
+        oTitleLis[i].index = i;
+        oTitleLis[i].onclick = function () {
+            for (var i = 0; i < oTitleLis.length; i++){
+                oTitleLis[i].className = "";
+                oConLis[i].className = "";
+            }
+            this.className = "active";
+            console.log(this.index);
+            oConLis[this.index].className = "show";
+        }
+    }
+</script>
+</body>
+</html>
