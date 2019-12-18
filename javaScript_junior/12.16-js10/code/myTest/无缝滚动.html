@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 1005px;
+            margin: 200px auto;
+            border: 1px solid #000000;
+            overflow: hidden;
+        }
+        #con{
+           width:2100px;
+           overflow: hidden;
+            position: relative;
+            left: 0;
+        }
+        #con img{
+            float: left;
+            width: 193px;
+            height: 136px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="left">向左走</button>
+    <button id="right">向右走</button>
+    <button id="stop">停止</button>
+    <div class="outer">
+       <div id="con">
+           <img src="../../images/01.jpg" alt="">
+           <img src="../../images/02.jpg" alt="">
+           <img src="../../images/03.jpg" alt="">
+           <img src="../../images/04.jpg" alt="">
+           <img src="../../images/05.jpg" alt="">
+           <img src="../../images/01.jpg" alt="">
+           <img src="../../images/02.jpg" alt="">
+           <img src="../../images/03.jpg" alt="">
+           <img src="../../images/04.jpg" alt="">
+           <img src="../../images/05.jpg" alt="">
+       </div>
+    </div>
+    <script>
+        var oCon = document.getElementById("con");
+        var oLeft = document.getElementById("left");
+        var oRight = document.getElementById("right");
+        var oStop = document.getElementById("stop");
+        var timer = null,timer2 = null;
+        var oConLeft = 0;
+        function moveLeft () {
+            timer = setInterval(function () {
+                oConLeft += 1;
+                if (oConLeft % (193 + 10) == 0) {
+                    clearInterval(timer);
+                    timer2 = setTimeout(function () {
+                        moveLeft();
+                    }, 1000)
+                }
+                if (oConLeft >= (193 + 10) * 5) {
+                    oConLeft = 0;
+                }
+                oCon.style.left = -oConLeft + "px";
+            }, 3)
+        }
+        function moveRight () {
+            timer = setInterval(function () {
+                oConLeft -= 1;
+                if (oConLeft % (193+10) == 0) {
+                    clearInterval(timer);
+                    timer2 = setTimeout(function () {
+                        moveRight();
+                    }, 1000)
+                }
+                if (oConLeft <= 0) {
+                    oConLeft = (193+10)*5;
+                }
+                oCon.style.left = -oConLeft + "px";
+            }, 3)
+        }
+        function clear () {
+            clearInterval (timer)
+        }
+        moveLeft ();
+        oLeft.onclick = function () {
+            clear();
+            moveLeft();
+        }
+        oRight.onclick = function () {
+            clear();
+            moveRight();
+        }
+        oStop.onclick = function () {
+            clear();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>间隙调用计时器</title>
+</head>
+<body>
+    <h2 id="con">敌军还有<span id="sec">10</span>秒到达战场</h2>
+<script>
+    /*
+    * 间隙调用计时器：
+    *   setInterval(code,interval)
+    *   code也可以是一个字符串，也可以是一个函数，传参和setTimeout是一样的，并且是把代码放在了window的环境中执行
+    *   interval是间歇的时间,先延迟才去执行
+    *   该方法返回一个timerID，timerID代表当前计时器的句柄
+    *   clearInterval就是清除这个计时器的
+    *
+    * */
+
+    /*setInterval(function () {
+        alert(1);
+    },3000)*/
+
+    var oSec = document.getElementById("sec");
+    var oCon = document.getElementById("con");
+    var i = 10;
+    var timer1 = setInterval(function () {
+        i --;
+        if (i <= 0){
+            oCon.innerHTML = "全军出击";
+            clearInterval(timer1);
+        }
+        oSec.innerHTML = i;
+    },1000)
+
+
+
+</script>
+</body>
+</html>

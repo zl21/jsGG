@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>journal</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .outer{
+            margin: 50px auto;
+            width: 226px;
+            /*height: 400px;*/
+            background-color: rgb(233, 233, 233);
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            padding-bottom: 10px;
+        }
+        .month{
+            padding: 10px 5px 0 5px;
+        }
+        ul{
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        li{
+            float: left;
+            border: 1px solid #000;
+            width: 50px;
+            height: 50px;
+            margin:10px ;
+            font: bold 16px 微软雅黑;
+            text-align: center;
+            padding-top: 4px;
+            overflow: hidden;
+            background-color: rgb(66, 66, 66);
+            color: #fff ;
+        }
+        .arrangement{
+            background-color: rgb(241, 241, 241);
+            padding: 10px;
+            border: #fff 1px solid;
+            width: 176px;
+            margin: 0 auto;
+        }
+        p{
+            font-size: 12px;
+            height: 32px;
+            line-height: 32px;
+        }
+        li.active{
+            background-color: #fff;
+            color: #dd456a;
+        }
+        .l1{
+            background-color: #fff;
+            color: #dd456a;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="month">
+        <ul class="ul">
+        </ul>
+    </div>
+    <div class="arrangement">
+    </div>
+</div>
+<script>
+    var oUl = document.getElementsByClassName("ul")[0];
+    var oArrange = document.getElementsByClassName("arrangement")[0];
+    console.log(oUl);
+    var data = {
+        mouth:[
+            {momthNum:1,english:"January",plan:"过年啦~"},
+            {momthNum:2,english:"February",plan:"种菜啦~"},
+            {momthNum:3,english:"March",plan:"踏青啦~"},
+            {momthNum:4,english:"April",plan:"扫墓啦~"},
+            {momthNum:5,english:"May",plan:"五一啦~"},
+            {momthNum:6,english:"Jun",plan:"儿童节到啦~"},
+            {momthNum:7,english:"July",plan:"半年过去啦~"},
+            {momthNum:8,english:"August",plan:"假期要结束啦~"},
+            {momthNum:9,english:"September",plan:"开学啦~"},
+            {momthNum:10,english:"October",plan:"国庆啦~"},
+            {momthNum:11,english:"November",plan:"剁手啦~"},
+            {momthNum:12,english:"December",plan:"又要过年啦~"}
+        ]
+    };
+    var mouthData = data.mouth;
+    function showPlan(somthing) {
+        for (var i in mouthData) {
+            if (i == 0){
+                var str1 = `<li class="l1">${mouthData[i].momthNum}<br>${mouthData[i].english}</>`;
+                var str2 = `
+                    <h4>${mouthData[i].momthNum}月活动</h4>
+                    <p style="font-size: 12px;height: 32px;line-height: 32px;">${mouthData[i].plan}</p>`;
+            }else {
+                str1 = `<li class="li">${mouthData[i].momthNum}<br>${mouthData[i].english}</li>`
+                str2 = "";
+            };
+            oUl.innerHTML += str1;
+            oArrange.innerHTML += str2;
+
+            var oLis = oUl.getElementsByTagName("li");
+            var oH3 = oArrange.getElementsByTagName("h3");
+            var oP = oArrange.getElementsByTagName("p");
+            for (var j = 0; j < oLis.length; j++) {
+                oLis[j].index = j;
+                oLis[j].onmouseenter = function () {
+                    for (j = 0; j < oLis.length; j++) {
+                        oLis[j].className = "";
+                        oArrange.innerHTML = "";
+                    }
+                    this.className = "active";
+                    str2 = `
+                            <h4>${mouthData[this.index].momthNum}月活动</h4>
+                            <p>${mouthData[this.index].plan}</p>`;
+                    oArrange[this.index] = (oArrange.innerHTML = str2);
+                }
+            }
+
+        }
+    }
+    showPlan(mouthData);
+</script>
+</body>
+</html>

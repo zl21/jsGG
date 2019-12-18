@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.栈结构方法的封装</title>
+</head>
+<body>
+<script>
+    /*
+    * 01.栈结构方法的封装:
+    *   自己封装的函数，方便对栈的操作
+    *
+    * */
+    // 1.封装一个push函数，添加一个或多个元素到栈顶
+    function push(arr){
+        for (var i = 1; i < arguments.length; i++) {
+            arr.push(arguments[i])
+        }
+    }
+
+    //2.移出栈顶元素，并返回移出的元素
+    function pop(arr) {
+        return arr.pop();
+    }
+    
+    // 3.返回栈顶的元素，并不对栈修改
+    function peek(arr) {
+        return arr[arr.length - 1];
+    }
+
+    //4.判断栈是否为空  如果为空 返回true  否则返回false
+    function isEmpty(arr) {
+        // return arr.length == 0;
+        return !arr.length;
+    }
+
+    // 5.清空整个栈
+    function clear(arr) {
+        arr.length = 0;
+    }
+
+    //6.返回栈里的个数
+    function size(arr) {
+        return arr.length;
+    }
+
+
+</script>
+</body>
+</html>

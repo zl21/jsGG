@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超时调用计时器</title>
+</head>
+<body>
+<button id="btn">点击别oh了</button>
+<script>
+    /*
+    * 超时调用计时器：
+    *   window.setTimeout(code,delay)
+    *   setTimeout方法能够在指定时间之后去执行相应的代码
+    *   code参数表示要延迟执行的代码,并且是把代码放在了window的环境中执行，code可以是字符串的形式(默认使用eval方法执行了代码)
+    *   delay是设置延迟的时间，以毫秒为单位   1s == 1000ms
+    *   code虽然是一个字符串，但是也可以直接书写成一个函数，一般我们建议设置一个函数当成setTimeout执行代码
+    *   如果code是一个函数，如果需要传参，那么就直接在setTimeout方法的第三个参数开始书写，第三个参数以后的值都是计时器函数的实参
+    *
+    *
+    * 取消超时调用计时器
+    *   使用 clearTimeout()
+    *   setTimeout会有一个返回值，返回值是一个TimerID，这个ID编号指向延迟执行代码的句柄，如果把这个句柄传参给clearTimeout,那个这个句柄代码就会取消执行
+    *
+    * */
+    //code是一个字符串的书写格式
+    // window.setTimeout("alert(1)",1000)
+    // eval("alert(2)");
+
+
+
+    // 如果code是一个函数的书写格式1
+    /*window.setTimeout(function(){
+        alert("延迟了2秒");
+    },2000)*/
+
+
+
+    // 如果code是一个函数的书写格式2
+    /*function f() {
+        alert("延迟了3秒");
+    }
+    window.setTimeout(f,3000)*/
+
+
+
+    //传参的两种方法
+    /*function f(a,b){
+        alert(a+b)
+    }
+    var a = window.setTimeout("f(1,2)",1000)
+    var b = window.setTimeout(f,1000,1,2);
+    console.log(a, b);//计数器返回值是一个id*/
+
+
+    /*function f1(a,b) {
+        alert(a+b);
+        return `alert(1)`;
+    }
+    setTimeout(f(1,2),3000);*/
+
+
+    var oBtn = document.getElementById("btn");
+    var timer1 = setTimeout(function () {
+        alert("oh");
+    },3000)
+    oBtn.onclick = function () {
+        clearTimeout(timer1);
+    }
+
+</script>
+</body>
+</html>

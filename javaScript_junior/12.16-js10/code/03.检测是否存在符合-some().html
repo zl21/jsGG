@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测是否存在符合-some()</title>
+</head>
+<body>
+<script>
+    /*
+    * .检测是否存在符合-some():
+    *   some()方法可以确定数组的元素是否有符合指定条件的项
+    *   some()方法的第一个参数是一个回调函数，如果有一个返回true，则停止执行，如果一直没有则返回false
+    *   some()方法的第二个参数是回调函数的this指向
+    *
+    * */
+
+    // 我们得到一组年龄，如果有一个是儿童，则开始儿童模式
+    var arr = [18,19,20,21,30,11,14,19,40];
+    var isTrue = arr.some(function (item,index,array) {
+        // return item < 18;
+        return item < this.max;
+    },{max:18})
+    console.log(isTrue);
+</script>
+</body>
+</html>

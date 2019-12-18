@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组过滤-filter</title>
+</head>
+<body>
+<script>
+    /*
+    * filter：
+    *   使用filter可以返回数组中满足条件的元素，并把满足条件的元素组成一个新的数组返回出来
+    *   如果回调函数返回true 则说明这个元素满足条件，返回false则不满足
+    *   不会对空位元素迭代
+    *
+    * */
+
+    // 筛选出所有的偶数
+    var arr = [1,2,3,4,5,6,6,7,8,9];
+    /*var evenArr = arr.filter(function (item,index,array) {
+        return item % 2 == 0
+    })
+    console.log(evenArr);//[2,4,6,6,8]*/
+
+    function f(item,index,array) {
+        return item % 2 == 0;
+    }
+    var evenArr = arr.filter(f);
+    console.log(evenArr);
+
+
+    // 使用filter过滤掉不符合条件的值
+    var obj = {max:80,min:14};
+    var age = [12,11,34,56,90,92,65,65,34,31];
+    var newAge = age.filter(function (item) {
+        return item >= this.min && item <= this.max;
+    },obj)
+    console.log(newAge);
+
+</script>
+</body>
+</html>

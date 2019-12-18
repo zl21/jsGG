@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代数组 for&for in</title>
+</head>
+<body>
+<script>
+    /*
+    * 迭代数组 for&for in：
+    *   for和for/in语句都可以迭代数组
+    *   for的迭代需要使用数组的长度  执行效率比for/in要低
+    *   for in 是跳过数组的空位的
+    * */
+
+    var arr = ["a","b","c",,"e"];
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);//a b c undefined e
+    }
+
+    for(var j in arr){
+        console.log(j,arr[j]);//a b c e
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测是否全部符合-every</title>
+</head>
+<body>
+<script>
+    /*
+    * 检测是否全部符合-every：
+    *   一假即假
+    *   every方法的参数是一个回调函数，函数内是代码块，arr的值依次进入函数执行，每次都会返回一个值
+    *   如果有一次返回false，则停止执行，every方法直接返回false
+    *
+    *   回调函数的参数有3个，分别是 item（每次的元素） index（每次元素的下标）  array（当前的数组）
+    *
+    *   every方法的第二个参数，可以作为every方法回调函数的this执行，如果不书写，则this执向window
+    *
+    * */
+
+    //我们得到一组年龄，如果所有人都成年了，那么就开启成人网吧模式，否则进入儿童模式
+    var arr = [18,19,20,21,30,11,14,19,40];
+    var isTrue = arr.every(function (item,index,array) {
+        console.log(item);//每次的值
+        console.log(index);//相应的下标
+        console.log(arr);//原数组
+
+        /*if (item >= 18){
+            return true;
+        } else{
+            return false;
+        }*/
+
+        return item >= 18
+    })
+    if (isTrue) {
+        alert("开启成人模式 请坐稳扶好")
+    }else{
+        alert("小朋友，玩泥巴呢")
+    }
+
+    // 如果成绩有人没有考在了规定的范围内，那么老师就抄1000遍
+    var studentScore = [82,88,87,91,100,67,13,46];
+    var isCopy = studentScore.every(function (item) {
+        return item >= this.min && item <= this.max;
+    },{max:90,min:80})
+    console.log(isCopy);
+
+
+</script>
+</body>
+</html>

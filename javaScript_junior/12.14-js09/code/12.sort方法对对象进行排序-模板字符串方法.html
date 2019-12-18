@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="price">价格排序</button>
+<button id="hot">热度排序</button>
+<button id="num">销量排序</button>
+<ul id="list">
+    <!--<li>
+        <h2>苹果手机</h2>
+        <p>销量：<span>10000</span></p>
+        <p>价格：<span>11988</span></p>
+        <p>热度：<span>299</span></p>
+    </li>
+    <li>
+        <h2>苹果手机</h2>
+        <p>销量：<span>10000</span></p>
+        <p>价格：<span>11988</span></p>
+        <p>热度：<span>299</span></p>
+    </li>
+    <li>
+        <h2>苹果手机</h2>
+        <p>销量：<span>10000</span></p>
+        <p>价格：<span>11988</span></p>
+        <p>热度：<span>299</span></p>
+    </li>-->
+</ul>
+<script>
+    var oList = document.getElementById("list");
+    var oPrice = document.getElementById("price");
+    var oHot = document.getElementById("hot");
+    var oNum = document.getElementById("num");
+    var data ={
+        phone:[
+            {brand:"苹果手机",num:"10000",price:"11988",hot:"199"},
+            {brand:"联想手机",num:"9000",price:"1988",hot:"1199"},
+            {brand:"华为手机",num:"20000",price:"12988",hot:"1299"},
+            {brand:"三星手机",num:"13000",price:"7988",hot:"3199"},
+            {brand:"魅族手机",num:"4000",price:"988",hot:"1099"},
+            {brand:"小米手机",num:"14000",price:"19988",hot:"109"},
+            {brand:"锤子手机",num:"100",price:"88",hot:"199999"},
+        ],
+        img:[
+            "01.jpg","02.jpg","03.jpg"
+        ]
+    }
+    var phoneDate = data.phone;
+    showPhone(phoneDate);
+    function showPhone(data) {
+        oList.innerHTML = "";
+        for(var i in data){
+            var str = `
+                <li>
+                    <h2>${data[i].brand}</h2>
+                    <p>销量：<span>${data[i].num}</span></p>
+                    <p>价格：<span>${data[i].price}</span></p>
+                    <p>热度：<span>${data[i].hot}</span></p>
+                </li>
+            `;
+            oList.innerHTML += str;
+        }
+    }
+    // 点击价格降序
+    oPrice.onclick = function () {
+        phoneDate.sort(function (a,b) {
+            if (+a.price > +b.price){
+                return -1;
+            }else{
+                return 1;
+            }
+        })
+        //当数据发生变化以后，再次调用字符串拼接函数，重新向页面赋值
+        showPhone(phoneDate);
+    }
+
+    // 点击热度降序
+    oHot.onclick = function () {
+        phoneDate.sort(function (a,b) {
+            if (+a.hot > +b.hot){
+                return -1;
+            }else{
+                return 1;
+            }
+        })
+        //当数据发生变化以后，再次调用字符串拼接函数，重新向页面赋值
+        showPhone(phoneDate);
+
+    }
+
+    // 点击热度降序
+    oNum.onclick = function () {
+        phoneDate.sort(function (a,b) {
+            if (+a.num > +b.num){
+                return -1;
+            }else{
+                return 1;
+            }
+        })
+        //当数据发生变化以后，再次调用字符串拼接函数，重新向页面赋值
+        showPhone(phoneDate);
+
+    }
+
+
+</script>
+</body>
+</html>

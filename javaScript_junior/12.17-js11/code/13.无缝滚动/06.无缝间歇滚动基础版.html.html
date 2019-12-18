@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝间歇滚动基础版</title>
+    <style>
+        #outer{
+            width: 1040px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: auto;
+        }
+        #inner{
+            width: 2500px;
+            overflow: hidden;
+        }
+        #inner>img{
+            width: 200px;
+            height: 140px;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <img src="../../images/01.jpg" alt="">
+            <img src="../../images/02.jpg" alt="">
+            <img src="../../images/03.jpg" alt="">
+            <img src="../../images/04.jpg" alt="">
+            <img src="../../images/05.jpg" alt="">
+            <img src="../../images/01.jpg" alt="">
+            <img src="../../images/02.jpg" alt="">
+            <img src="../../images/03.jpg" alt="">
+            <img src="../../images/04.jpg" alt="">
+            <img src="../../images/05.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var oInner = document.getElementById("inner");
+        var oOuter = document.getElementById("outer");
+        var oImg = oInner.getElementsByTagName("img");
+        var timer = null;
+        var timer2 = null;
+        function move(){
+            timer = setInterval(function () {
+                oOuter.scrollLeft ++;
+                if (oOuter.scrollLeft % (oImg[0].offsetWidth + 10) == 0){
+                    clearInterval(timer);
+                    //等待1s再继续走
+                    // 递归调用本函数
+                    timer2 = setTimeout(move,1000)
+                }
+                if (oOuter.scrollLeft >= (oImg[0].offsetWidth + 10) * 5) {
+                    oOuter.scrollLeft = 0;
+                }
+
+            },1)
+        }
+
+        move()
+
+    </script>
+</body>
+</html>

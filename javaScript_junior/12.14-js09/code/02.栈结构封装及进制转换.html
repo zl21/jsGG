@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栈结构封装及进制转换</title>
+</head>
+<body>
+<script>
+    function Stack(){
+        var arr = [];
+        this.push = function () {
+            for (var i = 0; i < arguments.length; i++) {
+                arr.push(arguments[i])
+            }
+        }
+        this.pop = function () {
+            return arr.pop();
+        }
+        this.peek = function () {
+            return arr[arr.length - 1];
+        }
+        this.isEmpty = function () {
+            return !arr.length;
+        }
+        this.clear = function () {
+            arr.length = 0;
+        }
+        this.size = function () {
+            return arr.length;
+        }
+        // return arr;
+    }
+
+
+    //进制转换：ton方法  两个参数  一个数被转的十进制数字，一个是要转的进制数
+    function ton(num,para) {
+        var remStack = new Stack();
+        var str = "";
+        var string = "";
+        var center = "0123456789abcdef";
+        //while循环 把得到的余数插入到栈中
+        while(num > 0){
+            str = num % para;
+            remStack.push(str);
+            num = parseInt(num / para)
+        }
+        // 全部插入完成以后，对栈有一个移出的操作
+        while(!remStack.isEmpty()){
+            string += center[remStack.pop()];
+        }
+        return string;
+    }
+    console.log(ton(15, 8));
+    console.log((15).toString(12));
+</script>
+</body>
+</html>

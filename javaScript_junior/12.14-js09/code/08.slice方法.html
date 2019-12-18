@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice方法</title>
+</head>
+<body>
+<script>
+    /*
+    * slice方法：
+    *   slice方法和splice方法功能相近，，但是它只能截取数组指定的区段的元素，并返回截取的元素,
+    *   该方法不会影响原数组
+    *   该方法只有两个参数，分别代表区段起始的下标（包含）和 结束的下标（不包含）
+    *   如果不传递参数，则不执行任何操作
+    *   如果值传递一个参数，在直接截取到数组的末尾
+    *   如果参数为负值的时候：
+    *       表示从右到左的顺序进行定位，即倒数定位法，不按照从左至右进行定位了。
+    *       但是取值的顺序仍然是从左到右
+    *       如果其实下标大于等于结束下标是无效的
+    *
+    * */
+    var arr1 = [1,2,3,4,5,6,7,8];
+    console.log(arr1.slice(3));//[4,5,6,7,8]
+    console.log(arr1);
+
+    var arr1 = [1,2,3,4,5,6,7,8];
+    console.log(arr1.slice(3,6));//[4,5,6]
+    console.log(arr1);
+
+    var arr1 = [1,2,3,4,5,6,7,8];
+    console.log(arr1.slice(-3,-6));//[6]
+    console.log(arr1.slice(-6,-5));//[3,4,5]
+</script>
+</body>
+</html>

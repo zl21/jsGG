@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-设计大小-获取整体文档的大小</title>
+    <style>
+        #outer{
+            width: 200px;
+            height: 2000px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+        #btn{
+            position: fixed;
+            left: 0;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点一哈</button>
+<div id="outer">
+
+</div>
+<script>
+    /*
+    *   设置整体文档大小的宽高
+    *       对于标准DOM模式来说  就是获取html的宽高
+    *       对于非标准模式，就是获取body的宽高
+    *       兼容性代码：
+    *       document.documentElement.offsetHeight || document.body.offsetHeight;
+    * */
+    var oOuter = document.getElementById("outer");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        console.log(document.documentElement.offsetHeight || document.body.offsetHeight);
+    }
+
+    function getDocSize() {
+        return {
+            height:document.documentElement.offsetHeight || document.body.offsetHeight,
+            width:document.documentElement.offsetWidth || document.body.offsetWidth
+        }
+    }
+
+</script>
+</body>
+</html>

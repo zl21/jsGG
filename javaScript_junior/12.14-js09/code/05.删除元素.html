@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除元素</title>
+</head>
+<body>
+<script>
+    /*
+    * 删除元素：
+    *   - 使用pop方法可以删除尾部元素，使用shift可以删除头部元素
+    *   - 使用delete删除指定下标的元素，组变成了空位数组 长度不变
+    *   - 使用length属性也可以删除数组
+    *   - 使用splice方法删除数组
+    *       - splice方法 返回被删除的值组成的数组
+    *       - splice方法传入1个参数，代表从下标为几开始删 直接删到末尾
+    *       - splice方法传入2个参数，代表从下标为几开始删 总共删几个
+    *
+    *
+    * */
+
+    // 使用delete删除指定下标的元素
+    var arr1 = [1,2,3,4,5];
+    delete arr1[2];//删除指定下标的值，当前的值为空，所以数组变成了空位数组 长度不变
+    console.log(arr1);
+
+    // 使用length属性也可以删除数组
+    var arr2 = [1,2,3,4];
+    arr2.length = 1;
+    console.log(arr2);
+
+
+    var arr3  = [1,2,3,4,5,5,6,7,8,8];
+    console.log(arr3.splice(3));//一个参数代表删到末尾
+    console.log(arr3);//[1,2,3]
+
+    var arr4  = [1,2,3,4,5,5,6,7,8,8];
+    console.log(arr4.splice(3,3));//两个个参数代表删几个 [4,5,5]
+    console.log(arr4);//[1,2,3,6,7,8,8]
+</script>
+</body>
+</html>

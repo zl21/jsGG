@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scrollLeft和scrollTop</title>
+    <style>
+        #outer{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+        #con{
+            width: 2000px;
+            height: 2000px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点一哈</button>
+<div id="outer">
+    <div id="con"></div>
+</div>
+<script>
+    /*
+    * scrollLeft和scrollTop:
+    *   - 可以读写向左或向上 移出可视区域外的宽度或高度
+    *   - 其实就是滚动条已经滚过的距离
+    *
+    * */
+    var oOuter = document.getElementById("outer");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        // oOuter.scrollLeft = 200;
+        console.log(oOuter.scrollLeft);
+    }
+
+</script>
+</body>
+</html>

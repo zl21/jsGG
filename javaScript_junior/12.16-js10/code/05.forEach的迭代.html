@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forEach的迭代</title>
+</head>
+<body>
+<script>
+    /*
+    * forEach的迭代：
+    *   Array对象为每一个数组都定义了forEach方法，可以对数组进行迭代操作
+    *   forEach中是一个迭代函数，还有一个this指向的对象
+    *   forEach的回调函数仍然是3个参数  item index array
+    *   forEach是不会迭代空位元素的
+    *   forEach没有返回值
+    *
+    * */
+
+    var arr = ["a","b","c","d","e"];
+    arr.forEach(function (item,index,array) {
+        console.log(item, index, array);
+    })
+
+    // 有一个数组装着2019年所有人的年龄，2020年以后，每个人的年龄都增加1岁
+    var allAge = [19,15,,2,30,32,43,45];
+    //第一种方法，返回一个新数组，包含的是新的年龄
+    var age2020 = [];
+    allAge.forEach(function (item,index,array) {
+        age2020[index] = item + 1;
+        // age2020.push(++item);
+        // age2020.splice(index,0,item+1)
+    })
+    console.log(age2020);
+
+    //第二种方法，直接改变原数组
+    var re = allAge.forEach(function (item,index,array) {
+        allAge[index] = item + 1;
+    })
+    console.log(allAge);
+    console.log(re);//undefined
+
+</script>
+</body>
+</html>

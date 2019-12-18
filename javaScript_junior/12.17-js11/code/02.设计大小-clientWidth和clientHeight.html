@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计大小-clientWidth和clientHeight</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 20px;
+            border: 1px solid #000;
+            margin: 10px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box"> </div>
+<script>
+    /*
+    * 设计大小-clientWidth和clientHeight
+    *   - 使用clientWidth是获取元素可视化部分的宽度（content + padding的和） 不含边框
+    * */
+    var oBox = document.getElementById("box");
+    console.log(oBox.clientWidth);
+</script>
+</body>
+</html>

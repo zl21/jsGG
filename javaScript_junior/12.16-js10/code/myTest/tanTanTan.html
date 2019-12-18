@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tanTanTan</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .outer{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            background: #feeefe;
+            position: relative;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background: #92c6fe;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">一朵小发发~</div>
+</div>
+<script>
+    var oOuter = document.getElementsByClassName("outer")[0];
+    var oInner = document.getElementsByClassName("inner")[0];
+    var topOffset = 0;
+    var leftOffset = 0;
+    var flagL = true;
+    var flagR = false;
+    var flagUp = true;
+    var flagDown = true;
+        var timer1 = setInterval(function () {
+            if (flagL) {
+                leftOffset += 2;
+                oInner.style.left = leftOffset + "px";
+                console.log(leftOffset);
+                if (leftOffset >= 900) {
+                    flagR = true;
+                    flagL = false;
+                }
+            }
+            if (flagR){
+                console.log(1);
+                leftOffset -= 2;
+                oInner.style.left = leftOffset + "px";
+                if (leftOffset == 0) {
+                    flagR = false;
+                    flagL = true;
+                }
+            }
+        },1000/60);
+
+    var timer2 = setInterval(function () {
+        if (flagUp) {
+            topOffset += 2;
+            oInner.style.top = topOffset + "px";
+            console.log(topOffset);
+            if (topOffset >= 400) {
+                flagDown = true;
+                flagUp = false;
+            }
+        }
+        if (flagDown){
+            console.log(1);
+            topOffset -= 2;
+            oInner.style.top = topOffset + "px";
+            if (topOffset == 0) {
+                flagDown = false;
+                flagUp = true;
+            }
+        }
+    },1000/60);
+</script>
+</body>
+</html>
