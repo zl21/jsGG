@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>碰壁反弹</title>
+    <style>
+        #outer{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            position: relative;
+        }
+        #con{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 40px;
+            top: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="con"></div>
+    </div>
+    <script>
+        var oOuter = document.getElementById("outer");
+        var oCon = document.getElementById("con");
+        var timer = null;
+        var x = oCon.offsetLeft;//x轴初始值
+        var isRight = true;//x方向初始值
+        var y = oCon.offsetTop;//y轴初始值
+        var isBottom = true;//x方向初始值
+
+
+        timer = setInterval(function () {
+            if (isRight){
+                x += 10;
+                if (x >= oOuter.clientWidth - oCon.offsetWidth) {
+                    x = oOuter.clientWidth - oCon.offsetWidth;
+                    isRight = false;
+                }
+            }else{
+                x -= 10;
+                if (x <= 0){
+                    x = 0;
+                    isRight = true;
+                }
+            }
+
+
+            if (isBottom){
+                y += 10;
+                if (y >= oOuter.clientHeight - oCon.offsetHeight) {
+                    y = oOuter.clientHeight - oCon.offsetHeight;
+                    isBottom = false;
+                }
+            }else{
+                y -= 10;
+                if (y <= 0){
+                    y = 0;
+                    isBottom = true;
+                }
+            }
+
+
+            oCon.style.left = x + "px";
+            oCon.style.top = y + "px";
+        },16)
+    </script>
+</body>
+</html>

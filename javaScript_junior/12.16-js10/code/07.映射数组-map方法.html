@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>映射数组-map方法</title>
+</head>
+<body>
+<script>
+    /*
+    * 映射数组-map方法：
+    *   map方法可以对数组的每一个值调用回调函数，并返回包含每一个回调函数返回值的数组
+    *   map方法不会对空位元素进行迭代
+    * */
+
+    // 有一个数组装着2019年所有人的年龄，2020年以后，每个人的年龄都增加1岁
+    var allAge = [19,15,,2,30,32,43,45];
+    var age2020 = allAge.map(function (item,index,arr) {
+        return item+1;
+    })
+    console.log(age2020);
+
+
+    //回调函数可以使用系统的内置函数
+    var a = [25,36];
+    var b = a.map(Math.sqrt);
+    console.log(b);//[5,6]
+
+
+    var re = [1,2,3].map(parseInt);
+    console.log(re);//[1,NaN,NaN]
+
+    console.log(parseInt(1, 0));//1
+    console.log(parseInt(2, 1));//NaN
+    console.log(parseInt(3, 2));//NaN
+</script>
+</body>
+</html>

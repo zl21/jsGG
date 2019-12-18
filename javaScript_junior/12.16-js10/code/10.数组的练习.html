@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的练习</title>
+</head>
+<body>
+<script>
+    /*
+    * 1.数组去0操作
+    *
+    * */
+    var arr = [1,2,0,4,5,0,3,0,4,2,0];
+    // 1.filter方法
+    var newArr = arr.filter(function (item) {
+        return item != 0;
+    })
+    console.log(newArr);
+
+    // 2.对数组进行遍历，插入新数组
+   /* var newArr = [];
+    for(var i in arr){
+        if (arr[i] != 0){
+            newArr.push(arr[i])
+        }
+    }
+    console.log(newArr);*/
+
+    var newArr = [];
+    for(var i in arr){
+        if (arr[i] == 0){
+            continue;
+        }
+        newArr.push(arr[i]);
+    }
+    console.log(newArr);
+
+    //3.forEach
+    var newArr = [];
+    arr.forEach(function (item,index) {
+        if (item == 0){
+            return;
+        }
+        newArr.push(item);
+    })
+    console.log(newArr);
+
+
+
+    // 2.数组排序去重（先排序后去重）
+    var arr = [1,4,3,3,4,1,5,6,4,6,3,1,6];
+    arr.sort(function (a,b) {
+        return a - b;
+    })
+    console.log(arr);
+    var newArr = [];
+    arr.forEach(function (item,index,arr) {
+        if (arr[index] == arr[index + 1]){
+            return;
+        }
+        newArr.push(item);
+    })
+    console.log(newArr);
+
+
+    // 3.求数组中的最大值和最小值
+    var arr = [1,4,3,3,4,1,5,6,4,6,3,1,6];
+    var maxNum = arr.reduce(function (oldValue,item,index,arr) {
+        return Math.max(oldValue,item);
+    })
+    var minNum = arr.reduce(function (oldValue,item,index,arr) {
+        return Math.min(oldValue,item);
+    })
+    console.log(minNum,maxNum);
+
+
+    var min = 100;
+    var max = 0;
+    for(var i in arr){
+        if (min > arr[i]){
+            min = arr[i]
+        }
+        if (max < arr[i]){
+            max = arr[i];
+        }
+    }
+    console.log(min, max);
+
+
+    //数组去重
+    //数组排序（冒泡、快速排序）
+
+
+    var arr = ["aaa","2222","sdssds","dsdsad"]
+</script>
+</body>
+</html>

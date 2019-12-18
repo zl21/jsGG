@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素定位-indexOf lastIndexOf</title>
+</head>
+<body>
+<script>
+    /*
+    * 元素定位-indexOf lastIndexOf：
+    *   indexOf lastIdexOf都可以检测数组元素的位置，返回元素的下标
+    *   indexOf返回某个元素在数组中第一次匹配到的位置，如果没有找到指定的值，则返回-1
+    *   第二个参数，代表从第几位开始找，默认从下标为0开始找
+    *
+    *   lastIndexOf 返回指定的值在数组中最后一个匹配的项，用法和indexOf相同
+    * */
+
+    var arr = ["xiaowang","xiaoli","xiaozhang","xiaoqian","xiaomao","xiaozhang","xiaozhang2"];
+    var userStr = "xiaozhang";
+    var userStr2 = "maoge";
+    console.log(arr.indexOf(userStr,3));
+    console.log(arr.indexOf(userStr));
+    console.log(arr.indexOf(userStr,6));
+    console.log(arr.indexOf(userStr2));
+
+
+    console.log(arr.lastIndexOf("xiaozhang",2));//第二个参数是限制某一个范围，返回的仍然是下标
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取窗口的大小</title>
+</head>
+<body>
+<script>
+    /*
+    * 获取窗口的大小：
+    *   - 在js中 提供了两个简便的操作 document.documentElement === html标签
+    *                               document.body === body标签
+    *
+    *   - 获取html标签的clientWidth和clientHeight属性，就可以获取到浏览器窗口的宽高
+    *   - 在怪异模式下，body是顶层的可视元素，所以在怪异模式下获取窗口的大小是document.body.clientWidth
+    *   - 兼容性写法：
+    *       document.documentElement.clientWidth||document.body.clientWidth
+    *
+    * */
+    var oHtml = document.getElementsByTagName("html")[0];
+    var oBody = document.getElementsByTagName("body")[0];
+    console.log(document.documentElement === oHtml);//true
+    console.log(document.body === oBody);//true
+
+
+    // 打印浏览器窗口的宽高
+    console.log(document.documentElement.clientHeight);
+    console.log(document.documentElement.clientWidth);
+
+
+    //获取窗口高度的兼容性写法
+    console.log(document.documentElement.clientWidth || document.body.clientWidth);
+</script>
+</body>
+</html>

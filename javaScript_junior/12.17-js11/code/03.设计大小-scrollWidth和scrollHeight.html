@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计大小-scrollWidth和scrollHeight</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 20px;
+            border: 1px solid #000;
+            margin: 10px;
+            overflow: auto;
+            /*display: none;*/
+        }
+        #con{
+            width: 10000px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="con"></div>
+</div>
+<script>
+    /*
+    * 设计大小-scrollWidth和scrollHeight
+    *   - scrollWidth是获取元素的滚动宽度（包含的内容的完全的宽度 + 自身的padding）
+    * */
+    var oBox = document.getElementById("box");
+    console.log(oBox.scrollWidth);//10020
+</script>
+</body>
+</html>

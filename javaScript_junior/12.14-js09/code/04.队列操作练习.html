@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>队列操作练习</title>
+</head>
+<body>
+<!--有一群猴子排成了一个圈，按照1，2,3,4......n ，依次排号。
+从第一只开始数，数到第m只，就把它踢出去。然后从它后边继续开始数，当再数到第m只的时候，继续踢出去
+依次类推，只剩下1只猴子为止，那么这个猴子就是大王。要求编程模拟此游戏，可以输入m和n的值，输出大王的编号-->
+
+<script>
+    function f(n,m) {
+        //将猴子编号放到一个数组中
+        var arr = [];//专门放猴子的数组
+        for (var i = 1; i < n + 1; i++) {
+            arr.push(i);
+        }
+        //踢猴子  当猴子只剩下1只的时候 停止踢
+        while(arr.length > 1){
+            //把前边的猴子每次一个个的插入到后边，直到输入的数字停止，那么输入的数组就是当前第一个值了
+            for (var i = 0; i < m - 1; i++) {
+                arr.push(arr.shift());
+            }
+            // 把当前的第一个值删掉
+            arr.shift();
+        }
+        return arr[0];
+    }
+
+    console.log(f(10, 5));
+</script>
+</body>
+</html>

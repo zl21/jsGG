@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetParent</title>
+    <script src="./my.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 500px;
+            height: 500px;
+            margin: 50px;
+            overflow: hidden;
+            background-color: red;
+            padding: 10px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        #inner{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            position: relative;
+
+        }
+        #con{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            /*position: absolute;*/
+            /*left: 40px;*/
+            /*top: 40px;*/
+            background-color: #0ee69c;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="con"></div>
+    </div>
+</div>
+<script>
+    /*
+    * 获取元素具体屏幕边缘的位置大小
+    * */
+    var oCon = my.getID("con");
+    console.log(oCon);
+
+    /*// 第一步：
+    var num = oCon.offsetLeft;
+
+    // 第二步
+    oCon = oCon.offsetParent;
+
+    // 第三步：
+    num += oCon.offsetLeft;
+
+    // 第四步：
+    oCon = oCon.offsetParent;
+
+    //第五步：
+    num += oCon.offsetLeft;*/
+
+    /*var num = 0;
+    var oNewCon = oCon;
+    while(oNewCon){
+        // 因为offsetLeft获取的是元素距离定位父级边框内侧的长度，所以，如果不是oCon，那么就要获取边框
+        if (oNewCon == oCon){
+            num += oNewCon.offsetLeft;
+            oNewCon = oNewCon.offsetParent;
+        }else{
+            num += oNewCon.offsetLeft + oNewCon.clientLeft;
+            oNewCon = oNewCon.offsetParent;
+        }
+
+    }
+    console.log(num);*/
+
+    function getEleToWin(ele) {
+        var l = 0,t = 0;
+        var oNewCon = ele;
+        while(oNewCon){
+            // 因为offsetLeft获取的是元素距离定位父级边框内侧的长度，所以，如果不是oCon，那么就要获取边框
+            if (oNewCon == ele){
+                l += oNewCon.offsetLeft;
+                t += oNewCon.offsetTop;
+                oNewCon = oNewCon.offsetParent;
+            }else{
+                l += oNewCon.offsetLeft + oNewCon.clientLeft;
+                t += oNewCon.offsetTop + oNewCon.clientTop;
+                oNewCon = oNewCon.offsetParent;
+            }
+        }
+        return {left:l,top:t};
+    }
+
+    console.log(getEleToWin(oCon));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动按钮鼠标控制版</title>
+    <style>
+        #outer{
+            width: 1000px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #inner{
+            width: 2500px;
+            overflow: hidden;
+        }
+        #inner>img{
+            width: 200px;
+            height: 140px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <img src="../../images/01.jpg" alt="">
+            <img src="../../images/02.jpg" alt="">
+            <img src="../../images/03.jpg" alt="">
+            <img src="../../images/04.jpg" alt="">
+            <img src="../../images/05.jpg" alt="">
+            <img src="../../images/01.jpg" alt="">
+            <img src="../../images/02.jpg" alt="">
+            <img src="../../images/03.jpg" alt="">
+            <img src="../../images/04.jpg" alt="">
+            <img src="../../images/05.jpg" alt="">
+        </div>
+    </div>
+    <button id="left">向左</button>
+    <button id="right">向右</button>
+    <script>
+        var oInner = document.getElementById("inner");
+        var oOuter = document.getElementById("outer");
+        var oLeft = document.getElementById("left");
+        var oRight = document.getElementById("right");
+        var oImg = oInner.getElementsByTagName("img");
+        var timer = null;
+        var flag = true;//定义一个变量保存方向 true代表向左走
+        //给一个计时器，让元素每隔1个事件段，scroll就++
+
+        timer = setInterval(function () {
+            // oOuter.scrollLeft是数字类型，可读可写，可以直接运算和赋值
+            oOuter.scrollLeft ++;
+            // 判断当滚动条走了5张图片的宽度的时候，瞬间重新变成0
+            if (oOuter.scrollLeft >= oImg[0].offsetWidth * 5){
+                oOuter.scrollLeft = 0;
+            }
+        },1)
+
+        //点击向左走
+        oLeft.onclick = function () {
+            // 清除计时器
+            clearInterval(timer);
+            timer = setInterval(function () {
+                // oOuter.scrollLeft是数字类型，可读可写，可以直接运算和赋值
+                oOuter.scrollLeft ++;
+                // 判断当滚动条走了5张图片的宽度的时候，瞬间重新变成0
+                if (oOuter.scrollLeft >= oImg[0].offsetWidth * 5){
+                    oOuter.scrollLeft = 0;
+                }
+            },1)
+            flag = true;
+        }
+
+
+        //点击向右走
+        oRight.onclick = function () {
+            // 清除计时器
+            clearInterval(timer);
+            timer = setInterval(function () {
+                // oOuter.scrollLeft是数字类型，可读可写，可以直接运算和赋值
+                oOuter.scrollLeft --;
+                // 判断当滚动条走了5张图片的宽度的时候，瞬间重新变成0
+                if (oOuter.scrollLeft <= 0){
+                    oOuter.scrollLeft = oImg[0].offsetWidth * 5;
+                }
+            },1)
+            flag = false;
+        }
+
+
+        //鼠标移入outer中，让动画停止
+        oOuter.onmouseenter = function () {
+            //清除计时器就是让动画停止
+            clearInterval(timer);
+        }
+
+        //鼠标移出的时候，继续执行
+        oOuter.onmouseleave = function () {
+            if (flag){
+                timer = setInterval(function () {
+                    // oOuter.scrollLeft是数字类型，可读可写，可以直接运算和赋值
+                    oOuter.scrollLeft ++;
+                    // 判断当滚动条走了5张图片的宽度的时候，瞬间重新变成0
+                    if (oOuter.scrollLeft >= oImg[0].offsetWidth * 5){
+                        oOuter.scrollLeft = 0;
+                    }
+                },1)
+            } else{
+                timer = setInterval(function () {
+                    // oOuter.scrollLeft是数字类型，可读可写，可以直接运算和赋值
+                    oOuter.scrollLeft --;
+                    // 判断当滚动条走了5张图片的宽度的时候，瞬间重新变成0
+                    if (oOuter.scrollLeft <= 0){
+                        oOuter.scrollLeft = oImg[0].offsetWidth * 5;
+                    }
+                },1)
+            }
+        }
+
+
+    </script>
+</body>
+</html>

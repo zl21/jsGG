@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toString和toLocalString方法</title>
+</head>
+<body>
+<script>
+    /*
+    * toString和toLocaleString方法：
+    *   当数组调用toString方法的时候，把数组中的每一个值都转成字符串，然后逗号链接显示
+    *
+    *   当数组被放置在字符串的环境中时候，JS会自动的调用toString方法把数组转成字符串
+    *
+    *
+    *   toLocalString和toString相同，主要区别在于toLocalString方法能够根据用户所在地区的特定的分隔符把字符串连接起来
+    *
+    *
+    * */
+
+    var arr1 = [1,2,"a",null,{name:"lily"}];//null和undefined没有toString方法
+    console.log(arr1.toString());//1,2,a,,[object Object]
+
+    //改写Array的toString方法
+    /*Array.prototype.toString = function () {
+        alert(1);
+        return "没有返回值 哈哈哈"
+    }*/
+    var arr = [1,2,3];
+    console.log(arr + "1"); 1,2,31
+    // console.log(arr);
+
+    var arr = ["1.00",2.00,3,4,"a"];
+    console.log(arr.toLocaleString());
+    console.log(arr.toString());
+</script>
+</body>
+</html>

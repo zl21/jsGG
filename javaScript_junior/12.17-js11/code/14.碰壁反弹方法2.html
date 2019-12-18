@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>碰壁反弹</title>
+    <style>
+        #outer{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            position: relative;
+        }
+        #con{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 40px;
+            top: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="con"></div>
+    </div>
+    <script>
+        var oOuter = document.getElementById("outer");
+        var oCon = document.getElementById("con");
+        var timer = null;
+        var x = 10;//默认的每次原来的位置 加 10
+        var y = 10;//默认的每次原来的位置 加 10
+        timer = setInterval(function () {
+            var left = oCon.offsetLeft;//每次进来更新left的值
+            if (oCon.offsetLeft <= 0 || oCon.offsetLeft >= oOuter.clientWidth - oCon.offsetWidth) {
+                x *= -1;
+            }
+
+            var top = oCon.offsetTop;//每次进来更新left的值
+            if (oCon.offsetTop <= 0 || oCon.offsetTop >= oOuter.clientHeight - oCon.offsetHeight) {
+                y *= -1;
+            }
+
+            oCon.style.left = left + x + "px";//每次执行一次计时器，都让left加上x  x可能是10 或者是 -10
+            oCon.style.top = top + y + "px";//每次执行一次计时器，都让left加上x  x可能是10 或者是 -10
+        },16)
+    </script>
+</body>
+</html>

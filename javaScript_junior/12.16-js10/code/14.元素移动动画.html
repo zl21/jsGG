@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素移动动画</title>
+    <style>
+        #con{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="con"></div>
+<script>
+    // 每隔一定的时间，让元素的left值变化
+    var oCon = document.getElementById("con");
+    var conLeft = 0;
+    var timer = setInterval(function () {
+        conLeft +=3;
+        if(conLeft >= 1000){
+            conLeft = 1000;//最好在清计时器的判断中，让值等于临界值
+            clearInterval(timer);//清完计时器以后，需要把这次代码全部执行完毕
+        }
+        oCon.style.left = conLeft + "px";
+    },1000/60)
+</script>
+</body>
+</html>

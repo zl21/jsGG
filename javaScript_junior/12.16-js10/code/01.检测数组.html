@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测数组</title>
+</head>
+<body>
+<script>
+    /*
+    * 检测数组：
+    *   isArray():是Array对象的一个静态方法，它可以判断一个值是否是一个数组
+    *   Array.isArray(arr);
+    *   返回的是布尔值
+    *   typeof只能显示数组是object类型。
+    *
+    *   in 操作符  是判断某一个属性 是否存在于一个对象或数组中
+    *
+    *
+    * */
+    var  a = "123";
+    var b = [6,2,3,4];
+    console.log(Array.isArray(a));//false
+    console.log(Array.isArray(b));//true
+    console.log(6 in b);//false
+
+
+    var obj = {
+        name:"xiaowang",
+        sex:"nan"
+    }
+    console.log('name' in obj);
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduce方法</title>
+</head>
+<body>
+<script>
+    /*
+    * reduce方法：
+    *   可以对数组中所有的元素调用回调函数
+    *   该回调函数返回的是累计结果，并且此返回值在下一次调用该回调函数的，可以传入回调函数中继续使用
+    *   reduce的参数函数，有4个参数 1）上一次的返回值 2）本次进入函数的值  3）下标 4）数组
+    *
+    * */
+
+    //如果没有指定第一个进入的返回值，则第一次进入时，把下标为0 的值作为上一次的返回值进来，直接开始第二次迭代
+    /*var arr = ["abc","def","ggg","uuu"];
+    arr.reduce(function (a,b,c,d) {
+        console.log(a,b,c,d)
+        return 1;
+    })*/
+
+
+    //reduce的第二个参数，可以指定第一次的进入回调函数的返回值
+    /*var arr = ["abc","def","ggg","uuu"];
+    arr.reduce(function (a,b,c,d) {
+        console.log(a,b,c,d)
+        return 1;
+    },"oh")*/
+
+
+    /*var arr = ["abc","def","ggg","uuu"];
+    var newStr = arr.reduce(function (a,b,c,d) {
+        return a + "-" + b;
+    },"oh")
+    console.log(newStr);//oh-abc-def-ggg-uuu*/
+
+
+    // 计算数组的最大值
+    // 已知 Math.max()方法可以传入两个或多个参数，比较值的大小，返回最大的值
+    var arr = [1,5,6,34,32,1,56,21];
+    var numMax = arr.reduce(function (a,b,c,d) {
+        return Math.max(a,b);
+    })
+    console.log(numMax);//56
+
+
+    // https://upload-images.jianshu.io/upload_images/3532891-d94af0f1cd320a5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+
+</script>
+</body>
+</html>

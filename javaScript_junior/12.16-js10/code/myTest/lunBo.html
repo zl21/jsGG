@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lunBo</title>
+    <style>
+        /**{*/
+        /*    padding-bottom: 0;*/
+        /*    margin: 0;*/
+        /*}*/
+        .outer{
+            margin: 50px auto;
+            width: 1000px;
+            border: 1px solid;
+            overflow: auto;
+        }
+        .inner{
+            width: 2000px;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <img src="img-cats/dahuangmao-01.png" alt="">
+        <img src="img-cats/dahuangmao-02.png" alt="">
+        <img src="img-cats/dahuangmao-06.png" alt="">
+        <img src="img-cats/dahuangmao-07.png" alt="">
+        <img src="img-cats/dahuangmao-10.png" alt="">
+        <img src="img-cats/dahuangmao-01.png" alt="">
+        <img src="img-cats/dahuangmao-02.png" alt="">
+        <img src="img-cats/dahuangmao-06.png" alt="">
+        <img src="img-cats/dahuangmao-07.png" alt="">
+        <img src="img-cats/dahuangmao-10.png" alt="">
+    </div>
+</div>
+<script>
+    /*
+    * 思路：
+    *   1、获取元素；
+    *   2、定义定时器；
+    *   3、写定时器事件；
+    *   4、封装事件。
+    * */
+    var oOuter = document.getElementsByClassName("outer")[0];
+    var oInner = oOuter.getElementsByClassName("inner")[0];
+    var oImg = oInner.getElementsByTagName("img");
+
+    var timer = null;
+    timer = setInterval(function () {
+        oOuter.scrollLeft ++;
+        if (oOuter.scrollLeft >= oImg[0].offsetWidth * 5){
+            oOuter.scrollLeft = 0;
+        }
+    },1);
+</script>
+
+</body>
+</html>

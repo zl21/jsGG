@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组转换</title>
+</head>
+<body>
+<script>
+    /*
+    * 数组转换：
+    *   join可以将数组转换成字符串，不过join可以指定间隔符
+    *   在调用join方法的时候，可以传入一个参数，代表分割符，如果省略参数，则默认分隔符是逗号
+    *   join返回字符串  原数组不变
+    *   如果不想要间隔，可以使用空字符串
+    *   如果碰到null或undefined  则转成空字符串，其他值按照toString的方法转
+    * */
+
+    var arr = ['1',2,'c',4,5,null];
+    console.log(arr.join());//返回字符串
+    console.log(arr);
+
+    console.log(arr.join("-"));//返回字符串
+    console.log(arr.join(""));//返回字符串
+</script>
+</body>
+</html>

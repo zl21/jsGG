@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器面试题</title>
+</head>
+<body>
+<div id="box">box</div>
+<script>
+    for (var i = 0; i < 5; i++) {
+        //计时器是defer型的异步代码，异步代码会等待同步代码执行完毕以后才会执行，此时i已经变成了5
+        setTimeout(function () {
+            console.log(i); //5个5
+        },0)
+    }
+
+    for (var i = 0; i < 5; i++) {
+        (function(i){
+            setTimeout(function () {
+                console.log(i);   //0 1 2 3 4
+            },0)
+        })(i)
+    }
+
+    var oBox = document.getElementById("box");
+    oBox.onclick = function () {
+        setTimeout(function () {
+            console.log(this);//计时器把自己的code放在了window中执行，所以计时器的函数的this执向window
+        },1000)
+    }
+</script>
+</body>
+</html>

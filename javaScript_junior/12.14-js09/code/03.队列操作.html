@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>队列</title>
+</head>
+<body>
+<script>
+    /*
+    * 使用shift和unshift方法可以在数组的头部进行操作
+    * 其中unshift方法能够把1个或多个参数插入到数组的头部，第一个参数是数组下标为0，后边依次排列。返回数组的新长度
+    * shift方法能够删除数组元素的第一个值，返回删除的值，后边所有的元素全部向前移动1位，如果shift删除空数组，则不进行任何操作，返回undefined
+    * 使用unshift依次插入和一次性插入是不一样的
+    *
+    * 队列：只允许在一端进行插入操作，在另一端进行删除操作。先进先出，后进后出。
+    *   使用pop（）和unshift（）或者 使用 shift（）和push（）方法  都可以模拟队列
+    *
+    *
+    * */
+
+    /*var arr = [1,2,3,4,5];
+    console.log(arr.unshift(1));
+    console.log(arr.unshift(1,2,3));
+    console.log(arr);
+    console.log(arr.shift());
+    console.log(arr);*/
+
+    var arr2 = [1,2,3,4,5];
+    arr2.unshift(1,2,3);
+    console.log(arr2);      //8 (返回新数组的长度)
+
+    var arr3 = [1,2,3,4,5];
+    arr3.unshift(1);
+    arr3.unshift(2);
+    arr3.unshift(3);
+    console.log(arr3);
+
+
+    // 模拟队列题目：把数组元素所有的值都放大10倍
+    var arr4 = [2,4,5,6,7];
+    for(var i in arr4){
+        arr4.push(arr4.shift() * 10);
+    }
+    console.log(arr4);
+</script>
+</body>
+</html>

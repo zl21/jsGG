@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计位置-页面滚动条位置</title>
+    <style>
+        #outer{
+            width: 200px;
+            height: 2000px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+        #btn{
+            position: fixed;
+            left: 0;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点一哈</button>
+<div id="outer">
+
+</div>
+<script>
+    /*
+    *   获取浏览器窗口的滚动条的值
+    *   window.pageYOffset||document.documentElement.scrollTop || document.body.scrollTop
+    *
+    *   设置窗口滚动条的值
+    *       window对象的scrollTo(x,y)可以定义滚动条的位置
+    *       其中x是在水平的偏移   y是垂直的偏移
+    * */
+    var oOuter = document.getElementById("outer");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        // console.log(document.documentElement.scrollTop);
+        // console.log(document.body.scrollTop);
+        // console.log(window.pageYOffset);
+        // console.log(getWinScroll().left);
+        // console.log(getWinScroll().top);
+
+        // document.documentElement.scrollTop = 300;
+        // window.pageYOffset = 300;
+
+        // document.documentElement.scrollTop || document.body.scrollTop = 300;
+        // document.documentElement.scrollTop = 300;
+        // document.body.scrollTop = 300;
+
+        // setWinScroll(300,0)
+
+        scrollTo(0,300);
+
+    }
+
+    function getWinScroll() {
+        var h = document.documentElement;
+        var top = window.pageYOffset || h.scrollTop || document.body.scrollTop;
+        var left = window.pageXOffset || h.scrollLeft || document.body.scrollLeft;
+        return {
+            top:top,
+            left:left
+        }
+    }
+
+    function setWinScroll(n,m) {
+        if (typeof m != "undefined" && typeof m =="number") {
+            document.documentElement.scrollTop = m;
+            document.body.scrollTop =m
+        }
+        if (typeof n != "undefined" && typeof n =="number") {
+            document.documentElement.scrollLeft = n;
+            document.body.scrollLeft = n;
+        }
+    }
+
+
+</script>
+</body>
+</html>

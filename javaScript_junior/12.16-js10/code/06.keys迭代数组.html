@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keys迭代数组</title>
+</head>
+<body>
+<script>
+    /*
+    * keys迭代数组：
+    *   keys是Object的静态函数，专门用来遍历对象的键名的
+    *   Object.keys返回的是对象所有可枚举的属性名组成的数组
+    *   keys可以得到对象的长度
+    *   还有一个是getOwnPropertyNames方法，与keys相同，唯一不同的是可以迭代所有属性
+    *
+    * keys也可以用来迭代数组,不会迭代空位元素
+    *
+    * */
+    var arr = ["a","b","c",,"d"];
+    console.log(Object.keys(arr));;
+</script>
+</body>
+</html>
