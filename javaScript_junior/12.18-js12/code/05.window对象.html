@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+</head>
+<body>
+<script>
+    /*
+    * window对象：
+    *   window是客户端浏览器对象模型的基类
+    *   window对象就是客户端JS的全局对象
+    *   一个window就是一个独立的窗口
+    *   window对象就是访问BOM的接口，比如document对象就是window对象
+    *   window也可以写成 self
+    *
+    *
+    *   window对象的作用
+    *       - 定义全局作用域 全局作用域的变量和函数 都是window对象的属性和方法
+    *       - 访问客户端对象（所有BOM对象 都是window对象访问的）
+    *           1.navigator 获取浏览器相关的信息
+    *           2.screen  包含浏览器的屏幕信息
+    *           3.history  包含浏览器窗口历史访问记录
+    *           4.location  包含当前网页文档的url信息
+    *           5.document对象 包含整个HTML文档 用来访问文档中的元素
+    *       - window对象还包含了很多的全局方法 （isNaN  parseInt 。。。。。）
+        *       - 计时器
+        *       - 3种弹窗
+    *               1.alert():确定提示框，由浏览器向用户弹出提示信息，该方法包含一个参数（展示给用户的信息）。
+    *                   按钮状态是一个确定。
+    *               2.confirm():选择提示框，也是向用户弹出提示信息，包含两个按钮，确定和取消。
+    *                   如果用户点击确定，则方法返回true，否则返回false
+    *                   confirm()包含一个字符串的参数，如果不写，就没有提示信息，只有按钮
+    *               3.prompt() 可输入提示框  包含两个按钮  确定和取消
+    *                   包含一个输入框，可以供用户输入
+    *                   如果用户点击确定，则返回用户输入的值 否则返回null
+    *                   如果用户不输入，则返回空字符串
+    *                   包含两个参数，一个是给用户的提示信息，一个是输入框的默认值
+    *
+    *
+    *
+    * */
+
+    // 定义全局作用域
+    /*window.a = 1;
+    window.f1 = function () {
+        alert(2);
+    }
+    console.log(a);
+    f1();*/
+
+    // console.log(b,c,d);//全部报错 找不到变量
+    /*function f1(){
+        var a = b = c = d = 2;
+        console.log(a,b,c,d);//2 2 2 2
+    }
+    f1();
+    console.log(b,c,d);// 2 2 2
+
+    var h ;
+    console.log(h = 10);//赋值操作返回赋值的那个值*/
+
+
+    // 三种 弹窗
+
+    /*var userCon = prompt("叫爸爸","爸你大爷");
+    console.log(userCon);
+    if (userCon) {
+        if (userCon == "爸爸"){
+            alert("儿子乖，摸摸头");
+        }else{
+            var newCon = confirm("请重新输入");
+            if (newCon){
+
+            } else{
+                alert("滚出家门")
+            }
+        }
+    }else{
+
+    }*/
+</script>
+</body>
+</html>

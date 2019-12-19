@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象打开和关闭窗口</title>
+</head>
+<body>
+<button id="btn">打开一个新的窗口</button>
+<button id="btn2">再打开一个新的窗口</button>
+<script>
+    /*
+    * window对象打开和关闭窗口：
+    *   - window.open()可以打开一个新的窗口
+    *   - 三个参数：
+    *       url：可选字符串：新的页面地址，如果省略则是空白页面
+    *       name:可选字符串，声明新窗口的名称，如果声明的是已经存在的窗口，则跳到已经存在的窗口
+    *       features：可选字符串，声明了新窗口的特征
+    * `         width、height、top、left、resizable（yes\no\1\0） location
+    *
+    *   - window.close()可以关闭窗口
+    *   - window.open()的返回值 可以调用close方法，让新窗口关闭
+    *   - 使用 窗口名.closed  可以检测窗口是否关闭  如果关闭则返回true
+    *
+    *
+    * */
+
+    var oBtn = document.getElementById("btn");
+    var oBtn2 = document.getElementById("btn2");
+    var newWin;
+    oBtn.onclick = function(){
+        // window.open();
+        // window.open("http://www.baidu.com");
+        // window.open("http://www.baidu.com","newWin");
+        //name参数是在打开的新窗口中使用   返回值是在当前的窗口使用
+       newWin = window.open("http://www.baidu.com","newWin","width=300px,height=200px,top=100,left=100,resizable=0,location=no");
+    }
+
+    oBtn2.onclick = function(){
+        // window.open();
+        // window.open("http://www.baidu.com");
+        // window.open("http://www.baidu.com","newWin");
+
+        //关闭当前窗口
+        // window.close();
+        // 检测当前的窗口是否被关闭
+        console.log(newWin.closed);
+        // 关闭newWin
+        // newWin.close();
+        if (newWin.closed) {
+            alert("窗口已经关了")
+        }else{
+            newWin.close();
+        }
+    }
+</script>
+</body>
+</html>

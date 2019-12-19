@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loaction对象</title>
+</head>
+<body>
+<a href="#con" id="btn">con</a>
+<script>
+    /*
+    * location对象：
+    *   储存了与当前url相关的一系列信息，简单的说就是当前网址的字符串。
+    *   location对象定义了8个属性，其中7个是网址的某些部分，还有1个是完整的网址。
+    *       href：声明或者获取当前文档的URL   可以制作重定向
+    *
+    *       protocol:协议部分，包含冒号
+    *       host:主机和端口名称 www.baidu.com:8080
+    *       hostname:主机名称 localhost
+    *       port:端口号
+    *       pathname:路径部分
+    *       search:查询部分 包括前导问号
+    *       hash：锚链接部分 包含前导的#
+    *
+    *
+    *   location还提供了3个方法供我们使用
+    *       assign()[分配，指定，指派]里传递一个字符串，然后重定向， 类似href。
+    *       reload()重新加载当前网页，刷新。
+    *       replace()替换当前网页的url地址，并且替换了当前网页在历史记录的保存。
+    *
+    * 
+    *
+    *
+    * */
+
+    /*console.log(location.href);
+    setTimeout(function () {
+        location.href = "http://www.baidu.com";
+    },2000)*/
+
+    console.log(location.protocol);
+    console.log(location.host);
+    console.log(location.hostname);
+    console.log(location.port);
+    console.log(location.pathname);
+    console.log(location.search);
+    setTimeout(function () {
+        console.log(location.hash);
+    },2000);
+
+
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick= function () {
+        // location.assign("http://www.baidu.com");
+        // location.reload();
+        // location.replace("http://www.baidu.com");
+    };
+</script>
+</body>
+</html>

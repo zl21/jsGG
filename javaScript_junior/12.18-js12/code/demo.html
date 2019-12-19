@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>窗口在 <span id="time">5</span>秒之后关闭</p>
+<script>
+    var oTime = document.getElementById("time");
+    var i = 5;
+    var timer = setInterval(function () {
+        i --;
+        if (i <= 0){
+            i =0;
+            window.close();
+        }
+        oTime.innerHTML = i;
+    },1000)
+</script>
+</body>
+</html>
