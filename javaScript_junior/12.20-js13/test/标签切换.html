@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签左右切换</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #bfa;
+            position: relative;
+        }
+        #left{
+            float: left;
+        }
+        li{
+            font: bold 20px 微软雅黑;
+        }
+        #mid{
+            width: 40px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 20px) ;
+        }
+        #right{
+            float: left;
+            position: relative;
+            left: 200px;
+        }
+        .red{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="left">
+        <li>im first of 1</li>
+        <li>im second of 1</li>
+        <li>im third of 1</li>
+        <li>im forth of 1</li>
+    </ul>
+    <div id="mid">
+        <button id="toR"> >>>>>> </button>
+        <button id="toL"> <<<<<< </button>
+    </div>
+    <ul id="right">
+        <li>im first of 2</li>
+        <li>im second of 2</li>
+        <li>im third of 2</li>
+        <li>im forth of 2</li>
+    </ul>
+</div>
+<script>
+    var oLeft = document.getElementById("left");
+    var oLLis = oLeft.children;
+    var oRight = document.getElementById("right");
+    var oRLis = oRight.children;
+    var oBtnToR = document.getElementById("toR");
+    var oBtnToL = document.getElementById("toL");
+    var flag = true;
+    for (var i = 0; i < oLLis.length; i++) {
+        oLLis[i].onclick = function () {
+            flag;
+            if (flag){
+                this.className = "red";
+                this.dataset.active = "yes";
+                flag = false;
+            }else {
+                this.className = "";
+                flag = true;
+            }
+        }
+        oRLis[i].onclick = function () {
+            flag;
+            if (flag){
+                this.className = "red";
+                this.dataset.active = "yes";
+                flag = false;
+            }else {
+                this.className = "";
+                flag = true;
+            }
+        }
+    }
+    oBtnToR.onclick = function () {
+        console.log(1);
+        for (var i = 0; i < oLLis.length; i++) {
+            oLLis[i].className = "";
+            delete oLLis[i].dataset.active;
+            oRLis[i].appendChild(oLLis[i]);
+        }
+    }
+    oBtnToL.onclick = function () {
+        for (var i = 0; i < oRLis.length; i++) {
+            oRLis[i].className = "";
+            delete oRLis[i].dataset.active;
+            oLLis[i].appendChild(oRLis[i]);
+        }
+    }
+</script>
+</body>
+</html>

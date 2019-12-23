@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .outer{
+            width: 606px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        .title{
+            width: 606px;
+            overflow: hidden;
+        }
+        .title>h3{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #666;
+            border: 1px solid #000;
+            float: left;
+        }
+
+        .con{
+            width: 606px;
+        }
+        .con>li{
+            width: 606px;
+            height: 300px;
+            line-height: 300px;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+        .title>h3.active{
+            background-color: red;
+        }
+        .con>li.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="title">
+            <h3 class="active">标题1</h3>
+            <h3>标题2</h3>
+            <h3>标题3</h3>
+        </div>
+        <ul class="con">
+            <li class="show">内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <script>
+        var oH3s = document.querySelectorAll(".title>h3");
+        var oLis = document.querySelectorAll(".con>li");
+        //遍历每一个H3并为他们写点击事件
+        oH3s.forEach(function (item,index,arr) {
+            item.onclick = function () {
+                //遍历H3判断当前哪个被点击了并为其设置相应的样式
+                oH3s.forEach(function (item,index,arr) {
+                    if (item == this){
+                        item.classList.add("active");
+                        oLis[index].classList.add("show");
+                    }else{
+                        item.classList.remove("active");
+                        oLis[index].classList.remove("show");
+                    }
+                },this)
+            }
+        })
+    </script>
+</body>
+</html>

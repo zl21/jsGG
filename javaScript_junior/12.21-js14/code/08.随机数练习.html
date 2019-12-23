@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数练习</title>
+</head>
+<body>
+<script>
+    /*
+    * 生成[10,30)之间的随机数
+    * */
+    setInterval(function () {
+        console.log(random(10, 30));
+    },300)
+
+    // 封装一个生成[a,b)的随机正整数
+    function random(a,b) {
+        return Math.floor(Math.random() * (b - a) + a)
+    }
+
+
+    //得到一个随机的20位字符串  包含0-9 a-z A-Z
+
+    //书写n个li，每一个li赋值一个随机颜色的背景颜色  使用 rgb()
+
+    //写一个抽奖活动  如果1等奖（概率是10%）就送一辆大巴车  如果2等奖（百分20）送一个笔   如果3等奖（百分30）则将以一个笔帽
+
+    //写一个点名器  点击开始--名字随机一个个的播放，并且按钮变成了（停止）    点击停止，文字变成开始，暂停到当前随机的一个人
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档片段节点</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<ul id="box">
+
+</ul>
+<script>
+
+    /*
+    * 文档片段节点：
+    *   documentFragment是一个虚拟的节点类型，仅存在于内存中，没有添加到DOM树中，所以看不到它的渲染效果
+    *   使用文档碎片的好处：避免浏览器一直渲染和占用资源
+    *   把每次创建的元素一个个插入到文档碎片中，最后将文档碎片的内容一次性插入到文档树中显示出来，减少了重绘的次数
+    *   文档碎片解决了大量添加节点时的性能问题
+    *
+    * */
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    /*oBtn.onclick = function () {
+        for (var i = 0; i < 200; i++) {
+            var newLi = document.createElement("li");
+            newLi.innerHTML = "6666";
+
+            //给box添加元素200次  极其影响性能
+            oBox.appendChild(newLi);
+        }
+    }*/
+
+
+
+
+    //先创建一个文档碎片
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < 200; i++) {
+        var newLi = document.createElement("li");
+        newLi.innerHTML = "77777";
+
+        //每次向文档碎片插入节点
+        fragment.appendChild(newLi);
+
+    }
+    //for循环结束后，将文档碎片一次插入到box中
+    oBox.appendChild(fragment);
+</script>
+</body>
+</html>

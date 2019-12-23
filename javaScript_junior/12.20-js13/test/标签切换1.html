@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签左右切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #outer {
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #bfa;
+            position: relative;
+        }
+
+        #left {
+            float: left;
+        }
+
+        li {
+            font: bold 20px 微软雅黑;
+        }
+
+        #mid {
+            width: 40px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 20px);
+        }
+
+        #right {
+            float: left;
+            position: relative;
+            left: 200px;
+        }
+
+        .red {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="left">
+        <li>im first of 1</li>
+        <li>im second of 1</li>
+        <li>im third of 1</li>
+        <li>im forth of 1</li>
+    </ul>
+    <div id="mid">
+        <button id="toR"> >>>>>></button>
+        <button id="toL"> <<<<<<</button>
+    </div>
+    <ul id="right">
+        <li>im first of 2</li>
+        <li>im second of 2</li>
+        <li>im third of 2</li>
+        <li>im forth of 2</li>
+    </ul>
+</div>
+<script>
+	var oLeft = document.getElementById("left");
+	var oLLis = oLeft.children;
+	var oRight = document.getElementById("right");
+	var oRLis = oRight.children;
+	var oBtnToR = document.getElementById("toR");
+	var oBtnToL = document.getElementById("toL");
+	var flag = true;
+	for (var i = 0; i < oLLis.length; i++) {
+		oLLis[i].onclick = function () {
+			this.classList.toggle("red"); //toggle方法：有则删掉，无则添加，从而达到了取消选择的效果。
+			this.dataset.rel = "0";
+		};
+		oRLis[i].onclick = function () {
+			this.classList.toggle("red");
+			this.dataset.rel = "0";
+		}
+	}
+	oBtnToR.onclick = function () {
+		for (var i = 0; i < oLLis.length; i++) {
+			if (oLLis[i].dataset.rel) {
+				oLLis[i].className = "";
+                this.classList.contains("red") ? this.dataset.rel = "0" : delete this.dataset.rel;
+                oRight.appendChild(oLLis[i]);
+				/**
+                 * i的取值为0-3
+                 * 如果选中下标为2和3的元素（即第三个和第四个），此时i=2，然后我们把这个元素
+                 * 移出到了右边，此时下标为2的这个元素已经没有了，现在左边只剩下
+                 * 0、1、2，长度变成了3，然后再回去i++的时候，i已经是3，然后这个长度
+                 * 也是3，所以3就进不去了，就结束了循环，所以原来的第四个元素会留在页面
+                 * 所以把i--；此时下标2的元素被移出了之后，i--变成了1，整个循环的长度为
+                 * 3，然后i++之后变成了2，就能再次找到并移出
+                 * */
+				i--;
+			}
+		}
+	}
+	oBtnToL.onclick = function () {
+		for (var i = 0; i < oRLis.length; i++) {
+			if (oRLis[i].dataset.rel) {
+				oRLis[i].className = "";
+                this.classList.contains("red") ? this.dataset.rel = "0" : delete this.dataset.rel;
+                oLeft.appendChild(oRLis[i]);
+				i--;
+			}
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点名器</title>
+    <style>
+        body{
+            background-color: #dbc8ff;
+            padding-top: 200px;
+        }
+        h2{
+            font-size: 50px;
+            color: #085d07;
+            text-align: center;
+        }
+        p{
+            font: italic 40px 宋体;
+            color: #2d85ff;
+            text-align: center;
+        }
+        #btn{
+
+        }
+    </style>
+</head>
+<body>
+<h2 id="btn">START</h2>
+<p id="con">点名啦</p>
+<script>
+    var oBtn = document.getElementById("btn");
+    var oCon = document.getElementById("con");
+    var names = ["赵","钱","孙","李","周","吴","郑","王"];
+    var flag = true;//保存当前停止状态
+    var timer = null;
+    oBtn.onclick = function () {
+        // oBtn.classList.toggle("flag");
+        if(flag){
+            oBtn.innerHTML = "PAUSE";
+            timer = setInterval(function () {
+                oCon.innerHTML = names[Math.floor(Math.random()*names.length)];
+            },30)
+        }else{
+            oBtn.innerHTML = "PROCEED";
+            clearInterval(timer);
+        }
+
+        flag = !flag;
+    }
+</script>
+</body>
+</html>

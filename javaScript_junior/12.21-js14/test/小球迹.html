@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小球迹</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .sphere{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f00;
+            position: fixed;
+            top: 40%;
+            left: 0;
+        }
+        .btn{
+            font: bold 32px 楷体;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="sphere"></div>
+<button class="btn">暂停</button>
+
+<script>
+    var oSphere = document.querySelector(".sphere");
+    var oBtn = document.querySelector(".btn");
+    var timer = null;
+    var x=0,y=0;
+    var startY = oSphere.offsetTop;
+
+    function move() {
+        timer = setInterval(function () {
+            x ++;
+            y = (Math.sin(x * (2*Math.PI/360))) * 120;
+            oSphere.style.left = x + "px";
+            oSphere.style.top = startY - y + "px";
+
+            var oTrack = document.createElement("div");
+            oTrack.classList.add("sphere");
+            var r = random(100,256);
+            var g = random(100,256);
+            var b = random(100,256);
+            oTrack.style.backgroundColor = `rgba(${r},${g},${b})`;
+            oTrack.style.left = x + "px";
+            oTrack.style.top = startY - y + "px";
+            document.body.appendChild(oTrack);
+        },10);
+        function random(a,b) {
+            return Math.floor(Math.random() * (b -a) + a);
+        }
+    }
+    move();
+    var flag = true;
+    oBtn.onclick = function () {
+        if (flag) {
+            clearInterval(timer);
+            oBtn.innerHTML = "继续";
+            flag = false;
+        }else {
+            move();
+            oBtn.innerHTML = "暂停";
+            flag = true;
+        }
+    }
+</script>
+</body>
+</html>

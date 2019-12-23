@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+<div id="con"></div>
+<script>
+    var oCon = document.getElementById("con");
+    setInterval(fn,1000);
+
+    function fn() {
+        //获取距离2020年还有多少时间
+        var qingren = new Date("2020-02-14");
+        var now = new Date();//当前时间
+        var reduceTime = qingren - now;
+        console.log(reduceTime);
+
+        //获取天
+        var date = parseInt(reduceTime / (1000 * 60 * 60 *24));
+        date < 10 ? date = "0" + date : date;
+        console.log(date);
+
+        //获取小时
+        var _date = reduceTime % (1000 * 60 * 60 *24);
+        var hours = parseInt(_date / (1000 * 60 * 60));
+        hours < 10 ? hours = "0" + hours : hours;
+        console.log(hours);
+
+
+    }
+</script>
+</body>
+</html>

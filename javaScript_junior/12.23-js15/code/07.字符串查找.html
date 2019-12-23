@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串查找</title>
+</head>
+<body>
+<script>
+    /*
+    * 字符串查找：
+    *   charAt(n):返回字符串中下标为n的字符，参数是0 - str.length中间  如果不在，那么返回空字符串
+    *   indexOf()和lastIndexOf()方法：根据参数字符串，返回执行字符串出现的下标
+    *       两个方法都有两个参数，第一个参数是查找的目标字符串，第二个参数是 查找的起始位置
+    *       如果查找不到则返回 -1
+    *
+    *   search():和indexOf是基本一样的，但是indexOf只能检测固定字符串，而search可以传入正则
+    *       search查找符合传入参数的规定的字符串 第一次出现的位置
+    *
+    *   match():能找出所有的匹配的字符串，然后以数组的形式返回出来，如果没有 则返回null
+    *
+    *
+    * */
+    // 01.charAt
+    var str = "hello i am fine thankyou";
+    console.log(str.charAt(8));//a
+    console.log(str.charAt(0));//a
+    console.log(str.charAt(str.length));//空字符串
+
+    //02.indexOf()和lastIndexOf()
+    var str = "hello i am fine thankyou";
+    console.log(str.indexOf("a"));//8
+    console.log(str.lastIndexOf("a"));//18
+    console.log(str.indexOf("a",9));//18
+    console.log(str.lastIndexOf("a",5));//-1  倒着查  5是下标
+
+    // 03.search();
+    var str = "110p1101h110";
+    var index1 = str.search(/[a-zA-Z]/g);
+    console.log(index1);
+
+    // 04.match()
+    var str = "110p1101h110";
+    var index2 = str.match(/[a-zA-Z]/g);
+    console.log(index2);//["p","h"]
+</script>
+</body>
+</html>

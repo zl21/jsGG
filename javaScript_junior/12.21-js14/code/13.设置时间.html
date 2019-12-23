@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置时间</title>
+</head>
+<body>
+<script>
+    /*
+    * 设置时间 使用set+时间关键字
+    * */
+    var now = new Date();
+    now.setFullYear(2010);
+    console.log(now);//2010
+    now.setMonth(4);//月份的范围是0-11
+    console.log(now);//2010.05
+    now.setDate(12);
+    console.log(now);//2010.05.12
+    now.setHours(12);
+    console.log(now);//2010.05.12 12:00
+    now.setMinutes(12);
+    console.log(now);//2010.05.12 12:12
+    now.setSeconds(12);
+    console.log(now);//2010.05.12 12:12
+    now.setMilliseconds(888);
+    console.log(now);//Wed May 12 2010 12:12:12 GMT+0800 (中国标准时间)
+    // 没有提供setDay方法
+
+
+</script>
+</body>
+</html>

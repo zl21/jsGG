@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取代码执行时间1</title>
+</head>
+<body>
+<script>
+
+    // 执行前获取一个时间
+    var start = new Date();
+
+    var num = 0;
+    for (var i = 0; i < 100000000; i++) {
+        num += Math.sqrt(i);
+    }
+    console.log(num);
+
+    // 执行后获取一个时间
+    var end = new Date();
+
+    // 两个时间相减就是时差
+    console.log(end - start);
+</script>
+</body>
+</html>

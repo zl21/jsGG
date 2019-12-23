@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机背景颜色</title>
+    <style>
+        table{
+            margin: 50px auto;
+        }
+        td{
+            width: 50px;
+            height: 50px;
+            border: 1px solid;
+        }
+        #btn{
+            position: relative;
+            left: 430px;
+        }
+    </style>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <button id="btn">change</button>
+</head>
+<body>
+<script>
+
+    var oTd = document.querySelectorAll("td");
+    console.log(oTd);
+    var oBtn = document.querySelector("#btn");
+    oBtn.onclick = function () {
+        for (var i = 0; i < oTd.length; i++) {
+            var r = random(0,256);
+            var g = random(0,256);
+            var b = random(0,256);
+            oTd[i].style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+    }
+    function random(a,b) {
+        return Math.floor(Math.random() * (b - a) + a)
+    }
+
+
+</script>
+</body>
+</html>

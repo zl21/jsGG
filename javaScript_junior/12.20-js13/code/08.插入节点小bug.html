@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入节点小bug</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <ul id="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // 在每一个li中插入一个h标签
+        var oBox = document.getElementById("box");
+        var oBtn = document.getElementById("btn");
+        var oLis = oBox.children;
+        oBtn.onclick = function () {
+            //如果不是每次点击都创建一个新元素的话，那效果就是拿在点击事件外创建的那个元素插来插去，以至于最终只能看到在最后（因为appendChild是在最后添加）插入了一个元素。
+            var newH2 = document.createElement("h2");
+            newH2.innerHTML = "我是h2";
+            for (var i = 0; i <oLis.length ; i++) {
+                oLis[i].appendChild(newH2);
+            }
+        }
+
+    </script>
+</body>
+</html>

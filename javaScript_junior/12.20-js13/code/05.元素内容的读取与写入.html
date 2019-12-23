@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素内容的读取与写入</title>
+</head>
+<body>
+    <button id="btn">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+    <ul id="box">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+    <script>
+        /*
+        *  01.读取和插入html字符串--innerHTML
+        *   使用元素的innerHTMl属性可以返回调用元素所有包含的子节点及对应的HTML字符串
+        *   使用innerHTML属性可以根据传入的HTML字符串 创建DOM节点
+        *   设置好innerHTML以后，新创建的节点，像其他节点一样可以被访问设置等等
+        *   如果使用createElement和createTextNode处理长段的新非常复杂，推荐使用innerHTML
+        *   innerHTML设置后，会把之前的节点全部覆盖
+        *   大多数浏览器不会执行innerHTML插入的script标签
+        *
+        *   02.替换HTML字符串
+        *       outerHTML和innerHTML功能基本类似，但是outerHTML会设置元素自身
+        *
+        *   03.读写文本
+        *       innerText 在指定的元素中插入文本，如果包含HTML字符串，将被当做编码显示
+        *       innerText获取元素内容的时候，只能获取到文本节点，元素节点将被忽略
+        *
+        *       outerText和innerText类似，只不过会包含设置的元素自身
+        * */
+
+
+        var oBtn = document.getElementById("btn");
+        var oBtn2 = document.getElementById("btn2");
+        var oBtn3 = document.getElementById("btn3");
+        var oBox = document.getElementById("box");
+        // 01.读取和插入html字符串--innerHTML
+        oBtn.onclick = function () {
+            // console.log(oBox.innerHTML);//把html也转成字符串输出
+
+            // oBox.innerHTML = "<li>我是创建的li字符串 看我能不能被解析</li>"//替换原有所有内容
+
+            var str = "<li>我是创建的li字符串 看我能不能被解析</li>";
+            // oBox.appendChild(str);//appendChild插入字符串无效
+
+            // oBox.innerHTML = oBox.innerHTML + str;
+
+            oBox.innerHTML = str +oBox.innerHTML;
+        }
+
+        // 02.替换HTML字符串
+        oBtn2.onclick = function () {
+            oBox.outerHTML = "<li>我是创建的li字符串 看我能不能被解析</li>";//包含box一起被替换了
+            // console.log(oBox.outerHTML);//包含box一起获取到了
+        }
+
+        oBtn3.onclick = function () {
+            oBox.innerText = "<li>我是创建的li字符串 看我能不能被解析</li>";
+            console.log(oBox.innerText);
+
+            // console.log(oBox.outerText);
+            oBox.outerText = "<li>我是创建的li字符串 看我能不能被解析</li>";
+        }
+    </script>
+</body>
+</html>

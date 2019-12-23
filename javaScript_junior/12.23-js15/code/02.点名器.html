@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点名器</title>
+</head>
+<body>
+<h1>start</h1>
+<h2>请开始你的表演</h2>
+<script>
+    var oH1 = document.querySelector("h1");
+    var oH2 = document.querySelector("h2");
+    var allName = ["小王","大王","张大麻子","小宝贝","大宝贝","小李","校长","毛哥","猫哥","大毛哥"];
+    var flag = true;//开关  判断开始还是暂停   true默认暂停
+    var randomTimer = null;
+
+
+    oH1.onclick = function () {
+        if(flag){
+            oH1.innerHTML = "stop";
+            randomTimer = setInterval(function () {
+                // 每次随机出一个名字，其实就是每次随机出一个下标
+                oH2.innerHTML = allName[Math.floor(Math.random() * allName.length)];
+            },30);
+        }else{
+            oH1.innerHTML = "start";
+            clearInterval(randomTimer);
+        }
+        flag = !flag;
+    }
+</script>
+</body>
+</html>

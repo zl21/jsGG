@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小球球的曲线运动</title>
+    <style>
+        .box{
+            width: 30px;
+            height: 30px;
+            background-color: hotpink;
+            border-radius: 50%;
+            position: fixed;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+<script>
+    /*
+    * 小球的sin曲线运动留迹版：
+    * 思路：创建n个小球div定位在前面那个小球走过的地方。
+    * */
+    var oBox = document.querySelector(".box");
+    var timer = null;
+    var x = 0;
+    var y = 0;
+    var oldTop = oBox.offsetTop;
+    timer = setInterval(function () {
+        x ++;
+        y = (Math.sin(x * 2 * Math.PI / 360)) * 300;
+        oBox.style.top = oldTop - y + "px";
+        oBox.style.left = x + "px";
+
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("box");
+        var r = random(0,256);
+        var g = random(0,256);
+        var b = random(0,256);
+        newDiv.style.backgroundColor = `rgba(${r},${g},${b})`;
+        newDiv.style.top = oldTop - y + "px";
+        newDiv.style.left = x + "px";
+        document.body.appendChild(newDiv)
+    },1);
+    function random(a,b) {
+        return Math.floor(Math.random() * (b - a) + a)
+    }
+</script>
+</body>
+</html>
