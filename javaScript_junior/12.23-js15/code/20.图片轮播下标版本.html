@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播点击下标版</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .outer{
+            width: 520px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .inner{
+            /*width: 520px;*/
+            overflow: hidden;
+        }
+        .con{
+            width: 4000px;
+            overflow: hidden;
+        }
+        .con img{
+            width: 520px;
+            height: 280px;
+            float: left;
+        }
+
+        .left{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 0 100% 100% 0;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: rgba(200,40,156,.6);
+        }
+        .right{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100% 0  0 100%;
+            right: 0;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: rgba(200,40,156,.6);
+        }
+
+        .page{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        .page li{
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,255,255,.3);
+            margin: 5px;
+            float: left;
+        }
+        .page .show{
+            background-color: rgba(255,255,255,1);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <!--主要图片-->
+        <div class="con">
+            <img src="../images/01.jpg" alt="">
+            <img src="../images/02.jpg" alt="">
+            <img src="../images/03.jpg" alt="">
+            <img src="../images/04.jpg" alt="">
+            <img src="../images/05.jpg" alt="">
+            <img src="../images/01.jpg" alt="">
+        </div>
+
+        <!--左右按钮-->
+        <p class="left">&lt;</p>
+        <p class="right">&gt;</p>
+
+        <!-- 列表项-->
+        <ul class="page">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var oInner = document.querySelector(".inner");
+        var oImgs = document.querySelectorAll(".con>img");
+        var oLeft = document.querySelector(".left");
+        var oRight = document.querySelector(".right");
+        var oLis = document.querySelectorAll(".page>li");
+        var timer1 = null;
+        var timer2 = null;
+        var i = 0;//代表图片  默认第一张
+
+        // 图片更换动画函数
+        function move(){
+            //在每一个两秒内，不让滚动条直接走，而是以动画形式移动
+            var start = oInner.scrollLeft;//当前滚动条的位置
+            var end = i * oImgs[0].offsetWidth;//每次动画的结束位置
+            var startStep = 0;
+            var endStep = 44;
+            var everyStep = (end - start) / (endStep - startStep);//每一步所走的距离
+
+            //让滚动条条动画移动
+            timer2 = setInterval(function () {
+                startStep ++;//用来判断动画是否执行完毕
+                if (startStep >= endStep) {
+                    clearInterval(timer2);
+                }
+
+                // oInner.scrollLeft += everyStep;//scroll直接参与运算是向下取整的，start是默认当前滚动条位置，所以让变量start运算即可
+
+                start += everyStep;
+                oInner.scrollLeft = start;
+            },10)
+        }
+
+        //自动走函数
+        function autoMove(){
+            //每隔两秒就换图
+            timer1 = setInterval(function () {
+                // 在每一次新的一个动画开始的时候，先把上一次的动画给清掉
+                clearInterval(timer2);
+                i ++;
+                if (i >= oImgs.length){
+                    oInner.scrollLeft = 0;
+                    // i = 0;
+                    i = 1;
+
+                }
+                move();
+                page();
+            },2000)
+        };
+
+        //清计时器
+        function clear(){
+            clearInterval(timer1);
+            clearInterval(timer2);
+        }
+
+        //下标跟着走函数
+        function page() {
+            // 让下标跟着图片
+            var six = i;
+            for (var j = 0; j < oLis.length; j++) {
+                if (six == 5){
+                    six = 0;
+                }
+                if( j == six ){
+                    oLis[j].classList.add("show");
+                }else{
+                    oLis[j].classList.remove("show");
+                }
+            }
+        }
+
+        //页面加载后 自动走
+        autoMove();
+
+        //点击左边按钮
+        oLeft.onclick = function () {
+            //先把所有计时器给清掉
+            clear();
+            i ++;
+            if (i >= oImgs.length){
+                i = 0;
+                // oInner.scrollLeft = 0;
+            }
+            move();
+            page();
+            //每次点击事件执行完成后，执行自动走
+            autoMove();
+        }
+
+        //点击右边按钮
+        oRight.onclick = function(){
+            clear();
+            i --;
+            if (i < 0){
+                i = oImgs.length - 1;
+            }
+            move();
+            page();
+            autoMove();
+        }
+
+
+        //给下标绑定点击事件
+        for (var j = 0; j < oLis.length; j++) {
+            oLis[j].onclick = function () {
+                clear();
+                for (var k = 0; k < oLis.length; k++) {
+                    if (oLis[k] == this){
+                        oLis[k].classList.add("show");
+
+                        //i是图片轮播的核心，所以让i和当前点击的下标相等
+                        i = k
+                        move();
+                    }else{
+                        oLis[k].classList.remove("show");
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

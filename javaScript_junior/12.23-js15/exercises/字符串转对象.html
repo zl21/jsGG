@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串转对象</title>
+</head>
+<body>
+<script>
+    var str = "eName=Alanhie&age=21";
+    var zl = {};
+    str.split("&").forEach(function (item) {
+        zl[item.split("=")[0]] = item.split("=")[1];
+    });
+    console.log(zl);    //{eName: "Alanhie", age: "21"}
+</script>
+</body>
+</html>

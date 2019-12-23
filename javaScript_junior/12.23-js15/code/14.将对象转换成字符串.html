@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将字符串转换成对象</title>
+</head>
+<body>
+<script>
+
+    /*
+    * 有一个用户的数据：{username:"xiaowang",password:"12345",sex:"nv",age:19,on:"yes"}
+    * 有一个网址：http://www.baidu.com
+    *
+    * 把数据以查询字符串的格式，拼接到网址后，得到的结果是：
+    * http://www.baidu.com?username=xiaowang&password=12345&sex=nv&age=19&on=yes
+    * */
+
+    // 方法1
+    /*var url = "http://www.baidu.com";
+    var userData = {username:"xiaowang",password:"12345",sex:"nv",age:19,on:"yes"};
+    var str = ""
+    for ( var i in userData ){
+        str += (i + "=" + userData[i] + "&");
+    }
+    var newstr = str.substring(0,str.length-1);
+    var finallyStr = url + "?" + newstr;
+    console.log(finallyStr);*/
+
+
+
+    // 方法2
+    var url = "http://www.baidu.com";
+    var userData = {username:"xiaowang",password:"12345",sex:"nv",age:19,on:"yes"};
+    var str = ""
+
+    // 第一个目标：["username=xiaowang", "password=12345", "sex=nv", "age=19", "on=yes"]
+    var arr = [];
+    for ( var i in userData ){
+        console.log(i);//for in 遍历数组对象时，将键作为索引。
+        console.log(userData[i]);
+        arr.push(i + "=" + userData[i]);
+    }
+    console.log(arr);
+
+    //把数组的间隔以&形式隔开
+    var newStr = arr.join("&");
+    console.log(newStr);
+
+    var finallyStr = url + "?" + newStr;
+    console.log(finallyStr);
+
+
+</script>
+</body>
+</html>

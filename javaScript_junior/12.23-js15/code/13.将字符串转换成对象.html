@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将字符串转换成对象</title>
+</head>
+<body>
+<script>
+    /*有一个网址：
+        http://www.baidu.com?username=xiaowang&password=12345&sex=nv&age=19&on=yes
+        将网址的查询内容获取到，并用对象展示出来:
+            {username:"xiaowang",password:"12345",sex:"nv",age:19,on:"yes"}*/
+
+    var str = "http://www.baidu.com?username=xiaowang&password=12345&sex=nv&age=19&on=yes";
+    var finallyObj = {};
+
+    /*//1.截取到查询的内容（？以后的内容）
+    var strArr = str.split("?");
+    console.log(strArr);//["http://www.baidu.com", "username=xiaowang&password=12345&sex=nv&age=19&on=yes"]
+
+    var strSearch = strArr[1];//username=xiaowang&password=12345&sex=nv&age=19&on=yes;
+
+    //拿到查询结果，再次以&符号分割成一个数组，每一个键值对就是数组的其中一个值
+    var str2Arr = strSearch.split("&");
+    console.log(str2Arr);// ["username=xiaowang", "password=12345", "sex=nv", "age=19", "on=yes"]
+
+    //遍历新得到的数组，然后把每一个值的键值对放在对象中
+    str2Arr.forEach(function (item,index,arr) {
+        var newArr = item.split("=");
+        finallyObj[newArr[0]] = newArr[1];
+    })
+
+    console.log(finallyObj);*/
+
+
+    str.split("?")[1].split("&").forEach(function (item) {
+        finallyObj[item.split("=")[0]] = item.split("=")[1]
+    });
+    console.log(finallyObj);
+
+
+</script>
+</body>
+</html>

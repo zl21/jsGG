@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .outer{
+            width: 520px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .inner{
+            width: 520px;
+            overflow: auto;
+        }
+        .con{
+            width: 3000px;
+            overflow: hidden;
+        }
+        .con img{
+            width: 520px;
+            height: 280px;
+            float: left;
+        }
+
+        .left{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 0 100% 100% 0;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: rgba(200,40,156,.6);
+        }
+        .right{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100% 0  0 100%;
+            right: 0;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: rgba(200,40,156,.6);
+        }
+
+        .page{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        .page li{
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,255,255,.3);
+            margin: 5px;
+            float: left;
+        }
+        .page .show{
+            background-color: rgba(255,255,255,1);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <!--主要图片-->
+        <div class="con">
+            <img src="../images/01.jpg" alt="">
+            <img src="../images/02.jpg" alt="">
+            <img src="../images/03.jpg" alt="">
+            <img src="../images/04.jpg" alt="">
+            <img src="../images/05.jpg" alt="">
+        </div>
+
+        <!--左右按钮-->
+        <p class="left">&lt;</p>
+        <p class="right">&gt;</p>
+
+        <!-- 列表项-->
+        <ul class="page">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
