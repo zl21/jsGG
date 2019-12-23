@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取某一个时间</title>
+</head>
+<body>
+<script>
+    /*
+    * 获取时间：(返回值都是number)
+    *   获取年：now.getFullYear()
+    *   获取月：.getMonth()
+    *   获取日：.getDate()
+    *   获取小时：.getHours()
+    *   获取分钟：.getMinutes()
+    *   获取秒：.getSeconds()
+    *   获取毫秒：.getMilliseconds()
+    *   获取星期：.getDay(),0是周日
+    *   获取时间戳：.getTime(),获取当前时间距离1970年1月1日的毫秒数
+    *
+    * */
+    var now = new Date();
+
+    console.log(now.getFullYear());//2019
+    console.log(typeof now.getFullYear());//number
+
+    console.log(now.getYear());//119  不推荐使用
+
+
+    console.log(now.getMonth()) ;//11
+
+    console.log(now.getDate());//21
+
+    console.log(now.getDate());//21
+
+    console.log(now.getHours());//16
+
+    console.log(now.getMinutes());//39
+
+    console.log(now.getSeconds());//54
+
+    console.log(now.getMilliseconds());//121
+
+    console.log(now.getDay());//6
+
+    console.log(now.getTime());//1576917768975
+
+
+</script>
+</body>
+</html>

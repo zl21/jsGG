@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+<div id="con">
+</div>
+<script>
+    function fn1() {
+        //计算距离元旦的时间
+        var guoqing = new Date(2020,1,1,8,0,0);
+        var now = new Date();
+        var timeDifference = guoqing - now;//毫秒数
+        var date = parseInt(0+timeDifference / (1000 * 60 * 60 * 24));//毫秒转换天
+        date < 10 ? date = "0" + date : date;
+
+        // 获取小时
+        var _date = timeDifference % (1000 * 60 * 60 * 24);
+        var hours =parseInt( 0+_date / (1000 * 60 * 60 ));
+        hours < 10 ? hours = "0" + hours : hours;
+
+
+        // 获取分钟
+        var _hours = _date % (1000 * 60 * 60);
+        var minu =parseInt( 0+_hours / (1000 * 60 ));
+        minu < 10 ? minu = "0" + minu : minu;
+
+        // 获取秒
+        var _minu = _hours % (1000 * 60);
+        var sec =parseInt( 0+_minu / (1000 ));
+        sec < 10 ? sec = "0" + sec : sec;
+
+        var str = "距离元旦还有" + date + "天" + hours + "小时" + minu + "分" + sec + "秒";
+        document.getElementById("con").innerHTML = str;
+    }
+    setInterval(fn1,1000);
+</script>
+</body>
+</html>

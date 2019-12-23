@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+<div id="box">
+    <p>我是p标签</p>
+    <span>hello</span>
+    <i>i标签</i>
+    <div>我是div</div>
+    <!--<h3>h333</h3>-->
+    <em>em标签</em>
+</div>
+<script>
+    /*
+    * 节点：
+    *   在网页中所有的对象和内容都被称作为节点。比如文档、元素、文本、属性、注释等等
+    *   节点是DOM最基本的组成部分，不同的节点共同组成了DOM树。
+    *
+    *   常见的节点：
+    *       document 文档节点 根节点  节点类型是9
+    *       Element  元素节点  节点类型是 1
+    *       Attr     属性节点   节点类型是 2
+    *       Text     文本节点  节点类型是 3
+    *       comment  注释节点  节点类型是 8
+    *       documentFragment  文档片段节点  节点类型是 11
+    *
+    *   使用childNodes：获取某个元素中所有的子节点
+    *       使用中括号语法 或者是 item()方法可以获取其中的某一个节点
+    *       - nodeType  获取节点的类型
+    *       - nodeName  节点的名称
+    *       - nodeValue  节点的值
+    * */
+
+    var oBox = document.getElementById("box");
+    var nodes = oBox.childNodes;
+    console.log(nodes);//节点的集合 NodeList类型
+    console.log(nodes[3]);//直接可以获取到节点
+    console.log(nodes.item(5));//直接可以获取到节点
+
+    //document的节点类型 名称 和值
+    console.log(document.nodeType);//9
+    console.log(document.nodeName);//#document
+    console.log(document.nodeValue);//null
+
+
+    //元素节点的类型 名称和 值
+    console.log(nodes[1].nodeType);//1
+    console.log(nodes[1].nodeName);//节点名称就是标签名 大写
+    console.log(nodes[1].nodeValue);//null
+
+    //文本节点的类型 名称和 值
+    console.log(nodes[0].nodeType);//3
+    console.log(nodes[0].nodeName);//#text
+    console.log(nodes[0].nodeValue);//当前的文本内容
+
+    //注释节点的类型 名称和 值
+    console.log(nodes[9].nodeType);//8
+    console.log(nodes[9].nodeName);//#comment
+    console.log(nodes[9].nodeValue);//当前被注释的内容
+
+    var myAttr = document.createAttribute("my");
+    myAttr.value = "yes";
+    console.log(myAttr);
+    console.log(myAttr.nodeType);//2
+    console.log(myAttr.nodeName);//my  属性节点是标准的键值对形式   属性名就是节点名称
+    console.log(myAttr.nodeValue);//yes  属性值就是节点的值
+
+</script>
+</body>
+</html>

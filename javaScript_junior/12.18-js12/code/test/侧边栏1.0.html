@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侧边栏1.0</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .outer{
+            position: fixed;
+            right: 0;
+            top: 200px;
+        }
+        span{
+            display: block;
+            width: 40px;
+            height: 30px;
+            background-color: #fdeaff;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        p{
+            width: 200px;
+            height: 30px;
+            background-color: #92c6fe;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="outer">
+        <li>
+            <span>反馈</span>
+            <p>我的反馈</p>
+        </li>
+        <li>
+            <span>反馈</span>
+            <p>我的反馈</p>
+        </li>
+        <li>
+            <span>反馈</span>
+            <p>我的反馈</p>
+        </li>
+    </ul>
+<script>
+    var oSpan = document.getElementsByTagName("span")[0];
+    var oP = document.getElementsByTagName("p")[0];
+    console.log(oP);
+    var timer = null;
+    var pX = 0;
+    oSpan.onmouseenter = function () {
+        // console.log(1);
+        clearInterval(timer);
+        timer = setInterval(function () {
+            pX --;
+            // console.log(pX);
+            if (pX <= -200){
+                pX = -200;
+                clearInterval(timer);
+            }
+            oP.style.left = pX + "px";
+        },1);
+    }
+    oSpan.onmouseleave = function () {
+        // console.log(1);
+        clearInterval(timer);
+        timer = setInterval(function () {
+            pX ++;
+            // console.log(pX);
+            if (pX >= 0){
+                pX = 0;
+                clearInterval(timer);
+            }
+            oP.style.left = pX + "px";
+        },1);
+    }
+</script>
+</body>
+</html>

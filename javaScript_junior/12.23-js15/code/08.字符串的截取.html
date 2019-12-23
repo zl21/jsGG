@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>截取字符串</title>
+</head>
+<body>
+<script>
+    /*
+    * 截取字符串：
+    *   substr方法：能够指定长度来截取字符串，两个参数，一个是起始下标 一个是长度，如果只有一个参数，那么代表直接截取到字符串的末尾（ECMA不推荐）
+    *
+    *   substring方法：根据起始下标截取字符串，包含起始，不包含结束
+    *       第二个参数如果为负值，则不起作用
+    *
+    *   slice方法：根据起始下标截取字符串，包含起始，不包含结束
+    *       如果第二个值为负 则取绝对值，从1开始，从后向前数
+    *
+    *
+    *
+    * */
+    var str = "today is a fine day";
+    var _str = str.substr(4,5);
+    console.log(str);//today is a fine day
+    console.log(_str);//y is
+    var _str = str.substr(4);
+    console.log(_str);//y is a fine day
+
+
+    var str2 = "today is a fine day";
+    var _str2 = str2.substring(4,8);
+    console.log(str2);//today is a fine day
+    console.log(_str2);//y is
+    var _str2 = str2.substring(4);
+    console.log(_str2);//y is a fine day
+
+    var str3 = "today is a fine day";
+    var _str3 = str3.slice(4,8);
+    console.log(str3);//today is a fine day
+    console.log(_str3);//y is
+    var _str3 = str3.slice(4);
+    console.log(_str3);//y is a fine day
+
+
+    var str3 = "today is a fine day";
+    var _str3 = str3.slice(4,-11);
+    console.log(str3);//today is a fine day
+    console.log(_str3);//y is a
+
+    var str2 = "today is a fine day";
+    var _str2 = str2.substring(4,-1);
+    console.log(str2);//today is a fine day
+    console.log(_str2);//toda
+</script>
+</body>
+</html>

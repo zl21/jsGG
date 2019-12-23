@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串转数组</title>
+</head>
+<body>
+<script>
+    /*
+    * 字符串转数组：
+    *   split方法 可以根据指定的分隔符，把字符串转成数组
+    *   如果split没有指定任何分割符  把整个字符串当成数组的一个值
+    *   如果split指定的是一个空字符串作为分隔符，每一个字符串的值都被当做数组的值
+    *
+    *   split方法支持第二个参数，代表数组的最大长度
+    *
+    *
+    * */
+    var str = "哎,呦,不,错,哦";
+    var arr = str.split();
+    var arr2 = str.split('');
+    var arr3 = str.split(',');
+    var arr4 = str.split(',',3);
+    console.log(str);
+    console.log(arr);//["哎,呦,不,错,哦"]
+    console.log(arr2);// ["哎", ",", "呦", ",", "不", ",", "错", ",", "哦"]
+    console.log(arr3);//["哎", "呦", "不", "错", "哦"]
+    console.log(arr4);// ["哎", "呦", "不"]
+</script>
+</body>
+</html>

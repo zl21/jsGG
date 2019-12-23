@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classList对象</title>
+    <style>
+        .con{
+            width: 100px;
+            height: 100px;
+        }
+        .show{
+            background-color: yellow;
+        }
+        .red{
+            color:red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div class="box">
+    <p id="con" class="con show">concon</p>
+</div>
+
+<script>
+    /*
+    * html5为每一个元素新增了一个classList对象，classList对象保存着控制当前元素类名的各个方法和属性。用法：元素.classList.属性/方法("");
+    * - length 返回类名的个数
+    * - add() 在原有的类名基础上添加一个类名
+    * - remove() 在原有的类名基础上 移出某一个类名
+    * - toggle() 如果有这个类名 则删除这个类名，如果没有 则添加进去
+    * - item() 根据索引 获取类名
+    * - contains()  判断元素是否包含某一个类名
+    *
+    * */
+    var oBtn = document.getElementById("btn");
+    var oCon = document.getElementById("con");
+
+    oBtn.onclick = function () {
+        // oCon.className = "red";
+        // console.log(oCon.className);
+        // oCon.className = "con show red";
+        // oCon.className += " red";
+
+        console.log(oCon.classList.length);
+
+        oCon.classList.add("red");
+
+        // oCon.classList.remove("con");
+
+        oCon.classList.toggle("blue");
+        console.log(oCon.className);
+
+        console.log(oCon.classList.contains("con"));
+
+        console.log(oCon.classList.item(0));
+    }
+
+
+</script>
+</body>
+</html>

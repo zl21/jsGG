@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的大小写转换</title>
+    <style>
+        #ipt{
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    请输入验证码：
+    <input type="text" id="ipt">
+    <button id="con">hj76tr</button>
+</div>
+<script>
+    /*
+    *   toLowerCase() 转成小写字母
+    *   toUpperCase() 转成大写字母
+    * */
+    var oCon = document.getElementById("con");
+    var oIpt = document.getElementById("ipt");
+
+    oIpt.onchange = function () {
+        if (oIpt.value.toLowerCase() === oCon.innerHTML) {
+            oIpt.style.borderColor = "green";
+        }
+    }
+</script>
+</body>
+</html>

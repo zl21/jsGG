@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+</head>
+<body>
+<h1>01</h1>
+<a href="02.html">02</a>
+<a href="03.html">03</a>
+<button id="forward">前进</button>
+<button id="back">后退</button>
+<button id="go">揍你</button>
+<script>
+    var oForward = document.getElementById("forward");
+    var oBack= document.getElementById("back");
+    var oGo = document.getElementById("go");
+    oForward.onclick = function () {
+        history.forward();
+    }
+
+    oBack.onclick = function () {
+        history.back();
+    }
+    oGo.onclick = function () {
+        history.go(-2)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动条回顶模板</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #up{
+            width: 60px;
+            height: 30px;
+            border-radius: 50%;
+            background: #c2b9ff;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+        #con{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+<button id="up">回顶部</button>
+<div id="con"></div>
+<script>
+    /*控制按钮在什么位置开始显示。
+    * 思路：
+    *       1、大于当前窗口的高度就显示出回顶部按钮。
+    *       2、onscroll：触发滚动条时的捕捉事件。
+    * */
+    var oBtn = document.getElementById("up");
+    window.onscroll = function () {
+        if ((window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop) <= 500) {
+        oBtn.style.display = "none";
+        }else {
+            oBtn.style.display = "block";
+        }
+    };
+    /*点击回到顶部。
+    * 思路：
+    *       1、获取滚动条的初始位置；
+    *       2、设置滚动条最终的位置：顶部 所以为0；
+    *       3、定义起始步数；
+    *       4、定义走到终点总共要走的步数，以下称总步数；
+    *       5、计算每一步要走多少：=（终点-起点）/（总步数-起始步数）
+    *       6、当起始步数=总步数时，说明走完了 即滚动条已经到终点（顶端）了；
+    * */
+    oBtn.onclick = function () {
+        var startScrollPlace = window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop;
+        var endScrollPlace = 0;
+        var startStep = 0;
+        var endStep = 40;
+        var everyStepDistance = (endScrollPlace-startScrollPlace)/(endStep-startStep);
+        var timer = setInterval(function () {
+            startStep ++;
+            if (startStep >= endStep){
+                clearInterval(timer);
+                // startStep = endStep; /*这样设置的话第二次就拖不动滚动条了，所以采用清掉计时器的办法。*/
+            }
+            startScrollPlace += everyStepDistance;
+            window.scrollTo(0,startScrollPlace);
+        },1000/60);
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换动画显示版</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 800px;
+            margin: 20px auto;
+            border: 1px solid;
+        }
+        #title{
+            width: 800px;
+            overflow: hidden;
+        }
+        #title li{
+            width: 199px;
+            height: 50px;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            background: #92c6fe;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            border-collapse: collapse;
+        }
+        #con{
+            height: 660px;
+            overflow: hidden;
+        }
+        #con li{
+            width: 800px;
+            height: 660px;
+        }
+        #title .active{
+            background: #c2b9ff;
+            color: #009ff2;
+        }
+        img{
+            width: 800px;
+            /*height: 700px;*/
+            /*display: block;*/
+        }
+
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="title">
+        <li class="active">科技潮品dain</li>
+        <li>司法拍卖</li>
+        <li>爱逛街</li>
+        <li>游戏动漫</li>
+    </ul>
+    <ul id="con">
+        <li class="show"><img src="../../images/01.png" alt=""></li>
+        <li><img src="../../images/02.png" alt=""></li>
+        <li><img src="../../images/03.png" alt=""></li>
+        <li><img src="../../images/04.png" alt=""></li>
+    </ul>
+</div>
+<script>
+    var oTitle = document.getElementById("title");
+    console.log(oTitle);
+    var oLi1 = oTitle.getElementsByTagName("li");
+    console.log(oLi1);
+    var oCon = document.getElementById("con");
+    var oLi2 = oCon.getElementsByTagName("li");
+    var timer = null;
+    for (var i = 0; i < oLi1.length; i++) {
+        oLi1[i].onclick = function () {
+            for (var i = 0; i < oLi1.length; i++) {
+                if (oLi1[i] == this){
+                    oLi1[i].className = "active";
+                    //获取startSpace：
+                    var startSpace = oCon.scrollTop;
+                    //定义结束位置：
+                    var endSpace = i * oLi2[i].offsetHeight;
+                    //定义起始步数：
+                    var startStep = 0;
+                    //定义总步数：
+                    var endStep = 40;
+                    //计算速度：
+                    var speed = (endSpace - startSpace)/(endStep - startStep);
+                    timer = setInterval(function () {
+                        startStep ++;
+                        if (startStep >= endStep){
+                            clearInterval(timer);
+                        }
+                        startSpace += speed;
+                        // oCon.scrollTo(0,startStep);
+                        oCon.scrollTop = startSpace;
+                    },10);
+                } else{
+                    oLi2[i].className = "";
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取时间戳</title>
+</head>
+<body>
+<script>
+    /*
+    * 01.getTime()
+    * */
+    var timer1 = new Date().getTime();
+    console.log(timer1);
+
+    /*
+    * 02.将时间对象转换成数字类型
+    * */
+    var timer2 = + new Date();
+    console.log(timer2);
+
+    var timer3 = Number(new Date());
+    console.log(timer3);
+
+    var timer4 = parseInt(new Date());//parseInt不能转换时间对象为时间戳
+    console.log(timer4);
+
+    var timer5 = new Date() * 1;
+    console.log(timer5);
+
+    /*
+    * 03.valueOf 获取对象的原始值
+    * */
+    var timer6 = new Date().valueOf();
+    console.log(timer6);
+
+    /*
+    * 04.Date 对象  不用实例化 Date对象直接私有一个now方法，可以得到时间戳
+    * */
+    console.log(Date.now());
+</script>
+</body>
+</html>

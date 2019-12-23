@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串concat方法</title>
+</head>
+<body>
+<script>
+    /*
+    * 拼接字符串：
+    *   + 可以拼接字符串
+    *   concat可以拼接字符串
+    *       concat是可以把多个自己的参数添加到指定字符串的尾部
+    *       concat的参数没有个数限制，会把所有的参数转成字符串。然后拼接在尾部
+    *   可以使用数组拼接 然后使用join把数组转成字符串
+    *
+    *   原本join要比concat的速度快，替代join。但是现代浏览器优化了+号拼接，所以目前使用+号拼接是主流
+    *
+    *
+    *
+    * */
+
+    var str = "hello";
+    var _str = str.concat("world","oh");
+    console.log(str);//hello
+    console.log(_str);//helloworldoh
+
+
+    var str2 = "hello";
+    var _str2 = str.concat("world",['oh','nice'],{name:"laowang"});
+    console.log(str2);//hello
+    console.log(_str2);//helloworldoh,nice[object Object]
+
+
+    var straLL = "0123456789abcdefghijklmnopqrstuvwxyz";
+    var strArr = [];
+    for (var i = 0; i < 20; i++) {
+        var strNum = Math.floor(Math.random() * straLL.length)
+        strArr.push(straLL[strNum]);
+    }
+    var finallyStr = strArr.join("");
+    console.log(finallyStr);
+</script>
+</body>
+</html>

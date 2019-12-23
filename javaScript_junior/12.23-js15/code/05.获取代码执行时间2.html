@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取代码执行时间2</title>
+</head>
+<body>
+<script>
+    //console.time 需要传递一个参数，代表这个计时的名称
+   console.time("name");
+
+    var num = 0;
+    for (var i = 0; i < 100000000; i++) {
+        num += Math.sqrt(i);
+    }
+    console.log(num);
+
+    // console.timeEnd 需要传递一个参数，查找相同的时间计算的console，然后计算差值
+    console.timeEnd("name");
+</script>
+</body>
+</html>

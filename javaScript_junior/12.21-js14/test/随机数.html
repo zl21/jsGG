@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数</title>
+</head>
+<body>
+<script>
+    setInterval(function () {
+        console.log(random(10,30));
+    },300);
+
+    function random(a,b) {
+        return Math.floor(Math.random() * (b -a) + a);
+    }
+
+</script>
+</body>
+</html>

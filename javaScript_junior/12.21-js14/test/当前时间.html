@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>当前时间</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 400px;
+            background: url("../images/12.webp");
+            /*background-color: #f1e3ff;*/
+            position: fixed;
+            left: calc(50% - 300px);
+            top: calc(50% - 200px);
+            border-radius: 2%;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    var oBox = document.querySelector(".box");
+    setInterval(function () {
+        var now = new Date();
+        var n = now.getFullYear();
+        var y = now.getMonth();
+        var r = now.getDate();
+        var s = now.getHours();
+        var f = now.getMinutes();
+        var m = now.getSeconds();
+        var hm = now.getMilliseconds();
+        var str = "现在的时间是："+n+"年"+(y<10?'0'+y: y)+"月"+(r<10?'0'+r: r)+"日"+(s<10?'0'+s: s)+"时"+(f<10?'0'+f: f)+"分"+(m<10?'0'+m: m)+"秒"+(hm<10?'00'+hm : (hm<100 && hm>9)?'0'+hm: (hm<1000 && hm>99)? hm: hm)+"毫秒";
+        oBox.innerHTML = str;
+    },1);
+
+</script>
+</body>
+</html>

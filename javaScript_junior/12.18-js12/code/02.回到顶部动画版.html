@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部动画版</title>
+    <style>
+        .box{
+            width: 140px;
+            height: 80px;
+            background-color: red;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            display: none;
+
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        .con{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        回到顶部
+    </div>
+    <div class="con">
+
+    </div>
+    <script>
+        /*
+        * 当滚动条的的距离没有大于200px的时候，box按钮不显示
+        * onscroll 是当滚动的时候触发事件
+        * */
+        var oBox = document.getElementsByClassName("box")[0];
+        window.onscroll = function () {
+            // console.log(1);
+            if ((window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop) >= 200){
+                oBox.style.display = "block";
+            }else{
+                oBox.style.display = "none";
+            }
+        }
+        //点击box 直接让页面回到顶部  以动画的形式慢慢改变
+        oBox.onclick = function () {
+            var nowScroll = window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+            var timer = setInterval(function () {
+                nowScroll -= 10;//当前代表元素滚动条位置的变量 开始减
+                if (nowScroll <= 0){
+                    nowScroll = 0;
+                    clearInterval(timer);
+                }
+                window.scrollTo(0,nowScroll);
+            },1)
+        }
+    </script>
+</body>
+</html>

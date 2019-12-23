@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点互换练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 700px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        #outer #con1{
+            float: left;
+            width: 300px;
+            height: 400px;
+            background-color: #0ee69c;
+        }
+        #outer #con2{
+            float: right;
+            width: 300px;
+            height: 400px;
+            background-color: #009ff2;
+        }
+        #outer .controls{
+            width: 100px;
+            height: 400px;
+            float: left;
+            background-color: #9b55ff;
+            text-align: center;
+        }
+        #con1>li.red,#con2>li.red{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="con1">
+        <li>我是con1的内容1</li>
+        <li>我是con1的内容2</li>
+        <li>我是con1的内容3</li>
+        <li>我是con1的内容4</li>
+    </ul>
+    <div class="controls">
+        <button id="right">>>>>>>>></button>
+        <button id="left"><<<<<<<<</button>
+    </div>
+    <ul id="con2">
+        <li>我是con2的内容1</li>
+        <li>我是con2的内容2</li>
+        <li>我是con2的内容3</li>
+        <li>我是con2的内容4</li>
+    </ul>
+</div>
+<script>
+    /*
+    * 1.点击任意的li元素，给他们添加一个样式  再添加一个自定义属性
+    * 2.点击右岸扭，把选中的元素移动到con2中（获取到已经有标记的元素，添加到con2的后边）
+    *
+    * */
+    var oCon1 = document.getElementById("con1");
+    var oCon2 = document.getElementById("con2");
+    var oRight = document.getElementById("right");
+    var oCon1_li = oCon1.getElementsByTagName("li");
+    var oCon2_li = oCon2.getElementsByTagName("li");
+
+    //给con1中的li绑定点击事件
+    for (var i = 0; i < oCon1_li.length; i++) {
+        oCon1_li[i].onclick = function () {
+            this.className = "red";
+            //做一个标记，定义一个自定义属性
+            this.dataset.active = "yes";
+        }
+    }
+
+    //绑定右移事件
+    oRight.onclick = function () {
+        // 筛选con1中哪一个li被标记了
+        for (var i = 0; i < oCon1_li.length; i++) {
+            if (oCon1_li[i].dataset.active) {
+                // 把选中的元素去掉默认样式和标记，
+                oCon1_li[i].className = "";
+                delete oCon1_li[i].dataset.active;
+                //清掉样式后 插入到另一边。appendChild():若插入的是文档中已经存在的节点则会先把该节点删除,然后插入在新的位置。
+
+                oCon2.appendChild(oCon1_li[i]);
+
+                //因为每次删除的时候，元素的长度变短，并且后边所有的下边全部前移1位，所以每次删除的时候，需要把i 减去 1 即可
+                i --;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

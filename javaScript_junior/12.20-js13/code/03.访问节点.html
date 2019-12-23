@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访问元素节点</title>
+</head>
+<body>
+<ul id="box">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+<!--    <li>注释</li>-->
+    <li>55</li>
+</ul>
+<div class="con">
+    <div>1</div>
+    <span>span</span>
+    <p>p</p>
+    <h2>h2</h2>
+</div>
+<script>
+    /*
+    * 访问元素节点:
+    *   children:获取元素所有的子元素节点(得到的是集合)
+    *       （IE678会获取到子节点中的注释节点）其他全兼容
+    *
+    *   parentNode：（得到是单独的元素节点）
+    *       获取元素的父节点（全兼容）
+    *
+    *   previousSibling:
+    *       在IE9+获取的是上一个节点
+    *       在IE8及以下 获取的是上一个元素节点
+    *       在IE9中又提供了previousElementSibling获取上一个元素节点（IE低版本没有这个属性）
+    *
+    *   nextSibling && nextElementSibling
+    *       获取下一个兄弟节点
+    *
+    *   firstChild&& firstElementChild
+    *       获取第一个子节点
+    *
+    *   lastChild&&lastElementChild
+    *       获取最后一个子节点
+    * */
+
+    //通过get选择器的方式选择
+    var oBox = document.getElementById("box");
+    var oLis = oBox.getElementsByTagName("li");
+    console.log(oLis);
+
+    /*var oCon = document.getElementsByClassName("con")[0];
+    console.log(oCon.children);//  类数组集合 [div, span, p, h2]
+    console.log(oBox.children);// 类数组集合  [li, li, li, li, li]*/
+
+    //获取元素的父节点
+    console.log(oLis[3]);
+    console.log(oLis[3].parentNode);
+    console.log(oLis[3].parentNode.parentNode);
+    console.log(oLis[3].parentNode.parentNode.parentNode);
+    console.log(oLis[3].parentNode.parentNode.parentNode.parentNode);
+    console.log(oLis[3].parentNode.parentNode.parentNode.parentNode.parentNode);//null
+    // console.log(oLis[3].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);//报错
+
+
+    //获取上一个兄弟节点
+    console.log(oLis[3].previousSibling);
+    console.log(oLis[3].previousElementSibling);
+    // 兼容性写法
+    if (oLis[3].previousElementSibling){
+        console.log(oLis[3].previousElementSibling);
+    }else{
+        console.log(oLis[3].previousSibling);
+    }
+
+    // 获取下一个兄弟
+    console.log(oLis[3].nextElementSibling);
+
+    //获取第一个子节点
+    console.log(oBox.firstElementChild);
+
+    //获取最后一个子节点
+    console.log(oBox.lastElementChild);
+
+
+</script>
+</body>
+</html>

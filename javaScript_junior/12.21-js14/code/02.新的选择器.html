@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新的选择器</title>
+</head>
+<body>
+<ul class="outer">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<script>
+    /*
+    * w3c发布新的 seletors API，为浏览器js引擎实现css选择器选择元素。
+    *   两个核心的方法：querySelector（）   querySelectorAll（）
+    *   两个方法接受的必须是 符合css选择器规范的字符串。
+    *   querySelector（）：返回的是一个元素，querySelectorAll返回的是一个集合nodeList（可以使用数组的方法）；
+    *
+    *   querySelector（）：选择符合条件的第一个元素节点。
+    *
+    * */
+    var oLis = document.querySelectorAll(".outer>li");
+    console.log(oLis);
+    console.log(oLis[0]);
+
+    var oLi = document.querySelector(".outer>li");
+    console.log(oLi);
+
+    var oLi2 = document.querySelector(".outer>li:nth-child(2)");
+    console.log(oLi2);
+</script>
+</body>
+</html>

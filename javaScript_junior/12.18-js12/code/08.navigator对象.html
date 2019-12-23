@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navigator对象</title>
+</head>
+<body>
+<script>
+    /*
+    * navigator对象：
+    *   navigator对象储存了与浏览器相关的基本信息，如版本、操作系统、名称等。
+    *   通过windiw.navigator可以查看对象中所有的信息
+    *
+    *  浏览器检测：
+    *   1.特征检测法
+    *       根据浏览器是否兼容某一个属性来决定相应的操作,
+    *       这个是一种非精确的判断方法，但是一定是最安全的判断方法
+    *       不关心浏览器的身份，仅仅在意浏览器的执行能力
+    *
+    *   2.字符串检测法
+    *       浏览器在发送http请求的时候，都会附带一个 user-agent（用户代理）字符串
+    *       对于开发人员来说，可以通过user-agent来识别浏览器
+    *       使用 navigator.userAgent可以获取浏览器的识别码
+    *       userAgent包含了web浏览器大量的信息
+    *
+    *
+    *   3.检测操作系统
+    *       如果只需要获取操作系统的基本信息  那么可以使用字符串检测
+    *       windows系统--------》 Win
+    *       Macintosh系统------》Mac
+    *       unix系统 ---------》X11
+    *       linux系统---------》X11 和 Linux
+    *
+    *       navigator提供一个 platform  可以获取操作系统
+    *
+    * */
+
+    /*// 特征检测法
+    if (document.documentElement){
+        var w = document.documentElement.clientWidth
+    } else{
+        var w = document.body.clientWidth
+    }*/
+
+
+    //字符串检测法
+    console.log(navigator.userAgent);
+    //Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+    // Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0
+    // Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; Tablet PC 2.0; rv:11.0) like Gecko
+
+    // 浏览器版本检测
+    var uA = window.navigator.userAgent.toLowerCase();
+    var info = {
+        ie:/msie/.test(uA) && !/opera/.test(uA),
+        op:/opera/.test(uA),
+        sa:/version.*safari/.test(uA),
+        ch:/chrome/.test(uA),
+        ff:/gecko/.test(uA)&&!/webkit/.test(uA)
+    }
+    info.ie && alert("IE");
+    info.op && alert("Opera");
+    info.sa && alert("safari");
+    info.ch && alert("chrome");
+    info.ff && alert("firefox");
+
+
+    // 获取IE版本号：
+    function getIEVer() {
+        var uA = navigator.userAgent;
+        var b = uA.indexOf("MSIE");
+        if (b<0){
+            return "不是IE"
+        }
+        return uA.substring(b+5,uA.indexOf(";",b))
+    }
+
+    console.log(getIEVer());
+
+
+    // 检测操作系统：
+    var uA = navigator.userAgent;
+    var isWin = uA.indexOf("Win") != -1;
+    var isMac = uA.indexOf("Mac") != -1;
+    var isUnix = uA.indexOf("X11") != -1;
+    var isLinux = uA.indexOf("Linux") != -1;
+    console.log(isWin,isMac,isUnix,isLinux)
+
+
+    console.log(navigator.platform);
+</script>
+</body>
+</html>

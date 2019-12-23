@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+</head>
+<body>
+<script>
+    /*
+    * Date对象：
+    *   就是用来处理日期和时间的。浏览器保存的是当前距离1970年1月1号8:00的毫秒数，需要获取的时候把这个时间给计算出来
+    *   获取当前的时间： var now = new Date();
+    *
+    *   创建一个时间对象：
+    *       1.在new Date中传入一个毫秒数，计算机会把这个毫秒数加在1970年1月1号8:00  然后计算设置的时间;
+    *       2.传入一个时间的字符串,格式:XXXX-XX-XX XX:XX:XX;
+    *       3.传入多个参数,分别代表各个时间,年月日时分秒毫秒.
+    * */
+
+    //获取当前的时间
+    var now = new Date();
+    console.log(now);//Sat Dec 21 2019 16:21:32 GMT+0800 (伊尔库茨克标准时间)
+    console.log(+ now);//Sat Dec 21 2019 16:21:32 GMT+0800 (伊尔库茨克标准时间)
+    console.log(typeof now)//object
+
+
+    // 创建一个时间对象：
+    // 1.在new Date中传入一个毫秒数
+    var date1 = new Date(1000);
+    console.log(date1);
+    var date1 = new Date(1000000000000);
+    console.log(date1);
+
+    //2传入一个时间的字符串
+    var date2 = new Date("2019-12-25 00:00:00");
+    console.log(date2);
+    console.log(+date2);
+    var date2 = new Date("2019-12-25");
+    console.log(date2);
+    var date2 = new Date("00:00:00");//非法的时间
+    console.log(date2);
+
+    // 3.传入多个参数
+    var date3 = new Date(2020,9,1,0,0,0);//设置月份是 0-11 代表1-12月
+    console.log(date3);
+    var date3 = new Date("2020-10-1");//10月
+    console.log(date3);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+这、、、、、  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementXXX和queryselector的区别</title>
+</head>
+<body>
+<ul id="box">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+</ul>
+<script>
+    /*
+    * getElementXXX和queryselector的区别：
+    *
+    *
+    *
+    * */
+
+    // 第一种： 直接陷入死循环。因为getElementXXXX获取的元素是动态的，实时改变
+    /*var oBox = document.getElementById("box");
+    var oLis = oBox.getElementsByTagName("li");
+
+    for (var i = 0; i < oLis.length; i++) {
+        oBox.appendChild(document.createElement("li"));
+    }
+    console.log("ok~")*/
+
+
+    //第二种
+    // querySelectorAll  获取的元素是静态的  获取一次以后，长度不再发生变化
+    var oBox = document.querySelector("#box");
+    var oLis = document.querySelectorAll("#box>li");
+    for (var i = 0; i < oLis.length; i++) {
+        oBox.appendChild(document.createElement("li"));
+    }
+    console.log("ok~")
+</script>
+</body>
+</html>

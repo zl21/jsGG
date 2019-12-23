@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div id="box">
+    <img src="./01.jpg" alt="图片">
+    <span data-name="span">我是span</span>
+</div>
+<script>
+    /*
+    * 自定义属性：
+    *      HTML5允许用户为元素创建自定义属性，但是要求添加 data- 的前缀
+    *      添加前缀是为了和元素的自有属性区分开，添加一个其他的信息
+    *
+    *       当然可以使用原始的 setAttribute方法和getAttribute方法去设置和获取
+    *       HTML5提供了dataset设置自定义属性，和获取自定义属性
+    *       通过delete 可以删除某个属性值
+    *
+    *
+    * */
+
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    var oBoxs = oBox.children;
+
+    oBtn.onclick = function () {
+        console.log(oBoxs[1].getAttribute("data-name"));
+
+        console.log(oBoxs[1].dataset);//自身是包含当前元素所有 data- 前缀的属性的集合对象
+        oBoxs[1].dataset.sex = "不知道";
+
+        delete oBoxs[1].dataset.name;
+    }
+
+
+</script>
+</body>
+</html>

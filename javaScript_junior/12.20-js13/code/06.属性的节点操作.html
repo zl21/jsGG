@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性的节点操作</title>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    <button id="btn2">按钮2</button>
+    <ul id="box">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+    <div id="con">
+        <img src="../images/01.jpg" alt="我没有" your = "html" class="link">
+        <a href="###">我是老A</a>
+    </div>
+    <script>
+        /*
+        * 属性的节点操作：
+        *   1.创建属性节点
+        *       使用document.createAttribute()创建属性节点，一个参数，属性节点的名称
+        *       使用属性节点的name属性，可以得到属性的名称
+        *       使用属性节点的value属性 可以设置或获取属性的值
+        *       创建的属性节点可以通过setAttribute方法插入到元素中
+        *
+        *   2.读取属性值
+        *       在传统的DOM中，可以使用点操作符 读取HTML属性 如 src  id  href
+        *       但是很多属性包括自定义属性不支持这样读取，所以需要使用规范的方式读取
+        *       使用getAttribute方法可以读取元素指定属性的值，一个参数  属性名
+        *       对于自有的属性class 不能通过点操作符直接访问，因为class是关键字。但是可以点操作符+className
+        *       对于for属性，必须使用htmlFor来获取
+        *
+        *   3.设置属性值
+        *       使用点操作符 设置html元素的自有属性
+        *       setAttribute（name,value）,
+        *       如果设置的时候有相同属性，则覆盖原有属性
+        *
+        *   4.删除属性值
+        *       使用元素的removeAttribute方法删除
+        *       一个参数 ：属性名
+        * */
+
+        var oCon = document.getElementById("con");
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        oCons = oCon.children;
+
+        // 1.创建属性节点
+        var newAttr = document.createAttribute("my");
+        console.log(newAttr.name);//获取属性节点的名
+        console.log(newAttr.value);//获取属性节点的值
+        newAttr.name = "your";//name属性这样设置无效
+        newAttr.value = "js";//属性的值可以通过属性节点的value设置
+        console.log(newAttr);
+
+        //2.读取属性
+        console.log(oCons[0].src);
+        console.log(oCons[0].your);//不支持
+        console.log(oCons[0].alt);
+        console.log(oCons[1].href);
+
+        console.log(oCons[0].class);
+
+        console.log(oCons[0].getAttribute("your"));
+        console.log(oCons[0].getAttribute("class"));
+
+
+        //3.设置属性
+        oBtn1.onclick = function () {
+            oCons[0].alt = "我改变了";
+
+            oCons[0].her = "hahah";//对于自定义属性来说，这样的方法是把标签当成了js对象，给对象扩展的属性和方法
+
+            //如果想要给元素设置自定义属性， 就需要使用setAttribute方法
+
+            oCons[1].setAttribute("his","jQuery");
+
+            console.log(oCons[1]);  //<a href="###" his="jQuery">我是老A</a>
+            console.log(newAttr);
+            // oCons[0].setAttribute(newAttr);
+
+
+
+        }
+
+        oBtn2.onclick = function () {
+            oCons[0].removeAttribute("your");
+        }
+    </script>
+</body>
+</html>
