@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播2.0</title>
+    <link type="text/css" rel="stylesheet" href="轮播.css">
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <!--单独给图片一个盒子，避免左右两边的小左右尖符号跟着图片动-->
+        <div class="con">
+            <img src="img/11.JPG" alt="">
+            <img src="img/12.JPG" alt="">
+            <img src="img/13.JPG" alt="">
+            <img src="img/14.JPG" alt="">
+            <img src="img/15.JPG" alt="">
+            <img src="img/11.JPG" alt="">
+        </div>
+        <!--左右两边的图标-->
+        <p class="left"><</p>
+        <p class="right">></p>
+        <!--中间的三个方形-->
+        <ul class="page">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oOuter = document.querySelector(".outer");
+    var oInner = document.querySelector(".inner");
+    var oImg = document.querySelectorAll(".con>img");
+    var i = 0;//保存图片下标
+    var timerDing = null;//2秒后我要看到下一张完整的图片
+    var timerGo = null;//2秒内你要怎么走嘞？
+    timerDing = setInterval(function () {
+        i++;
+        if (i >= oImg.length){
+            i = 0;
+        }
+        // oInner.scrollLeft = oImg[0].offsetWidth * i;
+
+        var start = oInner.scrollLeft;
+        var end = oImg[0].offsetWidth * i;
+        var startStep = 0;
+        var endStep = 40;
+        var everyStep = (end - start) / (endStep - startStep);
+        timerGo = setInterval(function () {
+            startStep ++;
+            if (startStep >= endStep){
+                clearInterval(timerGo);
+            }
+            start += everyStep;
+            oInner.scrollLeft = start;
+        },10);
+    },2000);
+    
+
+</script>
+</body>
+</html>
+
+
