@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outer{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+        #box{
+            width: 200px;
+            height: 2000px;
+            background:linear-gradient(180deg,red,green);
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="box"></div>
+</div>
+<script>
+    /*
+    * onscroll事件：
+    *   滚动条事件，实时检测触发，间隔事件可以达到很短
+    * */
+    var oBox = document.getElementById("box");
+    var oOuter = document.getElementById("outer");
+    oOuter.onscroll = function () {
+        console.log(Date.now());
+        console.log(1);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM0绑定事件</title>
+</head>
+<body>
+<div id="box" onclick="f()">box  你点我</div>
+<div id="outer">
+    <div id="inner">
+        <div id="con">
+            k看我的事件流
+        </div>
+    </div>
+</div>
+<script>
+    /*
+    * 绑定事件是 on + 事件类型 来对元素绑定的
+    *  两种绑定方法：
+    *   1.静态绑定 把JS的脚本作为属性值，赋值给元素的事件属性
+    *
+    *   2.动态绑定：给元素的DOM对象的事件属性进行赋值
+    *
+    *  事件处理函数：是一种特殊的函数，主要是事件发生的时候调用，进行事件处理。是异步调用
+    *
+    *
+    * DOM0事件绑定的事件流是  冒泡~
+    *
+    * DOM0 事件绑定 不允许给同一个元素绑定多个相同的事件 否则会覆盖
+    * */
+
+    // 两种绑定方法：
+    /*function f() {
+        alert("hello");
+    }
+    var oBox = document.getElementById("box");
+    oBox.onclick = f;*/
+
+
+    //事件绑定的事件流
+    var oOuter = document.getElementById("outer");
+    var oInner = document.getElementById("inner");
+    var oCon = document.getElementById("con");
+    /*oCon.onclick = function () {
+        alert("con");
+    }
+    oInner.onclick = function () {
+        alert("inner");
+    }
+    oOuter.onclick = function () {
+        alert("outer");
+    }*/
+
+
+    //对同一个元素绑定同一个事件多次
+    oCon.onclick = function () {
+        alert(1)
+    }
+    oCon.onclick = function () {
+        alert(2)
+    }
+    oCon.onclick = function () {
+        alert(3)
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流函数</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        .con{
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="con"></div>
+<script>
+    /*
+    * 节流函数：
+    *   节流函数时优化高频率执行js的一种手段
+    *   oninput onkeypress onscroll onresize 等事件触发非常频繁
+    *   但是通常我们不需要逻辑代码执行频率很高，有必要的使用节流。
+    *   节流可以让逻辑代码在一定时间内只执行一次
+    *
+    * */
+    var i = 0;
+    var oCon = document.querySelector(".con");
+    var flag = true;//定义一个看门狗，默认开启大门
+    //我们不能改变事件的触发频率，但是可以改变触发时，执行逻辑代码的频率
+    window.onscroll = function () {
+        //看门狗判断是否放行
+        if (!flag) {
+            return;
+        }
+        //逻辑代码区域
+        i++;
+        oCon.innerHTML = i;
+
+        //只要放行就把门关
+        flag = false;
+
+        //延迟一定的时候再开启开门开关
+        setTimeout(function () {
+            flag = true;
+        },100)
+    }
+</script>
+</body>
+</html>

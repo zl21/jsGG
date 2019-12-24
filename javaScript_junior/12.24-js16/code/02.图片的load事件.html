@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片的load事件</title>
+</head>
+<body>
+<img id="pic" src="../images/01.jpg" alt="">
+<script>
+    var oImg = document.getElementById("pic");
+    //当图片没有设置好宽高的时候，想要获取到图片的宽高，就必须等待图片加载完成才能获取到
+    //否则 没有加载完成，则获取到的是0
+    //如果图片设置了宽高，那么获取的宽度是DOM节点的宽度，而不是图片实际的宽度
+    console.log(oImg.offsetWidth + "外部");//0
+
+
+    setTimeout(function () {
+        //图片加载慢，但是给一个延迟执行，可以等图片加载进来以后获取宽度，但是时间不可控
+        console.log(oImg.offsetWidth + "计时器");//2300
+    },1000)
+
+    // onload事件，等待加载完成以后执行
+    oImg.onload = function () {
+        console.log(oImg.offsetWidth + "onload");//2300
+    }
+</script>
+</body>
+</html>

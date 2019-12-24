@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resize事件</title>
+</head>
+<body>
+<script src="./my.js"></script>
+<script>
+    /*
+    * resize事件：
+    *   窗口重置后被触发
+    *
+    * */
+    function changeColor() {
+        if (my.getWinSize().width >=1000){
+            document.body.style.backgroundColor = "red";
+        }else if(my.getWinSize().width >=700){
+            document.body.style.backgroundColor = "green";
+        }else if(my.getWinSize().width >=500){
+            document.body.style.backgroundColor = "blue";
+        }else{
+            document.body.style.backgroundColor = "yellow";
+        }
+    }
+
+    window.onload = window.onresize = changeColor;
+</script>
+</body>
+</html>
