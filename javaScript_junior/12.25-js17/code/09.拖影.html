@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖影</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        img{
+            width: 20px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<script>
+    var oImgs = document.querySelectorAll("img");
+    document.onmousemove = function (e) {
+        var e = e || window.event;
+        var i = -1;
+        // 如果timer是全局变量，那么每次mousemove触发后，就生成一个新的计时器，覆盖全局变量timer，之前没有执行完的计时器，已经没有名字了，所以不可能被清除掉，就会出现bug
+        var timer = setInterval(function () {
+            i ++;
+            if (i >= oImgs.length - 1) {
+                clearInterval(timer);
+            }
+            oImgs[i].style.left = e.clientX + "px";
+            oImgs[i].style.top = e.clientY + "px";
+        },30)
+    }
+</script>
+</body>
+</html>

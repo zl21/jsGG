@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">点击我有惊喜哦</div>
+<button id="btn">取消惊喜</button>
+<script>
+    /*
+    * 销毁事件：
+    *   DOM0：
+    *      直接给事件赋值null  覆盖原有事件
+    *
+    *   DOM2：
+    *       必须保证绑定的函数和移除的函数是同一个函数
+    *       使用removeEventListener 方法移除事件
+    *
+    *
+    * */
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+
+    /*oBox.onclick = function () {
+        alert("圣诞快乐");
+    }
+    //点击btn 取消box的DOM0点击事件
+    oBtn.onclick = function () {
+        oBox.onclick = null;
+    }*/
+
+
+    // 必须保证绑定的函数和移除的函数是同一个函数
+    /*function f(){
+        alert("圣诞快乐")
+    }
+    oBox.addEventListener("click",f,false);
+    //点击btn 取消box的DOM2点击事件
+    oBtn.onclick = function () {
+        oBox.removeEventListener("click",f)
+    }*/
+
+
+
+    /*function f(){
+        alert("圣诞快乐")
+    }
+    oBox.attachEvent("onclick",f);
+
+    oBtn.onclick = function () {
+        oBox.detachEvent("onclick",f)
+    }*/
+</script>
+</body>
+</html>

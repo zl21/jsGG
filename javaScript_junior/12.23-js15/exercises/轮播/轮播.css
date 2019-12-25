@@ -76,3 +76,6 @@
     background-color: rgba(255,255,255,.5);
     float: left;
 }
+.page .show{
+    background-color: rgba(255,255,255,1);
+}

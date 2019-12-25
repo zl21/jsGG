@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件的兼容</title>
+</head>
+<body>
+<div id="box">box</div>
+<button id="btn">移除</button>
+<script>
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    function f() {
+        alert("圣诞你快乐吗");
+    }
+   /* if (oBox.addEventListener){
+        oBox.addEventListener("click",f,false);
+    }else if (oBox.attachEvent){
+        oBox.attachEvent("onclick",f);
+    }else{
+        oBox.onclick = f;
+    }*/
+
+    /*oBtn.onclick = function () {
+        if (oBox.removeEventListener){
+            oBox.removeEventListener("click",f);
+        }else if (oBox.detachEvent){
+            oBox.detachEvent("onclick",f);
+        }else{
+            oBox.onclick = null;
+        }
+    }*/
+
+    function removeEvent(ele,type,f) {
+        if (ele.removeEventListener){
+            ele.removeEventListener(type,f);
+        }else if (ele.detachEvent){
+            ele.detachEvent("on"+type,f);
+        }else{
+            ele["on"+type] = null;
+        }
+    }
+
+    function addEvent(ele,type,f,boo){
+        if (ele.addEventListener){
+            ele.addEventListener(type,f,boo || false);
+        }else if (ele.attachEvent){
+            ele.attachEvent("on" + type,f);
+        }else{
+            ele["on" + type] = f;
+        }
+    }
+    addEvent(oBox,"click",f);
+    oBtn.onclick = function () {
+        removeEvent(oBox,"click",f);
+    }
+
+
+
+
+</script>
+</body>
+</html>

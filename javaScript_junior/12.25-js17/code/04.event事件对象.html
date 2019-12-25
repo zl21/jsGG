@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event事件对象</title>
+</head>
+<body>
+<div id="box">box</div>
+<script>
+    /*
+    * event事件对象：
+    *   event对象是由事件自动创建的，记录了当前事件的状态，比如事件发生的源节点、键盘的相应状态、鼠标的信息等等。。。。
+    *   event对象的方法也有很多，比如阻止默认事件、阻止传播
+    *
+    * 获得event对象：
+    *   在DOM规范中，event事件对象被传递给了事件函数，也就是事件函数的第一个参数就是事件对象，当书写第一个参数的时候，这个参数就被当做event使用
+    *   在IE低版本中，event事件对象被保存在了window对象中
+    *
+    *   兼容性写法：
+    *       var e = e || window.event;
+    *
+    *       - bubbles：返回布尔值，判断是否属于冒泡类型的
+    *       - cancelable ：返回布尔值，判断当前的时间发生有没有取消默认事件，如果取消则返回false
+    *       - target：返回事件的源节点
+    *       - type:判断事件类型
+    *       - preventDefault():阻止默认事件（通知浏览器不要执行与事件相关联的默认动作）
+    *       - stopPropagation():阻止传播（阻止事件在捕获、目标阶段、冒泡阶段进行进一步的传播）
+    *
+    *
+    * */
+
+    var oBox = document.getElementById("box");
+    /*oBox.onclick = function () {
+        console.log(window.event);
+        // console.log(1);
+    }
+    oBox.onclick = function (e) {
+        console.log(e);
+        // console.log(1);
+    }*/
+
+    // 兼容性获取event事件对象：
+    oBox.onclick = function (e) {
+        var e = e || window.event;
+        console.log(e);
+    }
+
+</script>
+</body>
+</html>

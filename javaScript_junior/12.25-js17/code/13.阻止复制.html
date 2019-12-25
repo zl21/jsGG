@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止复制</title>
+</head>
+<body>
+<div>小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊</div>
+
+<script>
+    document.onkeydown = function (e) {
+        var e = e || window.event;
+        if (e.keyCode == 67 && e.ctrlKey){
+            alert("哎呦，又来抄作业了");
+            return false;
+        }
+    }
+    document.oncontextmenu = function () {
+        return false;
+    }
+</script>
+</body>
+</html>

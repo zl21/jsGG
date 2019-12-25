@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止传播</title>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="con">11</div>
+    </div>
+</div>
+<script>
+    /*
+    * 阻止传播：
+    *   阻止当前元素的事件 向上或下继续传播，只能阻止掉相同的事件
+    *       在现代浏览器中：
+    *           使用 event.stopPropagation()
+    *
+    *       在老的IE中：
+    *           使用event.cancelBubble = true;
+    *
+    * */
+
+    var oCon = document.getElementById("con");
+    var oOuter = document.getElementById("outer");
+    var oInner = document.getElementById("inner");
+
+    /*oCon.onclick = function (e) {
+        var e = e || window.event;
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+        alert("con");
+    }
+    oInner.onclick = function () {
+        alert("inner");
+    }
+    oOuter.onclick = function () {
+        alert("outer");
+    }*/
+
+
+    oCon.addEventListener("click",function (e) {
+        alert("con")
+    },true)
+    oInner.addEventListener("click",function (e) {
+        // e.stopPropagation();
+        alert("inner")
+    },true)
+    oOuter.addEventListener("click",function (e) {
+        e.stopPropagation();
+        alert("outer")
+    },true)
+
+</script>
+</body>
+</html>
