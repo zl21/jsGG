@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* body{
+            border:100px solid;
+        } */
+        #wrap{
+
+
+            margin-left:100px;
+            padding-left:50px;
+            border:30px solid;
+            background-color: red;
+            position: relative;
+            height:100px;
+        }
+        #inner{
+            /* margin-left:80px; */
+            position:absolute;
+            left:50px;
+            /* margin-left:80px; */
+            background-color: blue;
+            width:100px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="inner">
+            
+        </div>
+    </div>
+    <script>
+        //offsetX和offsetLeft区别
+        //获取方式
+        //offsetX:事件对象event.offsetX
+        //offsetLeft:DOM对象.offsetLeft
+        //功能
+        //offsetX:获取鼠标距离当前最内层元素的左上角的X轴距离
+        //offsetLeft:获取最近包含块的x轴偏移值
+        //             1.没开定位:找窗口(加上body的边框)
+        //             2.开启定位:找包含块(参考位置：包含块border的内侧)
+        wrap.onclick=function(e){
+            console.log(e.offsetX)
+        }
+        // console.log(inner.offsetLeft)
+    </script>
+</body>
+</html>

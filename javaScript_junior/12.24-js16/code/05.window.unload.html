@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.unload</title>
+</head>
+<body>
+<script>
+    /*
+    * window.onunload:
+    *   页面卸载，这个页面被超链接跳转走、历史记录回退前进、关闭窗口的时候触发
+    *
+    * beforeunload:
+    *   和unload类似，不过更加人性化 会弹出弹窗 让用户确定自己的选择，事件函数的返回值就是窗口的提示信息
+    * */
+    localStorage.setItem("hello","world");
+    /*window.onunload = function () {
+        localStorage.removeItem("hello");
+    }*/
+
+    window.onbeforeunload = function () {
+        localStorage.removeItem("hello");
+        return "你确定你要走？？？"
+    }
+
+</script>
+</body>
+</html>

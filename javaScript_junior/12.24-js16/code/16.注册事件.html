@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册事件（事件监听）</title>
+</head>
+<body>
+    <div id="demo">demo</div>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">
+                k看我的事件流
+            </div>
+        </div>
+    </div>
+<script>
+    /*
+    * 注册事件（事件监听）：(IE8及以下不兼容)
+    *   - 在DOM2事件模型中，调用对象的addEventListener()方法注册事件
+    *   - 参数
+    *       1.type：注册事件的类型名称，以事件属性不同，不需要书写on，比如点击事件 就书写 click
+    *       2.listener:监听函数，也就是事件处理函数，事件发生的时候，调用这个函数
+    *       3.useCapture：是一个布尔值，如果为true，则事件会在捕获的阶段发生，如果为flase，则事件会在冒泡的阶段发生
+    *
+    *   - 特点：
+    *       可以为元素设置同一个事件执行多次
+    *       可以选择捕获阶段还是冒泡阶段执行事件
+    *
+    *
+    * IE的事件模型（IE8以下）
+    *   使用对象的attachEvent方法绑定事件
+    *       和addEventListener()类似，但是只有两个参数，只能冒泡，不能选择事件流
+    * */
+
+    var oDemo = document.getElementById("demo");
+    /*oDemo.addEventListener("click",function () {
+        alert("demo1");
+    },false);
+    oDemo.addEventListener("click",function () {
+        alert("demo2");
+    },false);
+    oDemo.addEventListener("click",function () {
+        alert("demo3");
+    },false);
+    oDemo.addEventListener("click",function () {
+        alert("demo4");
+    },false);*/
+
+
+
+    var oOuter = document.getElementById("outer");
+    var oInner = document.getElementById("inner");
+    var oCon = document.getElementById("con");
+    /*oOuter.addEventListener("click",function () {
+        alert("outer")
+    },false)
+    oInner.addEventListener("click",function () {
+        alert("inner")
+    },true)
+    oCon.addEventListener("click",function () {
+        alert("con")
+    },true)*/
+
+
+    // IE低版本事件监听
+    /*oCon.attachEvent("onclick",function () {
+        alert(1);
+    })
+    oInner.attachEvent("onclick",function () {
+        alert(2);
+    })*/
+
+
+
+</script>
+</body>
+</html>

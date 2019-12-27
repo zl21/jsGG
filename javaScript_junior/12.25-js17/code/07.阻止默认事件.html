@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止默认事件</title>
+</head>
+<body>
+<script>
+    /*
+    * 阻止默认事件：
+    *   通知浏览器不要执行与事件相关联的默认动作（书写位置无所谓）
+    *   在现代浏览器中：
+    *       event.preventDefault();
+    *   在IE低版本中：
+    *       event.returnValue = false;
+    *
+    *
+    *   有更加简单的默认事件：
+    *       当事件函数 返回值 是false的时候，会阻止掉默认事件
+    *       return false;
+    *       return false要慎用，必须书写在事件函数的最后边，否则 return 就会退出当前的函数
+    *
+    * */
+
+    // 阻止右键默认事件
+    document.oncontextmenu = function (e) {
+        var e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖影</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        img{
+            width: 20px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<img src="../images/heart.png" alt="">
+<script>
+    var oImgs = document.querySelectorAll("img");
+    document.onmousemove = function (e) {
+        var e = e || window.event;
+        var i = -1;
+        var timer = setInterval(function () {
+            i++;    //第一张爱心即下标为0
+            /*超过最后一张即下标为9的那张就找不到了，会报错*/
+            if (i >= oImgs.length - 1){
+                clearInterval(timer);
+            }
+            oImgs[i].style.left = e.clientX + "px";
+            oImgs[i].style.top = e.clientY + "px";
+        },30)
+    }
+</script>
+</body>
+</html>

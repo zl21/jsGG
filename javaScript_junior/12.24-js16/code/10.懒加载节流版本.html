@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>懒加载（延迟加载）</title>
+    <style>
+        .con{
+            Width: 1044px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .con>img{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 10px;
+            float: left;
+            background: url("../images/timg.gif") 0 0 no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <img data-src="../images/01.jpg">
+    </div>
+    <script src="./my.js"></script>
+    <script>
+        window.onload = function () {
+            //页面加载时 添加img标签
+            var oCon = document.querySelector(".con");
+            for (var i = 0; i < 30; i++) {
+                var v = i + 1;
+                v < 10 ? v = "0" + v : v;
+                var imgStr = `<img src="" data-src="../images/${v}.jpg">`;
+                oCon.innerHTML += imgStr;
+            }
+            var oImgs = document.querySelectorAll(".con>img");
+
+            //定义一个看门狗
+            var flagLazy = true;
+            //进入页面 加载图片
+            lazyLoad();
+            //懒加载，滚动页面滚动条的时候触发
+            window.onscroll = lazyLoad;
+
+
+
+
+            function lazyLoad() {
+                if (!flagLazy){
+                    return;
+                }
+                flagLazy = !flagLazy;
+                oImgs.forEach(function (item,index) {
+                    if (my.getEleToWin(item).top <= my.getWinSize().height + my.getWinScroll().top){
+                        item.src = item.dataset.src;
+                    }
+                })
+                setTimeout(function () {
+                    flagLazy = !flagLazy;
+                },500)
+            }
+        }
+
+    </script>
+</body>
+</html>

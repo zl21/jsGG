@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMContentLoaded事件</title>
+</head>
+<body>
+<img src="../images/18.jpg" alt="" id="pic">
+<script>
+    /*
+    * DOMContentLoaded事件：
+    *   window.onload 当所有的节点和资源都加载完毕后才执行，如果使用DOM0，则window只能被绑定一次onolad
+    *
+    *   DOMContentLoaded事件
+    *       当所有的节点都加载完毕以后就执行
+    *       onDOMContentLoaded 事件是DOM2的事件，只能通过addEventListener绑定
+    *
+    *
+    * */
+
+    /*window.onDOMContentLoaded = function () {
+        alert("1");
+    }*/
+
+    window.addEventListener("DOMContentLoaded",function () {
+        alert(document.getElementById("pic").offsetWidth);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0px;
+        }
+
+        .xiaoTu {
+            width: 200px;
+            height: 200px;
+        }
+
+        .fdj {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(200, 200, 200, .4);
+            /*display: none;*/
+            position: absolute;
+            /*top: 0;*/
+            /*left: 0;*/
+            z-index: 3;
+        }
+        .fdj:hover{
+            cursor: move;
+        }
+
+        .xiaoTu img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .daTu {
+            width: 400px;
+            height: 400px;
+            /*display: none;*/
+            position: absolute;
+            top: 10px;
+            left: 220px;
+            overflow: hidden;
+        }
+
+        .daTu img {
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="xiaoTu">
+    <div class="fdj"></div>
+    <img src="../images/10.jpg" alt="">
+</div>
+<div class="daTu">
+    <img src="../images/10.jpg" alt="">
+</div>
+<script>
+    var xiaotu = document.querySelector(".xiaoTu");
+    var fdj = document.querySelector(".fdj");
+    var datu = document.querySelector(".daTu");
+
+    fdj.onmousedown = function (e) {
+        document.onmousemove = function (e) {
+            var e = e || window.event;
+            var fdjX = e.clientX - fdj.offsetWidth / 2;
+            var fdjY = e.clientY - fdj.offsetHeight / 2;
+            if (fdjX <= 0) {
+                fdjX = 0;
+            } else if (fdjX >= xiaotu.clientWidth - fdj.offsetWidth) {
+                fdjX = xiaotu.clientWidth - fdj.offsetWidth
+            }
+            if (fdjY <= 0) {
+                fdjY = 0;
+            } else if (fdjY >= xiaotu.clientHeight - fdj.offsetHeight) {
+                fdjY = xiaotu.clientHeight - fdj.offsetHeight
+            }
+            fdj.style.left = fdjX + "px";
+            fdj.style.top = fdjY + "px";
+            var xiaotuW = (e.clientX - e.offsetX) / xiaotu.offsetWidth;
+            var xiaotuH = (e.clientY - e.offsetY) / xiaotu.offsetHeight;
+            datu.scrollLeft = datu.offsetWidth * xiaotuW - (fdj.offsetWidth / 2);
+            datu.scrollTop = datu.offsetHeight * xiaotuH - (fdj.offsetHeight / 2);
+
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+    }
+</script>
+</body>
+</html>

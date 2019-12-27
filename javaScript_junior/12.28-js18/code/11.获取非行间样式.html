@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取非行间样式</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box" style="line-height: 40px;font-size: 20px"></div>
+<script>
+    var oBox = document.querySelector(".box");
+    // ele.style只能获取行内样式
+    //ele.style.cssText 可以获取到所有行内的样式信息  字符串形式
+    // console.log(oBox.style.lineHeight);
+    // console.log(oBox.style.cssText);
+
+    /*
+    获取非行间样式使用：
+        DOM规范的方法：
+         window.getComputedStyle(obj)
+        低版本IE：
+            obj.currentStyle属性
+
+
+        */
+    // console.log(getComputedStyle(oBox).backgroundColor);//rgb(255, 0, 0)
+
+    // console.log(oBox.currentStyle.width);
+
+
+    //封装
+    function getStyle(obj,attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj)[attr];
+        }else{
+            return obj.currentStyle[attr];
+        }
+    }
+
+    console.log(getStyle(oBox, "width"));
+
+
+</script>
+</body>
+</html>

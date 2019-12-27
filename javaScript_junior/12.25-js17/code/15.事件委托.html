@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<ul id="con">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+</ul>
+<script>
+    /*
+    * 事件委托（delegate）：也被称作为 事件代理 事件托管
+    *   事件就是我们平时绑定的事件，委托就是把目标节点的事件绑定到祖先元素上
+    *   优点1.优化代码性能减少for循环， 2.防止动态的添加删除节点中 注册的事件丢失的现象
+    *   原理：冒泡  逐层的冒泡会被祖先元素捕捉到
+    *
+    * */
+
+    var oCon = document.getElementById("con");
+    var oBtn = document.getElementById("btn");
+    var oLis = oCon.getElementsByTagName("li");
+
+    //普通写法
+    /*oBtn.onclick = function () {
+        var newLi = document.createElement("li");
+        newLi.innerHTML = "新的li";
+        oCon.appendChild(newLi);
+        console.log(oLis);
+    }
+
+    for (var i = 0; i < oLis.length; i++) {
+        oLis[i].onclick = function (){
+            this.style.backgroundColor = "red";
+        }
+    }*/
+    
+    //事件委托写法
+
+    oBtn.onclick = function () {
+        var newLi = document.createElement("li");
+        newLi.innerHTML = "新的li";
+        oCon.appendChild(newLi);
+        console.log(oLis);
+    }
+
+
+    oCon.onclick = function (e) {
+        var e = e || window.event;
+        if (e.target.nodeName.toLowerCase() == "li")
+        e.target.style.background = "red";
+    }
+
+
+</script>
+</body>
+</html>

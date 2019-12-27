@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.onload</title>
+    <script>
+        window.onload = function () {
+            var oPic = document.getElementById("pic");
+            console.log(oPic.offsetWidth);//2300
+        }
+    </script>
+</head>
+<body>
+<img src="../images/01.jpg" alt="" id="pic">
+<script>
+    /*
+    * window.onload：
+    *   当页面加载完成以后触发（需要等图片音频视频资源全部加载完成之前，window.onload中的内容是不会执行的）
+    *
+    * */
+    var oPic = document.getElementById("pic");
+    console.log(oPic.offsetWidth);//0
+
+
+</script>
+</body>
+</html>

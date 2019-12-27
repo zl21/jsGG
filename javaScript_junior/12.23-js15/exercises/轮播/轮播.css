@@ -1,0 +1,81 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.outer{
+    width: 620px;
+    margin: 100px auto;
+    border: 1px solid #000;
+    position: relative;/*给left、right盒子作参照。*/
+    /*scroll-snap-type: x mandatory;*/
+}
+.inner {
+    width: 620px;
+    overflow: auto;
+    /*position: relative;*//*不能给left、right盒子作参照。如果圆角相对inner定位，那滚动时左右两边的圆角会跟着滚动条不见*/
+    /*注意：在 有滚动条的元素上 给别的元素 设置 相对于该元素 的定位时，定位的东西会被滚动条滚走。*/
+}
+.con{
+    width: 4000px;
+    overflow: hidden;/*或使用浮动*/
+    /*scroll-snap-align: center;*/
+}
+.con img{
+    /*display: block;*/
+    width: 620px;
+    height: 400px;
+    float: left;/*浮动之后就自动变成块元素，并且清掉了图片之间的空格*/
+    /*scroll-snap-align: center;*/
+}
+.left{
+    /*display: block;*//*开定位后自动变成block*/
+    /*float: left;*//*开定位后浮动失效*/
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color: rgba(200,40,156,.6);
+    text-align: center;/*文字水平居中*/
+    line-height: 30px;/*文字水平居中*/
+    position: absolute;/*absolute相对于离得最近的定位非static的祖先元素定位*/
+    left: 0px;
+    top: 50%;
+    margin-top: -15px;/*向上移一点元素整体居中，减去自身高度的一半*/
+    border-radius: 0 100% 100% 0;
+}
+.right{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color: rgba(200,40,156,.6);
+    text-align: center;/*文字水平居中*/
+    line-height: 30px;/*文字水平居中*/
+    position: absolute;/*absolute相对于离得最近的定位非static的祖先元素定位*/
+    right: 0px;
+    top: 50%;
+    margin-top: -15px;/*向上移一点元素整体居中，减去自身高度的一半*/
+    border-radius: 100% 0 0 100%;
+}
+.page{
+    /*不行，不定位的话，li标签会被滚动条滚没了。
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    /*margin-left: -30px;*/
+    transform: translate(-50%);/*不用知道元素大小也可以设置，方便*/
+
+}
+.page li{
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: rgba(255,255,255,.5);
+    float: left;
+}
+.page .show{
+    background-color: rgba(255,255,255,1);
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘控制移动</title>
+    <style>
+        #box{
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    /*var oBox = document.getElementById("box");
+    var x = 0,y = 0;
+    document.onkeydown = function (e) {
+        var e = e || window.event;
+        /!*if (e.keyCode == 37){
+            x --;
+        }else if(e.keyCode == 38){
+            y --;
+        }else if(e.keyCode == 39){
+            x ++;
+        }else if(e.keyCode == 40){
+            y ++;
+        }
+        oBox.style.left = x + "px";
+        oBox.style.top = y + "px";*!/
+
+    }*/
+
+
+
+    var oBox = document.getElementById("box");
+    var x = 0,y = 0;
+    var shang  = xia = zuo = you = false;
+    document.onkeydown = function (e) {
+        var e = e || window.event;
+        switch (e.keyCode) {
+            case 37:
+                zuo = true;
+                break;
+            case 38:
+                shang = true;
+                break;
+            case 39:
+                you = true;
+                break;
+            case 40:
+                xia = true;
+                break;
+        }
+    }
+    document.onkeyup = function (e) {
+        var e = e || window.event;
+        switch (e.keyCode) {
+            case 37:
+                zuo = false;
+                break;
+            case 38:
+                shang = false;
+                break;
+            case 39:
+                you = false;
+                break;
+            case 40:
+                xia = false;
+                break;
+        }
+    }
+
+    timer = setInterval(function () {
+        if(shang){
+            y --;
+        }
+        if (xia){
+            y ++;
+        }
+        if (zuo){
+            x --;
+        }
+        if (you){
+            x ++;
+        }
+        oBox.style.left = x + "px";
+        oBox.style.top = y + "px";
+    },20)
+</script>
+</body>
+</html>

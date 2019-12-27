@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组对象排序</title>
+</head>
+<body>
+<input type="text" placeholder="请输入需要查询的id">
+<div class="box"></div>
+<button>dins</button>
+<script>
+    var oIpt = document.querySelector("input")
+    var oBox = document.querySelector(".box")
+    var oBtn = document.querySelector("button")
+    /*其中parent_id为父级，求输入id后找到它所有的子集。*/
+    var data = [
+        {id:1,address:"广东",parent_id:0},
+        {id:2,address:"广西",parent_id:0},
+        {id:3,address:"广南",parent_id:1},
+        {id:4,address:"广北",parent_id:2},
+        {id:5,address:"江东",parent_id:3},
+        {id:6,address:"江西",parent_id:4},
+        {id:7,address:"长沙",parent_id:0},
+        {id:8,address:"北京",parent_id:2},
+        {id:9,address:"上海",parent_id:7},
+        {id:10,address:"深证",parent_id:9},
+        {id:11,address:"丽水",parent_id:1},
+        {id:12,address:"广州",parent_id:10}
+    ];
+    /*
+    var fu = +prompt("输入父级id：");
+    data.forEach(function (item) {
+        if (item.parent_id.valueOf() == fu){
+            console.log(item);
+        }
+    })
+    */
+    oBtn.onclick=function () {
+        var x = data.filter(function (item,index) {
+            if( item.parent_id==+oIpt.value){
+                console.log(item.address);
+                oBox.innerHTML+=item.address;
+                return item.address;
+            }
+        })
+        console.log(x);
+        // console.log(x[0].address);
+    }
+
+
+</script>
+</body>
+</html>

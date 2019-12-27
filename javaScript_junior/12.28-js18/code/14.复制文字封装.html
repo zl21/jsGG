@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制文字</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="copy">
+        <p id="con">今天最后一天js基础课程，你们开始学高级了</p>
+    </div>
+    <button id="btn">复制</button>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.getElementById("con");
+
+        oBtn.onclick = function () {
+            /*//复制是依赖表单元素的  为了避免影响布局，所以动态创建表单
+            var oIpt = document.createElement("input");
+
+            //将input插入到页面中
+            document.body.appendChild(oIpt);
+
+            //把复制的内容  给 input元素
+            oIpt.value = oCon.innerHTML;
+
+            //选中表单内容
+            oIpt.select();
+
+            //复制操作
+            document.execCommand("copy");
+
+            //删除掉插入的表单
+            document.body.removeChild(oIpt);*/
+
+
+            copyEleText(oCon);
+        }
+
+        function copyEleText(obj) {
+            var oIpt = document.createElement("input");
+            document.body.appendChild(oIpt);
+            oIpt.value = obj.innerHTML;
+            oIpt.select();
+            document.execCommand("copy");
+            document.body.removeChild(oIpt);
+        }
+    </script>
+</body>
+</html>

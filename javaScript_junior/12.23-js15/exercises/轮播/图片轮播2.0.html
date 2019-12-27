@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播2.0</title>
+    <link type="text/css" rel="stylesheet" href="轮播.css">
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+        <!--单独给图片一个盒子，避免左右两边的小左右尖符号跟着图片动-->
+        <div class="con">
+            <img src="img/11.JPG" alt="">
+            <img src="img/12.JPG" alt="">
+            <img src="img/13.JPG" alt="">
+            <img src="img/14.JPG" alt="">
+            <img src="img/15.JPG" alt="">
+            <img src="img/11.JPG" alt="">
+        </div>
+        <!--左右两边的图标-->
+        <p class="left"><</p>
+        <p class="right">></p>
+        <!--中间的三个方形-->
+        <ul class="page">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oOuter = document.querySelector(".outer");
+    var oInner = document.querySelector(".inner");
+    var oImg = document.querySelectorAll(".con>img");
+    var i = 0;//保存图片下标
+    var timerDing = null;//2秒后我要看到下一张完整的图片
+    var timerGo = null;//2秒内你要怎么走嘞？
+    var toLeft = document.querySelector(".left");//点击向左
+    var toRight = document.querySelector(".right");//向右
+    var oLis = document.querySelectorAll(".page>li");//获取page页码
+    /*
+    * autoMove()方法：
+    * 2秒后必须给我显示下一张图。
+    * */
+    function autoMove() {
+        timerDing = setInterval(function () {
+            clearInterval(timerGo);
+            i++;
+            if (i >= oImg.length) {
+                // i = 0;
+                oInner.scrollLeft = 0;
+                i = 1;//走完最后那张重复的图片时，瞬间让下标为1的第二张图片显示出来。
+            }
+            move();//给我看完第二张之后你要继续动啊~
+            // oInner.scrollLeft = oImg[0].offsetWidth * i;
+            page();
+        }, 2000);
+    }
+
+    /*
+    * move()方法：
+    * 2秒内你想怎么动？
+    * */
+    function move(){
+        var start = oInner.scrollLeft;
+        var end = oImg[0].offsetWidth * i;
+        var startStep = 0;
+        var endStep = 44;
+        var everyStep = (end - start) / (endStep - startStep);
+        timerGo = setInterval(function () {
+            startStep ++;
+            if (startStep >= endStep){
+                clearInterval(timerGo);
+            }
+            start += everyStep;
+            oInner.scrollLeft = start;
+        },10);
+    }
+
+    autoMove(); //加载完页面先调用autoMove函数，里面有move子函数。
+
+    /*
+    * 清计时器的方法：
+    * */
+    function clean(){
+        clearInterval(timerDing);
+        clearInterval(timerGo);
+    }
+
+    //左右点击
+    toLeft.onclick = function () {
+        clean();
+        i --;
+        if (i < 0){
+            i = oImg.length - 1;//小于第一张就跳到最后一张
+        }
+        move();
+        page();//点击时页码跟着动
+        autoMove();//只调用autoMove的话，会停2秒才开始动。看autoMove中子函数的位置。
+    }
+    toRight.onclick = function () {
+        clean();
+        i ++;
+        if (i > oImg.length-1){
+            i = 0;
+        }
+        move();
+        page();
+        autoMove();
+    }
+
+    /*
+    * page()方法：
+    * 页码跟着走。思路：i=0时，第一个li标签显示样式，依次直到最后一张图。
+    * 最后一张图是重复图，所以要判断最后一张的下标并令此图绑定显示第一个li标签的样式。
+    * 在Automove()中调用。还要在autoMove中将inner的scrollLeft设为0，且最后一张图片走完时瞬间让i=1即显示第二张图。
+    * */
+    function page() {
+        var page = i;//不可以改变i,又需要用到i来进行比较，所以先定义一个变量来保存i的值
+        for (var j = 0; j < oLis.length; j++) {
+            if (page == oImg.length-1){
+                page = 0;//若为最后一张图则令页码page为0
+            }
+            if (page == j){
+                oLis[j].classList.add("show");
+            }else {
+                oLis[j].classList.remove("show");
+            }
+        }
+    }
+
+    /*
+    * 页码点击事件
+    * */
+    for (var j = 0; j < oLis.length; j++) {
+        oLis[j].onclick = function () {
+            clean();
+            for (var k = 0; k < oLis.length; k++) {
+                if (oLis[k] == this) {
+                    oLis[k].classList.add("show");
+                    i = k;//关键：让k等于i即图片的序号,这样就显示出来了li为K的那张。
+                    move();
+                    autoMove();
+                }else {
+                    oLis[k].classList.remove("show");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.键盘事件及键盘事件的event对象</title>
+</head>
+<body>
+<script>
+    /*
+    * 键盘事件：
+    *   当用户操作键盘的时候会触发键盘事件
+    *   keydown：键盘被按下某一个按键的时候触发，如果持续按住某一个按键，则会持续执行
+    *   keyup：键盘的某一个按键被松开的时候触发，只是执行一次  不会持续执行
+    *
+    * 键盘事件的event对象：
+    *   keyCode：对应键位的键码
+    *   shiftKey、ctrlKey、altKey  判断用户是否按下shift ctrl alt键
+    *   key:当前按键的符号（字符串）
+    *
+    * */
+
+    document.onkeydown = function (e) {
+        var e = e || window.event;
+        console.log(e);
+    }
+</script>
+</body>
+</html>

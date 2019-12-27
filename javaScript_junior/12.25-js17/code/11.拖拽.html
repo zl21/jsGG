@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #box{
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div>小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊小子，来复制我啊</div>
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById("box");
+    
+    //对oBox绑定鼠标按下事件
+    oBox.onmousedown = function (e) {
+        var e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        //鼠标按下 获取当前鼠标距离屏幕边缘的距离
+        var mouseToWin = {
+            left : e.clientX,
+            top : e.clientY
+        }
+        //鼠标按下获取 元素原有的定位信息
+        var eleToWin = {
+            left:oBox.offsetLeft,
+            top:oBox.offsetTop
+        }
+        //鼠标按下移动，需要书写移动事件,鼠标移动速度快，所以可以把事件绑定在document上
+        document.onmousemove = function (e) {
+            var e = e || window.event;
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;
+            // 鼠标移动的时候，把新的client值减去旧的  就是鼠标拖着元素移动的距离  再加上原有的距离就是最新的信息
+            var elePosition = {
+                left : e.clientX - mouseToWin.left + eleToWin.left,
+                top : e.clientY - mouseToWin.top + eleToWin.top
+            }
+            //判断临界值
+            if(elePosition.left <= 0){
+                elePosition.left = 0;
+            }else if(elePosition.left >= (document.documentElement.clientWidth||document.body.clientWidth) - oBox.offsetWidth){
+                elePosition.left = (document.documentElement.clientWidth||document.body.clientWidth) - oBox.offsetWidth;
+            }
+
+            if(elePosition.top <= 0){
+                elePosition.top = 0;
+            }else if(elePosition.top >= (document.documentElement.clientHeight||document.body.clientHeight) - oBox.offsetHeight){
+                elePosition.top = (document.documentElement.clientHeight||document.body.clientHeight) - oBox.offsetHeight;
+            }
+
+
+            //赋值操作
+            oBox.style.left = elePosition.left + "px";
+            oBox.style.top = elePosition.top + "px";
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>
+</body>
+</html>

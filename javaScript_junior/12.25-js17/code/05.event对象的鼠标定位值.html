@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象的鼠标定位值</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            border: 1px solid #000;
+            margin: 30px;
+            position: relative;
+        }
+        .box #con{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 80px;
+            top: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div id="con"></div>
+</div>
+<script>
+    /*
+    * event对象的鼠标定位值:
+    *   clientX:以浏览器窗口左上角为原点，计算X的位置，  clientY类似(全兼容)
+    *   offsetX：以当前事件目标对象左上为原点 计算位置（全兼容）
+    *   pageX：以document对象（文档的）左上角为原点  计算位置(IE 8及以下不兼容)
+    *   screenX：以屏幕的左上角为原点计算位置 （全兼容）
+    *
+    * */
+    var oCon = document.getElementById("con");
+    oCon.onclick = function (e) {
+        var e = e || window.event;
+        // console.log(e.clientX,e.clientY);
+        // console.log(e.offsetX,e.offsetY);
+        // console.log(e.pageX,e.pageY);
+        // console.log(e.screenX,e.screenY);
+
+        console.log(getEventPage(e));
+    }
+
+    // pageX和pageY的封装
+    function getEventPage(e) {
+        if (e.pageX){
+            return {
+                x:e.pageX,
+                y:e.pageY
+            }
+        }else{
+            return {
+                x:document.body.scrollLeft + e.clientX,
+                y:document.body.scrollTop + e.clientY
+            }
+        }
+    }
+</script>
+</body>
+</html>
