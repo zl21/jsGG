@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义滚动条基础版</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        #wrap{
+            width: 40px;
+            background-color: #ccc;
+            position: fixed;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
+        #wrap #inner{
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            background-color: orangered;
+            top: 0px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="con">
+
+</div>
+
+<div id="wrap">
+    <div id="inner"></div>
+</div>
+<script>
+    var oCon = document.getElementById("con");
+    var oWrap = document.getElementById("wrap");
+    var oInner = document.getElementById("inner");
+
+    //自动生成一些内容填充
+    for (var i = 0; i < 200; i++) {
+        oCon.innerHTML += i +"<br>";
+    }
+
+    //生成滑块的高度
+    var scale = document.documentElement.clientHeight / oCon.offsetHeight;
+    var innerHeight = scale * oWrap.offsetHeight;
+    oInner.style.height = innerHeight + "px";
+
+
+    // 定义滚动条功能
+    oInner.onmousedown = function (e) {
+        e.preventDefault();
+        var mouseDownTop = e.offsetY;
+
+        document.onmousemove = function (e) {
+            e.preventDefault();
+            var mouseMoveTop = e.clientY - mouseDownTop;
+            if (mouseMoveTop <= 0){
+                mouseMoveTop = 0;
+            } else if(mouseMoveTop >= oWrap.clientHeight - oInner.offsetHeight){
+                mouseMoveTop = oWrap.clientHeight - oInner.offsetHeight;
+            }
+
+            // 比例公式：小滑块滑动的距离/小滑块可以滑动的距离 = con向上走的距离/con能走的距离
+            var scale = mouseMoveTop / (oWrap.clientHeight - oInner.offsetHeight);
+            var conmoveTop = (oCon.offsetHeight - document.documentElement.clientHeight) * scale;
+            oInner.style.top = mouseMoveTop + "px";
+            oCon.style.marginTop = - conmoveTop + "px";
+        }
+
+        document.onmouseup = function () {
+            document.onmousemove = document.onmouseup = null;
+        }
+    }
+</script>
+</body>
+</html>

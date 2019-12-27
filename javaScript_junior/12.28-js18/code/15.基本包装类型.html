@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本包装类型</title>
+</head>
+<body>
+<script>
+    /*
+    * 数据类型中  string  boolean  number 被称作为基本包装类型
+    *
+    * string boolean number 都有自己的包装对象，包装对象就是 String  Boolean  Number
+    *   var str = '123'
+    *   var str = new String("123")
+    *
+    *
+    *
+    * */
+
+    //当基本包装类型调用一个方法的时候 过程如下：
+    /*var str = "hello";
+    str.split("e");*/
+    // 过程如下：
+
+    // 1.找到响应的包装对象类型 然后通过这个包装对象 创建一个和这个字符串一样的值
+    var _str = new String("hello");
+    //2.让 _str调用split方法 并把值返回出去
+    var newArr = _str.split("e");
+    //3.销毁中间量
+    _str = null;
+
+
+
+
+    // 为什么不能给基本类型值扩展属性和方法呢？
+    var str = "hello";
+    str.my = 'yes';
+    console.log(str.my);//undefined
+
+    // 过程如下：
+    var _str = new String("hello");
+    _str.my = "yes";
+    _str = null;
+</script>
+</body>
+</html>

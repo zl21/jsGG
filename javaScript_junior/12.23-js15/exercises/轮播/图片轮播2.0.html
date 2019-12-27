@@ -140,7 +140,7 @@
             for (var k = 0; k < oLis.length; k++) {
                 if (oLis[k] == this) {
                     oLis[k].classList.add("show");
-                    i = k;//让k等于i即图片的序号,这样就显示出来了。
+                    i = k;//关键：让k等于i即图片的序号,这样就显示出来了li为K的那张。
                     move();
                     autoMove();
                 }else {
@@ -149,9 +149,6 @@
             }
         }
     }
-
-
-
 </script>
 </body>
 </html>

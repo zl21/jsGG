@@ -31,6 +31,7 @@
         }
     }*/
 
+    //销毁事件的兼容封装
     function removeEvent(ele,type,f) {
         if (ele.removeEventListener){
             ele.removeEventListener(type,f);
@@ -40,16 +41,17 @@
             ele["on"+type] = null;
         }
     }
-
+    //绑定事件的兼容封装
     function addEvent(ele,type,f,boo){
         if (ele.addEventListener){
-            ele.addEventListener(type,f,boo || false);
+            ele.addEventListener(type,f,boo || false);//通过这个或运算形参boo可以不写
         }else if (ele.attachEvent){
             ele.attachEvent("on" + type,f);
         }else{
             ele["on" + type] = f;
         }
     }
+    //调用
     addEvent(oBox,"click",f);
     oBtn.onclick = function () {
         removeEvent(oBox,"click",f);

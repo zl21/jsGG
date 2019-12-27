@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制文字</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="copy">
+        <p id="con">今天最后一天js基础课程，你们开始学高级了</p>
+        <input type="text" id="ipt">
+    </div>
+    <button id="btn">复制</button>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.getElementById("con");
+        var oIpt = document.getElementById("ipt");
+
+        //点击复制 必须依赖input元素 我们提供的复制的方法 只能复制input的选中内容
+        //所以我们需要把文字放在input标签的内容中，然后复制
+
+        oBtn.onclick = function () {
+            oIpt.value = oCon.innerHTML;
+            oIpt.select();
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>

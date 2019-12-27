@@ -11,18 +11,41 @@
 
         }
         .inner{
+            width: 0%;
             height: 30px;
             background-color: #27ff0d;
         }
+        #progress{
+            width: 100px;  /* 给宽度才能用margin居中*/
+            margin: 50px auto;
+        }
+
     </style>
 </head>
 <body>
 <div class="outer">
     <div class="inner"></div>
 </div>
+<div id="progress">已加载0%</div>
 <script>
     var oOuter = document.querySelector(".outer");
     var oInner = document.querySelector(".inner");
+    var oProgress = document.getElementById("progress");
+    var num = 0;
+    for (var i = 0; i < 30; i++) {
+        var p = i + 1;
+         var newImg = new Image();
+        p < 10 ? p = "0"+p : p;
+        newImg.src = "../images/" + p + ".jpg";  // `../images/${v}.jpg`
+        console.log(newImg);
+        //load：加载完后执行
+        newImg.onload = function () {
+            num++;  //每加载完一张就++
+            //这样理解：总共是30cm长的框框，加载完1张占这个框框的多少即mun/30*100%
+            oInner.style.width = num/30*100 + "%";
+            oProgress.innerText = `已加载${parseInt(num/30*100)}%`;
+        }
+    }
 
 </script>
 </body>

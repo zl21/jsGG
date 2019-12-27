@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚轮事件</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+
+</div>
+<script>
+    /*
+    * 滚轮事件：
+    *   ie/谷歌：
+    *       onmousewheel（DOM0级既可以绑定）
+    *       ev.wheelDelta:
+    *           滚轮向下拨：  负
+    *           滚轮向上拨：  正
+    *
+    *   火狐：
+    *       DOMMouseScroll（DOM2级事件）:
+    *           e.detail
+    *               滚轮向下拨：  正
+    *               滚轮向上拨：  负
+    * */
+
+    var oBox = document.getElementById("box");
+    var x = 200;
+    /*oBox.onmousewheel = function (e) {
+        var e = e || window.event;
+        if (e.wheelDelta > 0){
+            x --;
+        } else{
+            x ++;
+        }
+        oBox.style.width = x + "px";
+    }
+
+
+    oBox.addEventListener("DOMMouseScroll",function (e) {
+        console.log(e);
+        if(e.detail > 0){
+            x ++;
+        }else{
+            x --;
+        }
+        oBox.style.width = x + "px";
+    })*/
+    
+    // 封装滚轮事件兼容
+    function mouseScroll(e) {
+        var e = e || window.event;
+        if (e.detail){
+            if(e.detail > 0){
+                x ++;
+            }else{
+                x --;
+            }
+        } else{
+            if (e.wheelDelta > 0){
+                x --;
+            } else{
+                x ++;
+            }
+        }
+        oBox.style.width = x + "px";
+    }
+    //火狐调用
+    oBox.addEventListener("DOMMouseScroll",mouseScroll);
+    // 谷歌调用
+    oBox.onmousewheel = mouseScroll;
+</script>
+</body>
+</html>

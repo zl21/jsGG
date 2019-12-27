@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .outer{
+            *zoom: 1;
+            position: relative;
+        }
+        .outer:after{
+            content: "\200B";
+            height: 0;
+            display: block;
+            clear: both;
+        }
+        .minbox{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+            float: left;
+        }
+        .minbox img{
+            width: 200px;
+            height: 200px;
+        }
+        .minbox .mask{
+            width: 80px;
+            height: 80px;
+            background: rgba(122,178,67,.5);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            display: none;
+        }
+        .maxBox{
+            position: absolute;
+            left: 202px;
+            top: 0;
+            width: 280px;
+            height: 280px;
+            overflow: hidden;
+            display: none;
+        }
+        .maxBox img{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="minbox">
+        <img src="../images/01.jpg" alt="">
+        <p class="mask"></p>
+    </div>
+    <div class="maxBox">
+        <img src="../images/01.jpg" alt="">
+    </div>
+</div>
+<script>
+    var oMinBox = document.querySelector(".minbox");
+    var oMinImg = document.querySelector(".minbox img");
+    var oMaxBox = document.querySelector(".maxBox");
+    var oMaxImg = document.querySelector(".maxBox img");
+    var oMask = document.querySelector(".mask");
+
+    oMinBox.onmouseenter = function () {
+        oMask.style.display = "block";
+        oMaxBox.style.display = "block";
+
+        oMinBox.onmousemove = function (e) {
+            var e = e || window.event;
+            var maskPosition = {
+                left: e.clientX - oMask.offsetWidth / 2 - oMinBox.getBoundingClientRect().left,
+                top: e.clientY - oMask.offsetHeight / 2 - oMinBox.getBoundingClientRect().top,
+            }
+
+            if(maskPosition.left <= 0){
+                maskPosition.left = 0;
+            }else if(maskPosition.left >= oMinBox.clientWidth - oMask.offsetWidth){
+                maskPosition.left = oMinBox.clientWidth - oMask.offsetWidth;
+            }
+            if(maskPosition.top <= 0){
+                maskPosition.top = 0;
+            }else if(maskPosition.top >= oMinBox.clientHeight - oMask.offsetHeight){
+                maskPosition.top = oMinBox.clientHeight - oMask.offsetHeight;
+            }
+
+
+            // 计算比例：（蒙版可以移动的距离 /  大图能够被移动的距离）
+            var scale = (oMinBox.clientWidth - oMask.offsetWidth) / (oMaxImg.offsetWidth - oMaxBox.clientWidth);
+            oMask.style.left = maskPosition.left + "px";
+            oMask.style.top = maskPosition.top + "px";
+
+            var maxPosition = {
+                left : maskPosition.left / scale,
+                top : maskPosition.top / scale
+            }
+            oMaxImg.style.marginTop = - maxPosition.top + "px";
+            oMaxImg.style.marginLeft = - maxPosition.left + "px";
+        }
+        oMinBox.onmouseleave = function () {
+            oMask.style.display = "none";
+            oMaxBox.style.display = "none";
+            oMinBox.onmousemove = oMinBox.onmouseleave = null;
+        }
+    }
+</script>
+</body>
+</html>

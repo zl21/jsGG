@@ -10,9 +10,10 @@
 <script>
     document.onkeydown = function (e) {
         var e = e || window.event;
+        //判断是否按下了CTRL + C
         if (e.keyCode == 67 && e.ctrlKey){
             alert("哎呦，又来抄作业了");
-            return false;
+            return false;//阻止默认事件的简便方法
         }
     }
     document.oncontextmenu = function () {
