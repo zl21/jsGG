@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+
+
+    数据类型
+      1.ECMAScript标准定义了8种数据类型
+        - 7种原始数据类型
+        - String,Numbr,Boolean,Undefined,null,Symbol,BigInt
+        - 和Object
+    基本数据类型(简单数据类型)
+      1. 基本数据类型
+        - string,number,boolean,undefined,null
+    引用数据类型(复杂(复合)数据类型)
+      1. 引用数据类型
+        - Object,Function,Array
+    基本包装数据类型
+      String,Number,Boolean
+    typeof 运算符(判断数据的类型)
+      1. 作用:用来获取当前变量中存储的数据的类型
+      2. typeof的返回值有多少个
+        - String,Number,Boolean,Undefined,Object,Function
+        - 特殊的有两个:null和array的结果都是Object
+        - typeof 变量名字
+        - typeof(变量名字)
+
+    instanceOf 运算符(原生JS判断实例的类型)
+      1. 作用:用来判断当前实例对象是不是某种数据类型
+
+
+      JS原名为:livescript,最初的目的；是解决用户和浏览器之间交互的问题
+
+      
+
+
+
+
+      弱类型和强制类型语言
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // var num = 10
+    // console.log(num)
+    var num2 = new Number(20)
+    console.log(num2)
+    console.log(num2.this)
+
+
+
+    // 获取变量的数据类型
+    var a = 10;
+    var b = '真香';
+    var c = true;
+    var d;
+    var e = null; // object
+    var arr = [1, 2, 3, 4]; //object
+    var fn = function () { };
+    console.log(typeof a);
+    console.log(typeof b);
+    console.log(typeof c);
+    console.log(typeof d);
+    console.log(typeof e);
+    console.log(typeof arr);
+    console.log(typeof fn);
+    console.log(23)
+    console.log(String(null))
+
+    function f1(){
+
+    }
+    var result =f1()
+    console.log(result)
+    console.log('================================')
+    // 判断当前的实例对象是不是某种类型
+    console.log([1, 2, 3] instanceof Array); // true
+    console.log(fn instanceof Function); // true ----原型
+    console.log({} instanceof Object); // true
+
+    // // 值基本类型之间传递的是数值
+    var num1 = 10;
+    var num2 = num1;
+    // // 引用类型之间传递的是引用(地址)
+    var obj = { name: '卡卡西' };
+    var obj2 = obj;
+    console.log(obj2.name);
+    obj2.name = '自来也';
+    console.log(obj.name);
+  </script>
+</body>
+
+</html>

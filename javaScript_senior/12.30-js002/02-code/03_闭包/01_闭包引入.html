@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  // 闭包
+    function f1() {
+      var num = 10;
+      function f2() {
+        console.log(num)
+      }
+      return f2
+    }
+    var ff = f1()
+    ff()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  // 切记:如果变量中存储的是一个对象,而这个变量又作为某个对象的属性使用了,此时会自动的调用一下toString()方法
+    // 面试题
+    var obj = {}
+    var obj1 = { m: 2 }
+    var obj2 = { n: 3 }
+    obj[obj1] = 4
+    obj[obj2] = 5
+
+    // obj['[object Object]']=4
+    // obj['[object Object]']=5
+    console.log(obj1.toString())
+    console.log(obj2.toString())
+    // 5
+    console.log(obj[obj1])
+  </script>
+</body>
+
+</html>

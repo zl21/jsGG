@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    执行上下文:就是一个代码的执行环境(全局执行上下文和函数执行上下文,eval函数执行上下文)
+      1. 执行上下文概念:代表了代码执行的环境,包含:执行环境,变量对象,this,作用域链
+      2. 流程:
+        - js引擎在js代码正式执行前会先创建一个执行环境
+        - 进入该环境以后会创建一个变量对象,该对象用于收集:变量,函数,函数的参数,this
+        - 照关键字var,function
+        - 确认this
+        - 创建作用域链
+      3. 在全局代码执行前,js引擎就会创建一个栈来存储管理所有的执行上下文
+      4. 在全局执行上下文(window)确定后,将其添加到栈中(压栈)
+      5. 在函数执行上下文创建后,将其添加到栈中(压栈)
+      6. 在当前函数执行完毕后,将栈顶的对象移除(出栈)
+      7. 当所有的代码执行完毕后,栈中只剩下window
+    
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var a = 10
+    var bar = function (x) {
+      var b = 5
+      foo(x+b)
+    }
+    var foo = function (y) {
+      var c = 5
+      console.log(a + c + y)
+    }
+    bar(10)
+  </script>
+</body>
+
+</html>

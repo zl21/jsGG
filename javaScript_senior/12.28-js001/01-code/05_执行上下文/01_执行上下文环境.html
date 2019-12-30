@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    执行上下文:就是一个代码的执行环境(全局执行上下文和函数执行上下文,eval函数执行上下文)
+      1. 执行上下文概念:代表了代码执行的环境,包含:执行环境,变量对象,this,作用域链
+      2. 流程:
+        - js引擎在js代码正式执行前会先创建一个执行环境
+        - 进入该环境以后会创建一个变量对象,该对象用于收集:变量,函数,函数的参数,this
+        - 确认this
+        - 创建作用域链
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // eval('var num=10; console.log(num)')
+
+    /*
+      执行上下文:是一个环境,在代码执行之前,将要执行的时候出现了这个环境,执行上下文环境
+      会出现一个变量对象,收集var function 收集变量及函数的声明,函数中的参数,确定this的指向
+      同时还要把这些收集到的数据放在这个变量对象中
+      第一次出现的执行上下文环境是一个全局执行上下文环境----->全局上下文
+      只要函数调用,就会出现一个新的执行上下文环境(同上)
+
+
+      call Stack ---->回调栈---后台语言中居多
+    
+    
+    */
+
+    // var num = 10;
+    // console.log(num);
+    // function f1() {
+    //   console.log('床前明月光,华哥去开窗,遇到一耳光,牙齿掉光光')
+    //   return
+    // }
+    // f1()
+
+    // 没有var 定义的变量  变量对象是否收集了?
+    // console.log(a1) // undefined
+    // console.log(a2) // undefined
+    // console.log(a3) // function 代码
+    // console.log(this) // window
+    // var a1 = 10
+    // var a2 = function () {
+    //   console.log('a2()')
+    // }
+    // function a3() {
+    //   console.log('a3()')
+    // }
+    // a4 = 4
+    // a3()
+
+
+    // var num1 = 10;
+   
+    // function f2(){
+    //   num2 = 20
+    // }
+    // f2()
+
+    // delete num1 // 无法删除
+    // delete num2
+    // console.log(typeof num1,num1)
+    // console.log(typeof num2, num2)
+  </script>
+</body>
+
+</html>
