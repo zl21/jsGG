@@ -18,6 +18,8 @@
         var oCon = document.getElementById("con");
 
         oBtn.onclick = function () {
+            copyEleText(oCon);
+
             /*//复制是依赖表单元素的  为了避免影响布局，所以动态创建表单
             var oIpt = document.createElement("input");
 
@@ -35,9 +37,6 @@
 
             //删除掉插入的表单
             document.body.removeChild(oIpt);*/
-
-
-            copyEleText(oCon);
         }
 
         function copyEleText(obj) {

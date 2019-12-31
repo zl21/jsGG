@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    this:首先是一个关键字,其实也是一个特殊的变量
+      1. 提前定义好的,内置变量,特殊的一个关键字
+      2. 全局的this:window(执行上下文)
+      3. 函数中的this:
+        - 默认函数中的this是window
+        - 方法中的this是当前的实例对象
+        - 原型对象中的this是当前的实例对象
+      4. 本质上任何函数在执行时都是通过某个对象调用的
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 全局中有个this,是window
+    console.log(this)
+    // 函数中的this的指向问题
+    function f1() {
+      console.log(this)
+    }
+    f1()
+
+    // 方法中的this
+    var obj = {
+      sayHi: function () {
+        console.log(this)
+      }
+    }
+    obj.sayHi()
+
+    // 原型对象的方法中的this------> 也是当前的实例对象
+
+    // function Person(){
+    //   console.log(this)
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 全局this
+    // console.log(this)
+    // function f1 (){
+    //   console.log(this)
+    // }
+    // // 函数调用
+    // f1()
+    // var obj={
+    //   eat:function(){
+    //     console.log(this)
+    //   }
+    // }
+
+  </script>
+</body>
+
+</html>

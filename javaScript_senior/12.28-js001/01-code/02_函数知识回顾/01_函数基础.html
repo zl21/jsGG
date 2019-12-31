@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    函数:代码的重用,分为:函数声明及函数表达式
+        - 函数可以隔离变量,减少命名冲突(命名污染)
+      1. 函数声明
+        - function () {}
+      2. 函数表达式:
+        - var fn =function (){}
+      3. 函数调用的方式:
+        - 直接调用 fn()
+        - 对象调用 obj.sayHi()
+        - new 构造函数 new Object()
+        - apply/call 调用 f1.call(this,num1,num2), 改变this的指向
+    */
+
+
+    /*
+
+      函数:放的是重复的内容,一个函数就是一个功能,一个函数就是一块代码块
+      作用:代码的重用(重复使用)
+      优点:减少代码量,重复代码
+
+      对象中存储的实际上都是属性,只不过这些属性的值可能是string,number,boolean,array,object,array,function
+      那么如果该对象的属性的值存储的是一个function,则该属性可以叫方法
+
+当一个对象想要调用其他对象的方法的时候,但是该对象没有这个方法,此时可以使用call来借用其他对象的方法(会自动的改变this的指向)----多用于伪数组使用真数组的方法中---Vue的框架中我们会再次见到
+
+    */
+  </script>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    // console.log('做饭')
+    // console.log('吃饭')
+
+    // console.log('做饭')
+    // console.log('吃饭')
+
+    // console.log('做饭')
+    // console.log('吃饭')
+
+    // console.log('做饭')
+    // console.log('吃饭')
+  </script>
+
+  <script type="text/javascript">
+    // 函数报错
+    // var fn
+    // fn()
+
+    //  var obj={
+    //    name:'小明'
+    //  }
+    //  console.log(obj.name.eat)
+    //  obj.name.eat()
+
+    // console.log(obj.sayHi)
+    // obj.sayHi()
+
+    // function f1(){}
+    // console.log(f1)
+
+
+
+    // 函数声明
+    // function f1(num1,num2) { // 形参
+    //   console.log('this:--->', this,num1,num2)
+    // }
+    // // 函数调用
+    // f1(10,20) // 实参
+    // // 函数表达式
+    // var fn = function () {
+    //   console.log('我是第二个函数')
+    // }
+    // // 函数调用
+    // fn()
+    // // 对象调用函数
+    // var obj={
+    //   sayHi:function(){
+    //     console.log('对象中的函数')
+    //   }
+    // }
+    // // 对象调用的函数:方法的调用
+    // obj.sayHi()
+
+    // // 构造函数---->实例化对象
+    // function Person(name){
+    //   this.name=name
+    // }
+    // var per = new Person('卡卡西')
+    // console.log(per.name)
+
+    function f1(x, y) {
+      console.log(this, x, y)
+    }
+    //f1.call(对象,实参1,实参2,实参3...)
+    var obj = {
+      name: '黑崎一护'
+    }
+    // f1()
+    // window.f1()
+    // // 改变了this的指向,有借用的含义
+    // // 当一个对象想要调用其他对象的方法的时候,但是该对象没有这个方法,此时可以使用call来借用其他对象的方法(会自动的改变this的指向)----多用于伪数组使用真数组的方法中---Vue的框架中我们会再次见到
+    // bind也会在Vue中会出现
+
+    // f1.call(obj,10,20)
+    // f1.apply(obj,[30,40])
+    // var ff = f1.bind(obj)
+    // ff(10, 20)
+
+      // console.dir(f1)
+      // f1.age=10
+      // console.log(f1.age)
+
+      // 函数的调用
+      // f1()
+      // f1.toString()
+
+      // 看的见,或者是摸得到,或者是特指的某个东西
+      // 具有一定特征和行为的某个事物称为对象
+      // 具有一定的属性和方法的某个具体特指的某个事物:对象
+      // function Person(){}
+      // var per = new Person()
+      // 对象可以直接调用属性或者方法!
+
+
+
+
+  </script>
+
+</body>
+
+</html>
