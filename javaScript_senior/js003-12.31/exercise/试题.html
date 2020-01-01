@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* var msg = 'hello';
+        for (var i = 0; i < 10; i++) {
+            msg = 'hello' + i * 2 + i;
+        }
+        console.log(msg);*/
+
+        /* string msg = 'hello';
+        for (int i = 0; i < 10; i++) {
+            msg = 'hello' + i * 2 + i;
+        }
+        system.out.println(msg); */
+
+        //执行"a" in window时，a已近被提升了，所以if为false，不会执行里面的赋值语句，从而输出a为undefined
+        /* if (! "a" in window) {
+            var a = 1;
+        }
+        console.log(a); */
+
+        /* ①创建一个新数组, [‘a’, ‘b’, ‘c’]；
+        ②用变量 x 保存数组的第二个值
+        ③在数组最后插入新值 ‘d’
+        ④找到a,把‘a’变为 ‘e’
+        ⑤把数组的各元素拼接中字符串，以逗号为分隔符 */
+        var arr = ['a','b','c'];
+        var x = arr[1];
+        arr.push('d');
+        arr[arr.indexOf('a')] = 'e';
+        console.log(arr);
+        
+        // arr[0] = 'e';
+        arr.join(',');
+    </script>
+</body>
+
+</html>

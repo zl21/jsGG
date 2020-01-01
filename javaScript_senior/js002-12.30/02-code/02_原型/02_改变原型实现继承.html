@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    // JS中如何实现继承:
+    /*
+
+      1. 方式1: 通过改变原型指向来实现继承
+
+
+    */
+
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 改变原型的指向可以实现继承
+
+    // 构造函数
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    // 原型对象中添加方法
+    Person.prototype.eat = function () {
+      console.log('中午吃油炸臭豆腐,红烧榴莲,再生吃大蒜')
+    }
+    // 构造函数
+    function Student(name, age, score) {
+      this.name = name;
+      this.age = age;
+      this.score = score
+    }
+    // prototype本身是对象,这个对象的指向改变了
+    Student.prototype = new Person()
+    // 每个学生都可以调用人的吃饭的行为方法
+    var stu = new Student('健哥', 48, 34)
+    stu.eat()
+
+
+
+
+
+
+
+
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // // 原型中添加方法
+    // Person.prototype.eat = function () {
+    //   console.log('吃饭啦')
+    // }
+    // Person.prototype.sayHi = function () {
+    //   console.log('打招呼啊')
+    // }
+
+    // function Student(name, age, score) {
+    //   this.name = name;
+    //   this.age = age;
+    //   this.score = score;
+    // }
+    // // 改变原型实现继承,但是,属性并并没有继承
+    // Student.prototype = new Person('小明明', 20);
+    // var stu = new Student('小明', 20, 98)
+    // stu.eat()
+    // stu.sayHi()
+    // console.log(stu.name, stu.age, stu.score)
+
+    // // 或者,这种方式可以实现继承,但是最好,把构造的指向重新设置一下
+    // Student.prototype = {
+    //   constructor: Student,
+    //   play: function () {
+    //     console.log('打游戏')
+    //   }
+    // }
+    // var stu2 = new Student('小红', 18, 34)
+    // console.log(stu2.name, stu2.age, stu2.score)
+    // stu2.play()
+    // // 报错的
+    // // stu2.eat()
+    // console.dir(Student)
+  </script>
+</body>
+
+</html>

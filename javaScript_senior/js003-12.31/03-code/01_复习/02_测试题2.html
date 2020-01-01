@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+     测试题2:
+          华哥有一辆五菱宏光的车,该车是银白色,重量是500kg,该车可以载人载货,华哥总是开车带着猫哥兜风,偶尔开车拉货赚钱
+    */
+
+    // 车的构造函数
+    function Car(color, weight) {
+      this.color = color; // 颜色
+      this.weight = weight; // 重量
+    }
+    // 原型添加方法
+    Car.prototype.run = function () {
+      console.log('载人载货')
+    }
+    // 人的构造函数
+    function Person(name, car) {
+      // 属性的值可以是什么类型? 任何类型
+      this.name = name;
+      this.car = car
+      // this.car = new Car('银白色', '500kg') // 此时car是一个属性,该属性内部存储的是一个对象
+      // this.age = 10 // 年龄---数字 名字--->字符串
+      // this.gender = true // 性别可以用1或者0,或者true或者false
+      // this.phone=[phone1,phone2]
+    }
+    // 通过原型添加方法
+    Person.prototype.drive = function () {
+      console.log(this.name + '带着猫哥去兜风')
+      // this.comeMoney()
+      // this.car.run() // 调用的是car这个属性中的一个方法(为什么可以调用,因为car虽然是一个属性,但是也是一个Car构造函数的实例对象)
+      // 因为实例对象可以调用该实例对象对应的构造函数的原型对象上的方法
+    }
+    Person.prototype.comeMoney = function () {
+      console.log('拉货赚钱')
+    }
+    // 实例化华哥对象
+    var per = new Person('华哥')
+    per.drive()
+    per.comeMoney()
+
+    var car = new Car('白色', '500kg')
+    var per2 = new Person('华哥', car)
+    per2.car.run()
+
+
+    // 原型对象中的方法是可以相互调用的
+
+    // function Dog() {
+
+    // }
+    // // 为原型添加方法
+    // Dog.prototype.sayHi = function () {
+    //   console.log('汪汪汪~~~吃了吗')
+    //   this.eat()
+    // }
+    // Dog.prototype.eat = function () {
+    //   console.log('真好吃')
+    //   this.sayHi()
+    // }
+
+    // var dog = new Dog()
+    // dog.sayHi()
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

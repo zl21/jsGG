@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /**
+    
+      复习:原型
+      原型:JS中原型就是对象,原型对象有两个,一个是prototype,一个是__proto__
+      prototype:显示原型,浏览器的标准属性,给程序员用,在函数中有prototype
+      __proto__:隐式原型,浏览器的非标准属性,给浏览器用的(程序员可用,但是几乎不用),在对象中有__proto__
+      函数中有prototype,对象中有__proto__
+
+      原型的作用之一: 共享数据,节省内存空间
+      原型的作用之二: 实现继承
+      通过改变原型指向来实现继承
+      构造函数是函数,构造函数中有prototype,实例化之后的实例对象中的__proto__指向的是当前对应的构造函数中的prototype
+      prototype本身是一个属性,其实也是一个对象,内部有一个constructor指向的是当前的原型对象对应的构造函数
+
+
+      函数中有__proto__,说明函数也是一个实例对象,通常叫法:如果函数是一个对象,函数对象
+
+      如果是一个实例对象,那么就说明对象是被创建出来的,肯定应该是通过构造函数创建的
+
+      无论是构造函数还是普通函数,他们都是函数,是函数就是对象,也就意味着当前的这个函数对象就是Function构造函数创建出来的,当前的这个函数对象的__proto__指向的必然是Function的prototype
+
+
+      今天的内容:
+      1. 原型及原型链及原型链图解
+
+      2. 闭包
+    
+    
+    
+    
+    
+    
+     */
+
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+
+  function Person(){
+    console.log('哈哈')
+  }
+
+  console.log(Person.__proto__===Function.prototype) // 指向的肯定是对应的构造函数Function的prototype
+
+  console.dir(Person)
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // function Person() { }
+    // // 通过原型添加一个方法
+    // Person.prototype.play = function () {
+    //   console.log('打雪球,打雪人')
+    // }
+    // // Person.prototype.play = function () {
+    // //   console.log('打雪球,打雪人')
+    // // }
+    // // Person.prototype.play = function () {
+    // //   console.log('打雪球,打雪人')
+    // // }
+    // function Student() {
+
+    // }
+    // // 点语法:    对象.属性----
+    // // 问题1: prototype是对象可以指向另一个对象,就可以实现继承
+    // // 问题2: 如果都是通过prototype的点语法的方式添加属性或者方法,那么实际上会出现大量的冗余代码
+    // Student.prototype = new Person() // 对象----匿名对象
+    // var stu = new Student()
+    // stu.play()
+
+    // 人的构造函数
+    function Person(name) {
+      this.name = name;
+    }
+    // 学生的构造函数
+    function Student(name,age) {
+      Person.call(this,name);
+      this.age = age;
+    }
+    // 这种改变原型指向的写法是使用次数最多的
+    Student.prototype = {
+
+      constructor: Person, // 不是必须要写的
+      // name: '小明',
+      // age: 20,
+      eat: function () {
+        console.log('真好吃')
+      },
+      play: function () {
+        console.log('真好玩')
+      }
+    }
+
+    var stu = new Student('xiaoming',20)
+    stu.eat()
+    stu.play()
+    console.log(stu.name,stu.age);
+    console.dir(Student)
+
+  </script>
+</body>
+
+</html>

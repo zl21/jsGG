@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 一个对象中的数据,其他的对象也可以访问,也可以看成是继承
+    // 通过改变原型指向实现继承的时候,方法必然被继承过来了,
+    // 但是,属性没有被继承过来(注意:如果当前的实例对象中的属性和原型对象中的属性是重名的,此时使用的是当前实例对象中的属性,原型对象上的该属性是没有继承过来,如果没有重名,可以继承过来)
+
+
+    // 实现继承,找这种继承方式的缺陷
+    // function Person(name) {  // 父级的类别
+    //   this.name = name;
+    // }
+    // // 通过原型对象添加方法
+    // Person.prototype.eat = function () {
+    //   console.log('我最喜欢吃华哥做的饭,铭哥说')
+    // };
+    // // 老师的构造函数
+    // function Teacher(gender) {  // 子级的类别
+    //   //this.name = name;
+    //   this.gender = gender;
+    // };
+    // // 发生关系
+    // Teacher.prototype = new Person('健哥')
+    // // 实例化对象
+    // var tHua = new Teacher()
+    // tHua.eat=function(){
+    //   console.log('我吃完了')
+    // }
+    // // 方法继承了,是通过改变原型指向来实现的继承
+    // // 通过改变原型指向来实现的继承,继承的是方法
+    // tHua.eat()
+    // // console.log(tHua.name, tHua.gender)
+    // //console.log(tHua.name)
+    // console.dir(Person)
+    // console.dir(Teacher)
+    // console.dir(tHua)
+    // console.log(tHua.name)
+    // console.log(tHua.__proto__.name)
+    // tHua.eat()
+
+
+
+
+
+
+
+    // function Person(name) {  // 父级的类别
+    //   this.name = name;
+    // }
+    // // 通过原型对象添加方法
+    // Person.prototype.eat = function () {
+    //   console.log('我最喜欢吃华哥做的饭,铭哥说')
+    // };
+    // // 老师的构造函数
+    // function Teacher(name, gender) {  // 子级的类别
+    //   this.name = name;
+    //   this.gender = gender;
+    // };
+    // // 发生关系
+    // Teacher.prototype = new Person('健哥')
+    // // 实例化对象
+    // var tHua = new Teacher('华哥', '女')
+    // tHua.eat()
+    // 通过改变原型指向来实现的继承,继承的是方法,虽然可以把属性继承过来,但是,有问题,属性重名的问题
+
+
+
+    // 只继承属性,借用构造函数的方式来实现继承
+
+    function Dog(name, age, gender) {
+      // 这里的this应该Dog的实例对象
+      console.log(this)
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+    }
+    Dog.prototype.play=function(){
+      console.log('这个枕头真好玩,这个沙发真好吃,拆家啦')
+    }
+    function HaShiQi(name, age, gender, color, height) {
+      // 这里的this应该是HaShiQi的实例对象
+      Dog.call(this, name, age, gender)
+      // 自己特有的
+      this.color = color;
+      this.height = height;
+    }
+
+    var huahua = new HaShiQi('花花', 4, '男', '黑白', 57)
+    console.log(huahua.name,huahua.age,huahua.gender,huahua.color,huahua.height)
+    huahua.play()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // // 原型中添加方法
+    // Person.prototype.eat = function () {
+    //   console.log('吃饭啦')
+    // }
+    // Person.prototype.sayHi = function () {
+    //   console.log('打招呼啊')
+    // }
+    // // 借用构造函数实现继承,是无法继承方法的,属性可以继承
+    // function Student(name, age, score) {
+    //   Person.call(this,name,age)
+    //   this.score = score;
+    // }
+    // var stu = new Student('小明', 20, 98)
+    // console.log(stu.name, stu.age, stu.score)
+    // // 报错
+    // stu.eat()
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

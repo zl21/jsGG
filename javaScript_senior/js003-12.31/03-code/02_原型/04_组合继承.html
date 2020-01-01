@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    // 原型中添加方法
+    Person.prototype.eat = function () {
+      console.log('吃饭啦')
+    }
+    Person.prototype.sayHi = function () {
+      console.log('打招呼啊')
+    }
+    // 借用构造可以实现属性继承,改变原型指向可以实现方法属性---组合继承
+    function Student(name, age, score) {
+      // 借用构造函数实现继承,属性的继承
+      Person.call(this, name, age)
+      this.score = score;
+    }
+    // 不能访问,先添加的方法,后来改变了指向
+    // Student.prototype.play=function(){
+    //   console.log('华哥真好玩')
+    // }
+    // 原型指向改变继承,继承的方法
+    Student.prototype = new Person()
+    // 此时可以访问,先改变指向,然后把内容直接放在了改变之后的对象中了
+    Student.prototype.play=function(){
+      console.log('华哥真好玩')
+    }
+    var stu = new Student('小明', 20, 98)
+    console.log(stu.name, stu.age, stu.score)
+    
+    stu.eat()
+    stu.sayHi()
+    stu.play()
+  </script>
+</body>
+
+</html>

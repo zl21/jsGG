@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // JS中的继承:一个对象的属性和方法可以在另一个对象中使用
+    // 第一种写法和第二种写法都可以看成是拷贝继承
+    // 浅拷贝:当拷贝发生之后,第二个对象中如果有相关的数据变化了,第一个对象中的数据也随之变化
+
+
+
+    // 第一个对象
+    /* var obj1 = {
+      name: '雏田',
+      age: 18,
+      sayHi: function () {
+        console.log('阿里嘎都以马斯')
+      }
+    }
+    // 第二个对象
+    var obj2 = obj1
+    console.log(obj2.name,obj2.age)
+    obj2.sayHi() 
+    */
+
+
+
+
+    var obj1 = {
+      name: '雏田',
+      age: 18,
+      sayHi: function () {
+        console.log('阿里嘎都以马斯');
+      }
+    }
+    var obj2 = {};
+    // 拷贝继承
+    for (var key in obj1) {
+      obj2[key] = obj1[key];
+    }
+    console.log(obj2);
+    obj2.name='鸣人';
+    console.log(obj1.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var obj2 = {
+    //   name: '小白',
+    //   age: 20,
+    //   sayHi: function () {
+    //     console.log('您好')
+    //   }
+    // }
+    // // 拷贝继承
+    // var obj1 = obj2
+    // console.log(obj1.name, obj1.age)
+    // obj1.sayHi()
+    // // 深拷贝---学了递归再说
+  </script>
+</body>
+
+</html>
