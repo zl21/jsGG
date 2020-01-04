@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    
+      ## 总结
+    1. 千万不要在定时器后面放大量的代码块(会阻塞定时器,导致定时器不准确的)
+    2. 定时器模块何时开始计时:
+      - 开定时器的时候交给定时器管理模块就执行
+
+      首先JS是单线程的,单线程也可以叫主线程,如果说只有一个线程,执行的时候是按照一定的顺序执行代码,从上到下执行,这种方式可以看成是同步的操作,由于可能会在一定的时间内做多个操作,但是JS又是单线程的,所以,JS中出现了异步操作(异步操作相当于是模拟多线程),这个时候是有一定的轮询机制的(事件的循环机制)
+      轮询机制:首先JS的主线程里面会先执行同步的代码,如果遇到了事件及ajax和定时器,这里面涉及到的回调会直接交给JS管理模块来进行管理(DOM事件管理和ajax管理及定时器的管理),同步代码执行完毕后(满足条件后)此时开始询问回调队列,里面有有没有对应的回调(三种回调),如果则直接钩到主线程中,开始执行回调,执行后就可以释放了(万一有闭包呢)
+      回调函数---->钩子函数---->生命周期周期中
+      尽可能的把一些同步代码放在定时器的前面
+    
+    */
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+   
+    for(var i=0;i<=10000;i++){
+      console.log(i)
+    }
+    var time = Date.now();
+    setTimeout(function () {
+      console.log('定时器执行了', Date.now() - time)
+    }, 1000);
+   
+   
+
+
+
+    // var time = Date.now();
+    // setTimeout(function () {
+    //   console.log('定时器执行了', Date.now() - time)
+    // }, 1000);
+    // alert('alert执行了')
+  </script>
+</body>
+</html>

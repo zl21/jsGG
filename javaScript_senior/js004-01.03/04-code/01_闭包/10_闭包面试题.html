@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+<body>
+  <script type="text/javascript">
+  function Foo(){
+    getName=function(){
+      console.log(1)
+    }
+    return this
+  }
+  Foo.getName=function(){
+    console.log(2)
+  }
+  Foo.prototype.getName=function(){
+    console.log(3)
+  }
+  var getName=function(){
+    console.log(4)
+  }
+  function getName(){
+    console.log(5)
+  }
+  console.log('Foo.getName是：'+Foo.getName);
+  Foo.getName() // 2
+  console.log('-----------------------------');
+  
+  getName() // 4  调用了前面定义的那个
+  console.log('-----------------------------');
+
+  console.log('Foo()是：'+Foo());//Foo()是：[object Window]
+  console.log('Foo().getName是：'+Foo().getName);//Foo().getName是：function(){console.log(1)}
+  Foo().getName() // 1
+  console.log('-----------------------------');
+
+  getName() // 1
+  console.log('-----------------------------');
+
+  new Foo().getName() // 3
+  console.log('-----------------------------');
+
+  new new Foo().getName() // 3
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // JS主线程,加载分线程
+    var worker = new Worker('./work.js')
+    // 监听消息:接收消息
+
+    // 当接收到分线程发送过来的消息的时候自动调用
+    worker.onmessage = function (msg) {
+      console.log('分线程传过来的消息:', msg.data)
+
+    }
+
+    // 发送消息
+    // worker.postMessage('主线程发给分分线程消息:')
+    worker.postMessage('What Are You Nong Sha Lei')
+  </script>
+</body>
+
+</html>

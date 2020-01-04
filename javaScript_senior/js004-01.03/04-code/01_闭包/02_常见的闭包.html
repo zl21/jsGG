@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+
+  <button id="btn">按钮</button>
+  <script type="text/javascript">
+    // 事件参数对象
+    // document.querySelector('#btn').onclick = function () {
+    //   var num = 10;
+    //   setInterval(function () {
+    //     console.log(num)
+    //     console.log('锄禾日当午,地雷埋下土,华哥走过去,炸成二百五')
+    //   }, 1000)
+    // };
+
+    function f1() {
+      var num = 1;
+      return function () {
+        num++
+        return num
+      }
+    }
+    var ff = f1()
+    console.log(ff()) // 2
+    console.log(ff()) // 3
+    console.log(ff()) // 4
+
+
+
+
+
+
+    // function showMsg(msg,time){
+    //   setTimeout(function(){
+    //     console.log(msg)
+    //   },time)
+    // }
+    // showMsg('闭包操作',2000)
+  </script>
+</body>
+
+</html>

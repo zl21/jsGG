@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 高阶函数: 定义一个函数的时候,该函数的参数是函数,该函数的返回值是一个函数
+    function f1(fn) {
+      return function () {
+        fn()
+      }
+    }
+    function f2() {
+      console.log('好困哦,好想睡觉哦,你说的我都能听见,但是就是困,我闭着眼睛都知道你在讲什么,但是五分钟之后你肯定不知道我讲了什么')
+    }
+    // 函数的调用
+    var ff = f1(f2)
+    ff()
+  </script>
+</body>
+
+</html>

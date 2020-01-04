@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简写对象.html</title>
+</head>
+<body>
+    <script>
+    var name = '亚丝娜';
+    var age = 19;
+    var gender = 'male';
+    var obj = {
+        name,age,gender,
+        play(){
+            console.log('paly games');
+        },
+        eat(){
+            console.log('eat cookies');
+        }
+    }
+    console.log(obj.name,obj.age,obj.gender);
+    obj.play();
+    obj.eat();
+    
+    </script>
+</body>
+</html>

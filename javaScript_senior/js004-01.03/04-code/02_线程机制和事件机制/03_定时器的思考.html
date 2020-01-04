@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+    
+    ## 定时器的问题
+    1. 定时器真的是定时执行的吗
+      - 定时器并不能保证真正定时执行
+      - 一般会延迟一丁点(可接受),也有可能延迟很长时间(不能接受)
+    2. 定时器回调函数是在分线程执行的吗
+      - 在主线程执行的,JS是单线程的
+    3. 定时器是如何实现的
+      - 事件循环模型(后面讲)
+
+      浏览器中有一个内核:内核有一个特殊引擎,这个引擎是用来专门负责解析JS代码的,叫JS引擎
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var time = Date.now();
+    setTimeout(function () {
+      console.log('定时器执行了', Date.now() - time)
+    }, 1000);
+
+    // 定时器按照定好的时间执行代码,但是,实际上,会出现延迟的问题,我们要研究,为什么会出现这种延迟的问题,
+
+
+    
+    for(var i=0;i<=10000;i++){
+      console.log(i)
+    }
+  </script>
+</body>
+
+</html>
