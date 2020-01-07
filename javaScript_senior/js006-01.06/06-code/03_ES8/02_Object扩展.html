@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <!-- 
+    <script type="text/javascript">
+    // Object.values()
+    let person = {
+      name: 'jack',
+      age: 18
+    }
+    // 获取对象中所有属性的值
+    let vals = Object.values(person)
+    console.log(vals)
+    // 获取对象中所有键的名字
+    console.log(Object.keys(person))
+
+    // Object.entries()
+    //对象转数组
+    console.log(Object.entries(person))
+  </script>
+ -->
+
+  <script>
+    //作业1遍：
+    //1.Object.values()
+    let person = { name: 'zl', age: 12 };
+    // 获取对象中所有属性的值
+    let re = Object.values(person);
+    console.log(re);//(2) ["zl", 12]
+    // 获取对象中所有键的名字
+    console.log(Object.keys(person));//(2) ["name", "age"]
+
+    //2.Object.entries(),对象转数组
+    console.log(Object.entries(person));//(2) [Array(2), Array(2)]
+
+
+    //作业2遍：
+    //1.Object.values()
+    let people = { name: 'ww', age: 12 };
+    let re = Object.values(people);
+    console.log(re);//(2) ["ww", 12]
+    console.log(Object.keys(people));//(2) ["name", "age"]
+
+    //2.Object.entries(),对象转数组
+    console.log(Object.entries(people));//(2) [Array(2), Array(2)]
+  </script>
+</body>
+
+</html>

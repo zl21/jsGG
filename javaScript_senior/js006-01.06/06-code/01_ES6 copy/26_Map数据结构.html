@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+        ## Map容器: 无序的key不重复的多个key-value的集合体
+      1. Map()
+      2. Map(array)
+      3. set(key,value) 添加
+      4. get(key)
+      5. delete(key)
+      6. has(key)
+      7. clear()
+      8. size
+
+    */
+  </script>
+</head>
+
+<body>
+  <!--   
+  <script type="text/javascript">
+    let map = new Map([[10,100,50,100],['小黑',1000],[true,false]])
+    console.log(map)
+    map.set(1,2)
+    console.log(map)
+    console.log(map.get(10))
+
+    // let map = new Map([[10,100],['name','小白']])
+    // console.log(map)
+    // // 添加数据
+    // map.set(20,200)
+    // // 获取键为10对应的数据---值
+    // console.log(map.get(10))
+    // console.log(map)
+    // // 删除数据
+    // map.delete(10)
+    // console.log(map)
+    // // 是否存在数据
+    // console.log(map.has('name'))
+  </script>
+ -->
+  <script>
+    //作业：
+    let arr0 = [[0, 20], ['name', 'zl'], ['true', 'false']]
+    let arr = new Map(arr0);
+    console.log(arr);//Map(3) {0 => 20, "name" => "zl", "true" => "false"}
+    console.log(arr.set(1, 2));//Map(4) {0 => 20, "name" => "zl", "true" => "false", 1 => 2}
+    console.log(arr.get(0));//20
+    arr.delete(0)
+    console.log(arr);//Map(3) {"name" => "zl", "true" => "false", 1 => 2}
+    console.log(arr.has(0));//false
+    console.log(arr.size);//3
+    arr.clear;
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <!-- 
+  <script type="text/javascript">
+  let promise = new Promise((resolve,reject)=>{
+    console.log('开始执行')
+    reject('111')
+    console.log('结束执行')
+  })
+
+  promise.then((data)=>{
+    console.log('成功:'+data)
+  }).catch((errorMsg)=>{
+    console.log('报错啦:'+errorMsg)
+  }).finally(()=>{
+    console.log('成功失败都会执行的')
+  })
+  </script>
+ -->
+
+  <script>
+   //作业1遍：
+    let promise = new Promise((resolve,reject)=>{
+      console.log('ok');
+      resolve('yes');
+      console.log('end');
+    });
+    promise.then((data)=>{
+      console.log('succeed:'+data);
+    }).catch((error)=>{
+      console.log('no');
+    }).finally(()=>{'all'});
+
+
+    //作业2遍：
+    let promise = new Promise((resolve,reject)=>{
+      console.log('start啦');
+      resolve('yes');
+      console.log('end啦');
+    });
+    promise.then((data)=>{
+      console.log('succeed:'+data);
+    }).catch((error)=>{
+      console.log('failed');
+    }).finally(()=>{'all'});
+  </script>
+</body>
+
+</html>
