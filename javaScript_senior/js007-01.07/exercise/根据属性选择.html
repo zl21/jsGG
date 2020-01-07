@@ -53,7 +53,7 @@
                 // $('div').attr('class',$('div').attr('class')+' '+'abc');
                 $('div').addClass('abc');
                 //需求7: 移除所有div的guiguClass的class,
-                $('div').removeClass('cls')
+                $('div').removeClass('cls');
                 //需求7.1 切换div的类样式，有就删掉反之添加
                 $('div').toggleClass('cls');
                 //需求8: 得到最后一个li的标签体文本
@@ -63,7 +63,7 @@
                 //需求10: 得到输入框中的value值
                 console.log($(':text').val());
                 //需求11: 将输入框的值设置为atguigu
-                $(':text').val('真开心')
+                $(':text').val('真开心');
             });
             //需求12: 点击'全选'按钮实现全选
             $('#all').click(function () {
@@ -73,11 +73,11 @@
             //需求13: 点击'全不选'按钮实现全不选
             $('#noAll').click(function () {
                 // $(':checkbox').attr('checked',false)
-                $(':checkbox').prop('checked', false)
+                $(':checkbox').prop('checked', false);
             })
             //需求14: 对元素一次添加多个属性和属性值；链式编程和对象的方式都可以
-            $('div').attr({ 'a': '123', 'b': '234' })
-        })
+            $('div').attr({ 'a': '123', 'b': '234' });
+        });
     </script>
 </body>
 

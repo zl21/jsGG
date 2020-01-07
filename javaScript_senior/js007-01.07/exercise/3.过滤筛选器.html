@@ -40,7 +40,7 @@
     <button id="btn">按钮</button>
     <script>
         $(() => {
-            /* 
+
             //找第一个div
             $('div:first').css('backgroundColor', 'red');
             //找最后一个
@@ -50,31 +50,31 @@
             //选择第二个某某,选定一个给定索引值的元素
             $('div:eq(1)').css('backgroundColor', 'yellow');
             //偶数的li：
-            $('ul>li:odd').css('backgroundColor','purple');
+            $('ul>li:odd').css('backgroundColor', 'purple');
             //奇数的li
-            $('ul>li:even').css('backgroundColor','green');
+            $('ul>li:even').css('backgroundColor', 'green');
             //大于索引3的
-            $('ul>li:gt(3)').css({'backgroundColor':'gray'});
+            $('ul>li:gt(3)').css({ 'backgroundColor': 'gray' });
             //小于2的
-            $('ul>li:lt(2)').css({'backgroundColor':'black'});
- *//* 
-                                             //大于2小于5
-                                             $('ul>li:lt(5):gt(2)').css({'backgroundColor':'maroon'});
-                                             //内容包含b的元素
-                                             $('li:contains(b)').css({'backgroundColor':'olive'});
-                                             //找空标签
-                                             $('li:empty').css({'backgroundColor':'navy'});
-                                             //打印出隐藏的元素li
-                                             console.log($('li:hidden').text());
-                                  *//* 
+            $('ul>li:lt(2)').css({ 'backgroundColor': 'black' });
+
+            //大于2小于5
+            $('ul>li:lt(5):gt(2)').css({ 'backgroundColor': 'maroon' });
+            //内容包含b的元素
+            $('li:contains(b)').css({ 'backgroundColor': 'olive' });
+            //找空标签
+            $('li:empty').css({ 'backgroundColor': 'navy' });
+            //打印出隐藏的元素li
+            console.log($('li:hidden').text());
+
             //有title属性的li
-            $('li[title]').css({'backgroundColor':'ivory'});
+            $('li[title]').css({ 'backgroundColor': 'ivory' });
             //有title属性，且值包含hello的
-            $('ul>li[title*=hello]').css({'backgroundColor':'red'});
+            $('ul>li[title*=hello]').css({ 'backgroundColor': 'red' });
             //内有span标签的li
             // $('ul>li span').parent().css({'backgroundColor':'mauve'});
-            $('ul>li:has(span)').css({'backgroundColor':'lavender'});
- */
+            $('ul>li:has(span)').css({ 'backgroundColor': 'lavender' });
+
         });
         /* 需求：
             1.点击按钮，ul中奇数行的P内容全部修改为AAA，偶数行的内容修改为BBB。
