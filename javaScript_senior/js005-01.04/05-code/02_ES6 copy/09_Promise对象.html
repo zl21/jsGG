@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+
+// console.log(1)
+//   setTimeout(function(){
+
+//   },2000)
+//   console.log(2)
+
+// setTimeout(function(){
+//   setTimeout(function(){
+
+//   },2000)
+// },2000)
+    /*
+
+     ## Promise对象:代表了未来某个将要发生的事件(通常是一个异步操作)
+      1. 理解:有了Promise对象,可以将异步操作以同步的流程表达出来,避免层层嵌套的回调函数(回调地狱)
+        - 回调地狱:回调嵌套或者函数相互调用(很乱的调用)
+        - ES6的Promise是一个构造函数,用来生成Promise的实例对象
+      2. 使用Promise基本步骤(2步)
+        - 创建Promise对象
+        - let promise = new Promise((resolve,reject)=>{
+          // 初始化promise状态为pending,执行异步操作
+          if(异步操作成功){
+            resolve(value); // 修改promise的状态为fullfilled
+          }else{
+            reject(errMsg); // 修改promise的状态为rejected
+          }
+        })
+        - 调用promise的then()
+        - promise.then(function(){
+            result=>console.log(result),
+            errorMsg=>alert(errorMsg)
+        })
+      3. promise对象的三个状态
+        - pending: 初始化状态
+        - fullfilled: 成功状态
+        - rejected: 失败状态
+      4. 应用:
+        - 使用promise实现超时状态
+        - 使用promise封装ajax请求
+        let request = new XMLHttpRequest();
+        request.onreadystatechange=function(){}
+        request.respnseType='json';
+        request.open('GET',url)
+        request.send()
+
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+    resolve参数是一个函数---->如果执行成功了,那么就调用这个函数
+    reject参数也是一个函数--->如果执行失败了,那么就调用这个函数
+    
+    
+    */
+
+    // console.log('1111')
+    // // 创建promise对象
+    // let promise = new Promise((resolve, reject) => {
+    //   setTimeout(function(){
+    //     console.log('promise内部的一个定时器')
+    //   },2000)
+    // })
+    // console.log(promise)
+    // console.log('2222')
+
+    // console.log('1111')
+    // setTimeout(function(){
+    //   console.log('我是定时器')
+    // },2000)
+    // console.log('22222')
+
+    /*
+     .then()方法可以直接被promise对象调用,是因为,.then()返回值就是promise对象
+     .then()方法中两个参数:
+     参数1:成功之后就会执行的函数
+     参数2:失败之后才会执行这个函数
+     .then()方法中的两个参数,都是回调函数,第一个回调函数是成功之后才执行的,第二个回调函数是失败之后才执行的
+     第一个回调函数中有一个参数:可以写data,也可以用其他的名字,推荐使用data
+     第二个回调函数中有一个参数:可以写error,也可以用其他的名字,推荐使用error
+    
+    */
+    console.log('1111')
+    // 创建promise对象
+    let promise = new Promise((resolve, reject) => {
+      console.log('开始发送请求')
+      // 响应之后的成功或者失败,状态改变了
+      resolve('{name:"小明"}')
+      // 得到响应的数据,在页面中遍历数据,显示数据
+      // 失败了,状态改变
+      // reject('响应失败了')
+      console.log('结束发送的请求')
+    })
+    console.log('2222')
+    // 然后
+    promise.then((data) => {
+      console.log('成功之后才执行的:', data)
+    }, (error) => {
+      console.log('失败之后才执行的:', error)
+    })
+
+
+
+
+    // promise.then((data) => {
+    //   console.log('成功之后才执行的:',data)
+    // }, (error) => {
+    //   console.log('失败之后才执行的:',error)
+    // }).catch((errorMsg)=>{
+    //   console.log(errorMsg)
+    // })
+
+
+
+
+
+
+
+
+
+
+
+    // 1.
+    // 同步执行:先111,后222
+    // 创建Promise的实例对象
+    // let promise = new Promise((resolve, reject) => {
+    //     // 此时初始化promise状态:peding:初始化
+    //     console.log('111')
+    // })
+    // console.log('222')
+
+      // 2.
+      // let promise = new Promise((resolve,reject)=>{
+      //   console.log('111')
+      //   // 执行异步操作,通常是发送ajax请求,开启定时器
+      //   setTimeout(function(){
+      //     console.log('333')
+      //     // 根据异步任务的返回结果来修改promise的状态
+      //     // 如果异步执行成功,调用resolve函数
+      //     resolve('哈哈'); // 修改promise的状态,修改为成功状态
+      //     // 异步任务执行失败了
+      //     // reject() // 修改promise的状态,修改为失败的状态
+      //   },2000)
+      // });
+
+      // console.log('222')
+      // // 如果没有修改状态数据,就不会进入到then中的任何一个
+      // promise.then((data)=>{
+      //   // 成功的回调
+      //   console.log('成功了')
+      //   console.log(data)
+      // },(error)=>{
+      //   // 失败的回调
+      //   console.log('失败了')
+      //   console.log(error)
+      // })
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+       ## 解构赋值
+      1. 理解:从对象或数组中提取数据,并赋值给变量(多个)
+      2. 对象的解构赋值: let {m,n}={n:'a',m:'b'}
+      3. 数组的解构赋值: let [a,b]=[10,'测试']
+      4. 用途: 给多个形参赋值
+      5. 解构赋值的对象的时候,{}中写的属性名字一定是对象中存在的属性名字
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // let obj1 = {
+    //   name: '棒棒的华哥',
+    //   age: 45,
+    //   gender: '男'
+    // }
+    // // console.log(obj1.name,obj1.age)
+    // // 解构赋值:分解结构,并且赋值给新的变量
+    // // const {name,age,gender}=obj1
+    // // console.log(name,age,gender)
+    // const { age } = obj1
+    // console.log(age)
+
+    // 数组呢
+
+    // let arr=[1,2,3,4,5]
+    // let [a,b,c]=arr
+    // console.log(a,b,c)
+
+    // let arr = [1, 2, 3, 4, 5]
+    // let [a, , b, c] = arr
+    // console.log(a, b, c)
+
+    // function f1(name,age,gender,height,weight){
+    //   console.log(name,age,gender,height,weight)
+    // }
+
+    // f1("小明",20,'男',180,65)
+
+    // function f1(person){
+    //   console.log(person.name,person.age,person.gender,person.height,person.weight)
+    // }
+
+    // var obj={
+    //   name:'小明',
+    //   age:20,
+    //   gender:'男',
+    //   height:185,
+    //   weight:65
+    // }
+    // f1(obj)
+
+    // 解构赋值出现了
+
+    function f1({name,age}){
+      console.log(name,age)
+    }
+    f1({name:'小明',age:20,gender:'男',height:185,weight:65})
+
+
+
+  </script>
+  <script type="text/javascript">
+    // let obj = {
+    //   userName: '卡卡西',
+    //   age: 20
+    // }
+    // // let { userName, age } = obj
+    // // // 变量名字和是属性名字一定要一致
+    // // console.log(userName, age)
+    // let { age } = obj; // 只写想要的属性名字
+    // console.log(age)
+    // let arr = [10, 20, 30]
+    // // 数组值获取的时候变量随便写
+    // let [x, y, z] = arr
+    // console.log(x, y, z)
+    // // 只要一个值
+    // let [, c,] = arr;
+    // console.log(c)
+
+
+    // function f2({ name, age }) {
+    //   console.log(name)
+    // }
+    // f2({ name: '小明', age: 20 })
+  </script>
+
+</body>
+
+</html>

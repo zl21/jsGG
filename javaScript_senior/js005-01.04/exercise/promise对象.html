@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* promise对象：
+            1、异步代码，同步执行；
+            2、本来里面的代码应该跟定时器一样延迟到最后才执行的，但是它就是特殊，非要在主线里面先执行，然后才让主线代码继续往下走。
+            3、此构造函数的参数是一个回调函数，该回调函数的参数是两个函数resolve()和reject()。
+            4、这个对象有三个状态。
+                -未执行resolve或reject则为pending: 初始化状态；
+                -执行resolve则为fullfilled: 成功状态；
+                -执行reject则为rejected: 失败状态。
+            5、要想promise里面的代码处于什么状态就要用到promise对象的then((data)=>{},(error)=>{})方法。此方法有两个参数，都是回调函数，前者对应前面的状态为fullfilled要执行的代码，后者对应状态rejected。
+         */
+        let promise = new Promise((resolve,reject)=>{
+            console.log('send');
+            resolve('{name:"zl"}');
+            console.log('end');
+            /* setTimeout(()=>{
+                console.log('aaaaaaaaaaaaaaa');
+            },0) */
+        })    
+        console.log('这是一堆JS的骚操作，完了之后再处理promise里的东西（主要是向服务器发送request之后服务器response响应回来的数据）。');
+        promise.then((data)=>{
+            console.log('succeed');
+        },(error)=>{
+            console.log('fail');
+        })
+
+    </script>
+</body>
+</html>

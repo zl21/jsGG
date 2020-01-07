@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise-ajax练习</title>
+</head>
+<body>
+    <script>
+    async function f1() {
+      console.log('开始执行');
+      let result = await new Promise((resolve, reject) => {
+        console.log('promise中代码');
+        setTimeout(function () {
+          resolve(222); // 成功,修改状态
+        }, 2000)
+      })
+      console.log(result);
+      console.log('结束执行');
+      return 1000;
+    }
+    let promise = f1();
+    console.log(promise);
+    promise
+      .then((data)=>{
+        // 是async 函数最终return 的值
+        console.log(data);
+      })
+      .catch((error)=>{
+        // 是reject(这里的数据)
+        console.log(error);
+      })
+    </script>
+</body>
+</html>

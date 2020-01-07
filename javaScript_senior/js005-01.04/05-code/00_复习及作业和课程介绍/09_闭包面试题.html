@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function func(n, o) {
+      console.log(o);
+      return {
+        func: function (m) {
+          var num = 123;
+          return func(m, n)
+        }
+      }
+    }
+    // 第一个
+    // var a = func(0)
+    // a.func(1)
+    // a.func(2)
+    // a.func(3)
+    // 第二个
+    // var c= func(0).func(1)
+    //   c.func(2)
+    //   c.func(3)
+    // 第三个
+     var b= func(0).func(1).func(2).func(3)
+
+  </script>
+</body>
+
+</html>

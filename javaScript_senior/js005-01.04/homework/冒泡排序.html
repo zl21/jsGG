@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[10,5,63,45,21,8,6,30];
+        for (var i =0; i < arr.length-1; i++) {
+            for (var j = 0; j < arr.length-1-i; j++) {
+                if(arr[j]<arr[j+1]){
+                    var m=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=m;
+                }
+            }
+        }
+        console.log(arr);
+
+        var arr1=[10,5,63,45,21,8,6,30];
+        for (var i =0; i < arr1.length-1; i++) {
+            for (var j = 0; j < arr1.length-1-i; j++) {
+                if(arr1[j]>arr1[j+1]){
+                    var m=arr1[j];
+                    arr1[j]=arr1[j+1];
+                    arr1[j+1]=m;
+                }
+                
+            }
+            
+        }
+        console.log(arr1);
+    </script>
+</body>
+</html>

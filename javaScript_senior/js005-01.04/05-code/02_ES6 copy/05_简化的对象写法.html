@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>玉树临风美少年，揽镜自顾夜不眠 </title>
+	<script type="text/javascript">
+    /*
+      ## 简化对象的写法
+      1. 省略同名的属性值
+      2. 省略方法的function
+
+    */
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">
+		// 一个对象三个属性,两个方法
+		// var obj = {
+		//   name: '滨崎步',
+		//   age: 40,
+		//   gender: '女',
+		//   sing: function () {
+		//     console.log('my all')
+		//   },
+		//   dance: function () {
+		//     console.log('跳起来')
+		//   }
+		// }
+
+
+		// ES6的写法-----下面的写法在React中常见
+		var name = '滨崎步';
+		var age = 10;
+		var gender = '女';
+		var obj = {
+			name,
+			age,
+			gender,
+			// 简化方法
+			sing() {
+				console.log('唱起来');
+			},
+			dance() {
+				console.log('真好啊');
+			}
+		}
+		console.log(obj.name, obj.age, obj.gender);
+		obj.sing();
+		obj.dance();
+
+	</script>
+</body>
+
+</html>

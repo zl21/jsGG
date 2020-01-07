@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // function* generator() {
+        //     console.log('执行了');
+        //     let res=yield 'hallo'; //遇到yield就会暂停
+        //     console.log(res);
+        //     console.log('暂停了');
+        //     yield '哈哈哈';
+        //     console.log('完毕了');
+        //     return '结束了';
+        // }
+        // var iteratorObj=generator();
+        // console.log(iteratorObj.next());
+        // console.log(iteratorObj.next('888'));
+        // console.log(iteratorObj.next());
+
+
+        // function* generator() {
+        //     console.log('执行了');
+        //     let res=yield 'hallo'; //遇到yield就会暂停
+        //     console.log(res);
+        //     console.log('暂停了');
+        //     yield '哈哈哈';
+        //     console.log('完毕了');
+        //     return '结束了';
+        // }
+        // var iteratorObj=generator();
+        // console.log(iteratorObj.next());
+        // console.log(iteratorObj.next('888'));
+        // console.log(iteratorObj.next());
+
+
+        function* generator() {
+            console.log('执行了');
+            let res=yield 'hallo'; //遇到yield就会暂停
+            console.log(res);
+            console.log('暂停了');
+            yield '哈哈哈';
+            console.log('完毕了');
+            return '结束了';
+        }
+        var iteratorObj=generator();
+        console.log(iteratorObj.next());
+        console.log(iteratorObj.next('888'));
+        console.log(iteratorObj.next());
+    </script>
+</body>
+</html>

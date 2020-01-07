@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <script>
+        var btnObjs=document.getElementsByTagName('button');
+        for (let i = 0; i < btnObjs.length; i++) {
+            btnObjs[i].onclick=function () {
+                console.log(i);
+            }
+        }
+
+        var btnObjs1=document.getElementsByTagName('button');
+        for (let i = 0; i < btnObjs1.length; i++) {
+            btnObjs1[i].onclick=function () {
+                console.log(i);
+            }
+        }
+
+
+        var btnObjs2=document.getElementsByTagName('button');
+        for (let i = 0; i < btnObjs2.length; i++) {
+            btnObjs2[i].onclick=function () {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
