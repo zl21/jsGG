@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+        ## 属性操作
+      1. 标签属性(自带的或者自定义的)
+        - attr()
+        - 属性设置和属性值读取
+        - 对象.attr('属性名字','属性值')   可链式编程
+        - 对象.attr({属性名字1:属性值1,属性名字2:属性值2})
+        - 对象.attr('属性名字')  获取当前标签的属性值
+        - prop()
+      2. class属性
+        - addClass()
+        - removeClass()
+        - toggleClass()
+      3. 操作html内容/文本内容/值
+        - html()
+        - text()
+        - val()
+
+    */
+  </script>
+  <style type="text/css">
+    .cls {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">设置及获取属性值</button>
+  <div id="dv" title="one">
+    第一个div标签
+  </div>
+  <hr>
+  <div id="dv2" class="">
+    第二个div标签
+  </div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <input type="text" value="123" />
+
+  <button id="all">全选</button>
+  <button id="noAll">全不选</button>
+
+  <fieldset>
+    <legend>爱好兴趣</legend>
+    <input type="checkbox" name="like" value="1">吃饭
+    <input type="checkbox" name="like" value="2">睡觉
+    <input type="checkbox" name="like" value="3">打豆豆
+    <input type="checkbox" name="like" value="4">打铅球
+  </fieldset>
+  <script type="text/javascript">
+    // <p id="" fsdfds="fdsfds"></p>  
+
+    // html标签的属性有几种方式:
+    // 1. 系统自带的属性  var pObj.id  系统自带的属性直接可以通过DOM对象.属性-->设置或者获取属性的值
+    // 2. 自己定义的属性   pObj.setAttribute('自定义的属性名字','值') 设置属性值,
+    // 获取属性的值  pObj.getAttribute('属性的名字')
+    // 总结 : setAttribute('属性的名字')  可以是系统自带的,也可以自己定义的
+
+
+    /*
+     点击按钮进行操作:
+      需求1:读取第一个div的title属性值
+      需求2:设置第二个div的data属性值为shop
+      需求3: 给所有的div设置name属性(value为atguigu)
+      需求4: 移除所有div的title属性
+      需求5: 给所有的div设置class='guiguClass'
+      需求6: 给所有的div添加class='abc'
+      需求7: 移除所有div的guiguClass的class,
+      需求7.1 切换div的类样式
+      需求8: 得到最后一个li的标签体文本
+      需求9: 设置第一个li的标签体为"<h1>mmmmmmmmm</h1>"
+      需求10: 得到输入框中的value值
+      需求11: 将输入框的值设置为atguigu
+      需求12: 点击'全选'按钮实现全选
+      需求13: 点击'全不选'按钮实现全不选
+      需求14: 对元素一次添加多个属性和属性值；
+
+      .attr() 方法是用来设置和获取标签中的属性的值
+      .attr('属性名字') 获取该属性的值
+      .attr('属性名字','值') 设置该属性的值
+      无论是html系统自带的属性还是自己定义的属性,都可以使用attr()方法来设置或者获取
+    
+    */
+
+    $(function () {
+      // 点击按钮进行操作:
+      $('#btn').click(function () {
+        // // 需求1:读取第一个div的title属性值
+        // console.log($('div:first').attr('title'))
+        // // 需求2:设置第二个div的data属性值为shop
+        // $('div:eq(1)').attr('data','shop')
+        // // 需求3: 给所有的div设置name属性(value为atguigu)
+        // $('div').attr('name','我好帅')
+        // 需求4: 移除所有div的title属性
+        // $('div').attr('title','')
+        // $('div').removeAttr('title')
+        // $('div').removeAttr()
+        // 需求5: 给所有的div设置class='guiguClass'
+        // $('div').attr('class','guiguClass')
+        // 需求6: 给所有的div添加class='abc'
+        // var result = $('#dv2').attr('class')
+        // console.log(result)
+        // $('#dv2').attr('class', result+' guiguClass')
+        // 需求6: 给所有的div添加class='abc'
+        //  $('div').addClass('guiguClass') // 添加类样式
+        // $('div').attr('class','cls abc')
+        // 需求7: 移除所有div的guiguClass的class,
+        // $('div').removeClass('cls')
+        // 需求7.1 切换div的类样式
+        // $('div').toggleClass('cls')
+        // 需求8: 得到最后一个li的标签体文本
+        // console.log($('li:last').text())
+        // 需求9: 设置第一个li的标签体为"<h1>mmmmmmmmm</h1>"
+        // $('li:first').html('<h1>今天作业很少很开心</h1>')
+        // 需求10: 得到输入框中的value值
+        // console.log($(':text').val())
+        // 需求11: 将输入框的值设置为atguigu
+        // $(':text').val('atguigu')
+        // 需求12: 点击'全选'按钮实现全选
+        // $('#all').click(function () {
+        //   $(':checkbox').attr('checked',true)
+        //  })
+        // checked ,selected   ---以后设置选中或者不选中的问题,推荐使用prop()
+        // prop('属性',值) 表示的是设置
+        // prop('属性') 表示的是获取该属性值
+        // $('#all').click(function () {
+        //   $(':checkbox').prop('checked', true)
+        // })
+        // // 需求13: 点击'全不选'按钮实现全不选
+        // $('#noAll').click(function () {
+        //   $(':checkbox').prop('checked', false)
+        // })
+        // $('#noAll').click(function () {
+        //   $(':checkbox').attr('checked',false)
+        //  })
+
+        // 需求14: 对元素一次添加多个属性和属性值；
+        // $('#dv').attr('one','哈哈').attr('two','嘎嘎')
+        // $('#dv').attr({'one':'哈哈','two':'嘎嘎','three':'嘿嘿'})
+      });
+
+      // 需求12: 点击'全选'按钮实现全选
+      // $('#all').click(function () {
+      //   $(':checkbox').attr('checked',true)
+      //  })
+      // checked ,selected   ---以后设置选中或者不选中的问题,推荐使用prop()
+      // prop('属性',值) 表示的是设置
+      // prop('属性') 表示的是获取该属性值
+      // $('#all').click(function () {
+      //   $(':checkbox').prop('checked', true)
+      // })
+      // // 需求13: 点击'全不选'按钮实现全不选
+      // $('#noAll').click(function () {
+      //   $(':checkbox').prop('checked', false)
+      // })
+      // $('#noAll').click(function () {
+      //   $(':checkbox').attr('checked',false)
+      //  })
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // $(function(){
+    //   $('#btn').click(function(){
+    //     // console.log($('div:first').attr('title'))
+    //     // $('div:eq(1)').attr('data','shop')
+    //     // $('div').attr('name','atguigu')
+    //     // $('div').removeAttr('title')
+    //     // $('div').attr('class','atguigu')
+    //     // $('div').attr('class',$('div').attr('class')+' '+'abc')
+    //     // $('div').addClass('abc')
+    //     // $('div').removeClass('cls')
+    //     // $('div').toggleClass('cls')
+    //     // console.log( $('li:last').text())
+    //     // $('li:first').html('<p>哈哈</p>')
+    //     // console.log($(':text').val())
+    //     // $(':text').val('真开心')
+    //     // 链式编程和对象的方式都可以
+    //       $('div').attr({'a':'123','b':'234'})
+    //   });
+    //   $('#all').click(function(){
+    //     // $(':checkbox').attr('checked',true)
+    //     $(':checkbox').prop('checked',true)
+    //   })
+    //   $('#noAll').click(function(){
+    //     // $(':checkbox').attr('checked',false)
+    //     $(':checkbox').prop('checked',false)
+    //   })
+    // })
+  </script>
+</body>
+
+</html>

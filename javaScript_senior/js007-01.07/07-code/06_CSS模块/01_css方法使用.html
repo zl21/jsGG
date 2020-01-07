@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+     ## CSS操作
+      1. css('属性名字','值')
+      2. css('属性名字','值').css('属性名字','值') 链式编程
+      3. css({'属性名字':'值','属性名字':'值'})
+      4. .css('属性')   可以获取该属性的值
+    
+    */
+  </script>
+  <style type="text/css">
+    .cls{
+      width: 100px;
+      height:50px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">设置</button>
+  <div class="cls"></div>
+  <p>第一个</p>
+  <p>第二个</p>
+  <p>第三个</p>
+  <script type="text/javascript">
+    /*
+      需求1:点击按钮设置div的宽高,及背景颜色
+      需求2:点击按钮设置所有的p的背景颜色为红色
+
+    
+    */
+    $(function(){
+      $('#btn').click(function(){
+        $('div').css({'width':'200px','height':'100px','backgroundColor':'red'})
+        $('p').css('backgroundColor','blue')
+        console.log($('div').css('color'))
+      })
+    })
+  </script>
+</body>
+</html>

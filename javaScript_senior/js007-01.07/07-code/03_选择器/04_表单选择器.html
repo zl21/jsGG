@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <form action="">
+    用户名:<input type="text" disabled /><br />
+    <input type="button" disabled value="这是按钮" /><br />
+    密码:<input type="password" /><br />
+    性别:<input type="radio" name="name" value="男" />男
+    <input type="radio" name="name" value="女" checked />女
+    <br>
+    爱好:
+    <input type="checkbox" value="sleep" />睡觉
+    <input type="checkbox" value="eat" checked />吃饭
+    <input type="checkbox" value="play" />打豆豆
+    <br />
+    <select>
+      <option value="1">北京</option>
+      <option value="2">天津</option>
+      <option value="3" selected>上海</option>
+      <option value="4">重庆</option>
+    </select>
+    <br>
+    <input type="submit" value="提交" />
+  </form>
+
+  <script type="text/javascript">
+    // 需求1:所有的input标签背景为红色
+
+    // 需求2:文本框的背景为蓝色
+    // 需求3:密码框背景为绿色
+    // 需求4:不可用的文本框背景为黄色
+    // 需求5:选中的复选框的value改为5
+    // 需求6:现实复选框选中的个数
+    // 需求7:显示选中城市的内容
+
+
+    $(function () {
+      // 需求1:所有的input标签背景为红色,单选和复选是不会改变背景颜色
+      // $(':input').css('backgroundColor','red');
+      // // 需求2:文本框的背景为蓝色
+      // $(':text').css('width','300px').css('backgroundColor','blue');
+      // // 需求3:密码框背景为绿色
+      // $(':password').css('backgroundColor','green')
+      // // 需求4:不可用的文本框背景为黄色
+      // $(':text:disabled').css('backgroundColor','yellow')
+      // 需求5:选中的复选框的value改为5
+      // console.log($(':checkbox:checked').val())
+      // $(':checkbox:checked').val(5)
+      //$(':checked').val(10)
+      // 需求6:显示复选框选中的个数
+      // console.log($(':checkbox:checked').length)
+      // 需求7:显示选中城市的内容
+      // console.log($(':selected').text())
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // $(function(){
+  //   // $(':input').css('backgroundColor','red')
+  //   // $(':text').css('backgroundColor','green')
+  //   // $(':password').css('backgroundColor','green')
+  //   // $(':text:disabled').css('backgroundColor','green')
+  //   // $(':checkbox:checked').val('5')
+  //   // console.log($(':checkbox:checked').length)
+  //   console.log($(':selected').text())
+  // })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+       ## jQuery对象是一个包含所有匹配的任意多个DOM元素的伪数组对象
+      1. size()/length: 包含DOM元素个数
+      2. $(DOM对象)[0]/$(DOM对象).get(0)   得到的是DOM对象
+      3. each() 方法 : 遍历包含的所有DOM元素
+      4. index() 方法 : 得到在所有兄弟元素中的下标
+    ## 原生JS和jQuery对比
+      1. JS对象仍然是JS对象,Array,Function,Object
+      2. DOM对象:document获取的到的对象
+      3. jQuery对象:jQuery调用方法返回的对象
+        - $.方法()或者$()方法返回的都是jQuery对象
+      4. jQuery对象和DOM对象可以互转
+        - $(DOM对象) 此时是jQuery对象
+        - $(DOM对象)[0] 或者$(DOM对象).get(0)
+        - 如何识别当前的对象是DOM对象还是jQuery对象?
+          DOM对象点出来的都是属性或者事件
+          jQuery对象点出来的大多数都是方法
+    */
+  </script>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <ul>
+    <li id="l1">油炸臭豆腐</li>
+    <li id="l2">清蒸榴莲</li>
+    <li id="l3">爆炒大蒜</li>
+  </ul>
+  <script type="text/javascript">
+    // 页面加载
+    $(function(){
+      // 获取有多少个标签对象---DOM对象----伪数组
+      // console.log($('button').size())
+      // console.log($('button').length)
+      // console.log($('button')[1].innerHTML)
+      // console.log($('button').get(1).innerHTML)
+
+      // 用来遍历DOM对象的
+      // $('button').each(function(index,item){
+      //   console.log(index,item)
+      // })
+      // // 获取当前的jQuery对象的索引
+      // console.log($('#l2').index())
+
+
+      // DOM对象和jQuery对象互转
+
+        
+      // $($( $(document)[0])[0]).get(0)
+    });
+
+
+
+
+
+
+    // $(function () {
+    //   // 需求:输出有多少个按钮
+    //   console.log($('button').size())
+    //   console.log($('button').length)
+    //   // 需求:现实第一个按钮的问题
+    //   console.log($('button')[0].innerHTML)
+    //   // 遍历所有的按钮
+    //   $('button').each(function (index, item) {
+    //     console.log(index, item)
+    //   })
+    //   // 获取l2这个li标签的索引
+    //   console.log($('#l2').index())
+    // });
+  </script>
+</body>
+
+</html>

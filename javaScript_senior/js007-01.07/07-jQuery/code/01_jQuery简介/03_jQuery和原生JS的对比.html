@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+      /*
+      ## jQuery核心函数: $(param)
+      1. 作为函数调用
+        - 参数是函数: $(函数) ->    $(function (){}) DOM加载后,执行该函数内部代码
+        - 参数是字符串(选择器): $('字符串') ->    $('button') 查找并匹配标签,封装成jQuery对象
+        - 参数是DOM对象: $(DOM对象) ->    $(document) 将DOM对象封装成jQuery独享
+        - 参数是html标签: $(html标签) ->  $(<p></p>)  创建标签对象,封装成jQuery对象
+        - 切记:jQuery中this是DOM对象,如果要使用则需要转jQuery对象
+      
+          jQuery() 没有$() 简单
+
+
+          $(function(){}) 页面的加载事件---相当于window.onload,但是不等于
+          $('button')  选择器
+          $(document.getElementById('btn'))--->jQuery对象
+          $(<p></p>) 创建p标签
+      
+      */
+  </script>
+</head>
+
+<body>
+  <input type="text" id="txt" />
+  <button id="btn1">显示文本框数据(原生js)</button>
+  <button id="btn2">显示文本框数据(jquery)</button>
+  <script type="text/javascript">
+    // $(函数)------>$(function(){}) 页面加载,相当于window.onload=function(){}
+    // window.onload=function(){} 这种方式只能写一次,多写无效,覆盖
+    // windio.onload 这种方式,表示的是,页面中所有的内容全部加载后,才执行
+    // $(function(){}) 这种方式,表示的是,页面中的基本DOM元素加载后就执行,
+
+    // window.onload=function(){
+    //   console.log('页面加载事件1')
+    // }
+    // window.onload=function(){
+    //   console.log('页面加载事件2')
+    // }
+
+    // // jQuery的版本
+    // $(function(){
+    //   console.log('jQuery页面加载1')
+    // });
+    // $(function(){
+    //   console.log('jQuery页面加载1')
+    // });
+
+    // // 比jQuery慢,一般写jQuery的插件的时候使用下面的方式
+    // $(document).ready(function(){
+    //   console.log('页面准备加载了')
+    // });
+    // $(document).ready(function(){
+    //   console.log('页面准备加载了')
+    // });
+
+
+  </script>
+  <script type="text/javascript">
+    // // 1. 原生JS
+    // // 页面中所有的内容加载完毕后才执行,加载事件
+    // window.onload = function () {
+    //   // 获取按钮,并注册点击事件
+    //   document.getElementById('btn1').onclick = function () {
+    //     //  获取文本框
+    //     var txtObj = document.getElementById('txt')
+    //     console.log(txtObj.value)
+    //   }
+    // }
+
+    // // DOM元素加载事件
+    // $(function(){
+    //   $('#btn2').click(function(){
+    //     console.log($('#txt').val())
+    //   })
+    // })
+
+  </script>
+</body>
+
+</html>

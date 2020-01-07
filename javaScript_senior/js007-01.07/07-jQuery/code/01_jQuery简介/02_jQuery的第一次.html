@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    div{
+      width:200px;
+      height:100px;
+      border:1px solid red;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">设置div的宽高</button>  
+  <div id="dv"></div>
+  <script type="text/javascript">
+    // jQuery的代码------初次体验
+    // 页面加载事件
+    
+    $(function(){
+      // 获取按钮,调用点击事件
+      $('#btn').click(function(){
+        // 设置div的宽和高
+        $('div').css({'width':'300px','height':'200px'});
+      })
+    });
+
+    // 页面加载事件
+    // window.onload=function(){
+    //   document.getElementById('btn').onclick=function(){
+    //     document.getElementById('dv').style.width="300px"
+    //     document.getElementById('dv').style.height="200px"
+    //   }
+    // }
+  </script>
+</body>
+</html>

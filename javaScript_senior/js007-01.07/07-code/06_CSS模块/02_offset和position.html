@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+        ## 设置/获取标签的位置数据
+      1. offset() 相对页面左上角的坐标
+      2. position() 相对于父级元素左上角的坐标,只有读的操作(如果要设置位置,通过css的left和top)
+      3. 写的操作要放在对象中
+        - 不能带有单位
+        - $('div').offset({let:10})
+
+
+    */
+  </script>
+  <style type="text/css">
+    html,body{
+      margin: 0;
+      padding: 0;
+    }
+    #dv1{
+      width: 200px;
+      height: 150px;
+      background-color: green;
+      position: absolute;
+      left:100px;
+      top:20px;
+    }
+    #dv1 div{
+      width: 100px;
+      height: 50px;
+      background-color: pink;
+      position: absolute;
+      left:50px;
+      top:30px;
+    }
+    #dv2{
+      width: 200px;
+      height: 150px;
+      border: 1px solid green;
+      position: absolute;
+      left:150px;
+      top:300px;
+    }
+    #dv2 div{
+      width: 100px;
+      height: 50px;
+      background-color: hotpink;
+      position: absolute;
+      left:10;
+      top:10px;
+    }
+    button{
+      position: absolute;
+      left:300px;
+      top:200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv1">
+    <div>
+      第一个div内部的div
+    </div>
+  </div>
+  <!-- <div id="dv2">
+    <div>
+      第二个div内部的div
+    </div>
+  </div> -->
+  <button id="btn">按钮</button>
+  <script type="text/javascript">
+  /*
+  
+    需求1: 获取第一个div相对于左上角的位置 
+    需求2: 获取第二个div相对于左上角的位置 
+    需求3: 获取第一个div里面div相对于父级元素的左上角的位置 
+    需求4: 获取第二个div里面div相对于父级元素的左上角的位置 
+
+    需求5: 设置里面div相对于页面的位置
+  
+  */
+
+  $(function(){
+    $('#btn').click(function(){
+      // console.log($('#dv1').offset().left)
+      // console.log($('#dv1>div').offset().left)
+
+      // console.log($('#dv1').position())
+      // console.log($('#dv1').position().left)
+      // console.log($('#dv1>div').position().left)
+
+      $('#dv1>div').offset({
+        left:300,
+        top:400
+      })
+    })
+  })
+  </script>
+</body>
+
+</html>
