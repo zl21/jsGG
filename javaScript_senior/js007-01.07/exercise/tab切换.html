@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        div {
+            width: 800px;
+            margin: 50px auto;
+            border: 1px solid;
+        }
+
+        #title {
+            width: 800px;
+            height: 100px;
+            overflow: hidden;
+            background-color: rgb(214, 252, 205);
+        }
+
+        #title li {
+            width: 200px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            float: left;
+        }
+
+        #content {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        #content li {
+            width: 800px;
+            height: 400px;
+            background-color: rgb(168, 253, 146);
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            position: relative;
+            display: none;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #content li:nth-child(1) {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="title">
+            <li>吃</li>
+            <li>喝</li>
+            <li>玩</li>
+            <li>乐</li>
+        </ul>
+        <ul id="content">
+            <li><img src="img-cats/dahuangmao-01.png" alt=""> </li>
+            <li><img src="img-cats/dahuangmao-02.png" alt=""> </li>
+            <li><img src="img-cats/dahuangmao-06.png" alt=""> </li>
+            <li><img src="img-cats/dahuangmao-07.png" alt=""> </li>
+        </ul>
+    </div>
+    <script>
+        $(() => {
+            /* $('#title>li').click(function () {
+                $('#content>li').css('display', 'none');
+                let index = $(this).index();
+                $('#content>li').eq(index).css('display', 'block');
+                $('#content>li:eq(' + index + ')').css('display', 'block');//或这样写
+            }); */
+            $('#title>li').click(function () {
+                let index = $(this).index();
+                $('#content>li').eq(index).css('display', 'block').siblings('li').css('display', 'none');
+                // $('#content>li:eq(' + index + ')').css('display', 'block').siblings('li').css('display', 'none');//或这样写
+            });
+
+        });
+
+        /* console.log($ instanceof(Object));//true
+        console.log(typeof($));//function
+        console.log($.type());//undefined */
+
+    </script>
+</body>
+
+</html>
