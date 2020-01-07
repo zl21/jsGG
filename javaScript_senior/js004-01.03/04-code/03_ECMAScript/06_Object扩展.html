@@ -19,22 +19,19 @@
 
 <body>
   <script type="text/javascript">
-    // 当前对象中的这个属性的值只能是获取,不能是设置的时候,此时才写get 属性名字(){}---只读
+    // 想设置对象中的属性值仅读时,使用get 属性名字(){}
     var obj = {
       get name() {
-        return ',卡卡西'
+        return '卡卡西';
       }
     }
-
-    // var obj2 = {
-    //   name: '小红'
-    // }
-    // obj.name = '大名'
-    // console.log(obj.name)
+    console.log(obj.name);//卡卡西
+    obj.name = '大名';
+    console.log(obj.name);//卡卡西
 
     // Object.create() // 静态方法-
     // var obj={}
-    // obj.creae()
+    // obj.creae()//crate不是实例化对象的，而是构造函数大Object的静态方法，仅Object可调用。
   </script>
 </body>
 

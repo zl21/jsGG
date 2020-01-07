@@ -10,31 +10,31 @@
 
 <body>
   <script type="text/javascript">
-    // var person = {
-    //   name: '卡卡西',
-    //   age: 20
-    // }
 
-    // // 作用:为当前的person对象添加一个新的属性,gender
-    // Object.defineProperties(person, {
-    //   gender: {
-    //     get: function () { // 提供扩展属性值的,获取扩展属性值的时候就调用
-    //       console.log('啊,调用了')
-    //       return '男' // 默认值
-    //     },
-    //     set: function (str) { // 设置扩展属性值
-    //     // 当前设置该属性值的时候,会进入到当前的这个方法中,
-    //       console.log('执行了:'+str)
-    //     }
-    //   }
-    // })
-    // // 访问该属性的时候,此时就会进入到该属性的get方法中
-    // console.log(person.gender)
-    // person.gender = '女'
-    // console.log(person.gender)
-
-
-
+/*       var person = {
+      name: '卡卡西',
+      age: 20
+    }
+    // 作用:为当前的person对象添加一个新的属性,gender
+    Object.defineProperties(person, {
+      gender: {
+          // get方法,供用户获取某属性的值,要定义成属性的方法
+        get: function () { 
+          console.log('啊,调用了');
+          return '男'; // 默认值
+        },
+          // set方法,供用户对某属性的value进行设置时使用,要定义成属性的方法
+        set: function (str) { // 设置扩展属性值
+        // 当前设置该属性值的时候,会进入到当前的这个方法中,
+          console.log('执行了:'+str);
+        }
+      }
+    })
+    // 访问该属性的时候,此时就会进入到该属性的get方法中
+    console.log(person.gender);//男
+    person.gender = '女';
+    console.log(person.gender);//还是男，此例中set没法儿修改掉原来的默认值
+ */
 
     // 克隆数据,修改第二个对象的数据,第一个对象的数据也要被修改
 
@@ -52,7 +52,7 @@
     // console.log(obj.name)
 
 
-    var obj = {
+     var obj = {
       name: '小明',
       age: 30
     }
@@ -64,26 +64,23 @@
         Object.defineProperties(obj2, {
           [key]: {
             get: function () {
-              return obj[key]   // ----当前这个属性值 obj["name"] 或者是obj["age"]
+              return obj[key];
             },
             set: function (msg) {
-              console.log(msg)
-              obj[key] = msg
+              console.log(msg);
+              obj[key] = msg;
             }
           }
         })
       })(key)
     }
-    console.log(obj2)
-    obj.name = '大明'
-    console.log(obj.name)
-    obj2.name = '小红'
-    console.log(obj2.name)
-    console.log(obj.name)
+    console.log(obj2);
+    obj.name = '大明';
+    console.log(obj.name);
+    obj2.name = '小红';
+    console.log(obj2.name);
+    console.log(obj.name);
 
-
-    var obj3={}
-    var obj4=obj3
   </script>
 </body>
 

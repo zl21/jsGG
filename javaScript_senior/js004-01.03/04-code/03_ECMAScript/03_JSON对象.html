@@ -22,44 +22,27 @@
 
 <body>
   <script type="text/javascript">
-    // var obj1 = {
-    //   name: '佐助',
-    //   age: 20
-    // }
-    // // JS对象转成了JSON格式的数据,但是类型是string类型,叫JSON对象
-    // var obj2 = JSON.stringify(obj1)
+    // JS对象转成了JSON格式的数据,但是类型是string类型,叫JSON对象
+
+    var obj1 = {
+      name: '佐助',
+      age: 20
+    }
+    var obj2 = JSON.stringify(obj1);
+    console.log(typeof obj1);//object
+    console.log(typeof obj2);//string
+    console.log(obj2);//字符串：{"name":"佐助","age":20}
 
 
-    // console.log(typeof obj1)
-    // console.log(typeof obj2)
-    // console.log(obj1)
-    // console.log(obj2)
-    // // localStorage缓存数据对象,setItem方法(参数1,参数2),参数1:键,参数2:要存储的值,保存在浏览器中
-    // localStorage.setItem('nani', obj2)
-    // var result = localStorage.getItem('nani')
-    // console.log(result)
-    // // JSON格式的数据(此时是string类型),转换JS对象,
-    // result = JSON.parse(result)
-    // console.log(result)
-
-
-    // var json = {
-    //   "name": "卡卡西",
-    //   "age": "18",
-    //   "gender": "男",
-    //   height: 170,
-    // }
-
-    // var  obj={
-    //   name:'卡卡西'
-    // }
-    // console.log(typeof obj)
-    // obj = JSON.stringify(obj)
-    // console.log(typeof obj)
-    // console.log(obj)
-    // obj = JSON.parse(obj)
-    // console.log(obj)
-    // console.log(typeof obj)
+    // localStorage缓存数据对象。
+    // 1、setItem方法('键',值)。参数1:键,参数2:要存储的值,保存在浏览器中
+    localStorage.setItem('person1', obj2);
+    // 2、getItem方法('键')。
+    var result = localStorage.getItem('person1');
+    console.log(result);//字符串：{"name":"佐助","age":20}
+    result = JSON.parse(result);//转为JS格式
+    console.log(result)//Object：{"name":"佐助","age":20}
+    
   </script>
 </body>
 

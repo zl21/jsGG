@@ -29,9 +29,10 @@
       3. 创建eval作用域
       4. 对象不能有重名的属性(语法报错)
 
-    ## JSON对象
-      1. JSON.stringify(obj/arr) js对象(数组)转换为json对象(数组)
-      2. JSON.parse(json) json对象(数组)转换为js对象(数组)
+    ## JSON对象()
+      0. JSON格式的数据，全是string类型
+      1. JSON.stringify(obj/arr),将js格式(对象/数组)转换为--->json格式(对象/数组)
+      2. JSON.parse(json),将json格式(对象/数组)转换为--->js格式(对象/数组)
       3. 用于前后端进行交互(或者数据的存储)
 
     ## ES5给Object扩展了一些静态方法,常用的2个:
