@@ -40,17 +40,18 @@
     $(function () {
       $('#btn').click(function () {
         // 1. 找到ul中直接的li子标签
-        $('ul').children('li').css('backgroundColor','red');
+        $('ul').children('li').css('backgroundColor','#bfa');
         // 2. 找ul中的第二个span标签
         $('ul').find('span:eq(1)').css('backgroundColor','green');
+        $('ul>span:eq(1)').css('backgroundColor','green');
         $('ul').find('span').eq(1).css('backgroundColor','green');
         // 3. 找ul的父级标签
         $('ul').parent().attr('hua','pleasure！')
         console.log($('ul').parent());
         // 4. id为li4的前面所有的兄弟元素
-        $('#li4').prevAll().css('backgroundColor','green');
+        $('#li4').prevAll().css('backgroundColor','#afa');
         // 5. id为li4的后面所有的兄弟元素
-        $('#li4').nextAll().css('backgroundColor','green');
+        $('#li4').nextAll().css('backgroundColor','#fbf');
         // 6. id为li4的所有兄弟元素(不包括自己)
         $('#li4').siblings().css('backgroundColor', 'green');
       });
