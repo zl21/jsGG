@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 6.筛选查找元素 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+        ## 筛选_查找元素:父级元素,子级元素,兄弟元素
+      1. children() 子级元素中找
+      2. find() 后代元素中找
+      3. parent() 父级元素
+      4. prevAll() 前面所有的兄弟元素
+      4.1 prev() 前面一个
+      5. nextAll() 后面所有的兄弟元素
+      5.1 next() 后面一个
+      6. siblings() 除了自己的所有兄弟元素
+    */
+  </script>
+</head>
+
+<body>
+  <button id="btn">显示效果</button>
+  <ul>
+    <span>ul中的直接子元素span标签</span>
+    <span>ul中的直接子元素span标签2</span>
+    <li><span>努力过后，才知道许多事情，坚持坚持，就过来了</span></li>
+    <li>成功可招引朋友，挫败可考验朋友。</li>
+    <li>你凭什么不努力，又什么都想要。</li>
+    <li id="li4"><span>不管失败多少次，都要面对生活，充满希望。</span></li>
+    <li>不管现在有多么艰辛，我们也要做个生活的舞者。</li>
+    <li>一切伟大的行动和思想，都有一个微不足道的开始。</li>
+    <li>业精于勤而荒于嬉，行成于思而毁于随。</li>
+    <li>只要学不死，就往死里学。说出来会被嘲笑的梦想才有实现它的价值。</li>
+  </ul>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn').click(function () {
+        // 1. 找到ul中直接的li子标签
+        $('ul').children('li').css('backgroundColor','red');
+        // 2. 找ul中的第二个span标签
+        $('ul').find('span:eq(1)').css('backgroundColor','green');
+        $('ul').find('span').eq(1).css('backgroundColor','green');
+        // 3. 找ul的父级标签
+        $('ul').parent().attr('hua','pleasure！')
+        console.log($('ul').parent());
+        // 4. id为li4的前面所有的兄弟元素
+        $('#li4').prevAll().css('backgroundColor','green');
+        // 5. id为li4的后面所有的兄弟元素
+        $('#li4').nextAll().css('backgroundColor','green');
+        // 6. id为li4的所有兄弟元素(不包括自己)
+        $('#li4').siblings().css('backgroundColor', 'green');
+      });
+    });
+  </script>
+</body>
+
+</html>
