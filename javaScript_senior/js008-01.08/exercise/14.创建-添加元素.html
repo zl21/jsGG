@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 创建元素的三种方式 </title>
+  <style type="text/css">
+    .cls {
+      width: 500px;
+      height: 450px;
+      border: 1px solid red;
+    }
+  </style>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+          4. 创建元素的三种方式
+        - 第一种:对象.append($(标签代码))或者$(标签代码).appendTo(对象)
+        - 第二种:对象.html(html标签代码)
+        - 第三种:对象.append(标签代码)
+    */
+  </script>
+</head>
+
+<body>
+  <button id="btn">显示效果</button>
+  <div class="cls">
+    哈哈
+  </div>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn').click(function () {
+        //方式1：对象.append(标签代码)。
+        // $('.cls').append('<p>这是一个p1</p>')
+        // $('.cls').append('<p>这是一个p2</p>')
+
+        // 方式2: 对象.append($(标签代码))或者$(标签代码).appendTo。少用,没有第一种简单。
+        // $('.cls').append($('<p>这是一个p1</p>'))
+        // $('.cls').append($('<p>这是一个p2</p>'))
+
+        // 方式3: 对象.html(html标签代码)。后面的会把前面的覆盖。
+        // $('.cls').html('<p>gaga </p>')
+        // $('.cls').html($('.cls').html()+'<p>gaga</p>')
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 断链 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li id="l3">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script type="text/javascript">
+    $(function(){
+      $('#l3').click(function(){
+        $(this).prevAll('li').css('backgroundColor','red').end().nextAll('li').css('backgroundColor','green')
+      });
+
+      // $('li').mouseenter(function(){
+      //   // jQuery中jQuery对象调用的方法如果是设置的操作,那么返回来的是什么
+       
+      //   console.log( $(this).css('backgroundColor','red').text())
+      // }).mouseleave(function(){
+      // })
+    })
+  </script>
+</body>
+</html>
