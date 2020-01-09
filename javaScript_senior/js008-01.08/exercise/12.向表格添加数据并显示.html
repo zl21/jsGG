@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12.向表格添加数据并显示</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        #data {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        #data,
+        td,
+        th {
+            border-collapse: collapse;
+            border: 1px solid #aaaaaa;
+        }
+
+        th,
+        td {
+            height: 28px;
+        }
+
+        #data thead {
+            background-color: #333399;
+            color: #ffffff;
+        }
+
+        #formDiv {
+            width: 250px;
+            border-style: solid;
+            border-width: 1px;
+            margin: 150px auto 10px auto;
+            padding: 10px;
+        }
+
+        #formDiv input {
+            width: 100%;
+        }
+
+        .word {
+            width: 40px;
+        }
+
+        .inp {
+            width: 200px;
+        }
+
+        #employeeTable,
+        #employeeTable th,
+        #employeeTable td {
+            border: 1px solid;
+            border-spacing: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table id="data">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>GENDER</th>
+                <th>AGE</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>zhou</td>
+            <td>female</td>
+            <td>20</td>
+            <td><a href="">DELETE</a></td>
+        </tr>
+    </table>
+
+    <div id="formDiv">
+        <h4>添加新员工</h4>
+        <table>
+            <tr>
+                <td class="word">ID:</td>
+                <td class="inp">
+                    <input type="text" name="empId" id="empId" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">GENDER:</td>
+                <td class="inp">
+                    <input type="text" name="gender" id="gender" />
+                </td>
+            </tr>
+            <tr>
+                <td class="word">AGE:</td>
+                <td class="inp">
+                    <input type="text" name="age" id="age" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addEmpButton" value="abc">
+                        Submit
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        $(() => {
+            $('#addEmpButton').click(function () {
+                //拿数据
+                var uId = $('#empId').val();
+                var uGender = $('#age').val();
+                var uAge = $('#age').val();
+                //添加到表格中
+                $('#data').append(`<tr>
+                    <td>${uId}</td>
+                    <td>${uGender}</td>
+                    <td>${uAge}</td>
+                    <td><a href="javascript">DELETE</a></td>
+                    </tr>`);
+                //清空添加输入框
+                $('#empId').val("");
+                $('#gender').val("");
+                $('#age').val("");
+            });//end click
+            //绑定删除事件
+            $('#data').on('click','a',function(){
+                if(confirm('您确定要删除吗？')){
+                    $(this).parent().parent().remove();
+                }
+                return false;//阻止默认事件
+            });
+        });//end ()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+
+     ## 内容尺寸
+      1. height() : 就是height
+      2. width()  : 就是width
+    ## 内部尺寸
+      1. innerHeight() : height + padding
+      2. innerWidth()  : widht + padding
+    ## 外部尺寸
+      1. outerHeight(false/true) :height + padding + border 如果是true 加上margin
+      2. outerWidth(false/true)  :width + padding + border 如果是true则加上margin
+
+
+    */
+  </script>
+  <style type="text/css">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    div {
+      width: 300px;
+      height: 200px;
+      border: 1px solid red;
+      padding: 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv">
+
+  </div>
+  <button id="btn">显示效果</button>
+  <script type="text/javascript">
+    /*
+    需求:显示元素的宽度和高度,内部大小,外部大小
+    
+    */
+
+  $(function(){
+    $('#btn').click(function(){
+      // console.log($('#dv').width()); // 宽
+      // console.log($('#dv').height()); // 高
+      // 内部大小(宽+padding 和高+padding)
+      // console.log($('#dv').innerWidth());
+      // console.log($('#dv').innerHeight());
+      // 外部的大小(宽+padding+border(如果是true)+margin,如果是false,此时没有margin)
+      // console.log($('#dv').outerWidth(true));
+      // console.log($('#dv').outerHeight(true));
+    })
+  })
+  </script>
+</body>
+
+</html>

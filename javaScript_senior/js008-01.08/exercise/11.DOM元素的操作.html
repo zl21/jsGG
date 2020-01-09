@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div id="dv">
+        <ul>
+            <li>yi ge li</li>
+            <li>liang ge li</li>
+        </ul>
+    </div>
+    <script>
+        /* 
+        JS中添加标签的方式：
+        document.create()
+        document.write()，注意要在页面加载完之前调用。
+        .innerHTML()，会覆盖之前的所有子孙元素，除非用+=。
+        */
+        $(() => {
+            //父子关系的添加，被动
+            $('#dv').append('<p>yi ge P</p>');
+            $('#dv').prepend('<p>2 ge P</p>');
+            //父子关系的添加，主动
+            $('<p>yi ge P</p>').appendTo('#dv');
+            $('<p>2 ge P</p>').prependTo('#dv');
+            //兄弟关系的添加
+            $('#dv>ul').before('<p>dadadadadadada</p>');
+            $('#dv>ul').after('<p>didididididididi');
+            //替换
+            $('ul>li').replaceWith('<span>yi ge span</span>');
+            //清空子孙元素
+            $('ul').empty();
+            //自杀
+            $('ul').remove();
+        });
+    </script>
+</body>
+
+</html>
