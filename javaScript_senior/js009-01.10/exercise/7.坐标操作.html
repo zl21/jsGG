@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7.坐标操作</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        #dv1 {
+            width: 300px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            left: 100px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1"></div>
+    <script>
+        $(() => {
+            $(document).click(function (e) {
+                // 1. 显示相对于页面(html)的横纵坐标
+                console.log(e.pageX, e.pageY);
+
+                // 2. 显示可视区域的横纵坐标
+                console.log(e.clientX, e.clientY);
+            });
+            $('#dv1').click(function (e) {
+                // 3. 相对于事件元素自身的左上角
+                console.log(e.offsetX, e.offsetY);
+            });
+        });
+    </script>
+</body>
+
+</html>
