@@ -30,11 +30,9 @@
             /* //需求1：为外部div绑定点击事件，修改背景颜色。两种方式
             $('#dv1').click(function(){
                 $(this).css('backgroundColor','red');
-                
             });
             $('#dv1').on('click',function(){
-                console.log();
-                
+                $(this).css('backgroundColor','');
             }); */
             //方法1：mouseover与mouseout事件会冒泡
             $('#dv1').mouseover(function(){
