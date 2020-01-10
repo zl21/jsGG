@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        #dv1{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+        #dv2{
+            width: 100px;
+            height: 100px;
+            background-color: #3ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <p>this is P</p>
+        <div id="dv2"></div>
+    </div>
+    <button id="btnOff">点击解绑</button>
+    
+    <script>
+        $(()=>{
+            //以绑定事件的方法4为例：第二种方法的另一种写法，区别在于用on可以绑定多个事件。
+            $('#dv1').on('mouseenter',function(){
+                $(this).css('backgroundColor','red');
+            }).on('mouseleave',function(){
+                $(this).css('backgroundColor','');
+            });
+            //解绑事件常用的2种方法：on常用off解绑，普通事件的绑定一般通过将事件设为null来解绑
+            $('#btnOff').click(function(){
+                $('#dv1').off('mouseenter');//解绑mouseenter事件，off()方法不穿参则解绑该对象的所有事件
+            })
+            
+        });
+    </script>
+</body>
+</html>
