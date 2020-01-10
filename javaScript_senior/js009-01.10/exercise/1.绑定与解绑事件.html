@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        #dv1{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+        #dv2{
+            width: 100px;
+            height: 100px;
+            background-color: #3ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <p>this is P</p>
+        <div id="dv2"></div>
+    </div>
+    
+    <script>
+        $(()=>{
+            /* //需求1：为外部div绑定点击事件，修改背景颜色。两种方式
+            $('#dv1').click(function(){
+                $(this).css('backgroundColor','red');
+                
+            });
+            $('#dv1').on('click',function(){
+                console.log();
+                
+            }); */
+            //方法1：mouseover与mouseout事件会冒泡
+            $('#dv1').mouseover(function(){
+                $(this).css('backgroundColor','red');
+            }).mouseout(function(){
+                $(this).css('backgroundColor','');
+            });
+            //方法2：常用，不会冒泡。
+            $('#dv1').mouseenter(function(){
+                $(this).css('backgroundColor','red');
+            }).mouseleave(function(){
+                $(this).css('backgroundColor','');
+            });
+            //方法3：hover可以有两个参数，俩都是回调函数
+            $('#dv1').hover(function(){
+                $(this).css('backgroundColor','red');
+            },function(){
+                $(this).css('backgroundColor','');
+            });
+            //方法4：第二种方法的另一种写法，区别在于用on可以绑定多个事件。
+            $('#dv1').on('mouseenter',function(){
+                $(this).css('backgroundColor','red');
+            }).on('mouseleave',function(){
+                $(this).css('backgroundColor','');
+            });
+        });
+    </script>
+</body>
+</html>
