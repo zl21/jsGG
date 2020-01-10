@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淡出淡入</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <button id="btn1">淡出</button>
+    <button id="btn2">淡入</button>
+    <button id="btn3">淡出淡入</button>
+    <button id="btn4">透明切换</button>
+    <div id="dv" style="margin-top:20px;width: 200px;height: 200px;background-color: rgb(87, 206, 57);"></div>
+    <script>
+        $('#btn1').click(function(){
+            $('#dv').fadeOut(3000,function(){
+                console.log('淡出结束');
+            })
+        });
+        $('#btn2').click(function(){
+            $('#dv').fadeIn(3000,function(){
+                console.log('淡入结束');
+            })
+        });
+        $('#btn3').click(function(){
+            $('#dv').fadeToggle(3000,function(){
+                console.log('淡出淡入结束');
+            })
+        });
+        $('#btn4').click(function(){
+            $('#dv').fadeTo(3000,.5,function(){
+                console.log('切换透明结束');
+            })
+        })
+    </script>
+</body>
+</html>
