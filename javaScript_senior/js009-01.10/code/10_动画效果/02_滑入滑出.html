@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn1">滑出</button>
+  <button id="btn2">滑入</button>
+  <button id="btn3">滑入滑出</button>
+  <div id="dv"></div>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn1').click(function () {
+        $('#dv').slideUp(10000, function () {
+          console.log('滑出结束')
+        });
+      });
+      $('#btn2').click(function () {
+        $('#dv').slideDown(2000, function () {
+          console.log('滑入结束')
+        });
+      });
+      $('#btn3').click(function () {
+        $('#dv').slideToggle(2000, function () {
+          console.log('滑入滑出结束')
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

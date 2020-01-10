@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+
+        ## 事件绑定:
+      1. eventName(function(){})
+        - 绑定对应事件名的监听,例子: $('#btn').click(function(){})
+      2. on(eventName,function(){})
+        - 通用绑定事件,例子: $('#btn').on('click',function(){})
+      3. 特点:
+        - eventName:编码方便,但只能添加一个监听,有个别的事件是没有的
+        - on: 可以添加多个监听,通用
+    ## 事件解绑
+      1. off(eventName)
+    ## 坐标:
+      1. e.clientX,e.clientY 相对于可视区域的坐标(左上角)
+      2. e.pageX,e.pageY 相对于页面左上角
+      3. e.offsetX,e.offsetY 相对于事件元素左上角
+    ## 事件处理
+      1. 组件事件冒泡: e.stopPropagation()
+      2. 阻止事件默认行为: e.pareventDefault()
+
+    */
+  </script>
+  <style type="text/css">
+    #dv1 {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+    }
+
+    #dv2 {
+      width: 200px;
+      height: 150px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv1">
+    <span id="sp"> </span>
+    <div id="dv2">
+      内部div
+    </div>
+  </div>
+  <script type="text/javascript">
+    /*
+    需求:
+     
+      1. 为外部div绑定鼠标进入和离开事件(3种方式)
+    
+    */
+    // 页面加载
+    $(function () {
+      var i=0;
+      // 方式1:
+      $('#dv1').mouseover(function(){
+        $('#sp').text(i++)
+      }).mouseout(function(){
+        $('#sp').text(i++)
+      });
+      $('#dv2').mouseover(function(){
+        $(this).text(i++)
+      }).mouseout(function(){
+        $(this).text(i++)
+      })
+      // 方式2:
+      // $('#dv1').mouseenter(function(){
+      //   $('#sp').text(i++)
+      // }).mouseleave(function(){
+      //   $('#sp').text(i++)
+      // });
+      // $('#dv2').mouseenter(function(){
+      //   $(this).text(i++)
+      // }).mouseleave(function(){
+      //   $(this).text(i++)
+      // })
+
+    })
+  </script>
+</body>
+
+</html>

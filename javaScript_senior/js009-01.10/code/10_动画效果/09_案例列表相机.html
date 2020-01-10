@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      width: 600px;
+      padding: 10px;
+      border: 1px solid #000;
+      margin: 100px auto 0;
+    }
+
+    .box ul {
+      overflow: hidden;
+    }
+
+    .box ul li {
+      float: left;
+      width: 200px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    .box #btn {
+      width: 200px;
+      height: 20px;
+      border: 1px solid #000;
+      background: #fff;
+      display: block;
+      margin: 0 auto;
+      background-image: url(img/down.gif);
+      background-repeat: no-repeat;
+      background-position: 30px center;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li>佳能</li>
+      <li>索尼</li>
+      <li>三星</li>
+      <li>尼康</li>
+      <li>松下</li>
+      <li>卡西欧</li>
+      <li>富士</li>
+      <li>柯达</li>
+      <li>宾得</li>
+      <li>理光</li>
+      <li>奥林巴斯</li>
+      <li>明基</li>
+      <li>其它品牌相机</li>
+    </ul>
+    <button id="btn">显示所有内容</button>
+  </div>
+  <script type="text/javascript">
+
+    $(function () {
+      // 页面打开,默认让索引小于12的和索引大于2的li隐藏
+      $('.box>ul>li:lt(12):gt(2)').hide();
+
+      // 点击按钮切换显示和隐藏的状态 ( 隐藏和显示效果用到的是滑入和滑出)
+      // 设置一个状态,为tue或者false,true:隐藏 false:显示出来
+      var flag = false;
+      $('#btn').click(function () {
+        if (flag) {
+          // 隐藏----滑入
+          $('.box>ul>li:lt(12):gt(2)').slideUp(200)
+          $(this).text('显示全部内容').css('background-image','url(img/down.gif)')
+        } else {
+          // 先进入到这里,显示出来---滑出
+          $('.box>ul>li:lt(12):gt(2)').slideDown(200);
+          $(this).text('隐藏部分内容').css('background-image','url(img/up.gif)')
+        }
+        flag = !flag
+      })
+    })
+
+
+
+
+
+
+
+    // $(function () {
+    //   // 1. 默认让小于12大于2的隐藏
+    //   $('li:lt(12):gt(2)').hide()
+    //   // 点击按钮,隐藏元素
+    //   var flag = false; //默认隐藏状态
+    //   $('#btn').click(function () {
+    //     if (flag) {
+    //       // 设置需要隐藏的内容
+    //       $('li:lt(12):gt(2)').slideUp(200)
+    //       $(this).text('显示内容').css('backgroundImage', 'url(img/down.gif)')
+    //     } else {
+    //       $('li:lt(12):gt(2)').slideDown(200)
+    //       $(this).text('隐藏部分内容').css('backgroundImage', 'url(img/up.gif)')
+    //     }
+    //     flag = !flag
+    //   })
+
+    // });
+  </script>
+</body>
+
+</html>

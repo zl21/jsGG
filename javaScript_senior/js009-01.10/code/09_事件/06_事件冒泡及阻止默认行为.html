@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    #dv1 {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+    }
+
+    #dv2 {
+      width: 200px;
+      height: 150px;
+      background-color: pink;
+    }
+  </style>
+
+  <script type="text/javascript">
+    /*
+
+    事件冒泡:元素(标签)之间有嵌套关系,具有相同的事件,并且,内部元素的该事件触发后,外部元素的事件会自动触发
+
+    // 阻止冒泡的
+    window.event? window.event.cancelBubble = true : e.stopPropagation();
+
+    // 阻止默认行为
+e.preventDefault();
+window.event.returnValue = false;
+    */
+  </script>
+</head>
+
+<body>
+  <div id="dv1">
+    <div id="dv2">
+      内部div
+    </div>
+  </div>
+  <a href="http://www.baidu.com" id="link">百度</a>
+  <script type="text/javascript">
+
+    $(function(){
+      $('#dv1').click(function(){
+        console.log('外面的div被点了')
+      });
+      $('#dv2').click(function(){
+        console.log('里面的div被点了')
+        // window.event.cancelBubble=true
+        // e.stopPropagation()
+        return false
+
+      });
+
+
+      // 默认行为的问题
+      $('#link').click(function(){
+        console.log('哈哈');
+        return false
+      })
+    })
+
+
+
+
+    // $(function () {
+    //   // 阻止事件冒泡
+    //   $('#dv1').click(function () {
+    //     console.log('外面的div')
+    //   });
+    //   $('#dv2').click(function () {
+    //     console.log('里面的div')
+    //     return false
+    //   });
+    //   // 阻止默认行为
+    //   $('#link').click(function () {
+    //     alert('真好');
+    //     return false
+    //   })
+    // });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+
+    }
+  </style>
+  <script type="text/javascript">
+    /*
+       动画:
+       1. 淡入淡出: fadeOut() 直接调用 消失了---->淡出
+       fadeOut('slow')
+      参数1:slow--慢 fast--快,可以用时间
+      参数2:回调----等到淡出的结果结束后,自动的调用该回调函数
+
+       2. 滑入滑出:
+        参数1:slow--慢 fast--快,可以用时间
+      参数2:回调----等到淡出的结果结束后,自动的调用该回调函数
+       3. 显示和隐藏:
+        参数1:slow--慢 fast--快,可以用时间
+      参数2:回调----等到淡出的结果结束后,自动的调用该回调函数
+       4. 动画
+
+
+    */
+  </script>
+</head>
+
+<body>
+  <button id="btn1">淡出</button>
+  <button id="btn2">淡入</button>
+  <button id="btn3">淡入淡出</button>
+  <button id="btn4">透明切换</button>
+  <div id="dv"></div>
+  <script type="text/javascript">
+    $(function () {
+
+      // 淡出
+      $('#btn1').click(function () {
+        $('#dv').fadeOut(3000, function () {
+          console.log('淡出结束了')
+        })
+      });
+
+      // 淡入
+      $('#btn2').click(function () {
+        $('#dv').fadeIn(3000, function () {
+          console.log('淡入结束了')
+        })
+      });
+
+      // 切换淡入和淡出
+      $('#btn3').click(function () {
+        $('#dv').fadeToggle(3000, function () {
+          console.log('淡入淡出结束了')
+        })
+      });
+      $('#btn4').click(function () {
+        $('#dv').fadeTo(2000,.5)
+      });
+
+
+
+
+
+
+
+      // $('#btn1').click(function () {
+      //   $('#dv').fadeOut(2000, function () {
+      //     console.log('淡出结束')
+      //   });
+      // });
+      // $('#btn2').click(function () {
+      //   $('#dv').fadeIn(2000, function () {
+      //     console.log('淡入结束')
+      //   });
+      // });
+      // $('#btn3').click(function () {
+      //   $('#dv').fadeToggle(2000, function () {
+      //     console.log('淡入淡出结束')
+      //   });
+      // });
+      // $('#btn4').click(function () {
+      //   $('#dv').fadeTo(2000, .5, function () {
+      //     console.log('透明度切换')
+      //   });
+      // });
+    });
+  </script>
+</body>
+
+</html>
