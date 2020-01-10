@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 广告位招租 </title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        div {
+            width: 160px;
+            height: 228px;
+
+            border: 1px solid #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+
+        .box2 {
+            left: auto;
+            right: 0;
+        }
+
+        div span {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: deepskyblue;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <span>X</span>
+        <img src="./gg.png" alt="">
+    </div>
+    <div class="box2">
+        <span>X</span>
+        <img src="./gg.png" alt="">
+    </div>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <p>段落</p>
+    <script type="text/javascript">
+        $(function () {
+            $(window).scroll(function () {
+                //获取滚动掉的距离，+ 100即是广告位
+                var pageY = $(window).scrollTop() + 100;
+                //设置广告的位置，动画移动时间为100毫秒
+                $('div').stop().animate({ 'top': pageY }, 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
