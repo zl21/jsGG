@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        #dv1 {
+            width: 500px;
+        }
+
+        #dv2 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1">
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+    <div id="dv2">
+        <p>单击点中，DELETE删除选中</p>
+        <button id="btn1">ADD</button>
+        <button id="btn2">DELETE</button>
+    </div>
+    <script>
+        $(() => {
+            /* //鼠标移入变色
+            $('ul>li').mousemove(function(){
+                $(this).css('backgroundColor', '#baf').css('color', 'red');
+            }).mouseleave(function(){
+                $(this).css('backgroundColor', '').css('color', '');
+            }); */
+            var index, flag = null;
+            //事件委托
+            $('ul').on('mouseenter', 'li', function () {
+                $(this).css('backgroundColor', '#baf').css('color', 'green');
+            }).on('click', 'li', function () {
+                $(this).css('backgroundColor', '#baf').css('color', 'red');
+                flag = true;
+                index = $(this).index();
+            }).on('mouseleave', 'li', function () {
+                $(this).css('backgroundColor', '').css('color', '');
+                //移开鼠标之后保持住点过的样式
+                if (index || index === 0) {
+                    $('li').eq(index).css('backgroundColor', '#baf').css('color', 'red');
+                }
+            });
+
+            //add
+            $('#btn1').click(function () {
+                $('ul').append('<li>new</li>');
+            });
+
+            //clear
+            $('#btn2').click(function () {
+                if (flag) {
+                    $('li').eq(index).remove();
+                    flag = !false;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
