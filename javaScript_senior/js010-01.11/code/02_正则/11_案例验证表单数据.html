@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <form action="">
+    请输入名字:<input type="text" id="name" /><br />
+    请输入密码: <input type="text" id="pwd" /><br />
+    请输入邮箱:<input type="text" id="email" /><br />
+    请输入QQ:<input type="text" id="qq" /><br />
+    请输入电话:<input type="text" id="phone" /><br />
+
+  </form>
+  <script type="text/javascript">
+    // 如果用户输入的任何一个数据是不满足条件的,那么背景为红色
+    // 原生JS实现表单验证
+
+    // 验证名字:
+    document.getElementById('name').oninput = function () {
+      if (/^[\u4e00-\u9fa5]{2,6}$/.test(this.value)) {
+        this.style.backgroundColor = 'green';
+      } else {
+        this.style.backgroundColor = 'red';
+      }
+    };
+
+    // 验证密码
+    document.getElementById('pwd').oninput = function () {
+      if (/^([^0-9a-zA-Z_]|[0-9a-zA-Z_]){6,}$/.test(this.value)) {
+        this.style.backgroundColor = 'green';
+      } else {
+        this.style.backgroundColor = 'red';
+      }
+    };
+
+    // 验证邮箱:
+    document.querySelector('#email').onchange = function () {
+      if (/^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/.test(this.value)) {
+        this.style.backgroundColor = 'green';
+      } else {
+        this.style.backgroundColor = 'red';
+      }
+    };
+
+    // 验证QQ:
+    document.getElementsByTagName('input')[3].onchange = function () {
+      if (/^\d{5,10}$/.test(this.value)) {
+        this.style.backgroundColor = 'green';
+      } else {
+        this.style.backgroundColor = 'red';
+      }
+    };
+
+    // 验证手机号码
+    $('#phone').on('input',function(){
+      if (/^\d{11}$/.test($(this).val())) {
+        $(this).css('backgroundColor','green');
+      } else {
+        $(this).css('backgroundColor','red');
+      }
+    });
+
+
+    // 110  12345 010-110 0431-110
+
+
+
+    
+
+  </script>
+</body>
+
+</html>

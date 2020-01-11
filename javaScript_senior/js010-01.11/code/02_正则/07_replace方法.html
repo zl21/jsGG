@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 字符串中有一个方法,可以把字符串中的前后空格去掉
+    // console.log('===='+' a bc '.trim()+'====')
+    // 把字符串中的所有的空格全部替换掉
+    var str = ' what are you no sha lei      ';
+    // 自己写正则,实现全部空格被替换掉
+    var reg = /\s/g;
+    str = str.replace(reg, '');
+    console.log('===' + str + '===')
+
+
+
+    /*var str = "  wad sdf e3 3 d s";
+    var newStr = str.replace(" ","");//匹配到所有的空格 然后用空字符串替换
+    console.log(str);
+    console.log(newStr);*/
+
+
+    // var str = "  wad sdf e3 3 d s";
+    // // \s代表空格
+    // var reg = /\s/g;
+    // var newStr = str.replace(reg,"");//匹配到所有的空格 然后用空字符串替换
+    // console.log(str);
+    // console.log(newStr);
+  </script>
+</body>
+
+</html>

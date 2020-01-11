@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    /*
+    
+    动态页面:DHtml
+    动态页面: 
+    1. HTML+CSS+JS  实现的一个页面
+    2. 发送请求的时候,本身这个页面在浏览器中不存在,根据请求动态的创建出一个页面,并返回给浏览器
+    
+
+    JavaScript:简称:JS
+    是一门脚本语言:直接执行
+    是一门弱类型语言:声明变量都用var
+    是一门解释型语言:遇到一行就执行一行(预解析)
+    是一门动态类型语言:本身不知道什么类型,执行的时候才知道该变量是什么类型(对象没有这个属性或者方法,点了,此时就有了这个属性或者方法,如果没有赋值,则为undefined,如果赋值了,那么就有了真正的值了)
+    是一门基于对象的语言:本身不是面向对象语言,所有的对象最终的原型指向都是Object.prototype(prototype中的__proto__是null)
+
+
+    jQuery是JavaScript类库,封装了大量的函数
+
+    学习JavaScript:ECMAScript标准(JS基本语法)和DOM(Document Object Model文档对象模型)和BOM(Browser Object Model 浏览器对象模型)
+
+    JS中的基本数据类型:string,number,undefined,null,boolean,object
+    JS中的原始数据类型:string,number,undefined,null,boolean,object,Symbol,bigInt
+    JS中的简单数据类型:string,number,boolean
+    JS中的复杂类型:Object,Array,Function,RegExp,Date
+    jS中的基本包装类型:string,number,boolean  (本身可以是基本类型,关键时刻可以当对象使用)
+    var str='哈哈'
+    console.log(str.split())
+
+    流程控制:代码的执行顺序
+    1. 顺序结构: 代码从上到下执行的顺序
+    2. 分支结构: if,if-else,if else-if else-if else,switch-case,三元表达式
+    3. 循环结构: while,do-while,for,for-in,for-of
+
+    运算符: 连接操作数的,并且进行计算的符号
+    一元运算符: 需要一个操作符进行运算的符号,如: ++  -- 
+    一元运算表达式:由一元运算符连接起来的表达式
+    二元运算符: 需要两个操作数进行运算的符号,如: + , - , * , / ,%
+    二元运算表达式:由二元运算符连接起来的表达式
+    三元运算符: 需要三个操作数进行运算的符号,如: ? :
+    三元表达式: 由三元运算符连接起来的表达式,如: 表达式1?表达式2:表达式3 ,注意:尽量不要嵌套使用
+    运算符的优先级: ++ -- 先小括号,乘除,加减
+    逻辑运算符: &&  || !    9<8&&9>7  短路
+    逻辑运算表达式:由逻辑运算符连接起来的表达式
+
+    函数:封装了重复使用的代码,在需要的时候进行调用
+    函数两种模式:函数声明和函数表达式
+    函数作用:代码的重用,减少冗余代码
+    函数声明:function f1(){}
+    函数表达式:var ff=function(){};
+    函数调用: 函数名(参数)
+    参数: 形参和实参
+    形参: 函数定义的时候小括号中的变量
+    实参: 函数调用的时候小括号中传入的数据
+    高阶函数:函数的参数是函数,函数的返回值还是函数
+    如何获取函数中调用的时候传入的实参数据:arguments(伪数组),不可以调用数组的方法,用...args 三点运算符(ES6中的,拆包)
+    作用域:变量的使用的范围
+      - 全局作用域和局部作用域(函数内部)
+      作用域是静态的(代码在定义完毕后,就可以确定作用域)
+    作用域链:就是函数内部使用数据的时候需要先查找(当前的执行上下文的变量对象中),
+    闭包:函数中嵌套函数,内部函数可以使用外部函数中的数据,内部函数调用,此时形成闭包
+      - 作用:延长作用域链,延长外部函数中的数据的生命周期,延长局部变量的生命周期
+      - 为什么要有闭包,我要访问外部函数中的数据
+      - 优点(缺点):延长局部变量的生命周期,内部不能及时释放,出现内存泄漏或者内存溢出
+      - 慎用闭包---但是避免不了
+    预解析: 在代码执行之前会先把函数的声明和变量的声明进行提升,这个操作就是预解析
+      - 如何证明预解析存在 :  console.log(num) var num=10
+    执行上下文:
+      - 全局执行上下文和局部执行上下文(函数调用的时候内部)
+        执行上下文是动态的(代码在将要执行的时候,或者函数在调用的时候)
+        变量对象:指向上下文环境出现的时候开始创建变量对象(用来收集var变量的声明,function函数的声明,函数的参数,确定this的执行)
+    递归:函数内部调用当前这个函数自己,注意:一定要有结束条件,否则就是死循环
+    原型:原型是一个对象,但是原型对象有两个,
+      prototype: 显示原型,浏览器的标准属性,程序员用的,存在函数中,函数也是对象,所以,函数中也有__proto__
+      proto__:隐式原型,浏览器的非标准属性,给浏览器使用,存在对象中
+      - 作用: 共享数据,节省内存空间
+             实现继承: 是类与类之间的关系,类是面向对象语言中的概念,JS不是纯面向对象语言,但是也可以实现继承(模拟),一个对象的数据另一个对象可以使用,这就是JS中的继承
+    继承的方式:
+      1. 改变原型指向:继承的是原型中的数据(原型上的属性和原型上的方法),构造函数内的数据继承了之后如何子对象中的属性重名,使用的是子对象的属性值
+      2. 借用构造函数:call/apply  改变了this的指向
+      3. 组合继承: 使用原型和借用构造函数
+      4. 拷贝继承:(浅拷贝和深拷贝)
+        拷贝:主要是针对复杂类型解释的,针对对象
+        浅拷贝:拷贝的是引用(地址),第二个对象如果修改数据,第一个对象的数据也会随之变化
+        深拷贝:拷贝的是所有的数据,应该说是复制了一份,第二个对象的数据变化,第一个对象的数据是不会变化
+    原型链:实例对象和原型对象之间的关系,
+
+
+    函数中有prototype,函数也是对象,也有__proto__
+    对象中有__proto__
+     所有的函数(系统的函数,自定义的函数,构造函数)都是Function的实例
+     所有的函数自身的prototype中的__proto__都指向了Object.prototype
+     Function的__proto__指向的是自己的prototype
+     Object的__proto__指向的是Function的prototype
+
+     Math:是个对象,但不是函数
+
+     new 关键字: 4件事:
+      1. 申请一块空闲的空间,
+      2. 设置this为当前的实例对象
+      3. 初始化属性和方法的值
+      4. 返回当前实例对象this
+     this 关键字
+      是一个特殊的变量,是个关键字,用来存放当前调用数据的对象,指向会发生改变
+
+
+
+
+    
+
+
+
+
+    
+    */
+
+    // console.log(Function.prototype.__proto__===Object.prototype)
+    function getBigNumber(x, y, z) {
+      return x > y ? (x > z ? x : z) : (y > z ? y : z)
+    }
+    console.dir(Date)
+
+    // 高阶函数:函数的参数是函数,函数的返回值还是函数
+    function f1(fn) {
+      return function () {
+        return fn(5, 10)
+      }
+    }
+    function add(x, y) {
+      return x + y
+    }
+
+    var ff = f1(add)
+    var result = ff()
+    console.log(result)
+
+    // function f1(){
+    //   var num=10
+    //   return function(){
+
+    //   }
+    //   console.log(num)
+    // }
+    // f1()
+  </script>
+</body>
+
+</html>

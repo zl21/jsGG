@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  请输入您的邮编号码:<input type="text" id="txt" />
+  <script type="text/javascript">
+    // 需求: 使用正则表达式匹配字符串
+    // var reg = /\d{2}/
+    // var str = '今天9?'
+    // console.log(reg.test(str)) // 匹配成功:true,如果是false,就是不匹配
+    // 根据用户在文本框中输入的数字,判断该输入的内容是否符合要求
+    document.getElementById('txt').oninput = function () {
+      // 输入的正确,则背景为绿色,如果输入的不对,则背景为红色
+      // var reg = /^\d{6}$/
+      var reg = /\d{6}/
+      if (reg.test(this.value)) {
+        this.style.backgroundColor = 'green';
+      } else {
+        this.style.backgroundColor = 'red';
+      }
+    };
+
+
+
+    // // 正则表达式定义方法1
+    // var reg1 = new RegExp("abc");
+    // console.log(reg1);// /abc/
+
+    // // 正则定义方法2
+    // //  \d 匹配所有的数字
+    // var reg2 = /\d/;
+    // var str2 = "ab3er4b6b4";
+    // console.log(str2.search(reg2));
+  </script>
+</body>
+
+</html>
