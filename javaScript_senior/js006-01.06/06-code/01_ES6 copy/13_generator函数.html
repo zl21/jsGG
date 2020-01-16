@@ -25,7 +25,7 @@
         - generator函数返回的是指针对象(接iterator),而不会执行函数内部逻辑
         - 调用next方法函数内部逻辑开始执行,遇到yield表达式停止,返回{value:yield后的表达式结果/undefined,done:true}
         - 再次调用next方法会从上一次停止时的yield处开始,直到最后
-        - yield语句返回结果通常为undefine,当调用next方法时传参内容会作为启动时yield语句的返回值
+        - yield语句返回结果通常为undefined,当调用next方法时传参内容会作为启动时yield语句的返回值
 
     */
   </script>
@@ -37,17 +37,17 @@
     function* generator() {
       console.log('这个世界真美好')
       let result = yield '1111'
-      console.log(result)
+      console.log(result)//222
 
       console.log('我喜欢这个世界')
-      let result2 = yield
-      console.log(result2)
+      let result2 = yield//undefined false
+      console.log(result2)//333
       console.log('结束了')
     }
     let iterator = generator()
-    console.log(iterator.next())
-    console.log(iterator.next('222'))
-    console.log(iterator.next('333'))
+    console.log(iterator.next())//第一次调用，是开始执行函数内部的逻辑。{value: "1111", done: false}
+    console.log(iterator.next('222'))//解锁第一个yield。222，‘我喜欢……’，{value: undefined, done: false}
+    console.log(iterator.next('333'))//解锁第二个yield。{value: undefined, done: true}？？？
 
 
 

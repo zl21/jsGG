@@ -70,6 +70,11 @@
     console.log(obj3);//{name: "zl", age: 18}
     Object.assign(obj3, obj1, obj2);
     console.log(obj3);//{name: "zl", age: 18, gender: "female"}
+    // 证明是深拷贝
+    // obj3.name = 'zz';
+    // console.log(obj3);
+    // console.log(obj1);
+    
 
     // 3. 直接操作__proto__属性  继承操作
     let obj4 = {};

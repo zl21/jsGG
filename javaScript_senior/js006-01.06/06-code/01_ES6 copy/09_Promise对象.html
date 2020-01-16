@@ -108,9 +108,11 @@
     // 然后
     promise.then((data) => {
       console.log('成功之后才执行的:', data)
-    }, (error) => {
+    }).catch((error) => {
       console.log('失败之后才执行的:', error)
-    })
+    }).finally(()=>{
+      console.log('不论失败与否');
+    });
 
 
 

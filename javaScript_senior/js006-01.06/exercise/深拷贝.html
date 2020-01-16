@@ -18,24 +18,24 @@
         }
         /* clone方法，一个参数，用于判断是否要克隆 */
         function clone(target) {
-            let result, targetType = checkType(target);
+            let res, targetType = checkType(target);
             if (targetType === 'Object') {
-                result = {};
+                res = {};
             } else if (targetType === 'Array') {
-                result = [];
+                res = [];
             } else {
-                return result;
+                return target;
             }
             //遍历克隆
             for (let i in target) {
-                let value = target[i];
-                if (checkType(value) === 'Object' || checkType(value) === 'Array') {
-                    result[i] = clone(value);//是Object或Array类型的则调用clone方法克隆value
+                let item = target[i];
+                if (checkType(item) === 'Object' || checkType(item) === 'Array') {
+                    res[i] = clone(item);//是Object或Array类型的则调用clone方法克隆value
                 } else {
-                    result[i] = value;//非Object或Array则直接克隆
+                    res[i] = item;//非Object或Array则直接克隆
                 }
             }
-            return result;
+            return res;
         }
         let arr = [1, 2, [20, 30], { name: 'zl', age: 18 }];
         console.log(arr);
