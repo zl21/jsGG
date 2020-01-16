@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li id="l3">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script type="text/javascript">
+    $(function(){
+      $('#l3').click(function(){
+        // 断链: jQuery对象调用相关的方法后,返回来的不是当前的这个对象,然后再去调用其他的方法,此时结果是有问题,就出现了断链的问题
+        // .end()解决断链,把状态恢复到断链之前的状态
+        // $(this).prevAll('li').css('backgroundColor','red');
+        // $(this).nextAll('li').css('backgroundColor','green')
+        //console.log( $(this).prevAll('li').css('backgroundColor','red'))
+
+
+        // $(this).prevAll('li').css('backgroundColor','red').end().nextAll('li').css('backgroundColor','green')
+      })
+
+      // $('li').mouseenter(function(){
+      //   // jQuery中jQuery对象调用的方法如果是设置的操作,那么返回来的是什么
+       
+      //   console.log( $(this).css('backgroundColor','red').text())
+      // }).mouseleave(function(){
+
+      // })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+
+          2. 层次选择器: 查找子元素,后代元素,兄弟元素的选择器
+        - 父级元素中所有的后代元素 $('div p')
+        - 父级元素下所有的直接子元素 $(div>p)
+        - 当前这个元素的后面的第一个兄弟元素 $('div+next')
+        - 当前这个元素的前面的所有的兄弟元素 $('div~div')
+        - 当前这个元素的后面所有的兄弟元素 $('div').nextAll()
+        - 当前这个元素的前面所有的兄弟元素 $('div').prevAll()
+    
+
+
+    */
+  </script>
+</head>
+
+<body>
+  <div>最开始的div</div>
+  <div id="dv">
+    <p>
+      <span>p中的span</span>
+    </p>
+    <span>div中的span</span>
+  </div>
+  <div>第二个div</div>
+  <div>第三个div</div>
+  <div>第四个div</div>
+  <script type="text/javascript">
+    $(function () {
+      console.log($('#dv span').text())
+      console.log($('#dv>span').text())
+      // 后面的
+      console.log($('#dv + div'))
+      // 同辈的
+      console.log($('#dv ~ div'))
+     
+    })
+  </script>
+</body>
+
+</html>

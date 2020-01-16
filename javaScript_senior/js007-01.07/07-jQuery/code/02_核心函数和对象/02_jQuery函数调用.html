@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+
+        ## jQuery核心函数: $(param)
+      1. 作为函数调用
+        - 参数是函数: $(函数) ->    $(function (){}) DOM加载后,执行该函数内部代码
+        - 参数是字符串(选择器): $('字符串') ->    $('button') 查找并匹配标签,封装成jQuery对象
+        - 参数是DOM对象: $(DOM对象) ->    $(document) 将DOM对象封装成jQuery独享
+        - 参数是html标签: $(html标签) ->  $(<p></p>)  创建标签对象,封装成jQuery对象
+        - 切记:jQuery中this是DOM对象,如果要使用则需要转jQuery对象
+
+      2. 作为对象使用
+      - $.each() : 遍历数组及对象的
+      - $.trim() : 去除字符串两端空格的
+    */
+  </script>
+  <style type="text/css">
+    div {
+      width: 300px;
+      height: 200px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+  <div id="d"></div>
+  <!--   
+  <script type="text/javascript">
+    // 点击按钮显示当前按钮中的文字内容,同时创建一个文本框,
+    // jQuery对象.html()---相当于DOM中innerHTML
+    $(function(){
+      // 获取按钮,调用点击事件
+      $('#btn').click(function(){
+        console.log($(this).html());
+        // 主动
+        $('<input type="text" />').appendTo($('#dv'))
+        // 被动
+        $('#dv').append($('<input type="text" />'))
+      })
+    })
+    // 遍历数组,jQuery中的对象下的方法来进行遍历
+    // let arr=[1,2,3,3,4]
+    // $.each(arr,function(index,item){
+    //   console.log(index,item)
+    // })
+    // 遍历对象
+    // var obj = {
+    //   name: '小明'
+    // }
+    // $.each(obj, function (key, value) {
+    //   console.log(key, value)
+    // })
+
+    // // 干掉字符串两边的空格
+    // console.log('===='+$.trim(' 我的天 ')+'======')
+  </script>
+ -->
+
+  <script>
+    //作业：
+    // 1、获取按钮,调用点击事件
+    $(() => {
+      $('#btn').click(() => {
+        //输出标签中的文本
+        console.log($('#btn').html());//按钮
+        //将新标签插入到id为d的父鸡标签中，主动
+        $('<input text="text"/>').appendTo($('#d'));
+        //被动式
+        $('#d').append($('<input text="text"/>'));
+      });
+    });
+
+    //2、each()遍历数组
+    let arr = [4,5,6,7,8];
+    $.each(arr,(index,item)=>{
+      console.log(index,item);
+    });
+
+   //3、each()遍历对象
+   let obj = {name:'xx',age:12};
+   $.each(obj,(key,value)=>{
+    console.log(key,value);
+   });
+
+   //4、trim()去空格
+   console.log('aaa' + $.trim('  bbb ') + 'ccc');
+   
+  </script>
+</body>
+
+</html>

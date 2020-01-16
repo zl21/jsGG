@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+
+        3. 对象本身有两个方法
+        - get propertyName(){} 用来得到当前属性值的回调函数
+        - set propertyName(){} 用来监视当前属性值变化的回调函数
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 想设置对象中的属性值仅读时,使用get 属性名字(){}
+    var obj = {
+      get name() {
+        return '卡卡西';
+      }
+    }
+    console.log(obj.name);//卡卡西
+    obj.name = '大名';
+    console.log(obj.name);//卡卡西
+
+    // Object.create() // 静态方法-
+    // var obj={}
+    // obj.creae()//crate不是实例化对象的，而是构造函数大Object的静态方法，仅Object可调用。
+  </script>
+</body>
+
+</html>

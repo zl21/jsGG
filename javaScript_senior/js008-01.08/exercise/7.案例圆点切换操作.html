@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 圆点切换 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      float: left;
+      margin-right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: pink;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    .show {
+      background-color: green !important;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script type="text/javascript">
+    /*
+      鼠标移动的过程中,有高亮显示,移动到哪个圆点,那么颜色位红色
+      点击选中的时候为绿色,离开颜色不变
+
+      作业:尝试着使用类样式进行操作(addClass(),removeClass(),toggleClass())
+    
+    
+    */
+    $(function () {
+      var index, bgColor;
+      $('li').mouseover(function () {
+        bgColor = $(this).css('backgroundColor');
+        $(this).css('backgroundColor', 'red');
+      }).mouseout(function () {
+        $(this).css('backgroundColor', bgColor);
+        //鼠标移开之后保持住点过的那个li的样式
+        if (index || index === 0) {//0为false第一个就不能变绿了,所以要让0进来
+          $('li').eq(index).css('backgroundColor', 'green');
+          // $('li').eq(index).addClass('show');
+        }
+      }).click(function () {
+        if (bgColor != "rgb(255, 192, 203)") {
+          $(this).css('backgroundColor', '');
+          bgColor = $(this).css('backgroundColor');
+        } else {
+          $(this).css('backgroundColor', 'green').siblings().css('backgroundColor', '');
+          bgColor = $(this).css('backgroundColor');
+        }
+        /* $(this).toggleClass('show').siblings('li').css('backgroundColor', '');
+        index = $(this).index();
+        bgColor = $(this).css('backgroundColor'); */
+      });//end click
+    })//end window
+  </script>
+</body>
+
+</html>

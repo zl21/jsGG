@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // //练习1
+        // function* generator() {
+        //     yield setTimeout(function () {
+        //         console.log('第一完成');
+        //         iterator.next();
+        //     },1000);
+        //
+        //     yield setTimeout(function () {
+        //         console.log('第二完成');
+        //         iterator.next();
+        //     },2000);
+        //
+        //     yield setTimeout(function () {
+        //         console.log('第三完成');
+        //         iterator.next();
+        //     },3000);
+        //     console.log('全部完成');
+        // }
+        // let iterator=generator();
+        // iterator.next();
+        //
+        // //练习2
+        // let obj={
+        //     name:'哈哈哈',
+        //     age:10
+        // };
+        // obj[Symbol.iterator]=function* generator() {
+        //     yield 1;
+        //     yield 2;
+        //     yield 3;
+        //     yield 4;
+        //     yield 5;
+        // };
+        // for (let i of obj){
+        //     console.log(i);
+        // }
+
+
+        // //练习1
+        // function* generator() {
+        //     yield setTimeout(function () {
+        //         console.log('第一完成');
+        //         iterator.next();
+        //     },1000);
+        //
+        //     yield setTimeout(function () {
+        //         console.log('第二完成');
+        //         iterator.next();
+        //     },2000);
+        //
+        //     yield setTimeout(function () {
+        //         console.log('第三完成');
+        //         iterator.next();
+        //     },3000);
+        //     console.log('全部完成');
+        // }
+        // let iterator=generator();
+        // iterator.next();
+        //
+        // //练习2
+        // let obj={
+        //     name:'哈哈哈',
+        //     age:10
+        // };
+        // obj[Symbol.iterator]=function* generator() {
+        //     yield 1;
+        //     yield 2;
+        //     yield 3;
+        //     yield 4;
+        //     yield 5;
+        // };
+        // for (let i of obj){
+        //     console.log(i);
+        // }
+
+
+
+        //练习1
+        function* generator() {
+            yield setTimeout(function () {
+                console.log('第一完成');
+                iterator.next();
+            },1000);
+
+            yield setTimeout(function () {
+                console.log('第二完成');
+                iterator.next();
+            },2000);
+
+            yield setTimeout(function () {
+                console.log('第三完成');
+                iterator.next();
+            },3000);
+            console.log('全部完成');
+        }
+        let iterator=generator();
+        iterator.next();
+
+        //练习2
+        let obj={
+            name:'哈哈哈',
+            age:10
+        };
+        obj[Symbol.iterator]=function* generator() {
+            yield 1;
+            yield 2;
+            yield 3;
+            yield 4;
+            yield 5;
+        };
+        for (let i of obj){
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+
+        ## 事件绑定:
+      1. eventName(function(){})
+        - 绑定对应事件名的监听,例子: $('#btn').click(function(){})
+      2. on(eventName,function(){})
+        - 通用绑定事件,例子: $('#btn').on('click',function(){})
+      3. 特点:
+        - eventName:编码方便,但只能添加一个监听,有个别的事件是没有的
+        - on: 可以添加多个监听,通用
+    ## 事件解绑
+      1. off(eventName)
+    ## 坐标:
+      1. e.clientX,e.clientY 相对于可视区域的坐标(左上角)
+      2. e.pageX,e.pageY 相对于页面左上角
+      3. e.offsetX,e.offsetY 相对于事件元素左上角
+    ## 事件处理
+      1. 组件事件冒泡: e.stopPropagation()
+      2. 阻止事件默认行为: e.pareventDefault()
+
+    */
+  </script>
+  <style type="text/css">
+    #dv1 {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+    }
+
+    #dv2 {
+      width: 200px;
+      height: 150px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv1">
+    <div id="dv2">
+      内部div
+    </div>
+  </div>
+  <button id="btnOff">解绑事件</button>
+  <script type="text/javascript">
+    /*
+    需求:
+      1. 为外部div绑定点击事件,修改背景颜色,(2种方式)
+      2. 为外部div绑定鼠标进入和离开事件(3种方式)
+      3. 点击按钮,解绑div上绑定的所有的事件
+      4. 点击按钮,解绑div的鼠标进入事件
+    */
+    // 页面加载
+    $(function () {
+
+      // $('#dv1').click(function () {
+      //   console.log('我被点了')
+      // });
+      // // 有一些事件jQuery中并没有封装成方法,此时上面的方式就不能使用了,应该用下面的这种方式
+      // $('#dv1').on('click',function(){
+      //   console.log('我又被点了')
+      // });
+
+      // $('#dv1').mouseenter(function(){
+      //   console.log('来了')
+      // }).mouseleave(function(){
+      //   console.log('走了')
+      // })
+
+      // $('#dv1').mouseover(function(){
+      //   console.log('来了')
+      // }).mouseout(function(){
+      //   console.log('走了')
+      // })
+
+      $('#dv1').on('mouseenter',function(){
+        console.log('来了')
+      }).on('mouseleave',function(){
+        console.log('走了')
+      });
+      // 点击按钮,解绑div的鼠标进入事件
+      $('#btnOff').click(function(){
+        // $('#dv1').off('mouseenter');
+        // 解绑所有的事件
+        $('#dv1').off(); // 最推荐使用的
+        // $('#dv1').mouseenter=null
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // 方式1:
+      // $('#dv1').click(function(){
+      //   $(this).css('backgroundColor','red');
+      // });
+      // // 方式2:
+      // $('#dv1').on('click',function(){
+      //   $(this).css('backgroundColor','yellow');
+      // });
+
+      // $('#dv1').mouseenter(function () {
+      //   $(this).css('backgroundColor', 'red');
+      // }).mouseleave(function () {
+      //   $(this).css('backgroundColor', '');
+      // })
+      // $('#btnOff').click(function () {
+      //   $('#dv1').off('mouseleave')
+      // })
+
+
+    })
+  </script>
+</body>
+
+</html>

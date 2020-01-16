@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.eat = function () {
+            console.log('吃饭啦');
+        }
+        Person.prototype.sayHi = function () {
+            console.log('打招呼');
+        }
+        function Student(name, age, score) {
+            Person.call(this, name, age);
+            this.score = score;
+        }
+        Student.prototype = new Person();
+        var stu = new Student('xiaoming', 20, 98);
+        console.log(stu.name, stu.age, stu.score);
+        stu.eat();
+        stu.sayHi();
+    </script>
+</body>
+
+</html>

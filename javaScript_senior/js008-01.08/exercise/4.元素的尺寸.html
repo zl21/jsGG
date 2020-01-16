@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>元素的尺寸</title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+     ## 内容尺寸
+      1. height() : 就是height
+      2. width()  : 就是width
+    ## 内部尺寸
+      1. innerHeight() : height + padding
+      2. innerWidth()  : widht + padding
+    ## 外部尺寸
+      1. outerHeight(false/true) :height + padding + border 如果是true 加上margin
+      2. outerWidth(false/true)  :width + padding + border 如果是true则加上margin
+    */
+  </script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 300px;
+      height: 200px;
+      border: 1px solid rgb(142, 218, 241);
+      padding: 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv">
+
+  </div>
+  <button id="btn">显示效果</button>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn').click(function () {
+        //内容区的width
+        console.log(`内容区的width: ${$('#dv').width()}`);
+        //内容区的height
+        console.log(`内容区的height: ${$('#dv').height()}`);
+        //width + padding
+        console.log(`innerWidth()获取(width + padding): ${$('#dv').innerWidth()}`);
+        //height + padding
+        console.log(`innerHeight()获取(width + padding): ${$('#dv').innerHeight()}`);
+        //width + padding + border 如果是true 加上margin
+        console.log(`outerWidth(true)获取(width + padding + border 如果是true 加上margin): ${$('#dv').outerWidth(true)}`);
+        //height + padding + border 如果是true 加上margin
+        console.log(`outerHeight(true)获取(height + padding + border 如果是true 加上margin): ${$('#dv').outerHeight(true)}`);
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+      /*
+            3. 过滤选择器(基本,内容,可见性,属性)
+        - :first
+        - :not(selector)
+        - :even
+        - :odd
+        - :eq(index)
+        - :gt(index)
+      */
+  </script>
+  <style type="text/css">
+    .cls{
+      border:1px solid green;
+    }
+    .cls1{
+      border:1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="cls">第一个div</div>
+  <div class="cls1">第二个div</div>
+  <div class="cls1">第三个div</div>
+  <ul id="u1">
+    <li>第一个</li>
+    <li>第二个</li>
+    <li>第三个b</li>
+    <li>第四个</li>
+    <li>第五个b</li>
+    <li>第六个</li>
+    <li></li>
+    <li style="display: none;">我是隐藏的</li>
+    <li title="我去">我有title</li>
+    <li title="hello world">我有title</li>
+    <li title="hello everyone">我有title</li>
+    <li><span>我是li中的span</span></li>
+  </ul>
+  <script type="text/javascript">
+    /*
+    需求1:找到第一div
+    需求2:找到最后一个div
+    需求3:选择没有应用cls类样式的div
+    需求4:选择下标为第二个的div
+    需求5:偶数的li背景为pink
+    需求6:奇数的li背景为gray
+    需求7:大于索引3的背景为蓝色
+    需求8:小于索引2的背景为yellow
+    需求9:大于2小于5的背景为黑色
+    需求10:内容包含b的元素背景为蓝色
+    需求11:内容为空的背景为蓝色
+    需求12:隐藏的li打印出来
+    需求13:有title属性的li背景为红色
+    需求14:有title属性,并且值包含hello的li背景为蓝色
+    需求15:有span的li背景为蓝色
+
+    :gt;  :lt; nbsp;
+    
+    */
+    // 页面加载
+
+    $(function(){
+
+      // // 需求1:找到第一div
+      // $('div:first').css('background-color','red');
+      // // 需求2:找到最后一个div
+      // $('div:last').css('background-color','green');
+      // // 需求3:选择没有应用cls类样式的div
+      // $('div:not(.cls)').css('background-color','blue');
+      // // 需求4:选择第二个的div
+      // $('div:eq(1)').css('background-color','yellow');
+      // // odd---->奇数  even---偶数
+      // // 需求5:偶数的li背景为pink
+      // $('#u1>li:odd').css('background-color','pink');
+      // // 需求6:奇数的li背景为gray
+      // $('#u1>li:even').css('background-color','gray');
+      // // 需求7:大于索引3的背景为蓝色
+      // $('#u1>li:gt(3)').css('background-color','blue');
+      // // 需求8:小于索引2的背景为yellow
+      // $('#u1>li:lt(2)').css('background-color','yellow');
+      // 需求9:大于2小于5的背景为黑色-----特殊的(如果先计算索引大于2,那么后面的索引从0开始)
+      // li li li li li li li li li li
+      // $('#u1>li:lt(5):gt(2)').css('background-color','black');
+      // // 需求10:内容包含b的元素背景为蓝色
+      // $('#u1>li:contains(b)').css('background-color','hotpink');
+      // // 需求11:内容为空的背景为蓝色
+      // $('#u1>li:empty').css('background-color','orange');
+      // // 需求12:隐藏的li打印出来,不可见的就是隐藏的
+      // console.log($('#u1>li:hidden').text())
+      // // 需求13:有title属性的li背景为红色  [属性的名字]
+      // $('#u1>li[title]').css('background-color','red')
+      // 需求14:有title属性,并且值包含hello的li背景为蓝色
+      // $('#u1>li[title*=hello]').css('background-color','blue')
+      // // 需求15:有span的li背景为蓝色
+      // $('#u1>li:has(span)').css('background-color','yellow')
+      // $('#u1>li span').parent().css('background-color','yellow')
+
+
+
+
+
+      
+      // $('div:first').css('backgroundColor','red');
+      // $('div:last').css('backgroundColor','green');
+      // $('div:not(.cls)').css('height','100px');
+      // $('div:eq(1)').css('height','50px');
+      // $('li:even').css('backgroundColor','pink') // 偶数
+      // $('li:odd').css('backgroundColor','gray') //奇数
+      // $('li:gt(3)').css('backgroundColor','blue')
+      // $('li:lt(2)').css('backgroundColor','yellow')
+      // $('li:lt(5):gt(2)').css('backgroundColor','yellow')
+      // $('li:contains(b)').css('backgroundColor','blue')
+      // $('li:empty').css('backgroundColor','blue')
+      // console.log($('li:hidden').html())
+      // $('li[title]').css('backgroundColor','blue')
+      // $('li[title*=hello]').css('backgroundColor','blue')
+      // $('li:has(span)').css('backgroundColor','blue')
+    })
+  </script>
+</body>
+</html>

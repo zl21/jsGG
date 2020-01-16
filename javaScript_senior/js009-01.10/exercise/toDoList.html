@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toDoList</title>
+    <link rel="stylesheet" href="todoCss.css">
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="todo-container">
+            <div class="todo-wrap">
+                <div class="todo-header">
+                    <input id="newTodo" type="text" placeholder="请输入你的任务名称，按回车键确认" />
+                </div>
+                <ul class="todo-main">
+
+                </ul>
+                <div class="todo-footer">
+                    <label>
+                        <input id="checkAll" type="checkbox" />
+                    </label>
+                    <span>
+                        已完成<span id="allCompletedTodos">0</span> / 全部<span id="allTodos">2</span>
+                    </span>
+                    <button id="removeAllCompleted" class="btn btn-danger">清除已完成任务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(() => {
+            //1.模拟database
+            var dataList = [
+                { content: '吃饭', ok: false },
+                { content: '洗头', ok: false },
+                { content: '洗澡', ok: false }
+            ];
+
+            //2.遍历数据并显示到对应的ul中
+            dataList.forEach(function (obj) {
+                $('.todo-main').append(`
+                <li class="todoItem" style="background: white;">
+                    <label><input type="checkbox"><span>${obj.content}</span></label>
+                    <button class="btn btn-danger" style="display: none;">删除</button>
+                </li>
+                `);
+            });//end forEach
+
+            //3.鼠标进入和离开li的时候有高亮显示的效果，同时删除的按钮设置显示or隐藏的效果。
+            $('.todo-main').on('mouseenter', '.todoItem', function () {
+                $(this).css('backgroundColor', '#CCC');
+                $(this).find('button').css('display', 'block');
+            }).on('mouseleave', '.todoItem', function () {
+                $(this).css('backgroundColor', '');
+                $(this).find('button').css('display', 'none');
+            });
+
+            //4.显示总条数
+            $('#allTodos').text(dataList.length);
+
+            //5.全选和全不选
+            $('#checkAll').click(function () {
+                $('.todo-main :checkbox').prop('checked', $(this).prop('checked'));
+                //更新已经完成的数量
+                $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length);
+                //-------------------------version2.0_start---------------------------
+                //更新dataList中的数据状态
+                if ($(this).prop('checked')) {
+                    for (var i = 0; i < dataList.length; i++) {
+                        dataList[i].ok = true;
+                    }
+                } else {
+                    for (var i = 0; i < dataList.length; i++) {
+                        dataList[i].ok = false;
+                    }
+                }
+                //-------------------------version2.0_end---------------------------
+            });//end click
+
+            //6.单点操作
+            $('.todo-main').on('click', ':checkbox', function () {
+                //-------------------------version2.0_start---------------------------
+                //单点之后要修改dataList中的数据状态
+                var index = $(this).parents('li').index();
+                dataList[index].ok = $(this).prop('checked');
+                //-------------------------version2.0_end---------------------------
+                /* //更新已经完成的数量
+                $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length);
+                // console.log($('.todo-main :checkbox:checked').length);
+                // 更新全选的复选框是否选中的状态,需要考虑到没有数据时，选中的个数是0,数据的个数也是0,此时也不能将全选选中
+                $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1 && $(':checkbox').length - 1 != 0); */
+                update();
+            });//end 单点
+
+            // 7. 添加新的选项数据
+            $('#newTodo').keyup(function (e) {
+                // 判断是否按下回车键----添加数据了
+                if (e.keyCode === 13) {
+                    // 获取当前文本框中输入的数据
+                    var txt = $(this).val();
+                    // 判断文本框中的数据是否为空
+                    if ($.trim(txt)) {
+                        // 先把数据保存在数组中
+                        dataList.unshift({ content: txt, ok: false }); // 有bug  ,todos是数组,数组中的每个数据是对象,txt是文本
+                        var newLi = $(`
+                            <li class="todoItem" style="background:white;">
+                                <label><input type="checkbox"><span>${txt}</span></label>
+                                <button class="btn btn-danger" style="display: none;">删除</button>
+                            </li>
+                        `);
+                        // newLi ---->li标签----->进入到ul 中---->
+                        $('.todo-main').prepend(newLi);
+                        newLi.hide(); // 隐藏
+                        newLi.slideDown(500); // 滑出来
+                        update();
+                        /* // 再次更新总数量
+                        $('#allTodos').text(dataList.length);
+                        //-------------------------version2.0_start---------------------------
+                        //再次更新后全选框的状态
+                        $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1);
+                        //-------------------------version2.0_end--------------------------- */
+                    } else {
+                        alert('请您输入内容');
+                    }
+                    // // 清空文本框数据
+                    $(this).val('');
+                }
+            });//end keyUp
+
+            // 8. 删除数据
+            /* 修改、删除、金钱及编辑(如发表文章等)等相关的操作，一定要询问用户是否确定当前的操作，保存或确定删除等。 */
+            $('.todo-main').on('click', '.btn', function () {
+                if (confirm('您是否确认删除？')) {
+                    //先让数据隐藏，后再执行第二个参数回调函数中的操作
+                    $(this).parents('li').slideUp(200, function () {
+                        //保存当前元素的下标以供后面在dataList中查找并删除数据做准备
+                        var index = $(this).index();
+                        //隐藏后干掉自个儿
+                        $(this).remove();
+                        //再在dataList中删除数据
+                        dataList.splice(index, 1);
+                        /* //更新总数量
+                        $('#allTodos').text(dataList.length);
+                        //更新已完成的总数量，即当前被选中的总数量
+                        $('#checkAll').text('checked', $('.todo-main :checkbox:checked').length);
+                        //更新全选框的状态
+                        $('#checkAll').prop('checked', $('.tode-main :checkbox:checked').length == $(':checkbox').length - 1); */
+                        update();
+                    });//end slideUp
+                }//end if
+            });//end 8
+
+            //8.干掉已选中的所有
+            $('#removeAllCompleted').click(function () {
+                if (confirm('您是否确认删除？')) {
+                    $('.todo-main :checkbox:checked').parents('li').slideUp(200, function () {
+                        $('.todo-main :checkbox:checked').parents('li').remove();
+                        update();
+                    });//end slideUp
+                }
+            });//end 删除已选中
+
+            /* 
+                *   update方法：
+                *   无参，无返回，用于更新任务的总数量、已完成的总数量以及全选框的状态
+             */
+            function update() {
+                //更新总数量
+                $('#allTodos').text(dataList.length);
+                //更新已经完成的数量,即当前被选中的总数量
+                $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length);
+                // console.log($('.todo-main :checkbox:checked').length);
+                // 更新全选的复选框是否选中的状态,需要考虑到没有数据时，选中的个数是0,数据的个数也是0,此时也不能将全选选中
+                $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1 && $(':checkbox').length - 1 != 0);
+            }
+        });//end window
+    </script>
+</body>
+
+</html>

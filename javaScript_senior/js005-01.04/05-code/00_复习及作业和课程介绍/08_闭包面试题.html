@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // var msg = '真香'
+    // var obj2 = {
+    //   msg: '真帅',
+    //   getMsg: function () {
+    //     // console.log(this)
+    //     // var that=this
+    //     return function () {
+    //       // console.log(that.msg)
+    //       // console.log(this)
+    //       return this.msg
+    //     }
+    //   }
+    // }
+    // console.log(obj2.getMsg()())
+
+    var msg2 = '真香'
+    var obj3 = {
+      msg2: '真帅',
+      getMsg: function () {
+        var that = this
+        return function () {
+          return that.msg2
+        }
+      }
+    }
+     console.log(obj3.getMsg()())
+  </script>
+</body>
+
+</html>

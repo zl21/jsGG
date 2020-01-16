@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 动画 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn"> 动画 </button>
+  <img src="img/niao.png" alt="" id="im"/>
+  <script type="text/javascript">
+    /*
+    // animate()
+     参数1:是一个对象,对象中放的内容都是键值对,都是css中的属性和值
+     参数2:动画的时间:毫秒为单位
+     参数3:回调函数,等当前动画全部执行后,此时就会自动调用该回调函数
+    */
+    $(function () {
+      $('#btn').click(function () {
+        $('#im').stop().animate({ 'top': '+500px', 'width': '50px', 'height': '50px' }, 2000, function () {
+          console.log('当前动画结束了')
+        }).animate({ 'top': '+50px', 'left': '800px', 'width': '100px', 'height': '100px' }, 3000)
+      });
+    });
+  </script>
+</body>
+
+</html>

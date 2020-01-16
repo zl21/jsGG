@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    /*
+      1. 申请一块空闲的空间,用来存储当前的对象
+      2. 把this的指向设置为当前的实例对象
+      3. 初始化对象的属性及方法的值
+      4. 把this这个当前实例对象返回
+    */
+   // 实际上,构造函数中定义的代码都不属于当前的这个函数,而是属于实例对象的
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.sayHi = function () {
+        console.log('啊捏哈谁有')
+      }
+    }
+    Person.prototype.eat=function(){
+      console.log('真香')
+    }
+    // 通常,属性一般很少会直接放在原型中书写
+    // Person.prototype.name='卡卡'
+    // 做了几件事?
+    var per1 = new Person('火线妹妹', 18)
+    var per2 = new Person('火线妹妹', 18)
+    // console.log(per1===per2) // false
+    // 可以查看函数的内部的结构样子
+    // console.dir(Person)
+    // console.dir(per1)
+    // 既然方法内部的数据都是一样的,但是又不是同一个方法,浪费空间
+    // console.log(per1.sayHi===per2.sayHi)
+    // 目的(作用):解决的是节省内存空间
+    // console.log(per1.eat===per2.eat)
+    // 对象可以直接点出来属性和方法?
+    per1.eat();
+    per2.eat();
+    // 原型:
+    console.dir(Person)
+    console.dir(per1)
+    console.dir(per2)
+    per1.__proto__.eat()
+
+    /*
+      原型:就是对象,所以叫原型对象,原型对象有两个,一个是prototype,一个是__proto__
+      prototype:是一个对象,浏览器的标准属性,给程序员使用的,显示原型
+      __proto__:是一个对象,浏览器的非标准属性,给浏览器使用的,隐式原型
+
+      构造函数中有prototype
+      实例化对象中有__proto__
+      构造函数也是函数,所以,函数中有prototype
+      实例化对象也是对象,所以,对象中有__proto__
+      函数实际上也是对象,所以,函数中也应该有__proto__
+
+    prototype----->函数
+    __proto__--->对象
+    prototype中contructor构造器---->指向的是当前所在的原型对象的构造函数
+    举例子:Person函数中有prototype,prototype中的constructor就是Person
+
+
+    构造函数,原型对象,实例对象---三者之间的关系
+
+
+    原型作用之一:数据共享,节省内存空间
+
+
+
+
+
+
+    
+    
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function Person(name,age){
+    //   this.name=name;
+    //   this.age=age;
+    //   this.sayHi=function(){
+    //     console.log('真好')
+    //   }
+    // }
+    // Person.prototype.eat=function(){
+    //   console.log('吃饭啦')
+    // }
+    // var per1 = new Person('卡卡西',20)
+    // var per2 = new Person('自来也',18)
+    // console.log(per1.sayHi===per2.sayHi)
+    // console.log(per1.eat===per2.eat)
+    // console.dir(Person)
+    // console.dir(per1)
+    // console.dir(per2)
+  </script>
+</body>
+
+</html>

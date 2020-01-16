@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    // 动态加载: 用户什么时候使用,什么时候就加载进来,只加载一次,但是可以一直用
+    // 提供用户体验
+
+    // a.js  b.js  c.js  d.js
+    // index.html----->a.js  b.js  c.js  d.js
+    // 第一次打开index.html要加载全部的文件---体验不好
+
+    // 按需引入,按需打包,懒加载
+  </script>
+  <script src="../../js/jquery-1.12.4.js"></script>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <!-- <script type="text/javascript">
+    document.getElementById('btn').onclick=function(){
+      // 返回的是一个promise对象
+     let promise= import('./a.js');
+     promise .then(()=>{
+          console.log('导入成功')
+        })
+        .catch(()=>{
+          console.log('导入失败')
+        })
+    }
+</script> -->
+
+<script>
+  //作业1遍：
+  $('#btn').click(()=>{
+    let promise = import('../../js/jquery-1.12.4.js');
+    promise.then(()=>{
+      console.log('succeed!');
+    }).catch(()=>{
+      console.log('failed');
+    })
+  })
+
+  //作业2遍：
+  $('#btn').click(()=>{
+    let promise = import('../../js/jquery-1.12.4.js');
+    promise.then(()=>{
+      console.log('yes!');
+    }).catch(()=>{
+      console.log('no');
+    })
+  })
+</script>
+</body>
+</html>

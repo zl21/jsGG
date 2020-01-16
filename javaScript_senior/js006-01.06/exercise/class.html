@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            sayHi(){
+                console.log('hello');
+            }
+        }
+        class Student extends Person{
+            constructor(name,age,gender){
+                super(name,age);
+                this.gender = gender;
+            }
+            eat(){
+                console.log('eat');
+            }
+        }
+        let stu = new Student('zl',18,'female');
+        console.log(stu);
+        stu.sayHi();
+        stu.eat();
+    </script>
+</body>
+</html>

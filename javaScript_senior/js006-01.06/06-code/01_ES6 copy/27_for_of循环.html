@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <!-- 
+    <script type="text/javascript">
+    // 数组去重
+    // let arr = [1, 2, 3, 4, 5, 5]
+    // let arr1 = arr;
+    // arr = []
+    // let set =new Set(arr1)
+    // for (let key of set) {
+    //   arr.push(key)
+    // }
+    // console.log(arr)
+    // let btnObjs = document.getElementsByTagName('button')
+    // for (let key of btnObjs) {
+    //   console.log(key)
+    // }
+    // console.log(btnObjs)
+  </script> 
+-->
+  <script>
+    //作业：
+    // 1.数组去重：
+    let arr = [9, 7, 5, 4, 3, 2, 4, 5, 6];
+    let arr1 = arr;
+    arr = [];
+    let set = new Set(arr1);
+    for (let i of set) {
+      arr.push(i);
+    }
+    console.log(arr);
+
+    //2.遍历伪数组
+    let oBtn = document.getElementsByTagName('button');
+    for (let key of oBtn) {
+      console.log(key);
+    }
+
+  </script>
+</body>
+
+</html>

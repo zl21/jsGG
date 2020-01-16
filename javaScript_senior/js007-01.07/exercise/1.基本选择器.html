@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本选择器 </title>
+    <script src="../js/jquery-1.12.4.js">
+    </script>
+    <script type="text/javascript">
+        /*
+            1. 基本选择器
+            - id选择器: $('#btn')
+            - 标签选择器: $('button')
+            - 类选择器: $('.cls')
+            - 并集选择器: $('div,p')
+            - * 通配符: 匹配所有的元素 $('*')
+            - 交集选择器: $('div.cls')
+        */
+    </script>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+
+        }
+
+        .cls {
+            width: 200px;
+            height: 150px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv">
+        华哥
+    </div>
+    <button id="btn">按钮1</button>
+    <div id="dv2" class="cls">
+        <p>华哥喜欢男人</p>
+        <p>健哥喜欢华哥</p>
+        <p>华哥说:你怎么不早说</p>
+    </div>
+    <hr />
+    <hr />
+    <ul class="cls">
+        <li>今天作业比较少</li>
+        <li class="cls">绝对是假的</li>
+    </ul>
+    <button id="btn2">都改变吧</button>
+    <button id="btn3">修改所有的div和p的宽和高</button>
+    <script type="text/javascript">
+        $(function () {
+
+            // 需求1: 点击div修改div的宽和高,及背景颜色
+            $('#dv').click(function () {
+                console.log(888888888888887);
+                // 简写
+                $(this).css({ 'width': '300px', 'height': '100px', 'backgroundColor': 'red' });
+                // 链式编程
+                // $(this).css('width','300px').css('height','100px').css('backgroundColor','red');
+            });
+
+/* 
+            // 需求2: 点击按钮,设置div中所有p标签的文字内容
+            $('#btn').click(function () {
+                // 标签选择器
+                $('p').html(`改变一下`);
+            });
+ */
+/* 
+            // 需求3: 点击按钮设置所有应用cls类样式的标签背景颜色为绿色
+            $('#btn2').click(function () {
+                $('.cls').css('backgroundColor', 'green')
+            });
+*/
+/*              
+            // 需求4: 点击按钮设置所有的div和p的高度为300px
+            $('#btn3').click(function(){
+            // 并集选择器
+            $('div,p').css('height','300px')
+            });
+    */
+            // 通配符,所有的
+            // $('*').css('backgroundColor', 'black')
+
+            // 应用了cls类样式的div
+            // $('div.cls').css('backgroundColor', 'hotpink')
+        })
+    </script>
+</body>
+
+</html>

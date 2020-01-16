@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var person = {
+        name:'kaka',
+        sayHi:function(){
+            console.log('hello');
+        }
+    }
+    var stu = Object.create(person,{
+        age:{
+            value:20,
+            writable:true,
+            configurable:true,
+            enumerable:true
+        },
+        gender:{
+            value:'female'
+        }
+    });
+    console.log(stu.age);
+    for(var key in person){
+        if(stu.hasOwnProperty(key)){
+            console.log(key);
+        }
+    }
+    </script>
+</body>
+</html>

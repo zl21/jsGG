@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则练习1</title>
+</head>
+<body>
+    <div id="dv1"></div>
+    <script>
+    /* 正则表达式的创建：
+        1、构造函数创建发。
+        2、字面量创建法。 
+    */
+    //方法1
+    var reg1 = new RegExp('\\d');// /\d/
+    var reg2 = new RegExp('[0-9]');// /[0-9]/
+    var reg3 = new RegExp(/\d/);//推荐使用 /\d/
+    console.log(reg1);
+    console.log(reg2);
+    console.log(reg3);
+    
+    //方法2
+    var reg = /\d/;//最常写
+    console.log(reg);// /\d/
+    
+
+    </script>
+</body>
+
+</html创建发>

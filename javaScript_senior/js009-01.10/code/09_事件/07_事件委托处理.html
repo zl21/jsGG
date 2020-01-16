@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <ul id="u1">
+    <li>我做到了</li>
+    <li>我这就去做</li>
+    <li>我能做</li>
+  </ul>
+  <button id="btn1">添加li</button>
+  <button id="btn2">干掉li</button>
+  <script type="text/javascript">
+    /*
+    
+      需求: 
+        1. 鼠标进入到li有高亮显示效果,离开则高亮消失
+        2. 点击按钮,添加li
+        3. 点击按钮,干掉li(连同事件一起干掉)
+    
+    
+    */
+
+    $(function () {
+      // 找到所有的li,添加鼠标进入和离开的事件
+      // $('#u1>li').mouseenter(function(){
+      //   $(this).css('backgroundColor','green').css('color','yellow');
+      // }).mouseleave(function(){
+      //   $(this).css('backgroundColor','').css('color','');
+      // });
+      /*
+        on()方法的使用方式:
+        jQuery对象.on('事件名字',回调函数);  为当前的jQuery对象绑定事件
+        父级元素对象.on('事件名字','选择器',回调函数); 为当前父级元素中的子级元素绑定事件
+      
+      
+      */
+
+      // 绑定事件
+      $('#u1').on('mouseenter', 'li', function () {
+        $(this).css('backgroundColor', 'green').css('color', 'yellow');
+      }).on('mouseleave', 'li', function () {
+        $(this).css('backgroundColor', '').css('color', '');
+      })
+      $('#btn1').click(function () {
+        $('<li>我是新来的</li>').appendTo($('#u1'));
+      })
+
+
+      // 干掉ul中所有的li
+      $('#btn2').click(function () {
+        //$('#u1>li').remove()
+        // $('#u1').off()
+        $('#u1').empty()
+      })
+
+    });
+
+    // $(function () {
+    //   // 高亮
+    //   // $('#u1>li').mouseenter(function(){
+    //   //   $(this).css('backgroundColor','green');
+    //   // }).mouseout(function(){
+    //   //   $(this).css('backgroundColor','');
+    //   // })
+    //   $('#u1').on('mouseenter', 'li', function () {
+    //     $(this).css('backgroundColor', 'green');
+    //   }).on('mouseleave', 'li', function () {
+    //     $(this).css('backgroundColor', '');
+    //   });
+    //   // 添加
+    //   $('#btn1').click(function () {
+    //     $('#u1').append('<li>我来了</li>');
+    //   });
+    //   $('#btn2').click(function () {
+    //     $('#u1>li').remove()
+
+    //   });
+    // })
+  </script>
+</body>
+
+</html>

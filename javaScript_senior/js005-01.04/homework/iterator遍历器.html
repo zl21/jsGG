@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // let arr=[1,2,3];
+        // function myIterator(arr) {
+        //     let nextIndex=0;
+        //     return{
+        //         next:function () {
+        //             return nextIndex<arr.length ? {
+        //                 value:arr[nextIndex++],
+        //                 done:false
+        //             } : {
+        //                 value:undefined,
+        //                 done:true,
+        //             }
+        //         }
+        //     }
+        // }
+        // let interatorObj=myIterator(arr);
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        //
+        // //for of遍历数组
+        // for (let i of arr){
+        //     console.log(i);
+        // }
+
+        // let arr=[1,2,3];
+        // function myIterator(arr) {
+        //     let nextIndex=0;
+        //     return{
+        //         next:function () {
+        //             return nextIndex<arr.length ? {
+        //                 value:arr[nextIndex++],
+        //                 done:false
+        //             } : {
+        //                 value:undefined,
+        //                 done:true,
+        //             }
+        //         }
+        //     }
+        // }
+        // let interatorObj=myIterator(arr);
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        // console.log(interatorObj.next());
+        //
+        // //for of遍历数组
+        // for (let i of arr){
+        //     console.log(i);
+        // }
+
+        let arr=[1,2,3];
+        function myIterator(arr) {
+            let nextIndex=0;
+            return{
+                next:function () {
+                    return nextIndex<arr.length ? {
+                        value:arr[nextIndex++],
+                        done:false
+                    } : {
+                        value:undefined,
+                        done:true,
+                    }
+                }
+            }
+        }
+        let interatorObj=myIterator(arr);
+        console.log(interatorObj.next());
+        console.log(interatorObj.next());
+        console.log(interatorObj.next());
+        console.log(interatorObj.next());
+
+        //for of遍历数组
+        for (let i of arr){
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

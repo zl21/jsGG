@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+      斐波那契数列:
+      1  2  3  4  5  6  7   8   9   10   11   12
+      1、1、2、3、5、8、13、21、34、 55   89  144
+
+      整数的范围(int类型) -2147483648~ 2147483647
+
+      // 给你任意的一个月份,得到当前这个月份一共有多少对兔子
+
+
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // 递归是最好的写法
+    // 递归:自己抽自己,把自己抽晕了,就结束
+    // 递归:函数自己调用自己,但是,递归一定要结束的条件
+    // 什么时候使用递归:后台使用的比较多
+    // 深拷贝(深度克隆)
+    // 城市联动----功能--前后台通用
+    // 文件夹(目录)的文件及目录的遍历---后台居多
+
+
+
+    // 递归实现斐波那契数列
+    // 第12个月有多少对兔子
+    function fib(m) {
+      if(m===1||m===2){
+        return 1
+      }
+      return fib(m - 1) + fib(m - 2)
+    }
+    var result = fib(12)
+    console.log(result)
+
+
+
+
+
+
+
+    // var num = 0;
+    // function showMessage() {
+    //   num++
+    //   // 结束条件
+    //   if (num < 5) {
+    //     console.log('从前有个山,山上有个庙,庙里有个老和尚和一个小和尚,老和尚给小和尚讲故事')
+    //     showMessage()
+    //   }
+
+
+    // }
+    // showMessage()
+
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+      1. $.each() 遍历数组或者对象中的数据
+      2. $.trim() 去除字符串两边的空格
+      3. $.type(obj) 得到数据的类型 ,像typeof
+      4. $.isArray(obj) 判断是否是数组
+      5. $.isFunction(obj) 判断是否是函数
+    */
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>手机</li>
+    <li>电脑</li>
+    <li>相机</li>
+    <li>电视</li>
+    <li>冰箱</li>
+  </ul>
+  <script type="text/javascript">
+
+console.log($.type($('li')));//object
+console.log($.type('哈哈'));//string
+
+console.log($.isArray($('li')));//false，伪数组不是数组
+
+$('li').forEach(function (item, index) {
+  console.log(item);
+});
+
+console.log($.isFunction($));//true
+console.log($ instanceof Object);//true
+
+
+    // var str='abc'
+    // console.log($.type(str))
+    // var arr=[1,2,3,4,5]
+    // console.log($.isArray(arr))
+    // // 伪数组
+    // console.log($.isArray($('li')))
+
+    // // 判断$是不是函数
+    // console.log($.isFunction($))
+  </script>
+</body>
+
+</html>

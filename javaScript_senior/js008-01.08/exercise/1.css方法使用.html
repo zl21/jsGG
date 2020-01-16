@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 1.css方法使用 </title>
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <p>1p</p>
+    <p class="cls">2p</p>
+    <script>
+        $(() => {
+            /* //需求1：点击按钮，P的背景变红
+            $('#btn').click(function () {
+                $('p').css('backgroundColor','red');
+            }); */
+
+            //需求2：点击按钮，P的背景变红，文字变绿
+            $('#btn').click(function(){
+                $('p').css('backgroundColor','red').css('color','green');
+            });
+            
+            //需求3：只写一个属性的名字，获取该属性的值
+            $('#btn').click(function(){
+                $('.cls').css({'backgroundColor':'red','color':'green','width':'100px','height':'32px'});
+                console.log($('.cls').css('width'));
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    div {
+      width: 300px;
+      height: 450px;
+      border: 1px solid red;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">显示效果</button>
+  <div id="dv">
+    <p>油炸铁轨</p>
+    <p>清蒸大锤</p>
+    <p>爆炒铁定</p>
+    <p>宫爆华哥</p>
+    <p>凉拌榴莲</p>
+    <p>手撕井盖</p>
+  </div>
+  <script type="text/javascript">
+
+    // 需求16: 点击按钮,div中奇数行的p标签内容全部修改为:我还要多加一遍作业,偶数行的p标签内容修改为；可以加两遍作业,当鼠标进入到p标签的时候,当前的p标签的背景为绿色,点击p标签的时候,当前p标签的内容为:我要多写三遍作业
+    // 多加一个操作.鼠标离开的这个p,颜色还原成默认的颜色
+
+    // 页面加载的方法
+    $(function () {
+      // DOM中的事件都是on开头的,到了jQuery中,on全部去掉,在事件的名字后直接加一对小括号,小括号里面使用一个回调函数,此时jQuery中的事件就等于绑定完毕了
+      $('#btn').click(function () {
+        $('#dv>p:even').text('我还要多加一遍作业');
+        $('#dv>p:odd').text('我还要多加两遍作业');
+        // p标签的鼠标进入事件
+        // $('#dv>p').mouseover(function () {
+        //   $(this).css('backgroundColor', 'green');
+        // });
+        // $('#dv>p').click(function () {
+        //   $(this).text('我要多写三遍作业')
+        // });
+
+        $('#dv>p').mouseover(function () {
+          $(this).css('backgroundColor', 'green');
+        }).click(function () {
+          $(this).text('我要多写三遍作业');
+        }).mouseout(function () {
+          $(this).css('backgroundColor', '');
+        })
+
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>

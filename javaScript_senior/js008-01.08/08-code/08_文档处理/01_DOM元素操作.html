@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <style type="text/css">
+    .cls {
+      width: 500px;
+      height: 450px;
+      border: 1px solid red;
+    }
+  </style>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+    ## 文档处理
+      1. 添加/替换元素
+        - append(content) 向当前匹配的所有元素的最后插入指定内容
+        - prepend(content) 当前元素内部的最前面插入指定内容
+        - before(content) 向当前元素的前面插入指定内容
+        - after(content) 指定内容插入当前元素的后面替换节点
+        - replaceWith(content) 指定内容替换所有匹配的标签删除节点
+      2. 删除元素
+        - empty() 删除所有匹配元素的子元素
+        - remove() 删除所有匹配的元素
+      3.
+        - 目标.append('元素')  将元素追加到目标内部的最后面
+        - 目标.appendTo('元素')将目标追加到元素内部的最后面
+        - 目标.prepend('元素')  将元素追加到目标内部的最前面
+        - 目标.prependTo('元素')将目标追加到元素内部的最前面
+        - 目标.after('元素')  将元素追加到目标的后面
+        - 目标.before('元素')  将元素追加到目标的前面
+        - 目标.insertAfter('元素') 将目标追加到元素的后面
+        - 目标.insertBefore('元素') 将目标追加到元素的前面
+        - 目标.remove() 连同标签一起删除,斩草除根
+        - 目标.empty() 清空标签的内容,斩草留根
+    */
+  </script>
+</head>
+
+<body>
+  <button id="btn">显示效果</button>
+  <div id="dv" class="cls">
+    <ul>
+      <li>第一个</li>
+      <li>最后一个</li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    /*
+      需求:
+      1. 向id为dv的div中添加一个p标签(添加到最后)
+      2. 向id为dv的div中添加一个p标签(添加到最前面)
+      3. 向ul的前面添加一个p标签
+      4. 向ul的后面添加一个p标签
+      5. 替换ul中所有的li
+      6. 清空ul中所有的标签
+      7. 干掉ul
+    */
+    $(function () {
+      $('#btn').click(function () {
+        // 父子关系的添加
+        // 被动
+        // $('#dv').append('<p>这是一个p标签1</p>');
+        // $('#dv').prepend('<p>这是一个p标签2</p>');
+        // 主动
+        // $('<p>这是一个p标签1</p>').appendTo($('#dv'));
+        // $('<p>这是一个p标签2</p>').prependTo($('#dv'));
+
+        // 兄弟关系的添加
+        // $('#dv>ul').before('<p>别让我抓到谁睡着了,作业不是加几遍的问题,而是翻倍</p>')
+        // $('#dv>ul').after('<p>别让我抓到谁睡着了,作业不是加几遍的问题,而是翻倍</p>')
+
+        // 替换 有几对li就会替换几对li
+        //  $('ul>li').replaceWith('<span>嘎嘎</span>')
+
+        // 清空ul中所有的li ,干掉的是父级元素的所有的子级元素
+        // $('ul').empty()
+        // 自杀
+        // $('ul').remove()
+
+      })
+    })
+  </script>
+</body>
+
+</html>

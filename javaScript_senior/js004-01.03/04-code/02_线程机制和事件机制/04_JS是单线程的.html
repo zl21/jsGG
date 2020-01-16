@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+
+    /*
+
+     ## JS是单线程的,这里的这个单线程,也可以叫主线程
+    1. 如何证明JS执行是单线程的
+      - setImteout()的回调函数是在主线程执行的
+      - 定时器回调函数只有在运行栈中的代码全部执行完毕后才有可能执行
+    2. 为什么JS要用单线程模式，而不是多线程模式
+      - JS的单线程与它的用途
+      - 作为浏览器脚本语言,JS的主要用途是与用户互动,以及操作DOM
+      - 这决定了它只能是单线程,否则会带来很复杂的同步问题
+    3. 代码的分类
+      - 初始化代码
+      - 回调代码
+    4. JS引擎执行代码的基本流程
+      - 先执行初始化代码:包含一些特别的代码
+        - 设置定时器
+        - 绑定监听
+        - 发送ajax请求
+      - 后面某个时刻才会执行回调代码
+
+      - 同步代码:
+      - 同步会阻塞后续代码的执行
+      - 同步没有回调
+      - 异步代码:
+      - 异步是非阻塞的
+      - 异步有回调
+
+
+      alert()实际上是断言的意思
+
+
+      本身JS是单线程的,也可以叫主线程,由于是单线程的,所以,代码几乎都是同步执行的,为了提升体验,代码执行的效率的问题,也可以模拟多线程,JS中的代码可以分为两种,一种是同步代码,一种是异步代码,同步代码就是JS单线程的方式,异步的代码就可以模拟多线程的问题,
+      异步代码出现了之后,就可以在同一时间可以做多件事
+    */
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // JS是单线程的,代码会阻塞,JS代码分两种:(同步代码和异步)
+
+
+    // setTimeout(function () {
+    //   console.log('timeout 3')
+    // }, 3000)
+    // setTimeout(function () {
+    //   console.log('timeout 2')
+    // }, 2000)
+    // alert('提示....')
+    // console.log('alert之后')
+
+    // 异步操作
+    // var time = Date.now()
+    // setTimeout(function(){
+    //   console.log('定时器执行了',Date.now()-time)
+    // },2000)
+    // // 同步操作
+    // console.log('代码开始执行')
+    // alert('alert执行了') // 阻塞
+    // console.log('代码结束执行')
+  </script>
+</body>
+
+</html>

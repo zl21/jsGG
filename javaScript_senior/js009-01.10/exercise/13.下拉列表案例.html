@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 下拉列表案例 </title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 340px;
+            height: 30px;
+            background: url(img/bg.jpg) no-repeat 0 0;
+            margin: 100px auto 0;
+        }
+
+        .box>ul>li {
+            float: left;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .box>ul>li ul {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            display: none;
+        }
+
+        .box a {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background: url(img/libg.jpg) no-repeat 0 0;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            color: #000;
+            font-weight: 700;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href="##">一级菜单</a>
+                <ul>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="##">一级菜单</a>
+                <ul>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="##">一级菜单</a>
+                <ul>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                    <li>
+                        <a href="##">二级菜单</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.box>ul>li').mouseenter(function () {
+                //注意页面结构，
+                $(this).children('ul').stop().slideDown(200);
+            }).mouseleave(function () {
+                $(this).children('ul').stop().slideUp(200);
+            });
+        });
+    </script>
+</body>
+
+</html>

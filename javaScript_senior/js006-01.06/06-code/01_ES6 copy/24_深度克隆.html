@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+     如何实现深度克隆
+      拷贝的数据里如果有对象或者数组,那么要继续遍历进行拷贝,除非该数据是数值类型,否则一直遍历进行拷贝
+
+      var arr=[1,2,[3,4,{age:10,name:'小白'}]]
+      1. 先判断数据类型---获取最终当前的数据的类型到底是什么类型,才能够进行是否要遍历
+      
+    */
+
+    // 1. 先判断数据类型---获取最终当前的数据的类型到底是什么类型,才能够进行是否要遍历
+    // let test='abc'
+    // console.log(Object.prototype.toString.call(test))
+    // test=null
+    // console.log(Object.prototype.toString.call(test))
+    // test=[]
+    // console.log(typeof test)
+    // console.log(test instanceof Array)
+    // console.log(Object.prototype.toString.call(test))
+
+    // Array Object 
+    // let test=[]
+    // console.log(Object.prototype.toString.call(test))
+    // let obj;
+    // console.log(Object.prototype.toString.call(obj))
+
+
+
+    // let obj={
+    //   sayHi:function(){
+    //     console.log('您好')
+    //   }
+    // }
+    // let obj2={}// 重写
+    // obj2.__proto__=obj1
+    // obj2.sayHi=function(){
+    //   console.log('我好')
+    // }
+
+
+    // 深度克隆---深拷贝
+    // 给我一个数据,我给你返回一个类型
+    // var arr=[1,2,[3,4,{age:10,name:'小白'}]]
+
+
+    // 根据得到的类型,判断是不是Object,判断是不是Array,如果都不是,直接复制即可
+    // 得到的是数据的类型
+    function targetType(target) {
+      return Object.prototype.toString.call(target).slice(8, -1)
+    }
+    // 如果数据是Object或者是Array 都要遍历,找到里面的每个数据是不是Object/Array,然后是否要继续遍历
+    function clone(target) {
+      // 进行克隆
+      let result, checkType = targetType(target); // 获取当前数据的类型的
+      // 判断
+      if (checkType === 'Object') {
+        result = {}
+      } else if (checkType === 'Array') {
+        result = []
+      } else {
+        return result
+      }
+
+      // 遍历进行克隆
+      for (let i in target) {
+        let value = target[i]
+        if (targetType(value) === 'Object' || targetType(value) === 'Array') {
+          result[i] = clone(value)
+        } else {
+          result[i] = value
+        }
+      }
+
+      // 最终把克隆后的数据要返回
+      return result
+    }
+
+    // 深拷贝
+    let arr = [1, 2, [10, 20], { name: '小明', age: 100 }]
+    let result = clone(arr)
+    result[3]['name'] = '帅杨'
+    console.log(arr)
+    console.log(result)
+
+
+    // clone([10, { age: 10 }])
+
+    // let obj = {
+    //   age: 10
+    // }
+    // let arr = [10, 20, 30]
+
+    // for (let i in obj) {
+    //   console.log(i)
+    // }
+    // for (let i in arr) {
+    //   console.log(i)
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let result = 'hello';
+    // // 可以获取任意数据的真正的类型
+    // result = null
+    // result = []
+    // console.log(Object.prototype.toString.call(result))
+    // // 截取获取的真正的数据类型
+    // console.log(Object.prototype.toString.call(result).slice(8, -1))
+
+    // // 遍历对象--属性名
+    // let obj = { name: '小强' }
+    // for (let i in obj) {
+    //   console.log(i)
+    // }
+    // // 遍历数组---索引
+    // let arr = [1, 3, 'abc']
+    // for (let i in arr) {
+    //   console.log(i)
+    // }
+
+
+
+    // // 定义检测数据类型的功能函数
+    // function checkType(target) {
+    //   return Object.prototype.toString.call(target).slice(8, -1)
+    // }
+    // // 实现深度克隆
+    // function clone(target) {
+    //   // 初始化result  最终克隆的数据
+    //   let result, targetType = checkType(target)
+    //   // 判断数据类型
+    //   if (targetType === 'Object') {
+    //     result = {}
+    //   } else if (targetType === 'Array') {
+    //     result = []
+    //   } else {
+    //     return target
+    //   }
+    //   // 遍历目标数据
+    //   for (let i in target) {
+    //     let value = target[i]
+    //     // 判断目标结构里的每一个值是否存在对象/数组
+    //     if (checkType(value) === 'Object' || checkType(value) === 'Array') { // 对象/数组中又嵌套了对象/数组
+    //       // 继续遍历,获取到的value值
+    //       result[i] = clone(value)
+    //     } else {
+    //       result[i] = value
+    //     }
+
+    //   }
+    //   return result // 返回最终克隆的数据
+    // }
+
+    // let arr5 = [1, 2, { name: '小明啊', age: 90 }]
+    // let arr6 = clone(arr5)
+    // arr6[2]['name'] = '大明啊'
+    // console.log(arr5)
+    // console.log(arr6)
+  </script>
+</body>
+
+</html>

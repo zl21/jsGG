@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+        ## 数组扩展
+      1. Array.from(伪数组) 伪数组转真数组-------------------常用的方法
+      2. Array.of(val1,val2,val3)将一些列数值转换为数组
+      3. find(回调) 找出第一个满足条件的元素--------------------常用
+      4. findIndex(回调) 找出第一个满足条件的元素的下标------常用
+    */
+  </script>
+  <script src="../../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮1</button>
+  <button>按钮1</button>
+  <!--   
+    <script type="text/javascript">
+    // 伪数组
+    let btnObjs = document.getElementsByTagName('button')
+    // 伪数组转真数组
+    let btns = Array.from(btnObjs)
+    console.log(btns instanceof Array)
+
+    // 把一些数据,放在一个数组中
+    let arr = Array.of(1, 2, 3, 4, 5)
+    console.log(arr)
+
+    let array = [
+      {
+        name: 'jack',
+        age: 10
+      }, {
+        name: 'tom',
+        age: 20
+      }
+    ]
+    // 查找符合条件的第一个数据
+    var result1 = array.find((item, index) => {
+      return item.age === 10
+    })
+    console.log(result1)
+
+    // 根据条件查找,找到的下标返回来
+    var index = array.findIndex((item, index) => {
+      return item.age === 10
+    })
+    console.log(index)
+  </script>
+-->
+
+  <script>
+    //作业：
+    //1、from():伪数组转真数组
+    let oBtn = $('button');
+    console.log(Array.from(oBtn));//(3) [button, button, button]
+    
+    //2、of():将一些列数值转换为数组
+    console.log(Array.of(9,8,7,6,5,4,3));//(7) [9, 8, 7, 6, 5, 4, 3]
+    
+    //3、find(回调):找出第一个满足条件的元素并返回该元素
+    let arr = [{'name':'zl'},{'age':20}]
+    // 查找符合条件的第一个数据
+    var result = arr.find((item, index) => {
+      return item.age === 20;
+    })
+    console.log(result);//{age: 20}
+    
+    //4、findIndex(回调):找出第一个满足条件的元素的下标
+    console.log(arr.findIndex((item,index)=>{
+      return item.name === 'zl';
+    }));//0
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+  
+    使用自定义构造函数的方式实现下面功能：
+      测试题1: 
+        苹果pro 12 手机是黑色的,重量是0.6kg,价格是12000元,可以打电话,发短信
+        华为mate x 5G 手机是蓝色的,重量是0.7kg,价格是74999元,可以打电话,发短信,看电影
+  
+      测试题2:
+        华哥有一辆五菱宏光的车,该车是银白色,重量是500kg,该车可以载人载货,华哥总是开车带着猫哥兜风,偶尔开车拉货赚钱
+  
+      测试题3:
+  
+       联想thinkad t420 这款电脑是黑色,价格是3000元,电脑都可以编写代码,联想thinkad t420这款电脑不仅可以编写代码,还可以玩游戏,和这款电脑相类似的苹果pro这款电脑不同,苹果pro不仅可以编写代码,和玩游戏,还可以绘图
+    
+    */
+
+    /*
+    
+          苹果pro 12 手机是黑色的,重量是0.6kg,价格是12000元,可以打电话,发短信
+          华为mate x 5G 手机是蓝色的,重量是0.7kg,价格是74999元,可以打电话,发短信,看电影
+    
+    */
+
+    // 方式2:
+
+    // 手机构造函数
+    function Phone(color, weight, price) {
+      this.color = color; // 颜色
+      this.weight = weight; // 重量
+      this.price = price; // 价格
+    }
+    // 原型对象上添加方法
+    Phone.prototype.call = function () {
+      console.log('打电话')
+    }
+    Phone.prototype.sendMessage = function () {
+      console.log('发短信')
+    }
+    // 苹果手机的构造函数
+    function ApplePhone(color, weight, price) {
+      this.color = color; // 颜色
+      this.weight = weight; // 重量
+      this.price = price; // 价格
+    }
+    // 实现继承
+    ApplePhone.prototype = new Phone()
+
+    // 华为手机的构造函数
+    function HuaWeiMate(color, weight, price) {
+      this.color = color; // 颜色
+      this.weight = weight; // 重量
+      this.price = price; // 价格
+    }
+    // 实现继承
+    HuaWeiMate.prototype = new Phone()
+    // 原型上添加方法
+    HuaWeiMate.prototype.lookMovie = function () {
+      console.log('看电影')
+    }
+
+    // 实例化苹果手机
+    var applePhone = new ApplePhone('黑色','0.6kg',12000)
+    applePhone.call()
+    applePhone.sendMessage()
+    // 实例化华为手机
+    var mate = new HuaWeiMate('蓝色','0.7kg',74999)
+    mate.call()
+    mate.sendMessage()
+    mate.lookMovie()
+
+
+
+
+
+
+
+    // 方式1:
+
+    // 手机的构造函数
+    // function Phone(color, weight, price) {
+    //   this.color = color; // 初始化颜色
+    //   this.weight = weight; // 重量
+    //   this.price = price; // 价格
+    //   // 定义方法
+    //   this.call = function () {
+    //     console.log('可以打电话了')
+    //   };
+    //   this.sendMessage = function () {
+    //     console.log('发短信:考尼奇瓦')
+    //   };
+    // }
+
+    // // 实例化对象,并初始化
+    // var phonePro = new Phone('黑色', '0.6kg', 12000)
+    // phonePro.call() // 调用打电话的方法
+    // phonePro.sendMessage() // 调用发短信的方法
+    // var mate = new Phone('blue', '0.7kg', 74999)
+    // mate.call()
+    // mate.sendMessage()
+    // mate.lookMovie = function () {
+    //   console.log('看电影')
+    // }
+    // mate.lookMovie()
+    // 手机号码存储使用什么类型? 字符串
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

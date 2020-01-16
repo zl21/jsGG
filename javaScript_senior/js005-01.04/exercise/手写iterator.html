@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 手写iterator </title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Symbol.iterator这个接口的原理代码
+        var arr = [1, 2, 3, 4, 5];
+        // 该函数作用是用来遍历数组的,属于一个遍历机器---迭代器-->自己实现了Symbol.iterator的接口
+        function myIterator(arr) {
+            let nextIndex = 0;
+            return {
+                next: function () {
+                    return nextIndex < arr.length ? { value: arr[nextIndex++], done: false } : { value: undefined, done: true };
+                }
+            }
+        }
+        let iterator = myIterator(arr);
+        console.log(iterator.next());//Object {done: false,value: 1}
+        console.log(iterator.next());//Object {done: false,value: 2}
+        console.log(iterator.next());//Object {done: false,value: 3}
+
+
+        /* 就是要让你可以遍历某些对象 */
+        /* var obj = {
+            [Symbol.iterator]: function () {
+                let nextIndex = 0
+                return {
+                    next: function () {
+                        return nextIndex < this.length ? { value: this[nextIndex++], done: false } : { value: undefined, done: true }
+                    }
+                }
+            }
+        }
+        for (let i of obj) {
+            console.log(i)
+        } */
+
+    </script>
+
+</body>
+
+</html>

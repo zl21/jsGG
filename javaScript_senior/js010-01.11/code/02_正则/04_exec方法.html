@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // var reg = /\d/g;//g是全局匹配
+    // var str = "aabb223";
+    /*exec方法  对字符串进行查找，每次调用只会查找一次，查找到1个以后，便停止查找
+    然后把小标移到查找元素的后一位。
+    返回查找到信息的相关数组*/
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+
+
+
+
+
+    var str = '报警的电话号码是:110,119,120';
+    var reg = /\d{3}/g;
+    // exex()方法返回来的是数组(匹配成功)
+    // console.log(reg.exec(str)[0])
+    // console.log(reg.exec(str))
+    // console.log(reg.exec(str))
+    // console.log(reg.exec(str))
+    // console.log(reg.exec(str))
+
+    var result;
+    while ((result = reg.exec(str)) != null) {
+      console.log(result[0])
+    }
+
+    // console.log('哈哈')
+    // console.log(null==null)
+
+
+
+  </script>
+</body>
+
+</html>

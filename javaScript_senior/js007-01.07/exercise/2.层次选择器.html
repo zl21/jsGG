@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        .d1 {
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <div>最开始的div</div>
+        <div id="d">
+            first div
+            <p><span>p里面的span</span></p>
+            <span>div里的span</span>
+        </div>
+        <div>second div</div>
+        <div>third div</div>
+        <div>forth div</div>
+    </div>
+    <script>
+        $(() => {
+            //id为d的里面的span，无论儿子孙子
+            let a = $('#d span').text();
+            console.log(a);
+
+            //id为d的儿子span
+            let b = $('#d>span').text();
+            console.log(b);
+
+            //当前的第一个兄弟
+            let c = $('#d+div').text();
+            console.log(c);
+
+            //当前的后面的所有兄弟
+            let d = $('#d~div').text();
+            console.log(d);
+
+            //当前的前面的所有兄弟
+            let e = $('#d').prevAll().text();
+            console.log(e);
+        });
+    </script>
+</body>
+
+</html>

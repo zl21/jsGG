@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 5.筛选和过滤 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+      ## 筛选和过滤:方法
+      1. first()
+      2. last()
+      3. eq()
+      4. filter(选择器)
+      5. not(选择器)
+      6. has(选择器)
+    */
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>城中戏一场，山民笑断肠</li>
+    <li>方寸混乱，灵台崩摧</li>
+    <li>心如死灰，灰厚几何</li>
+    <li>美轮美奂，不忍卒观</li>
+    <li title="hello">早知如此伴人心，何如当初莫相识</li>
+    <li title="world">阁下何不同风起，扶摇直上九万里</li>
+    <li><span>凌风破看醉红尘，何此如来遁空门</span></li>
+    <li>世人谓我恋长安，谁知只恋长安某</li>
+  </ul>
+  <button id="btn">显示效果</button>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn').click(function () {
+        //1. 获取ul中的第一个li
+        console.log($('ul li').first());
+        //2. 获取ul中的最后一个li
+        console.log($('ul li').last());
+        //3. 获取ul中的第二个li
+        console.log($('ul li').eq(1));
+        //4. 获取title属性值为hello 的li
+        console.log($('ul li').filter('[title=hello]').text());
+        //5. 获取title属性值不是hello 的li
+        console.log($('ul li').filter('[title!=hello]').text());
+        console.log($('ul li').not('[title=hello]').text());
+        //6. 获取有span子标签的li
+        console.log($('ul li').has('span'))
+      });
+    });
+  </script>
+</body>
+
+</html>

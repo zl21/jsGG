@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 11.当前图片高亮其余暗淡 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    body {
+      background-color: #333;
+    }
+
+    #wrap {
+      width: 630px;
+      height: 578px;
+      border: 1px solid #fff;
+      margin: 10px auto;
+      padding: 10px 0 0 10px;
+    }
+
+    #wrap .list {
+      overflow: hidden;
+    }
+
+    #wrap .list li {
+      float: left;
+      width: 200px;
+      height: 186px;
+      margin: 0 10px 10px 0;
+    }
+    img{
+      width: 200px;
+      height: 186px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <ul class="list">
+      <li><img src="imgs/01.jpg" alt=""></li>
+      <li><img src="imgs/02.jpg" alt=""></li>
+      <li><img src="imgs/03.jpg" alt=""></li>
+      <li><img src="imgs/04.jpg" alt=""></li>
+      <li><img src="imgs/lyml.jpg" alt=""></li>
+      <li><img src="imgs/06.jpg" alt=""></li>
+      <li><img src="imgs/07.jpg" alt=""></li>
+      <li><img src="imgs/08.jpg" alt=""></li>
+      <li><img src="imgs/09.jpg" alt=""></li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+  $(function(){
+    $('.list>li').mouseenter(function(){
+        $(this).siblings('li').stop().fadeTo(500,.5);
+    }).mouseleave(function(){
+        $(this).siblings('li').stop().fadeTo(500,1);
+    });
+  });
+  </script>
+</body>
+
+</html>

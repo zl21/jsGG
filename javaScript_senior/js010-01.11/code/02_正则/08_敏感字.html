@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <textarea name="" id="text" cols="30" rows="10"></textarea>
+  <script type="text/javascript">
+
+    
+    var oText = document.getElementById("text");
+    oText.onchange = function () {
+      var reg = /滚蛋|傻逼|傻屌一个|狗日的/g;
+      var userCon = oText.value;
+      // var newStr = userCon.replace(reg,"**");
+
+      var newStr = userCon.replace(reg, function (i) {
+        // i-------------敏感字
+        console.log(i)
+        var len = i.length;
+        var str = "";
+        // 星星的个数
+        for (var j = 0; j < len; j++) {
+          str += "*";
+        }
+        return str;
+      });
+      oText.value = newStr;
+    }
+  </script>
+</body>
+
+</html>

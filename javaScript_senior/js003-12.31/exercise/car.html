@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+     测试题2:
+          华哥有一辆五菱宏光的车,该车是银白色,重量是500kg,该车可以载人载货,华哥总是开车带着猫哥兜风,偶尔开车拉货赚钱
+    */
+        //Car类，两个属性(color,weight),一个共享方法run
+        function Car(color, weighht) {
+            this.color = color;
+            this.weighht = weighht;
+        }
+        Car.prototype.run = function () {
+            console.log("载人载货");
+        }
+        //Person类，共享了两个方法。
+        function Person(name,car) {
+            this.name = name;
+            this.car = car;//new Car("sliver", "500kg");//在人里面实例化一个车对象=给人一辆车。
+        }
+        Person.prototype.drive = function () {
+            console.log(this.name + "兜风去。");
+            //this.car.run();
+        }
+        Person.prototype.earnMoney = function(){
+            console.log('赚钱去了');
+        }
+        //实例化华哥
+        var huaGe = new Person('hua');
+        huaGe.drive();
+        huaGe.earnMoney();
+        //实例化car
+        var car1 = new Car('cliver',5000);
+        //将Person的car属性赋值为实例化对象car1,并调用car1对象的run方法
+        var person1 = new Person('huaGe',car1);
+        person1.car1.run();
+
+    </script>
+</body>
+
+</html>

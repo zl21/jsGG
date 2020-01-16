@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <link rel="stylesheet" href="index.css">
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style>
+    .todo-main li button {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root">
+    <div class="todo-container">
+      <div class="todo-wrap">
+        <div class="todo-header">
+          <input id="newTodo" type="text" placeholder="请输入你的任务名称，按回车键确认" />
+        </div>
+        <ul class="todo-main">
+
+        </ul>
+        <div class="todo-footer">
+          <label>
+            <input id="checkAll" type="checkbox" />
+          </label>
+          <span>
+            已完成<span id="allCompletedTodos">0</span> / 全部<span id="allTodos">2</span>
+          </span>
+          <button id="removeAllCompleted" class="btn btn-danger">清除已完成任务</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    /*
+      1. 模拟后台数据
+      2. 遍历数据,添加到对应的ul中
+      3. 添加鼠标进入和离开事件,高亮显示效果,因为会有新的内容,所以,使用on的方式
+      4. 显示总条数
+      5. 全选和全不选
+      6. 单个的复选框选中操作
+      7. 添加新的选项数据
+      8. 删除操作
+      9. 干掉所有的数据,从后向前删除
+    */
+  </script>
+  <script type="text/javascript">
+
+    $(function () {
+
+
+
+      // 1. 模拟后台数据
+      var todos = [{ content: '奔驰', isCompleted: false }, { content: '宝马', isCompleted: false }, { content: '奥迪', isCompleted: false }];
+      // 2. 遍历数据,添加到对应的ul中
+      todos.forEach(function (todo) {
+        $('.todo-main').append(`
+        <li class="todoItem" style="background:white;">
+          <label><input type="checkbox"><span>${todo.content}</span></label>
+          <button class="btn btn-danger" style="display: none;">删除</button>
+        </li>
+      `)
+      });
+      // 3. 鼠标进入和离开li的时候有高亮显示的效果,同时删除的按钮会出现显示和隐藏的效果
+      $('.todo-main').on('mouseenter', '.todoItem', function () {
+        $(this).css('backgroundColor', '#CCC');
+        $(this).find('button').css('display', 'block');
+      }).on('mouseleave', '.todoItem', function () {
+        $(this).css('backgroundColor', '');
+        $(this).find('button').css('display', 'none');
+      });
+
+      // 4. 显示总条数
+      $('#allTodos').text(todos.length);
+
+      // 5. 全选和全不选
+      $('#checkAll').click(function () {
+        // 全选和全不选的操作
+        $('.todo-main :checkbox').prop('checked', $(this).prop('checked'));
+        // 更新已经完成的数量
+        $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length)
+
+        // 没有修改数组中数据的状态,判断this的checked状态,两个循环修改todos数据===
+        if ($(this).prop('checked')) {
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].isCompleted = true;
+
+          }
+        } else {
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].isCompleted = false;
+
+          }
+        }
+
+      });
+
+      // 6. 单个的复选框选中操作,如果有新的数据,那么新的数据对应的checkbox也要有点击事件
+      $('.todo-main').on('click', ':checkbox', function () {
+        // 点击单个的复选框,获取下标,目的是修改todos中对应数据的选中状态=============
+        var index = $(this).parents('li').index();
+        // 把当前复选框的选中状态更新到对应的todos数组中对应的对象的isCompleted的值
+        todos[index].isCompleted = $(this).prop('checked');
+        // 更新已经完成的数量
+        $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length)
+        // 更新全选全部选的复选框是否选中的状态,需要考虑到选中的个数是0,数据的个数也是0,此时也不能全选选中
+        $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1 && $(':checkbox').length - 1 != 0);
+      });
+
+      // 7. 添加新的选项数据
+      $('#newTodo').keyup(function (e) {
+        // 判断是否按下回车键----添加数据了
+        if (e.keyCode === 13) {
+          // 获取当前文本框中输入的数据
+          var txt = $(this).val();
+          // 判断文本框中的数据是否为空
+          if ($.trim(txt)) {
+            // 先把数据保存在数组中
+            todos.unshift({ content: txt, isCompleted: false }); // 有bug  ,todos是数组,数组中的每个数据是对象,txt是文本
+            var newLi = $(`
+        <li class="todoItem" style="background:white;">
+          <label><input type="checkbox"><span>${txt}</span></label>
+          <button class="btn btn-danger" style="display: none;">删除</button>
+        </li>
+      `);
+            // newLi ---->li标签----->进入到ul 中---->
+            $('.todo-main').prepend(newLi);
+            newLi.hide() // 隐藏
+            newLi.slideDown(500) // 滑出来
+
+            // 再次更新总数量
+            $('#allTodos').text(todos.length);
+            // 影响是否全选的问题==================
+            $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1);
+          } else {
+            alert('请您输入内容')
+          }
+          // // 清空文本框数据
+          $(this).val('');
+        }
+      });
+
+      // 8. 删除操作
+      $('.todo-main').on('click', '.btn', function () {
+        if (confirm('您是否确认删除')) {
+          // li消失了
+          $(this).parents('li').slideUp(200, function () {
+            var index = $(this).index()
+            // 干掉当前按钮外面的父级元素的li
+            $(this).remove()
+
+            // 干掉对应的数组中的那个数据
+            todos.splice(index, 1);
+
+            // 更新一下总的数量
+            $('#allTodos').text(todos.length);
+
+            // 更新一下选中个数的数量
+            $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length)
+            // 更新一下全选的状态
+            $('#checkAll').prop('checked', $('.todo-main :checkbox:checked').length === $(':checkbox').length - 1);
+          })
+
+        }
+      })
+
+      // 9. 干掉所有选中的数据,从后向前删除
+      $('#removeAllCompleted').click(function () {
+        // 提示信息
+        if (confirm('确认清楚已完成的数据吗?')) {
+          // 获取所有的选中的复选框,
+          var allCheckedbox = $('.todo-main li :checkbox:checked');
+          // 循环一个一个的删除
+          for (var i = allCheckedbox.length - 1; i >= 0; i--) {
+            // 找当前复选框的父级的li, 隐藏,删除
+            $(allCheckedbox[i]).parents('li').slideUp(200, function () {
+              var index = $(this).index(); // 先获取当前的li的索引
+              $(this).remove(); // 删除
+              todos.splice(index, 1);
+              // 更新一下总的数量
+              $('#allTodos').text(todos.length);
+              // 更新一下选中个数的数量
+              $('#allCompletedTodos').text($('.todo-main :checkbox:checked').length)
+              $('#checkAll').prop('checked', false);
+            })
+
+
+          }
+        }
+      });
+    });
+
+
+
+    /*
+     修改操作,删除操作,金钱的操作, 提示是否修改?是否删除?是否转账?.... 还有编辑(如:发表文章,发个朋友圈,说说...)的操作,提示:是否确认退出?退出前是否要进行保存?
+
+
+
+
+    */
+  </script>
+
+  <script type="text/javascript">
+
+
+    // $(function () {
+    //   // 1. 模拟后台数据
+    //   var todos = [{ content: '奔驰', isCompleted: false }, { content: '宝马', isCompleted: false }, { content: '奥迪', isCompleted: false }];
+    //   // 2. 遍历数据,添加到对应的ul中
+    //   // li的样式 class="todoItem" style="background: rgb(255, 255, 255
+    //   // button的样式 class="btn btn-danger" style="display: none;"
+    //   todos.forEach(function (todo, index) {
+    //     $('.todo-main').append(`<li class="todoItem" style="background:white">
+    //       <label><input type="checkbox" /><span>${todo.content}</span></label>
+    //       <button class="btn btn-danger" display:"none">删除</button>
+    //     </li>`);
+    //   });
+
+    //   // 3. 添加鼠标进入和离开事件,高亮显示效果,因为会有新的内容,所以,使用on的方式
+    //   $('.todo-main').on('mouseenter', 'li', function () {
+    //     $(this).css('backgroundColor', '#ccc').find('.btn').show();
+    //   }).on('mouseleave', 'li', function () {
+    //     $(this).css('backgroundColor', '#fff').find('.btn').hide();
+    //   });
+
+    //   // 4. 显示总条数
+    //   $('#allTodos').text(todos.length)
+
+    //   // 5. 全选和全不选
+    //   $('#checkAll').click(function () {
+    //     // 全选和全不选
+    //     $(':checkbox').prop('checked', $(this).prop('checked'));
+    //     // 选中之后,立刻修改已经完成的数量
+    //     $('#allCompletedTodos').text($('.todoItem :checkbox:checked').length);
+    //     // 修改数组中数据的isCompleted状态
+    //     if ($(this).prop('checked')) {
+    //       for (let i = 0; i < todos.length; i++) {
+    //         todos[i].isCompleted = true;
+    //       }
+    //     } else {
+    //       for (let i = 0; i < todos.length; i++) {
+    //         todos[i].isCompleted = false;
+    //       }
+    //     }
+    //   });
+
+    //   // 6. 单个的复选框选中操作
+    //   $('.todo-main').on('click', '.todoItem :checkbox', function () {
+    //     // 点击单个的复选框,获取下标,修改数组中的状态,同时修改下面的完成数量的状态
+    //     var index = $(this).parents('li').index();
+    //     console.log(index)
+    //     todos[index].isCompleted = $(this).prop('checked');
+    //     // 修改下面的完成数量
+    //     $('#allCompletedTodos').text($('.todoItem :checkbox:checked').length)
+    //     // 点击任意一个复选框,都有可能会影响全选的复选框是否选中
+    //     $('#checkAll').prop('checked', $('.todoItem :checkbox:checked').length === $(':checkbox').length - 1);
+    //   });
+    //   // 7. 添加新的选项数据
+    //   $('#newTodo').keyup(function (e) {
+    //     // 判断是否按下了回车
+    //     if (e.keyCode === 13) {
+    //       // 获取文本框中的输入内容
+    //       var txt = $(this).val()
+    //       // 判断是否为空
+    //       if ($.trim(txt)) {
+    //         // 把数据添加到对象,然后插入到数组中,
+    //         todos.unshift({ content: txt, isCompleted: false });
+    //         // 把数据添加到ul中的第一个li中
+    //         var newLi = $(`<li class="todoItem" style="background:white">
+    //       <label><input type="checkbox" /><span>${txt}</span></label>
+    //       <button class="btn btn-danger" display:"none">删除</button>
+    //     </li>`);
+    //         $('.todo-main').prepend(newLi);
+    //         // 先隐藏该元素,然后滑动出来
+    //         newLi.hide();
+    //         newLi.slideDown(500);
+    //         // 修改下面的数量
+    //         $('#allTodos').text(todos.length);
+    //         // 同时可能会影响全选
+    //         $('#checkAll').prop('checked', $('.todoItem :checkbox:checked').length === $(':checkbox').length - 1)
+    //       } else {
+    //         alert('请您输入数据')
+    //       }
+
+    //       // 清空文本框
+    //       $(this).val('')
+    //     }
+
+
+    //   })
+
+    //   // 8. 删除操作
+    //   $('.todo-main').on('click', '.btn', function () {
+    //     // 点击当前按钮的时候,对应的li要先隐藏,然后再进行删除
+    //     $(this).parents('li').slideUp(200, function () {
+    //       // 获取索引
+    //       var index = $(this).index()
+    //       $(this).remove() // 干掉li
+    //       todos.splice(index, 1); // 干掉数组中的数据
+    //       // 重新统计选中的总数量
+    //       $('#allCompletedTodos').text($('.todoItem :checkbox:checked').length);
+    //       // 重新统计总数量
+    //       $('#allTodos').text(todos.length);
+    //       // 删除之后是否影响全选
+    //       $('#checkAll').prop('checked', $('.todoItem :checkbox:checked') === $(':checkbox').length - 1 && $('.todoItem :checkbox:checked').length != 0);
+    //     });
+
+    //   });
+
+    //   // 9. 干掉所有的数据,从后向前删除
+    //   $('#removeAllCompleted').click(function () {
+    //     var allCheck = $('.todoItem :checkbox:checked');
+    //     // 循环删除
+    //     for (let i = allCheck.length; i >= 0; i--) {
+    //       $(allCheck[i]).parents('li').slideUp(200, function () {
+    //         // 获取索引
+    //         var index = $(this).index()
+    //         $(this).remove()
+    //         todos.splice(index, 1);
+    //         // 重新统计数量
+    //         $('#allCompletedTodos').text($('.todoItem :checkbox:checked').length);
+    //         // 重新统计总数
+    //         $('#allTodos').text(todos.length);
+    //         // 干掉全选的勾
+    //         $('#checkAll').prop('checked', false);
+    //       })
+    //     }
+    //   });
+    // })
+  </script>
+</body>
+
+</html>

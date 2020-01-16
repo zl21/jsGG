@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> 列表相机 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      width: 600px;
+      padding: 10px;
+      border: 1px solid #000;
+      margin: 100px auto 0;
+    }
+
+    .box ul {
+      overflow: hidden;
+    }
+
+    .box ul li {
+      float: left;
+      width: 200px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    .box #btn {
+      width: 200px;
+      height: 20px;
+      border: 1px solid #000;
+      background: #fff;
+      display: block;
+      margin: 0 auto;
+      background-image: url(img/down.gif);
+      background-repeat: no-repeat;
+      background-position: 30px center;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li>佳能</li>
+      <li>索尼</li>
+      <li>三星</li>
+      <li>尼康</li>
+      <li>松下</li>
+      <li>卡西欧</li>
+      <li>富士</li>
+      <li>柯达</li>
+      <li>宾得</li>
+      <li>理光</li>
+      <li>奥林巴斯</li>
+      <li>明基</li>
+      <li>其它品牌相机</li>
+    </ul>
+    <button id="btn">显示所有内容</button>
+  </div>
+  <script>
+    $(() => {
+      //让小于12大于2的隐藏
+      var flag = true;//用于记录按钮的状态，默认true为打开的状态
+      $('li:lt(12):gt(2)').hide();
+      $('#btn').click(function () {
+        if (!flag) {
+          $('li:lt(12):gt(2)').slideDown(200, function () { });
+          //下来之后按钮里面的字要改变
+          $(this).text('隐藏所有内容');
+          //小背景图标也要改变
+          $(this).css('background-image', 'url(img/up.gif)');
+        } else {
+          $('li:lt(12):gt(2)').slideUp(200, function () { });
+          //上去之后按钮里面的字要改变
+          $(this).text('显示所有内容');
+          //小背景图标也要改变
+          $(this).css('background-image', 'url(img/down.gif)');
+        }
+        flag = !flag;//每点击一次都改变按钮的状态
+      });
+    });
+  </script>
+</body>
+</html>

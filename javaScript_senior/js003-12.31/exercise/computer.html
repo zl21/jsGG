@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        作业:
+          联想thinkad t420 这款电脑是黑色,价格是3000元,电脑都可以编写代码,联想thinkad t420这款电脑不仅可以编写代码,还可以玩游戏,和这款电脑相类似的苹果pro这款电脑不同,苹果pro不仅可以编写代码,和玩游戏,还可以绘图
+        */
+        //Computer类，两个属性(color,weight),一个共享方法compile
+        function Computer(color, price) {
+            this.color = color;
+            this.price = price;
+        }
+        Computer.prototype = {
+            constructor: Computer,
+            compile: function () {
+                console.log('编译代码了!');
+            }
+        }
+
+        //thinkPad类，继承Computer类，拥有自己的play方法
+        function ThinkPad(color, price) { //为了继承属性
+            Computer.call(this, color, price);
+        }
+        ThinkPad.prototype = new Computer();//为了继承方法
+        ThinkPad.prototype.play = function () {
+            console.log('play games!');
+        }
+
+        /* ThinkPad.prototype = {
+            play: function () {
+                console.log('play games!');
+            }
+        } */
+
+        /* var think3 = new ThinkPad();
+         console.log(think3);
+         think3.compile(); */
+
+        //ApplePro类，继承thinkPad类，有自己的draw方法
+        function ApplePro(color, price) {
+            ThinkPad.call(this, color, price);
+        }
+        ApplePro.prototype = new ThinkPad();//改变原型指向从而继承ThinkPad的方法
+        ApplePro.prototype.draw = function () {
+            console.log('draw pictures');
+        }
+
+        /* = {
+            constructor: ApplePro,
+            draw: function () {
+                console.log('drwa pictures');
+            }
+        } */
+        // console.dir(think);
+        var apple = new ApplePro('black', 3000);
+        console.log(apple.color, apple.price);
+        apple.compile();
+        apple.play();
+        apple.draw();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 函数多次调用,产生相同的随机数
+    // function showNumber() {
+    //   var num = Math.floor(Math.random() * 5 + 1)
+    //   console.log(num)
+    // }
+    // showNumber();
+    // showNumber();
+    // showNumber();
+
+
+    function showNumber2() {
+      var num = Math.floor(Math.random() * 5 + 1)
+      return function () {
+        console.log(num)
+      }
+    }
+    var ff = showNumber2();
+    ff()
+    // ff()
+    // ff()
+  </script>
+</body>
+
+</html>

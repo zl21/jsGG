@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /* 
+      闭包:函数嵌套函数,内部函数使用了外部函数中的变量(数据),内部函数要调用
+      闭包的作用:延长了局部变量的生命周期
+      为什么要有闭包?为了缓存数据
+      闭包优点:缓存数据,延长局部变量的生命周期
+      闭包缺点:缓存数据,延长局部变量的生命周期,内存溢出或者泄漏
+   */
+    // 产生5次随机数,随机数相同
+    /*     
+      function f1() {
+        // 产生随机数:1-100
+        var num = Math.floor(Math.random() * 100 + 1);
+        return function () {
+          console.log(num);
+        }
+      }
+      var fn = f1();//将f1()结果，也就是return后的函数体赋值给fn
+      fn();
+      fn();
+      fn();
+      fn();
+      fn();
+      //由于外部函数中的生成随机数并赋值给num这个语句只会执行一次，所以5次调用输出的结果是相同，从而达到了5次随机数相同的效果。
+     */
+
+
+    /*
+     function f1() {
+        // 这里只执行了一次
+        var num = 10;
+        return function () {
+          num++;
+          console.log(num);
+        }
+      }
+      var ff = f1();
+      ff(); // 11
+      ff(); // 12
+      ff(); // 13
+     */
+
+
+
+
+    // 闭包
+    function f1() {
+      var num = 10;
+      function f2() {
+        console.log(num)
+      }
+      return f2
+    }
+    var ff = f1()
+    ff() //10
+  </script>
+</body>
+
+</html>

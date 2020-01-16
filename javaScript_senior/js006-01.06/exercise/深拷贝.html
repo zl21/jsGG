@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /* checkType方法，一个参数，用于检查数据的类型，返回数据类型。 */
+        function checkType(target) {
+            /* toString后得到字符串[object xxx],用slice将字符串中的xxx截取出来。 */
+            return Object.prototype.toString.call(target).slice(8, -1);
+        }
+        /* clone方法，一个参数，用于判断是否要克隆 */
+        function clone(target) {
+            let res, targetType = checkType(target);
+            if (targetType === 'Object') {
+                res = {};
+            } else if (targetType === 'Array') {
+                res = [];
+            } else {
+                return target;
+            }
+            //遍历克隆
+            for (let i in target) {
+                let item = target[i];
+                if (checkType(item) === 'Object' || checkType(item) === 'Array') {
+                    res[i] = clone(item);//是Object或Array类型的则调用clone方法克隆value
+                } else {
+                    res[i] = item;//非Object或Array则直接克隆
+                }
+            }
+            return res;
+        }
+        let arr = [1, 2, [20, 30], { name: 'zl', age: 18 }];
+        console.log(arr);
+        //克隆并改变arr中的值，以此判断是否深拷贝
+        let result = clone(arr);
+        result[3]['name'] = 'AlanhieZhou';
+        console.log(arr);
+        console.log(result);
+
+        let obj = { name: 'bingGo', age: 20, gender: 'male' };
+        let obj1 = clone(obj);
+        console.log(obj1);
+        obj1['name'] = '小胖';
+        console.log(obj);
+        console.log(obj1);
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <style>
+        .d1 {
+            width: 200px;
+            height: 300px;
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cls">第一个div</div>
+    <div class="cls1">第二个div</div>
+    <div class="cls1">第三个div</div>
+    <ul>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个b</li>
+        <li>第四个</li>
+        <li>第五个b</li>
+        <li>第六个</li>
+        <li></li>
+        <li style="display: none;">我是隐藏的</li>
+        <li title="我去">我有title</li>
+        <li title="hello world">我有title</li>
+        <li title="hello everyone">我有title</li>
+        <li><span>我是li中的span</span></li>
+        <p>123</p>
+        <p>234</p>
+        <p>345</p>
+    </ul>
+    <button id="btn">按钮</button>
+    <script>
+        $(() => {
+
+            //找第一个div
+            $('div:first').css('backgroundColor', 'red');
+            //找最后一个
+            $('div:last').css('backgroundColor', 'blue');
+            //找没有css样式的
+            $('div:not(.cls)').css('backgroundColor', 'pink');
+            //选择第二个某某,选定一个给定索引值的元素
+            $('div:eq(1)').css('backgroundColor', 'yellow');
+            //偶数的li：
+            $('ul>li:odd').css('backgroundColor', 'purple');
+            //奇数的li
+            $('ul>li:even').css('backgroundColor', 'green');
+            //大于索引3的
+            $('ul>li:gt(3)').css({ 'backgroundColor': 'gray' });
+            //小于2的
+            $('ul>li:lt(2)').css({ 'backgroundColor': 'black' });
+
+            //大于2小于5
+            $('ul>li:lt(5):gt(2)').css({ 'backgroundColor': 'maroon' });
+            //内容包含b的元素
+            $('li:contains(b)').css({ 'backgroundColor': 'olive' });
+            //找空标签
+            $('li:empty').css({ 'backgroundColor': 'navy' });
+            //打印出隐藏的元素li
+            console.log($('li:hidden').text());
+
+            //有title属性的li
+            $('li[title]').css({ 'backgroundColor': 'ivory' });
+            //有title属性，且值包含hello的
+            $('ul>li[title*=hello]').css({ 'backgroundColor': 'red' });
+            //内有span标签的li
+            // $('ul>li span').parent().css({'backgroundColor':'mauve'});
+            $('ul>li:has(span)').css({ 'backgroundColor': 'lavender' });
+
+        });
+        /* 需求：
+            1.点击按钮，ul中奇数行的P内容全部修改为AAA，偶数行的内容修改为BBB。
+            2.鼠标进入P当前P变粉。
+            3.点击P时当前P的内容变为CCC。
+        */
+        $(() => {
+            $('#btn').click(function () {
+                $('ul>p:odd').text('AAA');
+                $('ul>p:even').text('BBB');
+                $('ul>p').mouseenter(function () {
+                    $(this).css({ 'backgroundColor': 'pink' });
+                }).click(function () {
+                    $(this).text('CCC');
+                }).mouseout(function () {
+                    $(this).css({ 'backgroundColor': '' });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

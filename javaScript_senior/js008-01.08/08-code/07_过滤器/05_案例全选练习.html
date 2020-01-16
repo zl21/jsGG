@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script src="../js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+    复选框选中的操作推荐使用 .prop()方法,attr()方法会有bug
+    如果针对多个复选框做相同的操作,那么需要使用.each()方法进行遍历
+
+    */
+  </script>
+</head>
+
+<body>
+
+  <form>
+    你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选
+
+    <br />
+    <input type="checkbox" name="items" value="足球" />足球
+    <input type="checkbox" name="items" value="篮球" />篮球
+    <input type="checkbox" name="items" value="羽毛球" />羽毛球
+    <input type="checkbox" name="items" value="乒乓球" />乒乓球
+    <br />
+    <input type="button" id="checkedAllBtn" value="全　选" />
+    <input type="button" id="checkedNoBtn" value="全不选" />
+    <input type="button" id="checkedRevBtn" value="反　选" />
+    <input type="button" id="sendBtn" value="提　交" />
+  </form>
+
+  <script type="text/javascript">
+
+    $(function () {
+      // 需求1: 全选
+      $('#checkedAllBtn').click(function () {
+        $(':checkbox').prop('checked', true);
+      }); // end 全选
+      // 需求2: 全不选
+      $('#checkedNoBtn').click(function () {
+        $(':checkbox').prop('checked', false);
+      });
+      // 需求3: 全选和全不选切换操作
+      $('#checkedAllBox').click(function () {
+        // 所有复选框的选中状态
+        var ck = $(':checkbox').prop('checked')
+        console.log(ck)
+        $(':checkbox').prop('checked', ck);
+      });
+      // 需求4: 反选
+      $('#checkedRevBtn').click(function () {
+        $(':checkbox[name=items]').each(function () {
+          $(this).prop('checked', !$(this).prop('checked'));
+        });
+        // 对比,选中的复选框的个数和总的复选框的个数是否一致
+        // 获取选中的复选框的个数
+        var len1 = $(':checkbox[name=items]:checked').length;
+        // 总的复选框的个数-1
+        var len2 = $(':checkbox').length - 1
+        // var len3 =  $(':checkbox[name=items]').length
+        $('#checkedAllBox').prop('checked', len1 === len2)
+      });
+
+      // 需求5: 单个复选框如果都选中了,最上面的复选框也要选中
+      $(':checkbox[name=items]').click(function () {
+        var len1 = $(':checkbox[name=items]:checked').length;
+        // 总的复选框的个数-1
+        var len2 = $(':checkbox').length - 1
+        $('#checkedAllBox').prop('checked', len1 === len2)
+      }); // end 复选
+    })
+
+
+    // for (let index = 0; index < array.length; index++) {
+
+    //   if () {
+
+    //   } else {
+    //     if () {
+
+    //     } // end if
+    //   } // end else 
+
+    // } // end for
+
+
+
+
+
+
+
+  // // 页面加载 
+  // $(function(){
+  //   // 需求1: 全选
+  //   $('#checkedAllBtn').click(function(){
+  //     $(':checkbox').prop('checked',true);
+  //   });
+  //   // 需求2: 全不选
+  //   $('#checkedNoBtn').click(function(){
+  //     $(':checkbox').prop('checked',false);
+  //   });
+  //   // 需求3: 全选/全不选
+  //   $('#checkedAllBox').click(function(){
+  //     $(':checkbox').prop('checked',$(':checkbox').prop('checked'));
+  //   });
+  //   // 需求4: 反选
+  //   $('#checkedRevBtn').click(function(){
+  //     $(':checkbox[name=items]').each(function(){
+  //       $(this).prop('checked',!$(this).prop('checked'))
+  //     });
+  //     // 对于上面的全选/全不选是有影响的
+  //     $('#checkedAllBox').prop('checked',$(':checkbox[name=items]:checked').length===$(':checkbox').length-1)
+  //   })
+  //   // 需求5: 点击某个复选框
+  //   $(':checkbox[name=items]').click(function(){
+  //     $('#checkedAllBox').prop('checked',$(':checkbox[name=items]:checked').length===$(':checkbox').length-1)
+  //   })
+
+  //})
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+
+      基本类型--简单类型----值类型
+      复杂类型--复合数据类型---引用类型
+
+
+      拷贝数据:基本类型的拷贝和复杂类型的拷贝
+      基本类型的拷贝----数值拷贝,拷贝后,不会影响之前的数据
+      var num1=10
+      var num2=num1
+      num2=100
+      console.log(num1)
+      复杂类型的拷贝---拷贝的是引用(地址)----浅拷贝
+      -----------------拷贝的是所有的数据(放在一个对应的空间中)---深拷贝
+
+
+       ## 拷贝数据
+      1. 基本数据类型
+        - 拷贝后悔生成一份新的数据,修改拷贝以后的数据不会影响原数据
+      2. 对象/数组
+        - 拷贝后不会生成新的数据,而是拷贝的是引用,修改拷贝以后的数据会影响原来的数据
+      3. 拷贝数据的方法:
+        - 直接赋值给一个变量 浅拷贝
+        - Object.assgin() 浅拷贝/深拷贝==============================特殊
+          如果assgin()只有一个对象---用一个变量接口,那么此时是浅拷贝
+          例子:
+            let obj2 =Object.assgin({name:'jack'}) 此时是浅拷贝
+          如果assgin()放两个对象,不接收,此时是深拷贝
+          例子:
+            Object.assgin(obj1,obj2) 把obj2拷贝到了obj1中,此时深拷贝
+        - Array.prototype.concat() 浅拷贝
+        - Array.pototype.slice() 浅拷贝
+        - JSON.parse(JSON.stringify()) 深拷贝(深度克隆),拷贝的数据里不能有函数,处理不了
+      4. 浅拷贝(对象/数组)
+        - 特点: 拷贝引用,修改拷贝以后的数据会影响原数据
+      5. 深拷贝(深度克隆)
+        - 特点: 拷贝的时候生成新数据,修改拷贝以后的数据不会影响原数据
+
+    */
+  </script>
+</head>
+
+<body>
+  <!-- 
+    <script type="text/javascript">
+    // 字符串拷贝的到底是怎么回事
+    // let str1 = 'abc'
+    // let str2 = str1
+    // str2 = 'def'
+    // console.log(str1)
+
+    // 研究拷贝到底是浅拷贝还是深拷贝
+    // let obj1 = {
+    //   name: 'jack',
+    //   age: 10
+    // }
+    // let obj2 = obj1
+    // console.log(obj1)
+    // console.log(obj2)
+    // obj2.name='tom'
+    // console.log(obj1)
+    // console.log(obj2)
+
+    // let obj1 = {
+    //   name: 'jack'
+    // }
+    // // 用法的问题
+    // let obj3 = Object.assign(obj1)
+    // obj3.name='tom'
+    // console.log(obj1)
+    // console.log(obj3)
+
+    // let arr1 = [1, 2, { name: 'jack', age: 20 }]
+    // // 可以看成拷贝
+    // let arr2 = arr1.concat()
+    // arr2[2]['name'] = 'tom'
+    // console.log(arr1)
+    // console.log(arr2)
+
+    // let arr1 = [1, 2, { name: 'jack', age: 20 }]
+    // let arr2 = arr1.slice()
+    // arr2[2]['name'] = 'tom'
+    // console.log(arr1)
+    // console.log(arr2)
+
+    //  深拷贝
+    // let arr1 = [
+    //   1,
+    //   2,
+    //   {
+    //     name: '小黑'
+    //   }
+    // ]
+    // let arr2 = JSON.parse(JSON.stringify(arr1))
+    // arr2[2]['name']='大白'
+    // console.log(arr1)
+    // console.log(arr2)
+  </script>
+ -->
+
+
+
+  <script>
+    //作业：
+    //1.直接赋值给一个变量 浅拷贝
+    let obj1 = {
+      name: 'zl',
+      age: 20,
+      gender: 'female'
+    }
+    let obj2 = obj1;
+
+    //2.Object.assgin()
+      //2.1 浅拷贝的情况：
+    let obj3 = Object.assign(obj1);//一个参数
+    console.log(obj3);//{name: "zl", age: 20, gender: "female"}
+    obj3.age = 21;
+    console.log(obj1, obj3);//{name: "zl", age: 21, gender: "female"} {name: "zl", age: 21, gender: "female"}
+      //2.2 深拷贝的情况：
+    let obj4 = {};
+    Object.assign(obj4, obj1);
+    obj4.age = 22;
+    console.log(obj1, obj4);//{name: "zl", age: 21, gender: "female"} {name: "zl", age: 22, gender: "female"}
+
+    //3. Array.prototype.concat() 浅拷贝
+    let arr1 = [1, 2, obj4];
+    let arr2 = arr1.concat();
+    arr2[2]['age'] = 23;
+    console.log(arr1[2]['age']);//23
+
+    //4.Array.pototype.slice() 浅拷贝
+    let arr3 = arr2.concat();
+    arr3[2]['age'] = 24;
+    console.log(arr2[2]['age']);//24
+
+    //5.JSON.parse(JSON.stringify()) 深拷贝(深度克隆)
+    let arr4 = JSON.parse(JSON.stringify(arr3));
+    arr4[2]['age'] = 25;
+    console.log(arr3[2]['age']);//24
+  </script>
+
+
+<!--   <script>
+  // 首先第一个问题,字符串拷贝后,如果修改数据,原来数据不会改变
+  // 字符串拷贝,不会影响原来的数据
+  // let str = 'abc'
+  // let str2 = str
+  // console.log(str2) // abc
+  // str2 = ''
+  // console.log(str) // abc
+
+  // // 对象拷贝
+  // let obj1 = { name: '小明' }
+  // // 复制的引用
+  // let obj2 = obj1
+  // obj2.name = '小红'
+  // console.log(obj1.name)
+  // // 数组中有对象进行复制 复制的也是引用
+  // let arr1 = [1, 2, { name: '小白' }]
+  // let arr2 = arr1
+  // arr2[0] = 'abc'
+  // console.log(arr1)
+  // arr2[2]['name'] = '大白'
+  // console.log(arr1)
+
+
+  // Object.assgin() 浅拷贝
+  // let obj1 = { name: '卡卡西' }
+  // let obj2 = Object.assign(obj1)
+  // obj2.name = '佐助'
+  // console.log(obj1)
+
+  // // Array.prototype.concat() 浅拷贝
+  // let arr1 = [1, 2, { name: '小绿' }]
+  // let arr2 = arr1.concat()
+  // arr2[2]['name'] = '大绿'
+  // console.log(arr1)
+
+  // // Array.prototype.slice() 浅拷贝
+  // let arr3 = [1, 2, 3, { age: 20 }]
+  // let arr4 = arr3.slice()
+  // arr4[3]['age'] = 50
+  // console.log(arr3)
+
+  // // JSON.parse(JSON.stringify()) 深拷贝
+  // let obj5 = { age: 100 }
+  // let obj6 = JSON.parse(JSON.stringify(obj5))
+  // obj6.age = 1000
+  // console.log(obj5)
+  // console.log(obj6)
+  </script> -->
+</body>
+
+</html>

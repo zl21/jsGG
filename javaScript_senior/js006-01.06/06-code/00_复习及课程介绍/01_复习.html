@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+  <script type="text/javascript">
+    /*
+      bind/call/apply  可以改变this的指向
+      call(对象,参数1,参数2) 改变this的指向同时,进行调用
+      apply(对象,[参数1,参数2]) 改变this的指向同时,进行调用
+      var ff=bind(对象) 直接复制一份返回给ff,ff中存储的就是函数/方法
+      ff(参数1,参数2) 调用
+
+      let const  都有自己的作用域,不能被提升 
+      let 定义的变量中存储的数据是可变的
+      const 一般定义的都是常量,不可变
+      解构赋值, 获取数组/对象中的数据,可以直接使用[]/{}来获取里面的所有值或者是部分值
+      let obj={name:'a',age:20,gender:'男'}
+      let {name,age,gender}=obj  console.log(name,age,gender)
+      let {age}=obj console.log(age)
+      let arr1=[1,2,3,4,5]
+      let [a,b,c,d,e]=arr1
+      let [,,c,,]=arr1
+
+      模版字符串   `可以拼接字符串${变量名}`   --- 拼接地址
+
+      简化对象
+      var name ='jack'
+      var age=10
+      var obj={
+        name,
+        age
+      }
+
+      箭头函数  var ff =()=>{},箭头函数都是作为回调来使用
+      var f1=()=>{} 如果有返回值则需要自己手动使用return
+      var f2=a=>{}
+      var f3=(a,b)=>{}
+      var f4=(a)=> a+10 有返回值,自动使用了return
+
+      三点运算符  
+      var arr=[1,2,3,4,5]
+      var arr2=[10,...arr,20] 拆包的过程
+      function f1(...args){ 打包的过程
+        console.log(args) 真数组
+        console.log(arguments) 伪数组
+      }
+      f1(1,2,3,4,5)
+
+      形参默认值: function f1(x=10,y=10){}
+
+      Promise对象,是一个构造函数,异步操作的
+      let promise = new Promise((resolve,reject)=>{
+        默认有一个初始化的状态
+        如果成功了,就改变为成功状态
+        resolve()
+        如果失败了,就改变为失败状态
+        reject()
+      })
+      只有状态改变的时候会进入到then()方法中
+      promise.then((data)=>{成功的时候进来},(error)=>{失败的时候进来})
+      promise.then((data)=>{成功的时候进来}).catch((error)=>{失败会进来})
+      promise.then((data)=>{成功的时候进来}).catch((error)=>{失败会进来}).finally(()=>{无论是成功还是失败都会进来})
+
+      Symbol 数据,唯一的,即使调用方式一样,数据也是不一样,一般可以作为键来使用
+      Symbol.iterator接口,只要某个数据类型中有这个接口,就可以通过for-of进行遍历
+
+      generator函数,惰性函数,也可以实现异步的操作,内部在执行的时候如果遇到了yield 就会暂停,如果希望进行向后执行,则该函数返回的iterator.next('abc')就会调用
+      yield 返回的数据是undefined,这个数据就会给接收yield的变量
+      function* generator(){
+        let result=yield 123
+      }
+      let iterator=generator()
+      iterator.next('abc')
+      async 关键字修改函数, async函数,该函数返回promise对象
+      async 配合await 关键字使用  可以实现异步操作
+      await 后面一定是Promise对象
+    
+    */
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+  </script>
+</body>
+</html>

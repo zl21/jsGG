@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>斐波那契数列递归版</title>
+</head>
+<body>
+    <script>
+        /* 
+            需求：求某月的兔子数
+         */
+        function fei(m){
+            if(m == 1 || m == 2){
+                return 1;//一二月都是1只
+            }
+            return fei(m-1) + fei(m-2);
+        }
+        var num = fei(12);
+        console.log(num);
+    </script>
+</body>
+</html>
